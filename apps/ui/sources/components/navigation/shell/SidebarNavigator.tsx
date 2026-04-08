@@ -172,11 +172,15 @@ export const SidebarNavigator = React.memo(() => {
     );
 
     if (!desktopDrawerEnabled) {
-        return <Stack screenOptions={stackNavigationOptions} />;
+        // Use a stable key when unauthenticated to avoid remounts during auth state transitions
+        return <Stack key="stack-nav" screenOptions={stackNavigationOptions} />;
     }
 
     return (
+        // Use a different key when authenticated to force remount when transitioning from Stack to Drawer
+        // This prevents "Couldn't find the drawer status in the state object" error after OAuth login
         <Drawer
+            key="drawer-nav"
             screenOptions={drawerNavigationOptions}
             drawerContent={showPermanentDrawer ? drawerContent : undefined}
         />
