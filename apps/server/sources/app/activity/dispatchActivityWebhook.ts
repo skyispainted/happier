@@ -2,6 +2,16 @@ import { createHmac } from "node:crypto";
 import { log } from "@/utils/logging/log";
 
 /**
+ * User information included in webhook payload.
+ */
+type WebhookUser = Readonly<{
+  userId: string;
+  username: string | null;
+  firstName: string | null;
+  lastName: string | null;
+}>;
+
+/**
  * Activity notification event types received from CLI daemon.
  */
 export type ActivityNotificationEvent =
@@ -11,6 +21,7 @@ export type ActivityNotificationEvent =
     sessionTitle?: string | null;
     waitingForCommandLabel: string;
     assistantPreviewText?: string | null;
+    user?: WebhookUser;
   }>
   | Readonly<{
     topic: 'permission_request' | 'user_action_request';
@@ -19,6 +30,7 @@ export type ActivityNotificationEvent =
     requestId: string;
     toolName: string;
     toolDetails?: string | null;
+    user?: WebhookUser;
   }>;
 
 /**
@@ -37,6 +49,11 @@ interface WebhookPayload {
     sessionId: string;
     title: string | null;
   };
+  user: {
+    userId: string;
+    username: string | null;
+    displayName: string | null;
+  } | null;
   request: {
     requestId: string;
     kind: 'permission' | 'user_action';
@@ -90,10 +107,21 @@ function buildNotificationContent(event: ActivityNotificationEvent): { title: st
 }
 
 /**
+ * Builds display name from user info.
+ */
+function buildDisplayName(user: WebhookUser): string | null {
+  const parts = [user.firstName, user.lastName].filter((p): p is string => typeof p === 'string' && p.length > 0);
+  if (parts.length > 0) return parts.join(' ');
+  return user.username;
+}
+
+/**
  * Builds webhook payload from event.
  */
 function buildWebhookPayload(event: ActivityNotificationEvent, nowMs: number): WebhookPayload {
   const content = buildNotificationContent(event);
+  const user = event.user;
+
   return {
     v: 1,
     channelId: 'builtin:default_webhook',
@@ -107,6 +135,13 @@ function buildWebhookPayload(event: ActivityNotificationEvent, nowMs: number): W
       sessionId: event.sessionId,
       title: event.sessionTitle ?? null,
     },
+    user: user
+      ? {
+        userId: user.userId,
+        username: user.username,
+        displayName: buildDisplayName(user),
+      }
+      : null,
     request: event.topic === 'ready'
       ? null
       : {

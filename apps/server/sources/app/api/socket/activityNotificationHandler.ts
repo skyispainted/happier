@@ -3,6 +3,7 @@ import { ClientConnection } from "@/app/events/eventRouter";
 import { dispatchActivityWebhookNotificationAsync, type ActivityNotificationEvent } from "@/app/activity/dispatchActivityWebhook";
 import { websocketEventsCounter } from "@/app/monitoring/metrics2";
 import { log } from "@/utils/logging/log";
+import { db } from "@/storage/db";
 
 /**
  * Handles activity-notification socket events from CLI daemon.
@@ -45,7 +46,34 @@ export function activityNotificationHandler(userId: string, socket: Socket, conn
                 return;
             }
 
-            await dispatchActivityWebhookNotificationAsync(data);
+            // Fetch user info for webhook payload
+            const account = await db.account.findUnique({
+                where: { id: userId },
+                select: { username: true, firstName: true, lastName: true },
+            });
+
+            // Fetch session title if not provided
+            let sessionTitle = data.sessionTitle;
+            if (!sessionTitle) {
+                const session = await db.session.findUnique({
+                    where: { id: data.sessionId },
+                    select: { title: true },
+                });
+                sessionTitle = session?.title ?? null;
+            }
+
+            const enrichedEvent: ActivityNotificationEvent = {
+                ...data,
+                sessionTitle,
+                user: {
+                    userId,
+                    username: account?.username ?? null,
+                    firstName: account?.firstName ?? null,
+                    lastName: account?.lastName ?? null,
+                },
+            };
+
+            await dispatchActivityWebhookNotificationAsync(enrichedEvent);
         } catch (error) {
             log({ module: 'websocket', level: 'error' }, `Error in activity-notification handler: ${error}`);
         }
