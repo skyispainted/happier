@@ -14,6 +14,7 @@ import { machineUpdateHandler } from "./socket/machineUpdateHandler";
 import { machineTransferHandler } from "./socket/machineTransferHandler";
 import { artifactUpdateHandler } from "./socket/artifactUpdateHandler";
 import { accessKeyHandler } from "./socket/accessKeyHandler";
+import { activityNotificationHandler } from "./socket/activityNotificationHandler";
 import { createServerRpcForwarder } from "./socket/serverRpcForwarder";
 import { getSocketRooms } from "./socketRooms";
 import { createAdapter } from "@socket.io/redis-streams-adapter";
@@ -315,6 +316,7 @@ export function startSocket(app: Fastify) {
         });
         artifactUpdateHandler(userId, socket);
         accessKeyHandler(userId, socket);
+        activityNotificationHandler(userId, socket, connection);
 
         // Ready
         log(

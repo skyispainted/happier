@@ -1,10 +1,10 @@
 # 默认 Webhook 通知推送接入文档
 
-本文档说明如何接入 Happier CLI 的默认 Webhook 通知推送功能。
+本文档说明如何配置 Happier Server 的默认 Webhook 通知推送功能。
 
 ## 概述
 
-Happier CLI 支持通过环境变量配置默认的 Webhook 通知渠道，无需用户在 UI 中手动配置。当 Agent 会话产生通知事件时，CLI 会自动向配置的 Webhook URL 发送 HTTP POST 请求。
+Happier Server 支持通过环境变量配置默认的 Webhook 通知渠道。当 CLI daemon 的 Agent 会话产生通知事件时，Server 会自动向配置的 Webhook URL 发送 HTTP POST 请求。
 
 ### 适用场景
 
@@ -17,7 +17,7 @@ Happier CLI 支持通过环境变量配置默认的 Webhook 通知渠道，无�
 
 ### 1. 配置环境变量
 
-在运行 Happier CLI 的环境中设置以下环境变量：
+在运行 Happier Server 的环境中设置以下环境变量：
 
 ```bash
 # 必填：Webhook 接收 URL
@@ -27,13 +27,30 @@ export HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_URL="https://your-service.com/api/no
 export HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_SECRET="your-secure-signing-secret"
 ```
 
-### 2. 启动 CLI
+### 2. 启动 Server
 
 ```bash
-happier daemon start
+# Light 模式启动
+./start-light.sh
+
+# 或使用 systemd
+sudo systemctl start happier-server
 ```
 
-配置完成后，CLI 会自动向指定的 URL 推送通知，无需其他操作。
+配置完成后，Server 会自动向指定的 URL 推送通知，无需其他操作。
+
+## 工作原理
+
+```
+┌──────────────┐     Socket Event      ┌──────────────┐     HTTP POST     ┌──────────────┐
+│  CLI daemon  │ ─────────────────────▶│   Server     │ ─────────────────▶│   Webhook    │
+│              │  activity-notification│              │                   │   Service    │
+└──────────────┘                       └──────────────┘                   └──────────────┘
+```
+
+1. CLI daemon 检测到 Agent 会话事件（ready、permission_request、user_action_request）
+2. CLI 通过 Socket.IO 向 Server 发送 `activity-notification` 事件
+3. Server 接收事件并转发到配置的 Webhook URL
 
 ## 通知类型
 
@@ -396,33 +413,6 @@ services:
     restart: unless-stopped
 ```
 
-## 与 Happier Server 同机部署
-
-如果 Webhook 服务与 Happier Server 部署在同一台服务器上：
-
-### 方案 1：本地回环地址
-
-```bash
-# CLI 配置
-export HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_URL="http://127.0.0.1:3000/api/notifications"
-```
-
-### 方案 2：Unix Socket（高性能）
-
-如果 Webhook 服务支持 Unix Socket：
-
-```bash
-# CLI 配置（需要服务端支持）
-export HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_URL="http+unix:///var/run/webhook.sock/api/notifications"
-```
-
-### 方案 3：内网地址
-
-```bash
-# CLI 配置
-export HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_URL="http://10.0.0.5:3000/api/notifications"
-```
-
 ## 部署配置示例
 
 ### Systemd Service（推荐）
@@ -451,6 +441,26 @@ Environment=TELEGRAM_CHAT_ID=your-chat-id
 WantedBy=multi-user.target
 ```
 
+### 更新 Happier Server 配置
+
+在 Happier Server 的启动脚本或 systemd service 中添加环境变量：
+
+```bash
+# start-light.sh 或 systemd service 配置
+export HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_URL="http://127.0.0.1:3001/api/notifications"
+export HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_SECRET="your-secure-secret"
+```
+
+或在 systemd service 文件中：
+
+```ini
+# happier-server.service
+[Service]
+# ... 其他配置 ...
+Environment=HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_URL=http://127.0.0.1:3001/api/notifications
+Environment=HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_SECRET=your-secure-secret
+```
+
 ### Nginx 反向代理
 
 ```nginx
@@ -476,33 +486,37 @@ server {
 
 检查步骤：
 
-1. **确认环境变量已设置**
+1. **确认 Server 环境变量已设置**
    ```bash
-   echo $HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_URL
+   # 检查 systemd service 配置
+   systemctl show happier-server --property=Environment
+   
+   # 或检查启动脚本
+   cat /home/ubuntu/happier/start-light.sh | grep HAPPIER_DEFAULT_NOTIFICATION
    ```
 
 2. **检查 Webhook 服务是否可达**
    ```bash
-   curl -X POST $HAPPIER_DEFAULT_NOTIFICATION_WEBHOOK_URL \
+   curl -X POST http://127.0.0.1:3001/api/notifications \
      -H "Content-Type: application/json" \
      -d '{"test": true}'
    ```
 
-3. **查看 CLI 日志**
+3. **查看 Server 日志**
    ```bash
-   tail -f ~/.happier/logs/daemon.log | grep -i webhook
+   journalctl -u happier-server -f | grep -i webhook
    ```
 
 ### Q: 签名验证失败？
 
-1. 确认双方使用相同的密钥
+1. 确认 Server 和 Webhook 服务使用相同的密钥
 2. 确认签名算法为 `HMAC-SHA256`
 3. 确认签名格式为 `sha256=hex_string`
 4. 使用原始请求 body 计算签名（JSON 序列化顺序可能影响结果）
 
 ### Q: 通知延迟？
 
-默认情况下通知是异步发送的，如果 Webhook 服务响应慢，不会阻塞 Agent。建议：
+通知是异步发送的，不会阻塞 Agent。建议：
 
 1. Webhook 服务快速响应（202 Accepted）
 2. 异步处理通知内容
@@ -511,8 +525,8 @@ server {
 ### Q: 如何测试？
 
 ```bash
-# 发送测试请求
-curl -X POST https://your-webhook-url/api/notifications \
+# 发送测试请求到 Webhook 服务
+curl -X POST http://127.0.0.1:3001/api/notifications \
   -H "Content-Type: application/json" \
   -H "X-Happier-Signature-256: sha256=test" \
   -d '{

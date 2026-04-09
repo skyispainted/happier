@@ -4,6 +4,7 @@ import { configuration } from '@/configuration';
 import { resolveAgentRequestKind, type AgentRequestKind } from '@/agent/permissions/requestKind';
 import { logger } from '@/ui/logger';
 import { setBoundedMap } from '@/utils/collections/lru';
+import type { ActivityNotificationEvent } from '@/activity/notifications/activityNotificationEvent';
 
 import {
   sendAgentRequestPushNotificationAsync,
@@ -33,6 +34,7 @@ export class PermissionRequestPushNotifier {
   private readonly maxEntries: number;
   private readonly nowMs: () => number;
   private readonly onNotifiedAt: (permissionId: string, notifiedAtMs: number) => void;
+  private readonly onActivityNotification?: (event: ActivityNotificationEvent) => void;
 
   private readonly entries = new Map<string, Entry>();
 
@@ -47,6 +49,7 @@ export class PermissionRequestPushNotifier {
     maxEntries?: number;
     nowMs?: () => number;
     onNotifiedAt?: (permissionId: string, notifiedAtMs: number) => void;
+    onActivityNotification?: (event: ActivityNotificationEvent) => void;
   }) {
     this.pushSender = params.pushSender;
     this.getSettings = params.getSettings;
@@ -60,6 +63,7 @@ export class PermissionRequestPushNotifier {
     this.maxEntries = Math.max(1, Math.floor(params.maxEntries ?? configuration.permissionRequestPushDedupeMaxEntries));
     this.nowMs = params.nowMs ?? (() => Date.now());
     this.onNotifiedAt = params.onNotifiedAt ?? (() => {});
+    this.onActivityNotification = params.onActivityNotification;
   }
 
   dispose(): void {
@@ -90,6 +94,21 @@ export class PermissionRequestPushNotifier {
     const createdAtMs = typeof params.createdAtMs === 'number' ? params.createdAtMs : now;
     const kind = params.requestKind ?? resolveAgentRequestKind(params.toolName);
     const toolDetails = summarizeToolInputForPushNotification(params.toolName, params.toolInput);
+
+    // Send activity notification to server for server-side webhook dispatch
+    if (this.onActivityNotification) {
+      try {
+        this.onActivityNotification({
+          topic: kind === 'user_action' ? 'user_action_request' : 'permission_request',
+          sessionId: this.sessionId,
+          requestId: params.permissionId,
+          toolName: params.toolName,
+          toolDetails,
+        });
+      } catch {
+        // ignore
+      }
+    }
 
     const existing = this.entries.get(params.permissionId) ?? null;
     if (existing) {

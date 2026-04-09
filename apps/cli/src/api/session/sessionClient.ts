@@ -1809,6 +1809,17 @@ export class ApiSessionClient extends EventEmitter {
     }
 
     /**
+     * Send activity notification to server for server-side webhook dispatch.
+     * Server will forward to configured webhook URL.
+     */
+    sendActivityNotification(event: import('@/activity/notifications/activityNotificationEvent').ActivityNotificationEvent) {
+        if (!this.socket.connected) {
+            return;
+        }
+        (this.socket as any).emit('activity-notification', { ...event, sessionId: this.sessionId });
+    }
+
+    /**
      * Send usage data to the server
      */
     sendUsageData(usage: Usage, model?: string) {

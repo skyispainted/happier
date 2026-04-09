@@ -25,6 +25,7 @@ export interface SessionClientPort {
   discardCommittedMessageLocalIds(opts: { localIds: string[]; reason: 'switch_to_local' | 'manual' }): Promise<number>;
 
   sendSessionDeath(): void;
+  sendActivityNotification?(event: import('@/activity/notifications/activityNotificationEvent').ActivityNotificationEvent): void;
   flush(): Promise<void>;
   close(): Promise<void>;
 

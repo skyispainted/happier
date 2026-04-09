@@ -237,6 +237,7 @@ export class PermissionHandler {
                     'permission_request_push_notified_at',
                 );
             },
+            onActivityNotification: (event) => this.session.client.sendActivityNotification?.(event),
         });
         return this.permissionRequestPushNotifier;
     }

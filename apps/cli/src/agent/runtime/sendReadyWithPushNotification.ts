@@ -32,7 +32,7 @@ function resolveReadyNotificationSettingsContext(opts: Readonly<{
 }
 
 export function sendReadyWithPushNotification(opts: {
-  session: Pick<SessionClientPort, 'sessionId' | 'sendSessionEvent'>
+  session: Pick<SessionClientPort, 'sessionId' | 'sendSessionEvent' | 'sendActivityNotification'>
   pushSender: PushSender
   waitingForCommandLabel: string
   logPrefix: string
@@ -45,6 +45,15 @@ export function sendReadyWithPushNotification(opts: {
   shouldSendPush?: () => boolean
 }): void {
   opts.session.sendSessionEvent({ type: 'ready' })
+
+  // Send activity notification to server for server-side webhook dispatch
+  opts.session.sendActivityNotification?.({
+    topic: 'ready',
+    sessionId: opts.session.sessionId,
+    sessionTitle: opts.sessionTitle,
+    waitingForCommandLabel: opts.waitingForCommandLabel,
+    assistantPreviewText: opts.assistantPreviewText,
+  })
 
   try {
     const currentSettingsContext = resolveReadyNotificationSettingsContext({

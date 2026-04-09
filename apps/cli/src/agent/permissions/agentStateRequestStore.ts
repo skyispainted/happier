@@ -17,6 +17,7 @@ type SessionLike = Readonly<{
     sessionId: string;
     updateAgentState: (updater: (state: AgentState) => AgentState) => Promise<void> | void;
     getAgentStateSnapshot?: () => AgentState | null | undefined;
+    sendActivityNotification?: (event: import('@/activity/notifications/activityNotificationEvent').ActivityNotificationEvent) => void;
 }>;
 
 export class AgentStateRequestStore {
@@ -312,6 +313,7 @@ export class AgentStateRequestStore {
                     'permission_request_push_notified_at',
                 );
             },
+            onActivityNotification: this.session.sendActivityNotification?.bind(this.session),
         });
 
         return this.permissionRequestPushNotifier;
