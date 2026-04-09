@@ -8,6 +8,9 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$SCRIPT_DIR"
 
+# 设置 Node 镜像加速下载
+export NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node
+
 echo "============================================"
 echo "  Happier 本地构建脚本"
 echo "============================================"
@@ -42,6 +45,9 @@ echo ""
 # ============================================
 echo "[2/2] 编译服务器..."
 cd $PROJECT_ROOT/apps/server
+
+echo "  - 安装依赖..."
+yarn install --production --ignore-optional --ignore-scripts --network-timeout 600000
 
 echo "  - 编译 TypeScript..."
 yarn build
