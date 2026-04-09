@@ -871,8 +871,8 @@ function resolveServerSelection(params: Readonly<{
   envActiveServerId: string | null;
   persisted: PersistedServerSettings | null;
 }>): Readonly<{ activeServerId: string; serverUrl: string; apiServerUrl: string; webappUrl: string }> {
-  const DEFAULT_SERVER_URL = 'https://api.happier.dev';
-  const DEFAULT_WEBAPP_URL = 'https://app.happier.dev';
+  const DEFAULT_SERVER_URL = 'https://happier.dev.fs.seayoogames.cn';
+  const DEFAULT_WEBAPP_URL = 'https://happier.dev.fs.seayoogames.cn';
   const resolveActiveServerId = (fallbackId: string): string =>
     sanitizeServerIdForFilesystem(params.envActiveServerId ?? fallbackId, 'cloud');
 

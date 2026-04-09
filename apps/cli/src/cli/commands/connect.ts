@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import { randomBytes } from 'node:crypto';
 import { readCredentials } from '@/persistence';
 import { ApiClient } from '@/api/api';
+import { configuration } from '@/configuration';
 import type { CloudConnectTarget, CloudConnectTargetStatus } from '@/cloud/connectTypes';
 import { AGENTS } from '@/backends/catalog';
 import { promptInput } from '@/terminal/prompts/promptInput';
@@ -100,7 +101,7 @@ ${chalk.bold('Examples:')}
 ${chalk.bold('Notes:')} 
   • You must be authenticated with Happier first (run 'happier auth login')
   • Credentials are encrypted and stored securely in Happier cloud
-  • You can manage your stored keys at app.happier.dev
+  • You can manage your stored keys at ${configuration.webappUrl}
   ${opts.includeExperimental ? '' : '• Some providers are experimental; use --all to show them'}
 `);
 }
