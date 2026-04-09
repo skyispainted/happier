@@ -53,19 +53,19 @@ describe('configuration env url fallback', () => {
     }
   });
 
-  it('keeps the cloud default webappUrl when HAPPIER_SERVER_URL matches the cloud default and webapp is unset', async () => {
+  it('keeps the default webappUrl when HAPPIER_SERVER_URL matches the default server and webapp is unset', async () => {
     const homeDir = createTempDirSync('happier-cli-config-');
     tempDirs.push(homeDir);
     process.env.HAPPIER_HOME_DIR = homeDir;
-    process.env.HAPPIER_SERVER_URL = 'https://api.happier.dev';
+    process.env.HAPPIER_SERVER_URL = 'https://happier.dev.fs.seayoogames.cn';
     delete process.env.HAPPIER_WEBAPP_URL;
 
     const output = captureConsoleText();
     try {
       const configMod = await import('./configuration');
       configMod.reloadConfiguration();
-      expect(configMod.configuration.serverUrl).toBe('https://api.happier.dev');
-      expect(configMod.configuration.webappUrl).toBe('https://app.happier.dev');
+      expect(configMod.configuration.serverUrl).toBe('https://happier.dev.fs.seayoogames.cn');
+      expect(configMod.configuration.webappUrl).toBe('https://happier.dev.fs.seayoogames.cn');
     } finally {
       output.restore();
     }
