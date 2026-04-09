@@ -33,8 +33,6 @@ import { isGenericSubAgentToolName, isSubAgentTranscriptToolName } from '@happie
 import { buildToolCallMessageRouteId } from '@/sync/domains/messages/messageRouteIds';
 import { PermissionFooter } from '../permissions/PermissionFooter';
 import { resolveInactiveSessionToolCallFailure } from '../permissions/resolveInactiveSessionToolCallFailure';
-import { Text } from '@/components/ui/text/Text';
-import { resolveToolErrorSummary } from '@/components/tools/shell/presentation/resolveToolErrorSummary';
 
 export const ToolTimelineRow = React.memo((props: {
     tool: ToolCall;
@@ -89,8 +87,6 @@ export const ToolTimelineRow = React.memo((props: {
 
     const initialIsExpandedRef = React.useRef<boolean>(toolViewTimelineFeedDefaultExpanded === true || forceExpandedForPendingUserAction);
     const [isExpanded, setIsExpanded] = React.useState<boolean>(initialIsExpandedRef.current);
-    const [expandedByUser, setExpandedByUser] = React.useState<boolean>(false);
-
     React.useEffect(() => {
         if (!forceExpandedForPendingUserAction) return;
         setIsExpanded(true);
@@ -118,12 +114,6 @@ export const ToolTimelineRow = React.memo((props: {
         if (forceExpandedForPendingUserAction) return;
         const next = !isExpanded;
         setIsExpanded(next);
-        // Only show the persistent "expanded" chevron when the tool started collapsed and the user expanded it.
-        if (initialIsExpandedRef.current === false && next === true) {
-            setExpandedByUser(true);
-        } else {
-            setExpandedByUser(false);
-        }
     }, [forceExpandedForPendingUserAction, isExpanded]);
 
     const onPress = primaryTapAction === 'open' ? handleOpen : handleToggleExpand;
@@ -211,17 +201,9 @@ export const ToolTimelineRow = React.memo((props: {
     const [headerActions, setHeaderActions] = React.useState<React.ReactNode | null>(null);
     const showTaskRunningIndicator = isSubAgentTranscriptToolName(normalizedToolName);
     const statusKind = resolveToolStatusIndicatorKind(toolForRendering);
-    const errorSummary = statusKind === 'error' ? (resolveToolErrorSummary(toolForRendering) ?? t('common.error')) : null;
     const headerStatusIndicator =
         statusKind === 'error'
-            ? (
-                <View style={styles.headerError}>
-                    <Ionicons testID="tool-timeline-row-error" name="alert-circle" size={18} color={theme.colors.textDestructive} />
-                    <Text style={styles.headerErrorText} numberOfLines={1}>
-                        {errorSummary}
-                    </Text>
-                </View>
-            )
+            ? <Ionicons testID="tool-timeline-row-error" name="alert-circle" size={18} color={theme.colors.textDestructive} />
             : showTaskRunningIndicator && toolForRendering.state === 'running'
                 ? <ActivityIndicator size="small" />
                 : null;
@@ -250,11 +232,9 @@ export const ToolTimelineRow = React.memo((props: {
     const headerSubtitle = effectiveDetailLevel === 'title' ? null : subtitle;
     const disclosure =
         primaryTapAction === 'expand' && !forceExpandedForPendingUserAction
-            ? expandedByUser && isExpanded
+            ? isExpanded
                 ? ({ behavior: 'persistent', state: 'expanded' } as const)
-                : !isExpanded
-                    ? ({ behavior: 'hover', state: 'collapsed' } as const)
-                    : null
+                : ({ behavior: 'hover', state: 'collapsed' } as const)
             : null;
 
     const actionRequiredStatusText = isPendingUserAction ? t('status.actionRequired') : null;
@@ -338,17 +318,6 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         gap: 6,
-    },
-    headerError: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 6,
-        minWidth: 0,
-    },
-    headerErrorText: {
-        color: theme.colors.textDestructive,
-        fontSize: 12,
-        fontWeight: '600',
-        maxWidth: 220,
+        justifyContent: 'flex-end',
     },
 }));
