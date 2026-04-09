@@ -46,8 +46,8 @@ echo ""
 echo "[2/2] 编译服务器..."
 cd $PROJECT_ROOT/apps/server
 
-echo "  - 安装依赖..."
-yarn install --production --ignore-optional --ignore-scripts --network-timeout 600000
+echo "  - 安装依赖（包含 devDependencies 用于编译，跳过 scripts）..."
+yarn install --ignore-optional --ignore-scripts --network-timeout 600000
 
 echo "  - 编译 TypeScript..."
 yarn build
