@@ -344,4 +344,4 @@ export class ClaudeRemoteSubagentFileCollector {
     }
   }
 }
-import { isGenericSubAgentToolName } from '@happier-dev/protocol/tools/v2';
+import { isGenericSubAgentToolName } from '@ks-happier/protocol/tools/v2';

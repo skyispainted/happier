@@ -1,5 +1,5 @@
-import { INSTALLABLES_CATALOG, type AccountSettings, type InstallableKey } from '@happier-dev/protocol';
-import { resolveInstallablePolicy } from '@happier-dev/protocol/installablesPolicy';
+import { INSTALLABLES_CATALOG, type AccountSettings, type InstallableKey } from '@ks-happier/protocol';
+import { resolveInstallablePolicy } from '@ks-happier/protocol/installablesPolicy';
 
 import {
   getRuntimeInstallableAdapter,

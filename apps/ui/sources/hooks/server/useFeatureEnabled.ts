@@ -1,4 +1,4 @@
-import type { FeatureId } from '@happier-dev/protocol';
+import type { FeatureId } from '@ks-happier/protocol';
 
 import type { FeatureDecisionScopeParams } from './useFeatureDecision';
 import { useFeatureDecision } from './useFeatureDecision';

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { RpcHandlerManager } from './RpcHandlerManager';
-import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES } from '@happier-dev/protocol/rpc';
+import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES } from '@ks-happier/protocol/rpc';
 import { decodeBase64, encodeBase64, encrypt, decrypt } from '@/api/encryption';
 
 function createDeferredVoid(): { promise: Promise<void>; resolve: () => void } {

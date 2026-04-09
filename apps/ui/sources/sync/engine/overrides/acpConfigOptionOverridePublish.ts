@@ -1,5 +1,5 @@
 import type { Metadata } from '@/sync/domains/state/storageTypes';
-import { computeNextMetadataConfigOptionOverrideV1 } from '@happier-dev/agents';
+import { computeNextMetadataConfigOptionOverrideV1 } from '@ks-happier/agents';
 
 export type AcpConfigOptionOverrideValueId = string;
 

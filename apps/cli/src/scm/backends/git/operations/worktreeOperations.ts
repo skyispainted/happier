@@ -5,8 +5,8 @@ import type {
     ScmWorktreePruneResponse,
     ScmWorktreeRemoveRequest,
     ScmWorktreeRemoveResponse,
-} from '@happier-dev/protocol';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 import { mkdir } from 'node:fs/promises';
 
 import type { ScmBackendContext } from '../../../types';

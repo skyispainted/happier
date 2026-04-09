@@ -1,1 +1,1 @@
-export { runTailscaleServeStatus } from '@happier-dev/cli-common/tailscale';
+export { runTailscaleServeStatus } from '@ks-happier/cli-common/tailscale';

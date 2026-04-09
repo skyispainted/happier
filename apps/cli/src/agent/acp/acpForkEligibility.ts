@@ -1,4 +1,4 @@
-import { resolvePersistedCodexRuntimeIdentity } from '@happier-dev/agents';
+import { resolvePersistedCodexRuntimeIdentity } from '@ks-happier/agents';
 
 const ALWAYS_ACP_PROVIDERS = new Set(['auggie', 'qwen', 'kimi', 'kilo', 'gemini', 'copilot']);
 

@@ -3,7 +3,7 @@ import { fetchAccountEncryptionMode } from '@/sync/api/account/apiAccountEncrypt
 import { registerConnectedServiceCredentialSealed, deleteConnectedServiceCredential as deleteConnectedServiceCredentialV2 } from '@/sync/api/account/apiConnectedServicesV2';
 import { registerConnectedServiceCredentialPlain, deleteConnectedServiceCredentialV3 } from '@/sync/api/account/apiConnectedServicesV3';
 
-import type { ConnectedServiceCredentialRecordV1, ConnectedServiceId } from '@happier-dev/protocol';
+import type { ConnectedServiceCredentialRecordV1, ConnectedServiceId } from '@ks-happier/protocol';
 
 import { sealConnectedServiceCredential } from './sealConnectedServiceCredential';
 

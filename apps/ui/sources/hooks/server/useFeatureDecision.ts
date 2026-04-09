@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { FeatureDecision, FeatureId } from '@happier-dev/protocol';
+import type { FeatureDecision, FeatureId } from '@ks-happier/protocol';
 
 import { useSettings } from '@/sync/domains/state/storage';
 import {

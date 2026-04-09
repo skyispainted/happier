@@ -1,4 +1,4 @@
-import { parseSubagentLaunchV1, type SubagentLaunchV1 } from '@happier-dev/protocol';
+import { parseSubagentLaunchV1, type SubagentLaunchV1 } from '@ks-happier/protocol';
 
 import { readClaudeHappierEnvelope } from '@/backends/claude/utils/structuredMessages/readClaudeHappierEnvelope';
 

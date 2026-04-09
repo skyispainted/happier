@@ -1,4 +1,4 @@
-import type { ActionId, BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { ActionId, BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { buildActionDraftInput } from './buildActionDraftInput';
 import { resolveExecutionRunActionDefaultPermissionMode } from './resolveExecutionRunActionDefaultPermissionMode';

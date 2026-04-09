@@ -15,7 +15,7 @@ import { logger } from '@/ui/logger';
 import type { PermissionMode } from '@/api/types';
 import { buildOpenCodeFamilyPermissionEnv } from '@/backends/openCodeFamily/permission/openCodeFamilyPermissionEnv';
 import { requireProviderCliLaunchSpec } from '@/runtime/managedTools/requireProviderCliLaunchSpec';
-import { parseBooleanEnv } from '@happier-dev/protocol';
+import { parseBooleanEnv } from '@ks-happier/protocol';
 
 export interface OpenCodeBackendOptions extends AgentFactoryOptions {
   /** MCP servers to make available to the agent */

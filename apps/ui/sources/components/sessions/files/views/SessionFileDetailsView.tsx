@@ -30,7 +30,7 @@ import { resolveDefaultDiffModeForFile } from '@/scm/diff/defaultMode';
 import { useFileScmStageActions } from '@/hooks/session/files/useFileScmStageActions';
 import { useFeatureEnabled } from '@/hooks/server/useFeatureEnabled';
 import { useCodeLinesSyntaxHighlighting } from '@/components/ui/code/highlighting/useCodeLinesSyntaxHighlighting';
-import type { ScmDiffArea } from '@happier-dev/protocol';
+import type { ScmDiffArea } from '@ks-happier/protocol';
 import type { ReviewCommentAnchor, ReviewCommentSource } from '@/sync/domains/input/reviewComments/reviewCommentTypes';
 import { useMountedRef } from '@/hooks/ui/useMountedRef';
 import { refreshSessionFileDetails, type SessionFileDetailsFileContent } from './sessionFileDetails/refreshSessionFileDetails';

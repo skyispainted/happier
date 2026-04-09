@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { View } from 'react-native';
 import { useUnistyles } from 'react-native-unistyles';
-import { buildBackendTargetKey, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import { buildBackendTargetKey, type BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { Item } from '@/components/ui/lists/Item';
 import { ItemGroup } from '@/components/ui/lists/ItemGroup';

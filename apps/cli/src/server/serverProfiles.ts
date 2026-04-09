@@ -1,7 +1,7 @@
 import { readSettings, updateSettings } from '@/persistence';
 import { deriveServerIdFromName, sanitizeServerIdForFilesystem } from '@/server/serverId';
 import { isLocalishServerUrl } from '@/server/serverUrlClassification';
-import { createServerUrlComparableKey } from '@happier-dev/protocol';
+import { createServerUrlComparableKey } from '@ks-happier/protocol';
 
 export type ServerProfile = Readonly<{
   id: string;

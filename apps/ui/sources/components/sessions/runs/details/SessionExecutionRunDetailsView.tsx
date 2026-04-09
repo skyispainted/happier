@@ -1,4 +1,4 @@
-import type { ExecutionRunPublicState } from '@happier-dev/protocol';
+import type { ExecutionRunPublicState } from '@ks-happier/protocol';
 import * as React from 'react';
 import { ActivityIndicator, Pressable, View } from 'react-native';
 import { useRouter } from 'expo-router';

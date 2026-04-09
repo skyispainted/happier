@@ -1,4 +1,4 @@
-import type { BackendTargetRefV1, LlmTaskRunnerConfigV1 } from '@happier-dev/protocol';
+import type { BackendTargetRefV1, LlmTaskRunnerConfigV1 } from '@ks-happier/protocol';
 
 import { runEphemeralExecutionRunTextPromptWithRunnerConfig } from '@/agent/executionRuns/tasks/runEphemeralExecutionRunTextPromptWithRunnerConfig';
 

@@ -6,7 +6,7 @@ import type { KnownToolDefinition } from '../_types';
 import { extractShellCommand, stripShellCommandPreludeForDisplay } from '../../normalization/parse/shellCommand';
 import { extractHappierToolsShellBridgeCommand } from '../../normalization/parse/happierToolsShellBridge';
 import { getHappierToolsShellBridgeDisplay } from '../../normalization/parse/happierToolsShellBridgeDisplay';
-import { BashInputV2Schema, BashResultV2Schema, ExitPlanModeInputV2Schema } from '@happier-dev/protocol';
+import { BashInputV2Schema, BashResultV2Schema, ExitPlanModeInputV2Schema } from '@ks-happier/protocol';
 
 export const coreTerminalTools = {
     'Bash': {

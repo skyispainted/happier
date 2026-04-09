@@ -3,7 +3,7 @@ import { serverFetch } from '@/sync/http/client';
 import { HappyError } from '@/utils/errors/errors';
 import { backoff } from '@/utils/timing/time';
 
-import type { ConnectedServiceId, SealedConnectedServiceCredentialV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceId, SealedConnectedServiceCredentialV1 } from '@ks-happier/protocol';
 
 type ConnectedServiceCredentialMetadataInput = Readonly<{
   kind: 'oauth' | 'token';

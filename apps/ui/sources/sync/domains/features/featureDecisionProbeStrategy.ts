@@ -1,8 +1,8 @@
-import type { FeatureId } from '@happier-dev/protocol';
+import type { FeatureId } from '@ks-happier/protocol';
 
 import type { Settings } from '@/sync/domains/settings/settings';
 
-import { featureRequiresServerSnapshot } from '@happier-dev/protocol';
+import { featureRequiresServerSnapshot } from '@ks-happier/protocol';
 
 import { getFeatureBuildPolicyDecision } from './featureBuildPolicy';
 import { resolveLocalFeaturePolicyEnabled } from './featureLocalPolicy';

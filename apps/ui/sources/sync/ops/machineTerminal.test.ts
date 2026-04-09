@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 const machineRpcWithServerScopeMock = vi.hoisted(() => vi.fn());
 

@@ -1,6 +1,6 @@
 import { rm } from 'node:fs/promises';
 
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 import type { FirstPartyComponentId } from './componentCatalog.js';
 import { resolveFirstPartyVersionInstallPath } from './installLayout.js';

@@ -4,7 +4,7 @@ import {
   accountSettingsParse,
   deriveSettingsSecretsKeyV1,
   encryptSecretStringV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { BasePermissionHandler, type PermissionResult } from './BasePermissionHandler';
 

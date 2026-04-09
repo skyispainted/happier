@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { resolveProviderAgentIdForBackendTarget } from '@/agents/backendCatalog/getResolvedBackendCatalogEntries';
 import { getAgentCore } from '@/agents/catalog/catalog';

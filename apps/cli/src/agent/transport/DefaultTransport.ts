@@ -16,7 +16,7 @@ import type {
 } from './TransportHandler';
 import type { AgentMessage } from '@/agent/core';
 import { filterJsonObjectOrArrayLine } from './utils/jsonStdoutFilter';
-import { redactBugReportSensitiveText } from '@happier-dev/protocol';
+import { redactBugReportSensitiveText } from '@ks-happier/protocol';
 
 /**
  * Default timeout values (in milliseconds)

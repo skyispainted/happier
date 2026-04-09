@@ -8,8 +8,8 @@ import {
     readMetadataAliasValue,
     SESSION_MODES_STATE_KEY,
     SESSION_MODE_OVERRIDE_KEY,
-} from '@happier-dev/agents';
-import { resolveRequestedSessionModeId } from '@happier-dev/protocol';
+} from '@ks-happier/agents';
+import { resolveRequestedSessionModeId } from '@ks-happier/protocol';
 import { tLoose } from '@/text';
 
 import { parseAcpSessionModesState, parseAcpSessionModeOverrideState } from './schema';

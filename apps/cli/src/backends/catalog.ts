@@ -1,5 +1,5 @@
 import type { AgentId } from '@/agent/core';
-import type { DirectSessionsProviderId } from '@happier-dev/protocol';
+import type { DirectSessionsProviderId } from '@ks-happier/protocol';
 import { BUILT_IN_CATALOG_DEFINED_ACP_AGENTS } from '@/agent/acp/catalog';
 import { agent as auggie } from '@/backends/auggie';
 import { agent as claude } from '@/backends/claude';

@@ -12,7 +12,7 @@ import {
     sanitizeBugReportUrl,
     parseDoctorSnapshotSafe,
     type BugReportArtifactPayload,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Machine } from '@/sync/domains/state/storageTypes';
 import { getStorage } from '@/sync/domains/state/storage';

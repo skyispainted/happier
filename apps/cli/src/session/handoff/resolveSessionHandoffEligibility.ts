@@ -3,7 +3,7 @@ import {
   evaluateVendorHandoffEligibility,
   resolveAgentIdFromFlavor,
   type AgentId,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 type SessionStorageMode = 'direct' | 'persisted';
 

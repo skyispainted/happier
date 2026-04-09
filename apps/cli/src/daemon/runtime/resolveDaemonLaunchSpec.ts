@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { parseOptionalBooleanEnv } from '@happier-dev/protocol';
+import { parseOptionalBooleanEnv } from '@ks-happier/protocol';
 
 import { projectPath } from '@/projectPath';
 import { resolvePackagedRuntimeEntrypoint } from '@/runtime/resolvePackagedRuntimeEntrypoint';

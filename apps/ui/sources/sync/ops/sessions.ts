@@ -29,7 +29,7 @@ import type {
     SessionRollbackRpcResult,
     SessionRollbackTarget,
     SpawnSessionResult,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import type { AgentId } from '@/agents/catalog/catalog';
 import {
     SessionContinueWithReplayRpcResultSchema,
@@ -37,8 +37,8 @@ import {
     SessionRollbackRpcResultSchema,
     SessionAuthoringValueV1Schema,
     SPAWN_SESSION_ERROR_CODES,
-} from '@happier-dev/protocol';
-import { RPC_ERROR_CODES, RPC_METHODS, SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+} from '@ks-happier/protocol';
+import { RPC_ERROR_CODES, RPC_METHODS, SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 import { normalizeSpawnSessionResult } from './_shared';
 import { isSocketIoAckTimeoutError } from '@/sync/runtime/socketIoAckTimeout';
 import { canUseSessionRpc, readMachineTargetForSession, resolveMachinePathFromSessionBase, shouldFallbackToSessionRpc } from './sessionMachineTarget';
@@ -151,7 +151,7 @@ export interface ResumeSessionOptions {
     /** The directory where the session was running */
     directory: string;
     /** The backend target to resume */
-    backendTarget: import('@happier-dev/protocol').BackendTargetRefV1;
+    backendTarget: import('@ks-happier/protocol').BackendTargetRefV1;
     /** Optional vendor resume id (e.g. Claude/Codex session id). */
     resume?: string;
     environmentVariables?: Record<string, string>;
@@ -179,8 +179,8 @@ export interface ResumeSessionOptions {
      * Prefer codexBackendMode for new resume callers.
      */
     experimentalCodexAcp?: boolean;
-    codexBackendMode?: import('@happier-dev/agents').CodexBackendMode;
-    agentRuntimeDescriptorV1?: import('@happier-dev/protocol').AgentRuntimeDescriptorV1;
+    codexBackendMode?: import('@ks-happier/agents').CodexBackendMode;
+    agentRuntimeDescriptorV1?: import('@ks-happier/protocol').AgentRuntimeDescriptorV1;
     /**
      * When true, use the requested machine/directory even if the current session metadata
      * still points at a previously reachable machine. This is required for session handoff

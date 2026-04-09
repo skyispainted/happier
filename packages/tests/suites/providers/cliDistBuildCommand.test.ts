@@ -16,7 +16,7 @@ function writeSharedDepWorkspacePackageManifest(repoRoot: string, packageName: '
     resolve(packageDir, 'package.json'),
     JSON.stringify(
       {
-        name: `@happier-dev/${packageName}`,
+        name: `@ks-happier/${packageName}`,
         type: 'module',
         exports: {
           '.': {
@@ -55,13 +55,13 @@ function writeSharedDepsOutputs(repoRoot: string) {
 }
 
 function writeCliBundledWorkspacePackage(repoRoot: string, packageName: 'agents' | 'cli-common' | 'protocol' | 'release-runtime') {
-  const packageDir = resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', packageName);
+  const packageDir = resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', packageName);
   mkdirSync(packageDir, { recursive: true });
   writeFileSync(
     resolve(packageDir, 'package.json'),
     JSON.stringify(
       {
-        name: `@happier-dev/${packageName}`,
+        name: `@ks-happier/${packageName}`,
         type: 'module',
         exports: {
           '.': {
@@ -95,7 +95,7 @@ function writeCliSources(repoRoot: string) {
   for (const filePath of sourceFiles) {
     mkdirSync(dirname(filePath), { recursive: true });
     if (filePath.endsWith('package.json')) {
-      writeFileSync(filePath, JSON.stringify({ name: '@happier-dev/cli', type: 'module' }, null, 2), 'utf8');
+      writeFileSync(filePath, JSON.stringify({ name: '@ks-happier/cli', type: 'module' }, null, 2), 'utf8');
       continue;
     }
     if (filePath.endsWith('tsconfig.json')) {
@@ -123,7 +123,7 @@ describe('providers: CLI dist build invocation', () => {
     const invocation = resolveCliDistBuildInvocation({ repoRoot });
 
     expect(invocation.command).toBe(yarnCommand());
-    expect(invocation.args).toEqual(['-s', 'workspace', '@happier-dev/cli', 'build']);
+    expect(invocation.args).toEqual(['-s', 'workspace', '@ks-happier/cli', 'build']);
     expect(invocation.cwd).toBe(repoRoot);
   });
 
@@ -416,21 +416,21 @@ describe('providers: shared deps build lock', () => {
     );
 
     expect(buildCalls).toBe(0);
-    expect(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'cli-common', 'dist')).toSatisfy((p) => {
+    expect(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'cli-common', 'dist')).toSatisfy((p) => {
       try {
         return lstatSync(p).isSymbolicLink();
       } catch {
         return false;
       }
     });
-    expect(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'protocol', 'dist')).toSatisfy((p) => {
+    expect(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'protocol', 'dist')).toSatisfy((p) => {
       try {
         return lstatSync(p).isSymbolicLink();
       } catch {
         return false;
       }
     });
-    expect(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'release-runtime', 'dist')).toSatisfy((p) => {
+    expect(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'release-runtime', 'dist')).toSatisfy((p) => {
       try {
         return lstatSync(p).isSymbolicLink();
       } catch {

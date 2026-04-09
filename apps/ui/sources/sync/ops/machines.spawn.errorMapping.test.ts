@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
-import { SPAWN_SESSION_ERROR_CODES } from '@happier-dev/protocol';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
+import { SPAWN_SESSION_ERROR_CODES } from '@ks-happier/protocol';
 import { storage } from '@/sync/domains/state/storage';
 
 const machineRpcWithServerScopeMock = vi.hoisted(() => vi.fn());

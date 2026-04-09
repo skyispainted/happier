@@ -2,7 +2,7 @@ import { io, type Socket } from 'socket.io-client';
 import type {
     ManagedConnectionTransport,
     TransportDisconnectEvent,
-} from '@happier-dev/connection-supervisor';
+} from '@ks-happier/connection-supervisor';
 
 import { resolveSocketIoTransports } from '@/sync/runtime/socketIoTransports';
 

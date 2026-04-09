@@ -1,4 +1,4 @@
-import { buildSettingArtifacts, defineSettingDefinitions } from '@happier-dev/protocol';
+import { buildSettingArtifacts, defineSettingDefinitions } from '@ks-happier/protocol';
 import { z } from 'zod';
 
 export const SessionListDensitySchema = z.preprocess((raw) => {

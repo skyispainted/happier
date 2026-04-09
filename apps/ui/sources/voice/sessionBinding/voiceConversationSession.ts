@@ -1,8 +1,8 @@
 import {
   buildSystemSessionMetadataV1,
   SPAWN_SESSION_ERROR_CODES,
-} from '@happier-dev/protocol';
-import { DEFAULT_AGENT_ID, type AgentId } from '@happier-dev/agents';
+} from '@ks-happier/protocol';
+import { DEFAULT_AGENT_ID, type AgentId } from '@ks-happier/agents';
 
 import { isAgentId } from '@/agents/registry/registryCore';
 import { listPreferredMachineIds } from '@/components/settings/pickers/resolvePreferredMachineId';

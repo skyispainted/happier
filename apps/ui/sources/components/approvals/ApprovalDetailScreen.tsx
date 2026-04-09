@@ -3,7 +3,7 @@ import { View, ScrollView, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 
-import { ApprovalRequestV1Schema, getActionSpec, type ActionId } from '@happier-dev/protocol';
+import { ApprovalRequestV1Schema, getActionSpec, type ActionId } from '@ks-happier/protocol';
 
 import { Text } from '@/components/ui/text/Text';
 import { RoundButton } from '@/components/ui/buttons/RoundButton';

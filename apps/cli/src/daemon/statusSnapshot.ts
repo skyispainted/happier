@@ -1,4 +1,4 @@
-import { createServerUrlComparableKey, type DoctorSnapshot } from '@happier-dev/protocol';
+import { createServerUrlComparableKey, type DoctorSnapshot } from '@ks-happier/protocol';
 
 import { decodeJwtPayload } from '@/cloud/decodeJwtPayload';
 import { configuration } from '@/configuration';

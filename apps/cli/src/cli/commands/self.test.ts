@@ -35,36 +35,36 @@ describe('self command helpers', () => {
   });
 
   it('builds npm spec from channel and override', () => {
-    expect(computeSelfUpdateSpec({ packageName: '@happier-dev/cli', channel: 'stable', to: '' })).toBe('@happier-dev/cli@latest');
-    expect(computeSelfUpdateSpec({ packageName: '@happier-dev/cli', channel: 'preview', to: '' })).toBe('@happier-dev/cli@next');
-    expect(computeSelfUpdateSpec({ packageName: '@happier-dev/cli', channel: 'publicdev', to: '' })).toBe('@happier-dev/cli@next');
-    expect(computeSelfUpdateSpec({ packageName: '@happier-dev/cli', channel: 'preview', to: '1.2.3' })).toBe('@happier-dev/cli@1.2.3');
-    expect(computeSelfUpdateSpec({ packageName: '@happier-dev/cli', channel: 'stable', to: '  latest  ' })).toBe('@happier-dev/cli@latest');
+    expect(computeSelfUpdateSpec({ packageName: '@ks-happier/cli', channel: 'stable', to: '' })).toBe('@ks-happier/cli@latest');
+    expect(computeSelfUpdateSpec({ packageName: '@ks-happier/cli', channel: 'preview', to: '' })).toBe('@ks-happier/cli@next');
+    expect(computeSelfUpdateSpec({ packageName: '@ks-happier/cli', channel: 'publicdev', to: '' })).toBe('@ks-happier/cli@next');
+    expect(computeSelfUpdateSpec({ packageName: '@ks-happier/cli', channel: 'preview', to: '1.2.3' })).toBe('@ks-happier/cli@1.2.3');
+    expect(computeSelfUpdateSpec({ packageName: '@ks-happier/cli', channel: 'stable', to: '  latest  ' })).toBe('@ks-happier/cli@latest');
   });
 
   it('rejects unsafe override specs', () => {
     expect(() =>
-      computeSelfUpdateSpec({ packageName: '@happier-dev/cli', channel: 'stable', to: '1.2.3 || rm -rf /' }),
+      computeSelfUpdateSpec({ packageName: '@ks-happier/cli', channel: 'stable', to: '1.2.3 || rm -rf /' }),
     ).toThrow(/invalid --to value/i);
   });
 
   it('builds node_modules package.json path for valid package names', () => {
-    expect(packageJsonPathForNodeModules({ rootDir: '/tmp/root', packageName: '@happier-dev/cli' }))
-      .toBe('/tmp/root/node_modules/@happier-dev/cli/package.json');
+    expect(packageJsonPathForNodeModules({ rootDir: '/tmp/root', packageName: '@ks-happier/cli' }))
+      .toBe('/tmp/root/node_modules/@ks-happier/cli/package.json');
     expect(packageJsonPathForNodeModules({ rootDir: '/tmp/root', packageName: 'chalk' }))
       .toBe('/tmp/root/node_modules/chalk/package.json');
   });
 
   it('rejects traversal-like package names when building node_modules paths', () => {
     expect(packageJsonPathForNodeModules({ rootDir: '/tmp/root', packageName: '../evil' })).toBeNull();
-    expect(packageJsonPathForNodeModules({ rootDir: '/tmp/root', packageName: '@happier-dev/../evil' })).toBeNull();
+    expect(packageJsonPathForNodeModules({ rootDir: '/tmp/root', packageName: '@ks-happier/../evil' })).toBeNull();
     expect(packageJsonPathForNodeModules({ rootDir: '/tmp/root', packageName: './evil' })).toBeNull();
     expect(packageJsonPathForNodeModules({ rootDir: '/tmp/root', packageName: 'pkg/../../evil' })).toBeNull();
   });
 
   it('detects npm install source from node_modules paths', () => {
-    expect(detectInstallSource('/usr/local/lib/node_modules/@happier-dev/cli/bin/happier.mjs')).toBe('npm');
-    expect(detectInstallSource('/Users/me/.nvm/versions/node/v22/lib/node_modules/@happier-dev/cli/bin/happier.mjs')).toBe('npm');
+    expect(detectInstallSource('/usr/local/lib/node_modules/@ks-happier/cli/bin/happier.mjs')).toBe('npm');
+    expect(detectInstallSource('/Users/me/.nvm/versions/node/v22/lib/node_modules/@ks-happier/cli/bin/happier.mjs')).toBe('npm');
   });
 
   it('detects binary install source from standalone executable paths', () => {

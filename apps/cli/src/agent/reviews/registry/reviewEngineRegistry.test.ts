@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { listNativeReviewEngines } from '@happier-dev/protocol';
+import { listNativeReviewEngines } from '@ks-happier/protocol';
 
 import { resolveReviewOutputNormalizer } from './reviewEngineRegistry';
 

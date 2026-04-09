@@ -1,4 +1,4 @@
-import { computeNextMetadataStringOverrideV1, SESSION_MODE_OVERRIDE_KEY } from '@happier-dev/agents';
+import { computeNextMetadataStringOverrideV1, SESSION_MODE_OVERRIDE_KEY } from '@ks-happier/agents';
 
 import type { Credentials } from '@/persistence';
 

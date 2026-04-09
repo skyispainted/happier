@@ -8,10 +8,10 @@ import { analyzeTarList, findMonorepoRoot, resolvePackDirForComponent } from './
 test('analyzeTarList detects bundled workspace deps in tar listing', () => {
   const { hasAgents, hasCliCommon, hasProtocol } = analyzeTarList([
     'package/dist/index.mjs',
-    'package/node_modules/@happier-dev/agents/package.json',
-    'package/node_modules/@happier-dev/agents/dist/index.js',
-    'package/node_modules/@happier-dev/cli-common/package.json',
-    'package/node_modules/@happier-dev/protocol/package.json',
+    'package/node_modules/@ks-happier/agents/package.json',
+    'package/node_modules/@ks-happier/agents/dist/index.js',
+    'package/node_modules/@ks-happier/cli-common/package.json',
+    'package/node_modules/@ks-happier/protocol/package.json',
   ]);
   assert.equal(hasAgents, true);
   assert.equal(hasCliCommon, true);

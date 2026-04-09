@@ -3,8 +3,8 @@ import {
     readSessionMetadataRuntimeDescriptor,
     resolveVendorHandoffIdFromSessionMetadata,
     type AgentId,
-} from '@happier-dev/agents';
-import { normalizeCodexBackendMode } from '@happier-dev/protocol';
+} from '@ks-happier/agents';
+import { normalizeCodexBackendMode } from '@ks-happier/protocol';
 import { resolveAgentIdFromFlavor } from '@/agents/registry/registryCore';
 import type { Metadata } from '@/sync/domains/state/storageTypes';
 

@@ -1,4 +1,4 @@
-import { SessionSummaryShardV1Schema } from '@happier-dev/protocol';
+import { SessionSummaryShardV1Schema } from '@ks-happier/protocol';
 
 import type { DecryptedTranscriptRow } from '@/session/replay/decryptTranscriptRows';
 

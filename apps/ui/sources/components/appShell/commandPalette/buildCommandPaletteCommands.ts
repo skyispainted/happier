@@ -1,5 +1,5 @@
-import type { ActionId } from '@happier-dev/protocol';
-import { listActionSpecs } from '@happier-dev/protocol';
+import type { ActionId } from '@ks-happier/protocol';
+import { listActionSpecs } from '@ks-happier/protocol';
 
 import type { Command } from './types';
 import { getEnabledAgentIds } from '@/agents/catalog/enabled';

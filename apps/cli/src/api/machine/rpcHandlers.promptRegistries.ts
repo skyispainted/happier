@@ -7,7 +7,7 @@ import {
   PromptRegistryScanSourceRequestV1Schema,
   PromptRegistryScanSourceResponseV1,
   RPC_METHODS,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { RpcHandlerManager } from '../rpc/RpcHandlerManager';
 import type { PromptAssetAdapter } from '@/promptAssets/types';

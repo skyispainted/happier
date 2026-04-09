@@ -1,4 +1,4 @@
-import type { FeatureId } from '@happier-dev/protocol';
+import type { FeatureId } from '@ks-happier/protocol';
 
 import type { ServerFeaturesMainSelectionSnapshot } from '@/sync/domains/features/featureDecisionRuntime';
 import { resolveMainSelectionFeatureDecision } from '@/sync/domains/features/featureDecisionRuntime';

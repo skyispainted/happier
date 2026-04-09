@@ -6,7 +6,7 @@ import {
     ReviewFindingsV1Schema,
     ReviewFindingsV2Schema,
     ReviewFollowUpV1Schema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { ReviewFindingsMessageCard } from '@/components/sessions/reviews/messages/ReviewFindingsMessageCard';
 import { ReviewFollowUpMessageCard } from '@/components/sessions/reviews/messages/ReviewFollowUpMessageCard';

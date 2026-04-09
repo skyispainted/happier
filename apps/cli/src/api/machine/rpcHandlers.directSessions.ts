@@ -1,4 +1,4 @@
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 import {
   DirectSessionLinkEnsureRequestSchema,
   DirectSessionStatusGetRequestSchema,
@@ -15,7 +15,7 @@ import {
   type DirectSessionsCandidatesListResponse,
   type DirectTranscriptPageResponse,
   type DirectTranscriptReadAfterResponse,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { readCredentials } from '@/persistence';
 import { listSessionMarkers } from '@/daemon/sessionRegistry';

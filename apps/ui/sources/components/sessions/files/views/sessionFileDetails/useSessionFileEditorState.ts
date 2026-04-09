@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Platform } from 'react-native';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
 
 import { sessionWriteFile } from '@/sync/ops';
 import { t } from '@/text';

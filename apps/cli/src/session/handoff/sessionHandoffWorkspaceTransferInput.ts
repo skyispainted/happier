@@ -1,4 +1,4 @@
-import type { SessionHandoffWorkspaceTransfer } from '@happier-dev/protocol';
+import type { SessionHandoffWorkspaceTransfer } from '@ks-happier/protocol';
 
 export type SessionHandoffWorkspaceTransferInput = Readonly<
   Omit<SessionHandoffWorkspaceTransfer, 'strategy'> & {

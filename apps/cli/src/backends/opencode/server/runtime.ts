@@ -8,7 +8,7 @@ import { configuration } from '@/configuration';
 import { MessageBuffer } from '@/ui/ink/messageBuffer';
 import { logger } from '@/ui/logger';
 import { buildChangeTitleInstruction, shouldAppendChangeTitleInstruction } from '@/agent/runtime/changeTitleInstruction';
-import { isChangeTitleToolNameAlias } from '@happier-dev/protocol';
+import { isChangeTitleToolNameAlias } from '@ks-happier/protocol';
 import { TurnChangeSetCollector } from '@/agent/tools/diff/turnChangeSetCollector';
 import { emitCanonicalTurnDiffTool } from '@/agent/runtime/emitCanonicalTurnDiffTool';
 import { createEventShapeLoggerForLog } from '@/diagnostics/eventShapeForLog';

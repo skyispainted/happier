@@ -8,8 +8,8 @@ import {
   type ProviderCliKnownCommandCandidate,
   type ProviderCliManagedInstallSpec,
   type ProviderCliSourcePreference,
-} from '@happier-dev/agents';
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+} from '@ks-happier/agents';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 
 import { resolveWindowsCommandOnPath, resolveWindowsCommandPath } from '../process/index.js';
 import { resolveJavaScriptRuntimeCommand } from './managedJavaScriptRuntime.js';

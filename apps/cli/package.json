@@ -1,5 +1,5 @@
 {
-  "name": "@happier-dev/cli",
+  "name": "@ks-happier/cli",
   "version": "0.2.2",
   "description": "Mobile and Web client for Claude Code and Codex",
   "author": "Leeroy Brun <leeroy.brun@gmail.com>",
@@ -77,12 +77,12 @@
     "package.json"
   ],
   "bundledDependencies": [
-    "@happier-dev/agents",
-    "@happier-dev/cli-common",
-    "@happier-dev/connection-supervisor",
-    "@happier-dev/protocol",
-    "@happier-dev/transfers",
-    "@happier-dev/release-runtime",
+    "@ks-happier/agents",
+    "@ks-happier/cli-common",
+    "@ks-happier/connection-supervisor",
+    "@ks-happier/protocol",
+    "@ks-happier/transfers",
+    "@ks-happier/release-runtime",
     "tweetnacl"
   ],
   "scripts": {
@@ -99,7 +99,7 @@
     "dev:integration-test-env": "$npm_execpath run build && tsx --env-file .env.integration-test src/index.ts",
     "prepublishOnly": "$npm_execpath run build && $npm_execpath test",
     "release": "$npm_execpath install && release-it",
-    "build:shared": "yarn -s workspace @happier-dev/cli-common build && node scripts/buildSharedDeps.mjs",
+    "build:shared": "yarn -s workspace @ks-happier/cli-common build && node scripts/buildSharedDeps.mjs",
     "pretypecheck": "yarn -s build:shared",
     "prebuild": "yarn -s build:shared",
     "pretest": "yarn -s build:shared",
@@ -132,13 +132,14 @@
     "@agentclientprotocol/sdk": "^0.14.1",
     "@anthropic-ai/claude-agent-sdk": "^0.2.34",
     "@fastify/swagger": "9.7.0",
-    "@happier-dev/agents": "0.0.0",
-    "@happier-dev/cli-common": "0.0.0",
-    "@happier-dev/connection-supervisor": "0.0.0",
-    "@happier-dev/protocol": "0.0.0",
-    "@happier-dev/transfers": "0.0.0",
-    "@happier-dev/release-runtime": "0.0.0",
+    "@homebridge/node-pty-prebuilt-multiarch": "^0.13.1",
     "@huggingface/transformers": "^3.8.1",
+    "@ks-happier/agents": "0.0.0",
+    "@ks-happier/cli-common": "0.0.0",
+    "@ks-happier/connection-supervisor": "0.0.0",
+    "@ks-happier/protocol": "0.0.0",
+    "@ks-happier/release-runtime": "0.0.0",
+    "@ks-happier/transfers": "0.0.0",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "@stablelib/base64": "^2.0.1",
     "@stablelib/hex": "^2.0.1",
@@ -160,7 +161,6 @@
     "http-proxy-middleware": "^3.0.5",
     "https-proxy-agent": "^7.0.6",
     "ink": "^6.5.1",
-    "@homebridge/node-pty-prebuilt-multiarch": "^0.13.1",
     "node-pty": "^1.1.0",
     "open": "^10.2.0",
     "openapi-types": "12.1.3",
@@ -176,6 +176,7 @@
   },
   "devDependencies": {
     "@eslint/compat": "^1",
+    "@rollup/rollup-linux-x64-gnu": "^4.60.1",
     "@types/archiver": "^7.0.0",
     "@types/node": ">=20",
     "cross-env": "^10.1.0",
@@ -198,5 +199,14 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "packageManager": "yarn@1.22.22"
+  "packageManager": "yarn@1.22.22",
+  "bundleDependencies": [
+    "@ks-happier/agents",
+    "@ks-happier/cli-common",
+    "@ks-happier/connection-supervisor",
+    "@ks-happier/protocol",
+    "@ks-happier/transfers",
+    "@ks-happier/release-runtime",
+    "tweetnacl"
+  ]
 }

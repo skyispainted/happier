@@ -4,7 +4,7 @@ import {
   AgentRuntimeDescriptorV1Schema,
   SessionAttachMetadataIdentityPolicySchema,
   SessionMcpSelectionV1Schema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { PERMISSION_MODES } from '@/api/types';
 import { CATALOG_AGENT_IDS, type CatalogAgentId } from '@/backends/types';

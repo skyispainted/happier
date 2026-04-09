@@ -17,7 +17,7 @@ export function buildProviderDevCommandArgs(params: Readonly<{
   return [
     '-s',
     'workspace',
-    '@happier-dev/cli',
+    '@ks-happier/cli',
     'dev',
     params.providerSubcommand,
     '--existing-session',

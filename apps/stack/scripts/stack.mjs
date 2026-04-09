@@ -63,7 +63,7 @@ import { requireDir } from './utils/proc/pm.mjs';
 import { waitForHttpOk } from './utils/server/server.mjs';
 import { resolveLocalhostHost, preferStackLocalhostUrl } from './utils/paths/localhost_host.mjs';
 import { openUrlInBrowser } from './utils/ui/browser.mjs';
-import { buildConfigureServerLinks } from '@happier-dev/cli-common/links';
+import { buildConfigureServerLinks } from '@ks-happier/cli-common/links';
 import { bold, cyan, dim, green, yellow } from './utils/ui/ansi.mjs';
 import { bullets, sectionTitle } from './utils/ui/layout.mjs';
 import { findAnyCredentialPathInCliHome } from './utils/auth/credentials_paths.mjs';

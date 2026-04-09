@@ -1,4 +1,4 @@
-import { ReviewStartInputSchema } from '@happier-dev/protocol';
+import { ReviewStartInputSchema } from '@ks-happier/protocol';
 
 import { ReviewFollowUpIntentInputSchema } from '@/agent/reviews/followUp/reviewFollowUpIntentInput';
 

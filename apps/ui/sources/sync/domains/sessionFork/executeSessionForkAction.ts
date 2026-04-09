@@ -1,4 +1,4 @@
-import type { ActionExecuteResult, ActionExecutorContext } from '@happier-dev/protocol';
+import type { ActionExecuteResult, ActionExecutorContext } from '@ks-happier/protocol';
 
 type ExecuteAction = (actionId: 'session.fork', input: unknown, context?: ActionExecutorContext) => Promise<ActionExecuteResult>;
 

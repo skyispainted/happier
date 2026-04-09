@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { UpdateContainerSchema } from "@happier-dev/protocol/updates";
+import { UpdateContainerSchema } from "@ks-happier/protocol/updates";
 import {
     buildDeleteSessionUpdate,
     buildNewMachineUpdate,

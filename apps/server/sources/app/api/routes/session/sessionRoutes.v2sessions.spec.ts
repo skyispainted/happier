@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { encodeV2SessionListCursorV1 } from "@happier-dev/protocol";
+import { encodeV2SessionListCursorV1 } from "@ks-happier/protocol";
 
 import {
     createSessionRouteTestBuilder,

@@ -1,4 +1,4 @@
-import type { ActionExecutorContext, ActionUiPlacement } from '@happier-dev/protocol';
+import type { ActionExecutorContext, ActionUiPlacement } from '@ks-happier/protocol';
 
 import { openSessionHandoffPicker } from '@/components/sessions/handoff/openSessionHandoffPicker';
 import { Modal } from '@/modal';

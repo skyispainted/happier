@@ -59,7 +59,7 @@ import { createRequire } from 'node:module';
 import { resolveJavaScriptRuntimeExecutable } from '@/runtime/js/resolveJavaScriptRuntimeExecutable';
 import { buildMissingJavaScriptRuntimeMessage } from '@/runtime/js/buildMissingJavaScriptRuntimeMessage';
 import { resolvePackagedRuntimeEntrypoint } from '@/runtime/resolvePackagedRuntimeEntrypoint';
-import { parseOptionalBooleanEnv } from '@happier-dev/protocol';
+import { parseOptionalBooleanEnv } from '@ks-happier/protocol';
 
 function getSubprocessRuntime(): 'node' | 'bun' {
   const override = process.env.HAPPIER_CLI_SUBPROCESS_RUNTIME;
@@ -180,7 +180,7 @@ function resolveCurrentProcessBundledScriptPath(): string | null {
   const lowered = normalized.toLowerCase();
   const base = basename(lowered);
   if (base.includes('happier')) return scriptPath;
-  if (base === 'index.mjs' && (lowered.includes('/@happier-dev/cli/') || lowered.includes('/happier/'))) {
+  if (base === 'index.mjs' && (lowered.includes('/@ks-happier/cli/') || lowered.includes('/happier/'))) {
     return scriptPath;
   }
   return null;

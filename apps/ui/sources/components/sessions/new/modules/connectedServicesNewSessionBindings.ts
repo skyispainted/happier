@@ -1,4 +1,4 @@
-import type { ConnectedServiceId } from '@happier-dev/agents';
+import type { ConnectedServiceId } from '@ks-happier/agents';
 
 import type {
   ConnectedServicesProfileOption,

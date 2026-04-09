@@ -7445,7 +7445,7 @@ settingsSession: {
     detectedCliDetected: "検出済み",
     detectedCliNotDetected: "未検出",
     detectedCliUnknown: "不明",
-    detectedCliNotSupported: "未対応（@happier-dev/cliを更新してください）",
+    detectedCliNotSupported: "未対応（@ks-happier/cliを更新してください）",
     untitledSession: "無題のセッション",
     back: "戻る",
     notFound: "マシンが見つかりません",

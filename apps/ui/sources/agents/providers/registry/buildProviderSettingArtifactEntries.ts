@@ -1,4 +1,4 @@
-import { buildSettingArtifacts, type SettingArtifacts } from '@happier-dev/protocol';
+import { buildSettingArtifacts, type SettingArtifacts } from '@ks-happier/protocol';
 
 import type { ProviderSettingsPlugin } from '../shared/providerSettingsPlugin';
 

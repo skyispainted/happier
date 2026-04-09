@@ -1,4 +1,4 @@
-import { readServerEnabledBit } from '@happier-dev/protocol';
+import { readServerEnabledBit } from '@ks-happier/protocol';
 
 import { getReadyServerFeatures } from '@/sync/api/capabilities/getReadyServerFeatures';
 

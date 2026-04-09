@@ -1,8 +1,8 @@
 import { resolve } from 'node:path';
 
 import type { Metadata } from '@/api/types';
-import { buildCodexAgentRuntimeDescriptor, type CodexBackendMode } from '@happier-dev/agents';
-import { normalizeCodexBackendMode, type DirectSessionsSource } from '@happier-dev/protocol';
+import { buildCodexAgentRuntimeDescriptor, type CodexBackendMode } from '@ks-happier/agents';
+import { normalizeCodexBackendMode, type DirectSessionsSource } from '@ks-happier/protocol';
 import { inferCodexDirectSessionsSourceFromHome } from '../directSessions/resolveCodexHomeEntriesForDirectSessionsSource';
 import { resolveConfiguredCodexHome } from './resolveConfiguredCodexHome';
 

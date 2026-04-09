@@ -12,7 +12,7 @@
  * - Stream model output and events
  */
 
-import type { AgentId as CatalogAgentId } from '@happier-dev/agents';
+import type { AgentId as CatalogAgentId } from '@ks-happier/agents';
 
 /** Unique identifier for an agent session */
 export type SessionId = string;

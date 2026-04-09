@@ -1,4 +1,4 @@
-import type { PromptRegistryFetchItemRequestV1 } from '@happier-dev/protocol';
+import type { PromptRegistryFetchItemRequestV1 } from '@ks-happier/protocol';
 
 import type { PromptRegistryRegistry } from '@/promptRegistries/createPromptRegistryAdapterRegistry';
 import { writePromptRegistryTransferPayload } from '@/promptRegistries/shared/promptRegistryTransferPayload';

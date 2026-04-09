@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { delimiter, join } from 'node:path';
 
-import { resolveWindowsCommandOnPath } from '@happier-dev/cli-common/process';
+import { resolveWindowsCommandOnPath } from '@ks-happier/cli-common/process';
 
 function normalizePathList(envPath: string | undefined): string[] {
   return String(envPath ?? '')

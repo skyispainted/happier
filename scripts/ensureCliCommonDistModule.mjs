@@ -19,7 +19,7 @@ function runCliCommonBuild(repoRoot, exec = execFileSync) {
 }
 
 /**
- * Loads a built `@happier-dev/cli-common` dist submodule, rebuilding it on demand when missing.
+ * Loads a built `@ks-happier/cli-common` dist submodule, rebuilding it on demand when missing.
  * @param {{ repoRoot: string; subpath: string; existsSync?: (path: string) => boolean; execFileSync?: typeof execFileSync; importModule?: (url: string) => Promise<any>; }} options
  */
 export async function loadCliCommonDistModule(options) {

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { FeaturesResponse } from '@happier-dev/protocol';
+import type { FeaturesResponse } from '@ks-happier/protocol';
 
 import { createRootLayoutFeaturesResponse } from '@/dev/testkit';
 

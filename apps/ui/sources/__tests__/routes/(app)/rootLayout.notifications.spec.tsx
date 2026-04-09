@@ -7,7 +7,7 @@ import {
     flushHookEffects,
     renderScreen,
 } from '@/dev/testkit';
-import { PUSH_NOTIFICATION_ACTION_IDS } from '@happier-dev/protocol';
+import { PUSH_NOTIFICATION_ACTION_IDS } from '@ks-happier/protocol';
 import { installRootLayoutRouteCommonModuleMocks } from './rootLayoutRouteTestHelpers';
 
 type ReactActEnvironmentGlobal = typeof globalThis & {

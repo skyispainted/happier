@@ -1,4 +1,4 @@
-import { systemTasks } from '@happier-dev/cli-common';
+import { systemTasks } from '@ks-happier/cli-common';
 
 import { runLocalHappierJsonCommand } from './happierCli.js';
 

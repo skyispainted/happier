@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { AGENT_IDS, DEFAULT_AGENT_ID } from '@happier-dev/agents';
-import { AGENTS_CORE } from '@happier-dev/agents';
+import { AGENT_IDS, DEFAULT_AGENT_ID } from '@ks-happier/agents';
+import { AGENTS_CORE } from '@ks-happier/agents';
 
 import {
   AGENTS,

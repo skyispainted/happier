@@ -2,12 +2,12 @@ import {
     buildCodexAgentRuntimeDescriptor,
     buildOpenCodeAgentRuntimeDescriptor,
     normalizeCodexBackendMode,
-} from '@happier-dev/agents';
-import type { AgentRuntimeDescriptorV1, DirectSessionsSource } from '@happier-dev/protocol';
+} from '@ks-happier/agents';
+import type { AgentRuntimeDescriptorV1, DirectSessionsSource } from '@ks-happier/protocol';
 import {
     readCanonicalAgentRuntimeDescriptorV1ForProvider,
     readAgentRuntimeDescriptorV1ForProvider,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { writeAgentVendorResumeIdToMetadata } from '@/agents/catalog/catalog';
 

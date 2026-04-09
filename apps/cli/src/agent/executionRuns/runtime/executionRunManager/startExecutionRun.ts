@@ -4,7 +4,7 @@ import type { AgentBackend, AgentMessageHandler, SessionId } from '@/agent/core/
 import type { ACPMessageData, ACPProvider } from '@/api/session/sessionMessageTypes';
 import { resolveExecutionRunIntentProfile } from '@/agent/executionRuns/profiles/intentRegistry';
 import type { ExecutionRunStructuredMeta } from '@/agent/executionRuns/profiles/ExecutionRunIntentProfile';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 import type {
   ExecutionRunManagerStartParams,
   ExecutionRunStartResult,

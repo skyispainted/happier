@@ -1,4 +1,4 @@
-import type { DirectTranscriptRawMessageV1 } from '@happier-dev/protocol';
+import type { DirectTranscriptRawMessageV1 } from '@ks-happier/protocol';
 
 import { normalizeRawMessage, type NormalizedMessage } from '@/sync/typesRaw';
 

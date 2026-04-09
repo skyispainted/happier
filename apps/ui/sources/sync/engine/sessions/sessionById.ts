@@ -1,4 +1,4 @@
-import type { V2SessionByIdResponse } from '@happier-dev/protocol';
+import type { V2SessionByIdResponse } from '@ks-happier/protocol';
 
 import type { Metadata, Session } from '@/sync/domains/state/storageTypes';
 import type { AuthCredentials } from '@/auth/storage/tokenStorage';

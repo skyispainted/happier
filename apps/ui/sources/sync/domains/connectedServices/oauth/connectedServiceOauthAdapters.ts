@@ -7,7 +7,7 @@ import {
   encodeBase64,
   type ConnectedServiceCredentialRecordV1,
   type ConnectedServiceId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { exchangeConnectedServiceOauthViaProxy } from '@/sync/api/account/apiConnectedServicesV2';
 

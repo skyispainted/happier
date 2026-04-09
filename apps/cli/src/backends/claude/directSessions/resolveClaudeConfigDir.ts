@@ -1,7 +1,7 @@
 import { join } from 'node:path';
 
-import type { DirectSessionsSource } from '@happier-dev/protocol';
-import { expandHomeDirPath, resolveHomeDirFromEnvironment } from '@happier-dev/cli-common/providers';
+import type { DirectSessionsSource } from '@ks-happier/protocol';
+import { expandHomeDirPath, resolveHomeDirFromEnvironment } from '@ks-happier/cli-common/providers';
 
 import { resolveConfiguredClaudeConfigDir } from '../utils/resolveConfiguredClaudeConfigDir';
 

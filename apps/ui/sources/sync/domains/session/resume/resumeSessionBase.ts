@@ -4,7 +4,7 @@ import type { ResumeCapabilityOptions } from '@/agents/runtime/resumeCapabilitie
 import { canResumeSessionWithOptions, getAgentVendorResumeId } from '@/agents/runtime/resumeCapabilities';
 import { deriveAcpBackendIdFromFlavor } from '@/agents/runtime/acpFlavor';
 import { getAgentCore, resolveAgentIdFromFlavor } from '@/agents/catalog/catalog';
-import { resolveAgentIdFromSessionMetadata } from '@happier-dev/agents';
+import { resolveAgentIdFromSessionMetadata } from '@ks-happier/agents';
 import type { PermissionModeOverrideForSpawn } from '@/sync/domains/permissions/permissionModeOverride';
 import type { ModelOverrideForSpawn } from '@/sync/domains/models/modelOverride';
 import { readMachineTargetForSession } from '@/sync/ops/sessionMachineTarget';

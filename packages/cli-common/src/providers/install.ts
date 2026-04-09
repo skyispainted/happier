@@ -8,9 +8,9 @@ import type {
   ProviderCliManagedInstallSpec,
   ProviderCliRuntimeInstallPlatform as ProviderCliInstallPlatform,
   ProviderCliRuntimeSpec,
-} from '@happier-dev/agents';
-import { getProviderCliRuntimeSpec } from '@happier-dev/agents';
-import { fetchGitHubLatestRelease } from '@happier-dev/release-runtime';
+} from '@ks-happier/agents';
+import { getProviderCliRuntimeSpec } from '@ks-happier/agents';
+import { fetchGitHubLatestRelease } from '@ks-happier/release-runtime';
 
 import { commandExistsOnPath, resolveWindowsCommandInvocation } from '../process/index.js';
 import { createManagedToolScratchDir } from './createManagedToolScratchDir.js';

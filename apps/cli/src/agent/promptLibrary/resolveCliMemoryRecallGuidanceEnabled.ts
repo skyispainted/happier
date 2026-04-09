@@ -5,7 +5,7 @@ import {
   isMemoryRecallGuidanceSupported,
   type MemoryRecallGuidanceSurface,
   type MemorySettingsV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 type MemoryRecallIndexStat = Readonly<Pick<Awaited<ReturnType<typeof stat>>, 'size'>>;
 type MemoryRecallIndexStatReader = (path: string) => Promise<MemoryRecallIndexStat>;

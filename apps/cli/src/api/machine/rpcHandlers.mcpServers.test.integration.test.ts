@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { accountSettingsParse } from '@happier-dev/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { accountSettingsParse } from '@ks-happier/protocol';
 
 import { registerMachineMcpServersRpcHandlers } from './rpcHandlers.mcpServers';
 

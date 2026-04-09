@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useUnistyles } from 'react-native-unistyles';
-import type { SystemTaskResult } from '@happier-dev/protocol';
+import type { SystemTaskResult } from '@ks-happier/protocol';
 
 import { SystemTaskProgressCard, useSystemTaskSnapshot } from '@/components/systemTasks';
 import { resolveThisComputerSetupFollowUp, useThisComputerSetupTask } from '@/components/systemTasks/useThisComputerSetupTask';

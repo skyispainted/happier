@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import type {
   ConnectedServiceCredentialRecordV1,
   ConnectedServiceId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { CatalogAgentId } from '@/backends/types';
 import { materializeClaudeConnectedServiceAuth } from '@/backends/claude/connectedServices/materializeClaudeConnectedServiceAuth';

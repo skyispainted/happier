@@ -14,7 +14,7 @@ import { connectPendingSchema } from "./oauthExternalSchemas";
 import {
     ExternalOAuthFinalizeConnectRequestSchema,
     ExternalOAuthFinalizeConnectSuccessResponseSchema,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 
 export function registerExternalConnectFinalizeRoute(app: Fastify) {
     app.post("/v1/connect/external/:provider/finalize", {

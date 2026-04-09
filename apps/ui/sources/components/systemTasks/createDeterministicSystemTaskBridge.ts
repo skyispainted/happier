@@ -2,7 +2,7 @@ import {
     SYSTEM_TASK_PROTOCOL_VERSION,
     type SystemTaskResult,
     type SystemTaskSpec,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { t } from '@/text';
 
 import type {

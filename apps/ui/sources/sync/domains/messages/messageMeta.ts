@@ -1,5 +1,5 @@
 import type { MessageMeta } from './messageMetaTypes';
-import { parsePermissionIntentAlias } from '@happier-dev/agents';
+import { parsePermissionIntentAlias } from '@ks-happier/agents';
 
 export function buildOutgoingMessageMeta(params: {
     sentFrom: string;

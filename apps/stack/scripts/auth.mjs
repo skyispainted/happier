@@ -50,7 +50,7 @@ import {
 } from './utils/auth/credentials_paths.mjs';
 import { decodeJwtPayloadUnsafe } from './utils/auth/decode_jwt_payload_unsafe.mjs';
 import { fileHasContent } from './utils/fs/file_has_content.mjs';
-import { buildConfigureServerLinks } from '@happier-dev/cli-common/links';
+import { buildConfigureServerLinks } from '@ks-happier/cli-common/links';
 import { getStackRuntimeStatePath, isPidAlive as isRuntimePidAlive, readStackRuntimeStateFile } from './utils/stack/runtime_state.mjs';
 import { resolveStackRuntimeLaunchContext } from './runtime/launch/resolveStackRuntimeLaunchContext.mjs';
 

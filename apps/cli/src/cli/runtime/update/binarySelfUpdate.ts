@@ -2,22 +2,22 @@ import { mkdir, mkdtemp, readFile, rename, rm, stat, writeFile, lstat, realpath 
 import { tmpdir } from 'node:os';
 import { basename, dirname, join } from 'node:path';
 
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 import {
   extractReleasePayloadRootFromArchive,
   installVersionedPayload,
   resolveCliBinaryAssetBundleFromReleaseAssets,
   resolveFirstPartyInstallLayout,
-} from '@happier-dev/cli-common/firstPartyRuntime';
+} from '@ks-happier/cli-common/firstPartyRuntime';
 export {
   resolveCliBinaryAssetBundleFromReleaseAssets,
-} from '@happier-dev/cli-common/firstPartyRuntime';
+} from '@ks-happier/cli-common/firstPartyRuntime';
 export type {
   ReleaseAsset,
   ReleaseAssetBundle,
-} from '@happier-dev/cli-common/firstPartyRuntime';
-import { DEFAULT_MINISIGN_PUBLIC_KEY } from '@happier-dev/release-runtime/minisign';
-import { downloadVerifiedReleaseAssetBundle } from '@happier-dev/release-runtime/verifiedDownload';
+} from '@ks-happier/cli-common/firstPartyRuntime';
+import { DEFAULT_MINISIGN_PUBLIC_KEY } from '@ks-happier/release-runtime/minisign';
+import { downloadVerifiedReleaseAssetBundle } from '@ks-happier/release-runtime/verifiedDownload';
 
 async function resolveWritableBinaryTarget(execPath: string): Promise<string> {
   const raw = String(execPath ?? '').trim();

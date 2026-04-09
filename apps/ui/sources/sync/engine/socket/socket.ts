@@ -1,7 +1,7 @@
 import type { ApiEphemeralActivityUpdate, ApiUpdateContainer } from '@/sync/api/types/apiTypes';
 import type { Encryption } from '@/sync/encryption/encryption';
 import type { NormalizedMessage } from '@/sync/typesRaw';
-import type { EphemeralUpdate } from '@happier-dev/protocol/updates';
+import type { EphemeralUpdate } from '@ks-happier/protocol/updates';
 import type { Session } from '@/sync/domains/state/storageTypes';
 import type { Machine } from '@/sync/domains/state/storageTypes';
 import type { MachineActivityUpdate } from '@/sync/reducer/machineActivityAccumulator';

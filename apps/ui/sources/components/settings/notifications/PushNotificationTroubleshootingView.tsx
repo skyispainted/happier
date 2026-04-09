@@ -18,7 +18,7 @@ import {
     DEFAULT_NOTIFICATIONS_SETTINGS_V1,
     NotificationsSettingsV1Schema,
     type NotificationsSettingsV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { deletePushToken, fetchPushTokens, type PushToken } from '@/sync/api/session/apiPush';
 import { registerPushTokenIfAvailable } from '@/sync/engine/account/syncAccount';
 import { loadLastRegisteredExpoPushToken } from '@/sync/domains/state/pushTokenRegistration';

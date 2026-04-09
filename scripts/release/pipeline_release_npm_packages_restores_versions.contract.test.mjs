@@ -33,7 +33,7 @@ test('pipeline npm release restores preview-patched package manifests after the 
     writeJson(tempRepo, 'package.json', { name: 'tmp-root', private: true });
 
     writeJson(tempRepo, 'apps/cli/package.json', {
-        name: '@happier-dev/cli',
+        name: '@ks-happier/cli',
         version: '1.2.3',
         scripts: {
             build: 'node build.mjs',
@@ -78,7 +78,7 @@ console.log(tarballPath);
     );
 
     writeJson(tempRepo, 'apps/stack/package.json', {
-        name: '@happier-dev/stack',
+        name: '@ks-happier/stack',
         version: '9.9.9',
     });
     writeText(tempRepo, 'apps/stack/scripts/bundleWorkspaceDeps.mjs', 'process.exit(0);\n');

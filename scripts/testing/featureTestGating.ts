@@ -6,7 +6,7 @@ import {
   resolveEmbeddedFeaturePolicyEnv,
   resolveFeatureBuildPolicyFromEnvOrEmbedded,
   type FeatureId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 function resolveDisabledFeatureIdsBase(env: NodeJS.ProcessEnv): Set<FeatureId> {
   const disabled = new Set<FeatureId>();

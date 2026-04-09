@@ -46,7 +46,7 @@ function resolveWorkspacePackageSource(
 function resolveProtocolWorkspaceSource(id: string): string | null {
     return resolveWorkspacePackageSource(
         id,
-        '@happier-dev/protocol',
+        '@ks-happier/protocol',
         resolve('../../packages/protocol/src'),
     );
 }
@@ -54,7 +54,7 @@ function resolveProtocolWorkspaceSource(id: string): string | null {
 function resolveAgentsWorkspaceSource(id: string): string | null {
     return resolveWorkspacePackageSource(
         id,
-        '@happier-dev/agents',
+        '@ks-happier/agents',
         resolve('../../packages/agents/src'),
     );
 }
@@ -62,7 +62,7 @@ function resolveAgentsWorkspaceSource(id: string): string | null {
 function resolveConnectionSupervisorWorkspaceSource(id: string): string | null {
     return resolveWorkspacePackageSource(
         id,
-        '@happier-dev/connection-supervisor',
+        '@ks-happier/connection-supervisor',
         resolve('../../packages/connection-supervisor/src'),
     );
 }
@@ -83,9 +83,9 @@ export default defineConfig({
         __DEV__: false,
     },
     optimizeDeps: {
-        // Workspace packages (like `@happier-dev/protocol`) can change frequently during development.
+        // Workspace packages (like `@ks-happier/protocol`) can change frequently during development.
         // Excluding them ensures Vitest doesn't keep using stale optimized dependency caches.
-        exclude: ['@happier-dev/protocol', '@happier-dev/agents', '@happier-dev/connection-supervisor'],
+        exclude: ['@ks-happier/protocol', '@ks-happier/agents', '@ks-happier/connection-supervisor'],
     },
     test: {
         // Ensure per-file module isolation so test-local `vi.mock(...)` does not leak

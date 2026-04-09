@@ -15,7 +15,7 @@ test('hstack stack stop sweeps legacy infra without HAPPIER_STACK_PROCESS_KIND=i
       HAPPIER_STACK_ENV_FILE: fixture.envPath,
       // Simulate a yarn/npm-managed infra process from older stacks (no kind tag).
       npm_lifecycle_event: 'dev:light',
-      npm_package_name: '@happier-dev/server',
+      npm_package_name: '@ks-happier/server',
     },
   }));
   assert.ok(Number(legacyInfra.pid) > 1, 'expected legacy infra pid');

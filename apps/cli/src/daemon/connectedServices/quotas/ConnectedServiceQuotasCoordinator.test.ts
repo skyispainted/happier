@@ -5,8 +5,8 @@ import {
   ConnectedServiceQuotaSnapshotV1Schema,
   openAccountScopedBlobCiphertext,
   sealAccountScopedBlobCiphertext,
-} from '@happier-dev/protocol';
-import type { ConnectedServiceQuotaSnapshotV1 } from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
+import type { ConnectedServiceQuotaSnapshotV1 } from '@ks-happier/protocol';
 import { randomBytes } from 'node:crypto';
 
 import type { Credentials } from '@/persistence';

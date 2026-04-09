@@ -3,7 +3,7 @@ import type { ToolCall } from '@/sync/domains/messages/messageTypes';
 import { t } from '@/text';
 import { ICON_TASK } from '../icons';
 import type { KnownToolDefinition } from '../_types';
-import { SubAgentRunInputV2Schema } from '@happier-dev/protocol';
+import { SubAgentRunInputV2Schema } from '@ks-happier/protocol';
 
 export const coreSubAgentRunTools = {
     SubAgentRun: {

@@ -20,7 +20,7 @@ import {
     resolveToolViewDetailLevelDefaultForChromeMode,
     type ToolViewDetailLevelSetting,
 } from '@/components/tools/normalization/policy/resolveToolViewDetailDefaultsForChromeMode';
-import { isGenericSubAgentToolName } from '@happier-dev/protocol/tools/v2';
+import { isGenericSubAgentToolName } from '@ks-happier/protocol/tools/v2';
 
 export const PermissionPromptCard = React.memo(function PermissionPromptCard(props: {
     request: PendingPermissionRequest;

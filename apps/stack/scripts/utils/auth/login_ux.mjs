@@ -9,7 +9,7 @@ export function normalizeAuthLoginContext(raw) {
 }
 
 import { bold, cyan, dim, green, yellow } from '../ui/ansi.mjs';
-import { buildConfigureServerLinks } from '@happier-dev/cli-common/links';
+import { buildConfigureServerLinks } from '@ks-happier/cli-common/links';
 
 export function printAuthLoginInstructions({
   stackName,

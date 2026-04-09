@@ -1,5 +1,5 @@
-import { RPC_ERROR_CODES } from "@happier-dev/protocol/rpc";
-import { SOCKET_RPC_EVENTS } from "@happier-dev/protocol/socketRpc";
+import { RPC_ERROR_CODES } from "@ks-happier/protocol/rpc";
+import { SOCKET_RPC_EVENTS } from "@ks-happier/protocol/socketRpc";
 import type { Server, Socket } from "socket.io";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { createFakeSocket, triggerSocketHandler } from "../testkit/socketHarness";

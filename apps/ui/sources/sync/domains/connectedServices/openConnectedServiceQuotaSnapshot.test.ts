@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   ConnectedServiceQuotaSnapshotV1Schema,
   sealAccountScopedBlobCiphertext,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { encodeBase64 } from '@/encryption/base64';
 

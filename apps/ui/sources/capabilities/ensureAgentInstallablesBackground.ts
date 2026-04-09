@@ -4,7 +4,7 @@ import { getMachineCapabilitiesSnapshot, prefetchMachineCapabilities } from '@/h
 import { machineCapabilitiesInvoke } from '@/sync/ops';
 import { getAgentResumeExperimentsFromSettings, getNewSessionRelevantInstallableDepKeys, type AgentId } from '@/agents/catalog/catalog';
 import type { Settings } from '@/sync/domains/settings/settings';
-import { resolveInstallablePolicy } from '@happier-dev/protocol/installablesPolicy';
+import { resolveInstallablePolicy } from '@ks-happier/protocol/installablesPolicy';
 
 import { getInstallablesRegistryEntries } from './installablesRegistry';
 import { planInstallablesBackgroundActions } from './installablesBackgroundPlan';

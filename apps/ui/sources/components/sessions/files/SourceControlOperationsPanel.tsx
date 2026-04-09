@@ -9,7 +9,7 @@ import { resolveSourceControlOperationSupport } from '@/components/sessions/file
 import { ScmCommitSelectionSummaryRow } from '@/components/sessions/sourceControl/commitSelection/ScmCommitSelectionSummaryRow';
 import { ScmCommitComposerCard } from '@/components/sessions/sourceControl/commitComposer/ScmCommitComposerCard';
 import { Octicons } from '@expo/vector-icons';
-import type { ScmLogEntry } from '@happier-dev/protocol';
+import type { ScmLogEntry } from '@ks-happier/protocol';
 import type { ScmProjectInFlightOperation, ScmProjectOperationLogEntry } from '@/sync/runtime/orchestration/projectManager';
 import { t } from '@/text';
 

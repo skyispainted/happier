@@ -16,15 +16,15 @@ import type {
     CapabilitiesInvokeRequest,
     CapabilitiesInvokeResponse,
 } from '@/capabilities/types';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 import { probeAgentModelsBestEffort } from '@/capabilities/probes/agentModelsProbe';
 import { probeAgentModesBestEffort } from '@/capabilities/probes/agentModesProbe';
 import { probeAgentConfigOptionsBestEffort } from '@/capabilities/probes/agentConfigOptionsProbe';
 import { readCredentials } from '@/persistence';
 import { bootstrapAccountSettingsContext } from '@/settings/accountSettings/bootstrapAccountSettingsContext';
-import type { AgentId } from '@happier-dev/agents';
-import { applyAgentRuntimeKindOverrideToAccountSettings } from '@happier-dev/agents';
-import { BackendTargetRefSchema, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { AgentId } from '@ks-happier/agents';
+import { applyAgentRuntimeKindOverrideToAccountSettings } from '@ks-happier/agents';
+import { BackendTargetRefSchema, type BackendTargetRefV1 } from '@ks-happier/protocol';
 import { invokeProviderCliInstall as invokeSharedProviderCliInstall } from '@/runtime/managedTools/invokeProviderCliInstall';
 
 const DEFAULT_PROBE_MODELS_TIMEOUT_MS = 30_000;

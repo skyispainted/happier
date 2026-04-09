@@ -13,8 +13,8 @@ import {
   type RemoteFirstPartyCommandResult,
   type RemoteHostTrustResolution,
   type SystemTaskSshConnectionConfig,
-} from '@happier-dev/cli-common/systemTasks';
-import { createRelayHostEngine } from '@happier-dev/cli-common/relayHost';
+} from '@ks-happier/cli-common/systemTasks';
+import { createRelayHostEngine } from '@ks-happier/cli-common/relayHost';
 
 import { approveTerminalAuthRequest } from '@/auth/terminalAuthApproval';
 import { configuration } from '@/configuration';

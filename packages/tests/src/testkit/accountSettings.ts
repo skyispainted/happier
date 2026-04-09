@@ -1,6 +1,6 @@
 import { randomBytes } from 'node:crypto';
 
-import { sealAccountScopedBlobCiphertext } from '@happier-dev/protocol';
+import { sealAccountScopedBlobCiphertext } from '@ks-happier/protocol';
 
 import { fetchJson } from './http';
 

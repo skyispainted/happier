@@ -1,7 +1,7 @@
 import { homedir as osHomedir } from 'node:os';
 import { isAbsolute, resolve } from 'node:path';
 
-import { expandHomeDirPath } from '@happier-dev/cli-common/providers';
+import { expandHomeDirPath } from '@ks-happier/cli-common/providers';
 
 type Deps = Readonly<{
   env: NodeJS.ProcessEnv;

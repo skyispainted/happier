@@ -1,9 +1,9 @@
 import type { RpcHandlerRegistrar } from '@/api/rpc/types';
 import type { ACPMessageData, ACPProvider } from '@/api/session/sessionMessageTypes';
 import type { AgentBackend } from '@/agent/core/AgentBackend';
-import type { BackendTargetRefV1, ExecutionRunPublicState } from '@happier-dev/protocol';
+import type { BackendTargetRefV1, ExecutionRunPublicState } from '@ks-happier/protocol';
 
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 import {
   ExecutionRunGetRequestSchema,
   ExecutionRunListRequestSchema,
@@ -16,7 +16,7 @@ import {
   ExecutionRunTurnStreamStartRequestSchema,
   ExecutionRunTurnStreamReadRequestSchema,
   ExecutionRunTurnStreamCancelRequestSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { ExecutionRunManager } from '@/agent/executionRuns/runtime/ExecutionRunManager';
 import type { ExecutionBudgetRegistry } from '@/daemon/executionBudget/ExecutionBudgetRegistry';

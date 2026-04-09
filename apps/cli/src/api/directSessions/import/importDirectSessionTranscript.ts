@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 
-import type { SessionStoredMessageContent } from '@happier-dev/protocol';
+import type { SessionStoredMessageContent } from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import type { RawSessionRecord } from '@/session/transport/http/sessionsHttp';
@@ -11,7 +11,7 @@ import {
   resolveSessionStoredContentEncryptionMode,
 } from '@/session/transport/encryption/sessionEncryptionContext';
 import type { LoadedLinkedDirectSession } from '@/api/directSessions/takeover/loadLinkedDirectSession';
-import type { DirectTranscriptRawMessageV1 } from '@happier-dev/protocol';
+import type { DirectTranscriptRawMessageV1 } from '@ks-happier/protocol';
 import { getDirectSessionProviderOps } from '@/backends/catalog';
 
 function sha256(input: string): string {

@@ -3,7 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 import { encodeBase64 } from './messageCrypto';
-import { deriveBoxPublicKeyFromSeed } from '@happier-dev/protocol';
+import { deriveBoxPublicKeyFromSeed } from '@ks-happier/protocol';
 
 const CLI_HOME_DIR_MODE = 0o700;
 const CLI_HOME_FILE_MODE = 0o600;

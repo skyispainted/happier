@@ -7116,7 +7116,7 @@ settingsSession: {
     detectedCliDetected: "Обнаружено",
     detectedCliNotDetected: "Не обнаружено",
     detectedCliUnknown: "Неизвестно",
-    detectedCliNotSupported: "Не поддерживается (обновите @happier-dev/cli)",
+    detectedCliNotSupported: "Не поддерживается (обновите @ks-happier/cli)",
     untitledSession: "Безымянная сессия",
     back: "Назад",
     notFound: "Машина не найдена",

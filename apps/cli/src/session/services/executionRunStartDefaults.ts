@@ -1,4 +1,4 @@
-import type { ExecutionRunIntent } from '@happier-dev/protocol';
+import type { ExecutionRunIntent } from '@ks-happier/protocol';
 
 export function defaultPermissionModeForExecutionRunIntent(intent: ExecutionRunIntent): string {
   if (intent === 'delegate') return 'workspace_write';

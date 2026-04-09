@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs';
 import { readFile, unlink } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { createServerUrlComparableKey } from '@happier-dev/protocol';
+import { createServerUrlComparableKey } from '@ks-happier/protocol';
 import { decodeJwtPayload } from '@/cloud/decodeJwtPayload';
 import { configuration } from '@/configuration';
 import { DaemonLocallyPersistedStateSchema, readSettings } from '@/persistence';

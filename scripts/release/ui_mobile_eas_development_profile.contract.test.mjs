@@ -8,7 +8,7 @@ const repoRoot = path.resolve(import.meta.dirname, '..', '..');
 function collectExpectedUiInstallScopeWorkspaces() {
   const uiPackage = JSON.parse(fs.readFileSync(path.join(repoRoot, 'apps', 'ui', 'package.json'), 'utf8'));
   const internalDeps = Object.keys(uiPackage?.dependencies ?? {})
-    .filter((name) => name.startsWith('@happier-dev/'))
+    .filter((name) => name.startsWith('@ks-happier/'))
     .map((name) => name.split('/')[1])
     .filter(Boolean);
 

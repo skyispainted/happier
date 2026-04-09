@@ -1,4 +1,4 @@
-import { buildReadyNotificationContent } from '@happier-dev/protocol';
+import { buildReadyNotificationContent } from '@ks-happier/protocol';
 
 import type { ActivityNotificationEvent } from './activityNotificationEvent';
 import {

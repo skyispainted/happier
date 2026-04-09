@@ -28,7 +28,7 @@ import { MCPToolView } from '../system/MCPToolView';
 import { UnknownToolView } from '../system/UnknownToolView';
 import { SubAgentRunView } from '../workflow/SubAgentRunView';
 import { AgentTeamView } from '../workflow/AgentTeamView';
-import { KnownCanonicalToolNameV2Schema, type KnownCanonicalToolNameV2 } from '@happier-dev/protocol';
+import { KnownCanonicalToolNameV2Schema, type KnownCanonicalToolNameV2 } from '@ks-happier/protocol';
 import { normalizeToolNameForView } from '@/components/tools/normalization/policy/normalizeToolNameForView';
 
 export type ToolViewDetailLevel = 'title' | 'summary' | 'full';

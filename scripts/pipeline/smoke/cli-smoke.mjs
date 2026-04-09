@@ -309,7 +309,7 @@ function main() {
   const { values } = parseArgs({
     options: {
       'package-dir': { type: 'string', default: 'apps/cli' },
-      'workspace-name': { type: 'string', default: '@happier-dev/cli' },
+      'workspace-name': { type: 'string', default: '@ks-happier/cli' },
       'skip-build': { type: 'string', default: 'false' },
       'dry-run': { type: 'boolean', default: false },
     },
@@ -317,7 +317,7 @@ function main() {
   });
 
   const pkgDir = String(values['package-dir'] ?? '').trim() || 'apps/cli';
-  const workspaceName = String(values['workspace-name'] ?? '').trim() || '@happier-dev/cli';
+  const workspaceName = String(values['workspace-name'] ?? '').trim() || '@ks-happier/cli';
   const skipBuild = parseBool(values['skip-build'], '--skip-build');
   const dryRun = values['dry-run'] === true;
   const opts = { dryRun };

@@ -23,7 +23,7 @@ const { preparePayloadMock, installPayloadMock, resolveInstalledPathsMock, runCo
   runCommandCaptureMock: vi.fn(),
 }));
 
-vi.mock('@happier-dev/cli-common/firstPartyRuntime', () => ({
+vi.mock('@ks-happier/cli-common/firstPartyRuntime', () => ({
   prepareFirstPartyComponentPayloadFromGitHubRelease: preparePayloadMock,
   installVersionedPayload: installPayloadMock,
   resolveInstalledFirstPartyComponentPaths: resolveInstalledPathsMock,

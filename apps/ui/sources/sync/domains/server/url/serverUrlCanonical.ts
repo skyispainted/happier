@@ -1,4 +1,4 @@
-import { createServerUrlComparableKey as createProtocolServerUrlComparableKey } from '@happier-dev/protocol';
+import { createServerUrlComparableKey as createProtocolServerUrlComparableKey } from '@ks-happier/protocol';
 
 import { isLocalishHostname } from './serverUrlClassification';
 

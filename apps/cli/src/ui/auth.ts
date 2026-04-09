@@ -15,7 +15,7 @@ import React from 'react';
 import { randomUUID } from 'node:crypto';
 import { logger } from './logger';
 import { ensureDaemonRunningForSessionCommand, shouldAutoStartDaemonAfterAuth } from '@/daemon/ensureDaemon';
-import { buildConfigureServerLinks, buildTerminalConnectLinks } from '@happier-dev/cli-common/links';
+import { buildConfigureServerLinks, buildTerminalConnectLinks } from '@ks-happier/cli-common/links';
 import { tailscaleServeHttpsUrlForInternalServerUrl } from '@/integrations/tailscale/tailscaleServe';
 import { isInsecureRemoteHttpServerUrl, isLocalishServerUrl, isLoopbackHttpServerUrl } from '@/server/serverUrlClassification';
 import { decodeJwtPayload } from '@/cloud/decodeJwtPayload';

@@ -8,11 +8,11 @@ import {
   type RelayRuntimeStatusSnapshot,
   type RelayRuntimeTaskParams,
   type SystemTaskSshConnectionConfig,
-} from '@happier-dev/cli-common/systemTasks';
+} from '@ks-happier/cli-common/systemTasks';
 import {
   checkRelayRuntimeHealth as checkRelayRuntimeHealthShared,
   listInstalledVersionIdsNewestFirst,
-} from '@happier-dev/cli-common/firstPartyRuntime';
+} from '@ks-happier/cli-common/firstPartyRuntime';
 
 import { buildScpCommand, buildSshCommand, redactSshText } from '../ssh/index.js';
 import {

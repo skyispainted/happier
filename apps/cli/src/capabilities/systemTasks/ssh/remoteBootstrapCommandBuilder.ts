@@ -1,4 +1,4 @@
-import { resolveRemoteInstalledFirstPartyBinaryPath } from '@happier-dev/cli-common/systemTasks';
+import { resolveRemoteInstalledFirstPartyBinaryPath } from '@ks-happier/cli-common/systemTasks';
 
 import { safeBashSingleQuote } from './sshTransport';
 

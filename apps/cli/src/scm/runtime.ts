@@ -3,7 +3,7 @@ import { isAbsolute, relative, sep } from 'path';
 import path from 'node:path';
 import { realpathSync } from 'node:fs';
 
-import { createScmCapabilities, type ScmWorkingSnapshot } from '@happier-dev/protocol';
+import { createScmCapabilities, type ScmWorkingSnapshot } from '@ks-happier/protocol';
 
 import { validatePath } from '@/rpc/handlers/pathSecurity';
 import { expandHomeDirPath } from '@/utils/path/expandHomeDirPath';

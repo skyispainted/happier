@@ -23,7 +23,7 @@ function findRepoRoot(startDir) {
 async function loadCliCommonWorkspacesModule(repoRoot) {
   const modulePath = resolve(repoRoot, 'packages', 'cli-common', 'dist', 'workspaces', 'index.js');
   if (!existsSync(modulePath)) {
-    execFileSync('yarn', ['-s', 'workspace', '@happier-dev/cli-common', 'build'], {
+    execFileSync('yarn', ['-s', 'workspace', '@ks-happier/cli-common', 'build'], {
       cwd: repoRoot,
       stdio: 'inherit',
     });
@@ -40,7 +40,7 @@ async function ensureReleaseRuntimeBuilt(repoRoot) {
   const distPath = resolve(repoRoot, 'packages', 'release-runtime', 'dist', 'index.js');
   if (existsSync(distPath)) return;
 
-  execFileSync('yarn', ['-s', 'workspace', '@happier-dev/release-runtime', 'build'], {
+  execFileSync('yarn', ['-s', 'workspace', '@ks-happier/release-runtime', 'build'], {
     cwd: repoRoot,
     stdio: 'inherit',
   });

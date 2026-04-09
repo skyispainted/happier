@@ -136,7 +136,7 @@ describe('core e2e: daemon tmux spawn → attach → Claude remote↔local switc
     if (!existsSync(cliDistEntrypoint)) {
       await runLoggedCommand({
         command: yarnCommand(),
-        args: ['-s', 'workspace', '@happier-dev/cli', 'build'],
+        args: ['-s', 'workspace', '@ks-happier/cli', 'build'],
         cwd: repoRootDir(),
         env: { ...process.env, CI: '1' },
         stdoutPath: resolve(join(testDir, 'cli.build.stdout.log')),

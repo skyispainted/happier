@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-import { AGENT_IDS as SHARED_AGENT_IDS, getAgentModelConfig, getProviderCliInstallGuideUrl } from '@happier-dev/agents';
+import { AGENT_IDS as SHARED_AGENT_IDS, getAgentModelConfig, getProviderCliInstallGuideUrl } from '@ks-happier/agents';
 
 import {
     resolveAgentIdFromCliDetectKey,
@@ -114,7 +114,7 @@ describe('agents/registryCore', () => {
         }
     });
 
-    it('surfaces shared tools delivery config from @happier-dev/agents', () => {
+    it('surfaces shared tools delivery config from @ks-happier/agents', () => {
         expect(buildAgentToolsUiConfig({ agentId: 'claude' })).toEqual({
             delivery: 'native_mcp',
             support: 'supported',
@@ -125,7 +125,7 @@ describe('agents/registryCore', () => {
         });
     });
 
-    it('reads model selection config from @happier-dev/agents', () => {
+    it('reads model selection config from @ks-happier/agents', () => {
         const claude = getAgentModelConfig('claude');
         expect(claude.supportsSelection).toBe(true);
         expect(claude.nonAcpApplyScope).toBe('next_prompt');

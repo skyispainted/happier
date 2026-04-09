@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import type {
     ScmWorkingEntry,
     ScmWorkingSnapshot,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import type { ScmRepoDetection } from '../../types';
 import { runScmCommand } from '../../runtime';
 

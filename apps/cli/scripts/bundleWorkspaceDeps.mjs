@@ -26,7 +26,7 @@ function findRepoRoot(startDir) {
 async function loadCliCommonWorkspacesModule(repoRoot) {
   const modulePath = resolve(repoRoot, 'packages', 'cli-common', 'dist', 'workspaces', 'index.js');
   if (!existsSync(modulePath)) {
-    execFileSync('yarn', ['-s', 'workspace', '@happier-dev/cli-common', 'build'], {
+    execFileSync('yarn', ['-s', 'workspace', '@ks-happier/cli-common', 'build'], {
       cwd: repoRoot,
       stdio: 'inherit',
     });

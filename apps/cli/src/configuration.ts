@@ -16,7 +16,7 @@ import {
   resolveDaemonStateBasenameForRing,
 } from '@/cli/runtime/publicReleaseChannel'
 import packageJson from '../package.json'
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings'
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings'
 
 /**
  * Parse an environment variable as an integer and clamp it within optional bounds.

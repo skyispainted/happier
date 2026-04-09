@@ -18,7 +18,7 @@ import {
     sessionExecutionRunStart,
     sendMessage,
 } from './localVoiceEngine.testHarness';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
 import type { VoiceAgentClient } from '@/voice/agent/types';
 
 type VoiceAgentTurnStreamReadResult = Awaited<ReturnType<VoiceAgentClient['readTurnStream']>>;

@@ -6,7 +6,7 @@ import { configuration } from '@/configuration';
 import type { CloudConnectTarget, CloudConnectTargetStatus } from '@/cloud/connectTypes';
 import { AGENTS } from '@/backends/catalog';
 import { promptInput } from '@/terminal/prompts/promptInput';
-import { buildConnectedServiceCredentialRecord, sealConnectedServiceCredentialCiphertext, type ConnectedServiceId } from '@happier-dev/protocol';
+import { buildConnectedServiceCredentialRecord, sealConnectedServiceCredentialCiphertext, type ConnectedServiceId } from '@ks-happier/protocol';
 
 import type { CommandContext } from '@/cli/commandRegistry';
 import { parseConnectArgs, type ConnectParsedOptions } from './connect/parseConnectArgs';

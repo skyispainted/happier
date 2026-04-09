@@ -22,7 +22,7 @@ import { checkSessionAccess, requireAccessLevel } from "@/app/share/accessContro
 import { getSessionParticipantUserIds } from "@/app/share/sessionParticipants";
 import { parseIntEnv } from "@/config/env";
 import { parseSessionMessageSidechainId } from "@/app/session/parseSessionMessageSidechainId";
-import { ExecutionRunPublicStateSchema } from "@happier-dev/protocol";
+import { ExecutionRunPublicStateSchema } from "@ks-happier/protocol";
 import { refreshSessionParticipantBadgePushes } from "@/app/activity/refreshAccountActivityBadgePushes";
 import { didSessionActivityBadgeContributionChange } from "@/app/activity/accountActivityBadge";
 import { canPublishFromSessionScopedSocket } from "./sessionScopedBinding";

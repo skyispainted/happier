@@ -8,8 +8,8 @@ import {
   shouldNotifyUpdate,
   spawnDetachedNode,
   writeUpdateCache,
-} from '@happier-dev/cli-common/update';
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+} from '@ks-happier/cli-common/update';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 const DEFAULT_INTERVAL_MS = 24 * 60 * 60 * 1000;
 const DEFAULT_CHECK_LOCK_TTL_MS = 2 * 60 * 1000;

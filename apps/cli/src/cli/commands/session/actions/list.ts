@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import { listActionSpecs, serializeActionSpec } from '@happier-dev/protocol';
+import { listActionSpecs, serializeActionSpec } from '@ks-happier/protocol';
 
 import { wantsJson, printJsonEnvelope } from '@/cli/output/jsonEnvelope';
 

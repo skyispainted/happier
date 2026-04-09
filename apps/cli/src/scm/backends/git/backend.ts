@@ -1,4 +1,4 @@
-import type { ScmBackendDescribeResponse } from '@happier-dev/protocol';
+import type { ScmBackendDescribeResponse } from '@ks-happier/protocol';
 
 import type { ScmBackend } from '../../types';
 import { detectGitRepo, getGitSnapshot } from './repository';

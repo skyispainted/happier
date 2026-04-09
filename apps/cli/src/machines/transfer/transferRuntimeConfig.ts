@@ -1,6 +1,6 @@
 import { networkInterfaces } from 'node:os';
 
-import { parseBooleanEnv } from '@happier-dev/protocol';
+import { parseBooleanEnv } from '@ks-happier/protocol';
 
 import { readPositiveIntEnv } from '@/utils/readPositiveIntEnv';
 import { clampTransferChunkBytes } from './transferChunkSizeLimit';

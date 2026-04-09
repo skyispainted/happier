@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 
-import type { ParticipantMessageV1 } from '@happier-dev/protocol';
+import type { ParticipantMessageV1 } from '@ks-happier/protocol';
 
 import type { Message } from '@/sync/domains/messages/messageTypes';
 import { Text } from '@/components/ui/text/Text';

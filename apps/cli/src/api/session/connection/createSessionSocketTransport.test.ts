@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import type { TransportDisconnectEvent } from '@happier-dev/connection-supervisor';
+import type { TransportDisconnectEvent } from '@ks-happier/connection-supervisor';
 import axios from 'axios';
 import { bindApiSessionSocketMock, createApiSessionSocketStub } from '@/testkit/backends/apiSessionSocketHarness';
 

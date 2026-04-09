@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 
 import type { AgentBackend, SessionId } from '@/agent/core/AgentBackend';
-import { extractVoiceActionsFromAssistantText, type ExecutionRunResumeHandle, type VoiceAssistantAction } from '@happier-dev/protocol';
+import { extractVoiceActionsFromAssistantText, type ExecutionRunResumeHandle, type VoiceAssistantAction } from '@ks-happier/protocol';
 
 import { appendVoiceAgentHistoryTurn } from './voiceAgentHistory';
 import {

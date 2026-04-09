@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import { AGENT_IDS, getProviderCliRuntimeSpec, type AgentId } from '@happier-dev/agents';
+import { AGENT_IDS, getProviderCliRuntimeSpec, type AgentId } from '@ks-happier/agents';
 
 import type { CommandContext } from '@/cli/commandRegistry';
 import type {

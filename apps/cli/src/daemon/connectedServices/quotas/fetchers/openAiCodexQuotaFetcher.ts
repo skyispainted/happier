@@ -1,5 +1,5 @@
 import type { ConnectedServiceQuotaFetcher } from '../types';
-import type { ConnectedServiceCredentialRecordV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceCredentialRecordV1 } from '@ks-happier/protocol';
 
 import { isRecord, normalizeNonEmptyString, normalizePct, resolveConnectedServiceQuotaAccountLabel } from '../quotaNormalization';
 

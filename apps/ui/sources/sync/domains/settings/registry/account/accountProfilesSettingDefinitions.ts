@@ -1,7 +1,7 @@
 import {
     buildSettingArtifacts,
     defineSettingDefinitions,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { z } from 'zod';
 import { AIBackendProfileSchema } from '@/sync/domains/profiles/profileCompatibility';
 import { SavedSecretSchema } from '../../savedSecretTypes';

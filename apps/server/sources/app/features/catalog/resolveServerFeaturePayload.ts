@@ -5,7 +5,7 @@ import {
     FEATURE_IDS,
     readServerEnabledBit,
     tryWriteServerEnabledBitInPlace,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { ServerFeatureResolver } from './serverFeatureRegistry';
 import { resolveServerFeatureBuildPolicy } from './serverFeatureBuildPolicy';

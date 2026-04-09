@@ -1,6 +1,6 @@
 import { AGENTS } from '@/backends/catalog';
 import type { CatalogAgentId } from '@/backends/types';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { resolveConfiguredAcpProbeCacheVariant } from './configuredAcpProbeCacheVariant';
 

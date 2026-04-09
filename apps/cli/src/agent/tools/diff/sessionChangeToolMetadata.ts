@@ -1,5 +1,5 @@
-import type { ChangeConfidence, ChangeEvidenceSource, TurnChangeSet } from '@happier-dev/protocol';
-import type { ToolHappierMetaV2, ToolNormalizationProtocol } from '@happier-dev/protocol';
+import type { ChangeConfidence, ChangeEvidenceSource, TurnChangeSet } from '@ks-happier/protocol';
+import type { ToolHappierMetaV2, ToolNormalizationProtocol } from '@ks-happier/protocol';
 
 const SOURCE_PRECEDENCE: Record<ChangeEvidenceSource, number> = {
     provider_native: 0,

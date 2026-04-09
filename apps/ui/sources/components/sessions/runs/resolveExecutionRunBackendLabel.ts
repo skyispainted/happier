@@ -1,4 +1,4 @@
-import type { AcpCatalogSettingsV1, BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { AcpCatalogSettingsV1, BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { normalizeAcpCatalogSettingsV1 } from '@/sync/domains/acpCatalog/normalizeAcpCatalogSettingsV1';
 import { storage } from '@/sync/domains/state/storage';

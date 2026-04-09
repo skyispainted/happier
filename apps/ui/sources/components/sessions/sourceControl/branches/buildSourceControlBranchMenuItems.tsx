@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Octicons } from '@expo/vector-icons';
 
-import type { ScmBranchListEntry } from '@happier-dev/protocol';
+import type { ScmBranchListEntry } from '@ks-happier/protocol';
 
 import type { DropdownMenuItem } from '@/components/ui/forms/dropdown/DropdownMenu';
 import { t } from '@/text';

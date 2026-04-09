@@ -25,7 +25,7 @@ import { fetchSessionSnapshotUpdateFromServer, shouldSyncSessionSnapshotOnConnec
 import { createUserScopedSocket } from './sockets';
 import { isToolTraceEnabled, recordAcpToolTraceEventIfNeeded, recordClaudeToolTraceEvents, recordCodexToolTraceEventIfNeeded } from './toolTrace';
 import { updateSessionAgentStateWithAck, updateSessionMetadataWithAck } from './stateUpdates';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
 import { calculateCost } from '@/utils/pricing';
 import { buildAcpAgentMessageEnvelope, shouldTraceAcpMessageType } from './acpMessageEnvelope';
 import { normalizeAcpSessionMessageBody, normalizeCodexSessionMessageBody } from './sessionOutboundMessageNormalization';
@@ -53,7 +53,7 @@ import {
     DEFAULT_MANAGED_CONNECTION_POLICY,
     type ManagedConnectionState,
     type ManagedConnectionSupervisor,
-} from '@happier-dev/connection-supervisor';
+} from '@ks-happier/connection-supervisor';
 import { createLoopbackReadinessProbe } from '@/api/connection/createLoopbackReadinessProbe';
 import { createSessionSocketTransport } from './connection/createSessionSocketTransport';
 import { connectionState } from '@/api/offline/serverConnectionErrors';

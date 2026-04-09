@@ -7,7 +7,7 @@ import { Item } from '@/components/ui/lists/Item';
 import { Switch } from '@/components/ui/forms/Switch';
 import { t } from '@/text';
 
-import type { MemorySettingsV1 } from '@happier-dev/protocol';
+import type { MemorySettingsV1 } from '@ks-happier/protocol';
 
 export const MemorySettingsPrivacySection = React.memo(function MemorySettingsPrivacySection(props: Readonly<{
     settings: MemorySettingsV1;

@@ -3,7 +3,7 @@ import type {
     ScmProjectOperationLogEntry,
     ScmProjectOperationStatus,
 } from '@/sync/runtime/orchestration/projectManager';
-import { classifyScmOperationErrorCode, type ScmOperationErrorCode } from '@happier-dev/protocol';
+import { classifyScmOperationErrorCode, type ScmOperationErrorCode } from '@ks-happier/protocol';
 
 export interface ScmOperationTracker {
     capture(event: string, props?: Record<string, unknown>): void;

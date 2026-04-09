@@ -1,6 +1,6 @@
 import type { AuthCredentials } from '@/auth/storage/tokenStorage';
 import { serverFetch } from '@/sync/http/client';
-import { ChangesResponseSchema, CursorGoneErrorSchema, type ChangeEntry } from '@happier-dev/protocol/changes';
+import { ChangesResponseSchema, CursorGoneErrorSchema, type ChangeEntry } from '@ks-happier/protocol/changes';
 
 export async function fetchChanges(params: {
     credentials: AuthCredentials;

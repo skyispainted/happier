@@ -1,5 +1,5 @@
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
-import { isRpcMethodNotAvailableError, readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
+import { isRpcMethodNotAvailableError, readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 import { Modal } from '@/modal';
 import { t, type TranslationKey } from '@/text';

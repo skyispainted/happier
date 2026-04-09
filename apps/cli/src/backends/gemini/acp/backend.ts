@@ -27,7 +27,7 @@ import {
 } from '@/backends/gemini/utils/config';
 import { createGeminiMcpCliEnvironment } from '@/backends/gemini/mcp/createGeminiMcpCliEnvironment';
 import { wrapBackendDisposeWithCleanup } from '@/backends/gemini/mcp/wrapBackendDisposeWithCleanup';
-import { CHANGE_TITLE_TOOL_NAME_ALIASES } from '@happier-dev/protocol/tools/v2';
+import { CHANGE_TITLE_TOOL_NAME_ALIASES } from '@ks-happier/protocol/tools/v2';
 import { requireProviderCliLaunchSpec } from '@/runtime/managedTools/requireProviderCliLaunchSpec';
 
 function isTruthyEnv(value: string | undefined): boolean {

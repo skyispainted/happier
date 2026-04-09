@@ -5,7 +5,7 @@ import { mkdtemp, readdir, realpath, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { accountSettingsParse, sealEncryptedDataKeyEnvelopeV1 } from '@happier-dev/protocol';
+import { accountSettingsParse, sealEncryptedDataKeyEnvelopeV1 } from '@ks-happier/protocol';
 
 import { reloadConfiguration } from '@/configuration';
 import type { Credentials } from '@/persistence';

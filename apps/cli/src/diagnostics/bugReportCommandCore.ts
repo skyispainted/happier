@@ -14,7 +14,7 @@ import {
   type BugReportDeploymentType,
   type BugReportEnvironmentPayload,
   type BugReportFormPayload,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import packageJson from '../../package.json';
 import {

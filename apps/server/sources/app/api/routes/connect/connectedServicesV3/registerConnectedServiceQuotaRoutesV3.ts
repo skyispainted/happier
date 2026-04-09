@@ -8,7 +8,7 @@ import {
     ConnectedServiceQuotaSnapshotV1Schema,
     StoredJsonContentEnvelopeSchema,
     type ConnectedServiceId,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 import { readEncryptionFeatureEnv } from "@/app/features/catalog/readFeatureEnv";
 import { resolveEffectiveAccountEncryptionModeFromAccountRow } from "@/app/encryption/accountEncryptionMode";
 import { decryptString, encryptString } from "@/modules/encrypt";

@@ -1,4 +1,4 @@
-import type { ManagedEndpointSupervisor, ManagedEndpointSupervisorState } from '@happier-dev/connection-supervisor';
+import type { ManagedEndpointSupervisor, ManagedEndpointSupervisorState } from '@ks-happier/connection-supervisor';
 
 import { HappyError } from '@/utils/errors/errors';
 

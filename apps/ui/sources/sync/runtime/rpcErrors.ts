@@ -1,4 +1,4 @@
-export type { RpcErrorCode } from '@happier-dev/protocol/rpc';
+export type { RpcErrorCode } from '@ks-happier/protocol/rpc';
 export {
   createRpcCallError,
   isRpcMethodNotAvailableError,
@@ -6,4 +6,4 @@ export {
   readRpcErrorCode,
   RpcError,
   type RpcErrorCarrier,
-} from '@happier-dev/protocol/rpcErrors';
+} from '@ks-happier/protocol/rpcErrors';

@@ -1,4 +1,4 @@
-import { PromptDocBodyV1Schema } from '@happier-dev/protocol';
+import { PromptDocBodyV1Schema } from '@ks-happier/protocol';
 
 import { storage } from '@/sync/domains/state/storage';
 import { sync } from '@/sync/sync';

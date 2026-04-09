@@ -2,7 +2,7 @@ import type { TerminalSpawnOptions } from '@/terminal/runtime/terminalConfig';
 import type { PermissionMode } from '@/api/types';
 import type { RpcHandlerRegistrar } from '@/api/rpc/types';
 import type { Metadata } from '@/api/types';
-import type { CodexBackendMode } from '@happier-dev/agents';
+import type { CodexBackendMode } from '@ks-happier/agents';
 import { configuration } from '@/configuration';
 import {
     AcpConfigOptionOverridesV1,
@@ -11,9 +11,9 @@ import {
     type SessionAttachMetadataIdentityPolicy,
     SessionMcpSelectionV1,
     SpawnSessionErrorCode,
-} from '@happier-dev/protocol';
-export { SPAWN_SESSION_ERROR_CODES } from '@happier-dev/protocol';
-export type { SpawnSessionErrorCode } from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
+export { SPAWN_SESSION_ERROR_CODES } from '@ks-happier/protocol';
+export type { SpawnSessionErrorCode } from '@ks-happier/protocol';
 export { resolveCanonicalCodexBackendMode } from './codexBackendMode';
 import { registerCapabilitiesHandlers } from './capabilities';
 import { registerPreviewEnvHandler } from './previewEnv';

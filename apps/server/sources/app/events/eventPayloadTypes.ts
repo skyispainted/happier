@@ -1,6 +1,6 @@
 import { Socket } from "socket.io";
 import type { LinkedProvider } from "@/app/auth/providers/linkedProviders";
-import type { ExecutionRunPublicState } from "@happier-dev/protocol";
+import type { ExecutionRunPublicState } from "@ks-happier/protocol";
 
 // === CONNECTION TYPES ===
 

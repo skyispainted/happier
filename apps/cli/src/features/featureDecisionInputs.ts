@@ -1,7 +1,7 @@
 import {
   featureRequiresServerSnapshot,
   type FeatureId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { getCliFeatureBuildPolicyDecision } from './featureBuildPolicy';
 import { resolveCliLocalFeaturePolicyEnabled } from './featureLocalPolicy';

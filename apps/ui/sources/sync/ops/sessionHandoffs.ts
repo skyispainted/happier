@@ -6,7 +6,7 @@ import {
     SessionHandoffStartResponseSchema,
     SessionHandoffStatusSchema,
     SPAWN_SESSION_ERROR_CODES,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import type {
     AgentRuntimeDescriptorV1,
     SessionHandoffCommitResponse,
@@ -16,8 +16,8 @@ import type {
     SessionHandoffStorageMode,
     SessionHandoffTransportStrategy,
     SessionHandoffWorkspaceTransfer,
-} from '@happier-dev/protocol';
-import { RPC_ERROR_CODES, RPC_METHODS } from '@happier-dev/protocol/rpc';
+} from '@ks-happier/protocol';
+import { RPC_ERROR_CODES, RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { buildCodexBackendTransportFields } from '../domains/session/codexBackendTransport';
 

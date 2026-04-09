@@ -16,7 +16,7 @@ import {
   normalizeUrlOrThrow,
 } from '../server/commandUtilities';
 
-import { createServerUrlComparableKey } from '@happier-dev/protocol';
+import { createServerUrlComparableKey } from '@ks-happier/protocol';
 
 import { runRelayHostSubcommand } from './host';
 

@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Stack } from 'expo-router';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 
-import { PromptBundleBodyV1Schema, PromptDocBodyV1Schema } from '@happier-dev/protocol';
+import { PromptBundleBodyV1Schema, PromptDocBodyV1Schema } from '@ks-happier/protocol';
 
 import { Item } from '@/components/ui/lists/Item';
 import { ItemGroup } from '@/components/ui/lists/ItemGroup';

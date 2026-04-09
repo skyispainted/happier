@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { AccountSettings } from '@happier-dev/protocol';
+import type { AccountSettings } from '@ks-happier/protocol';
 import type { PermissionMode } from '@/api/types';
 import { serializeAxiosErrorForLog } from '@/api/client/serializeAxiosErrorForLog';
 import { isDefaultWriteLikeToolName } from '@/agent/permissions/writeLikeToolNameHeuristics';

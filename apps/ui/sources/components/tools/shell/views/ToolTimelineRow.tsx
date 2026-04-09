@@ -29,7 +29,7 @@ import {
 import { ToolTimelineRowHeader } from '@/components/tools/shell/views/timeline/ToolTimelineRowHeader';
 import { useEnsureSidechainsLoaded } from '@/hooks/session/useEnsureSidechainsLoaded';
 import { resolveToolTranscriptSidechainId } from './resolveToolTranscriptSidechainId';
-import { isGenericSubAgentToolName, isSubAgentTranscriptToolName } from '@happier-dev/protocol/tools/v2';
+import { isGenericSubAgentToolName, isSubAgentTranscriptToolName } from '@ks-happier/protocol/tools/v2';
 import { buildToolCallMessageRouteId } from '@/sync/domains/messages/messageRouteIds';
 import { PermissionFooter } from '../permissions/PermissionFooter';
 import { resolveInactiveSessionToolCallFailure } from '../permissions/resolveInactiveSessionToolCallFailure';

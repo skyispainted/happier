@@ -48,7 +48,7 @@ import type {
     ScmBackendId,
     WorkspaceCheckoutKind,
     WorkspaceLocationScm,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { ScmSourceControllerCheckoutMaterializationRequest } from './sourceController/checkoutMaterialization';
 import type {

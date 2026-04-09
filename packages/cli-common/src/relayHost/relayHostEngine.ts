@@ -4,7 +4,7 @@ import { mkdtemp, rm, writeFile, mkdir, readFile } from 'node:fs/promises';
 import { homedir, tmpdir } from 'node:os';
 import { basename, dirname, join, posix as posixPath } from 'node:path';
 
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 import {
   resolveServiceBackend,

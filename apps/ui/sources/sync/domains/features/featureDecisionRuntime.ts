@@ -10,7 +10,7 @@ import {
     type FeatureDecision,
     type FeatureDecisionScope,
     type FeatureId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import type { Settings } from '@/sync/domains/settings/settings';
 import { fireAndForget } from '@/utils/system/fireAndForget';
 

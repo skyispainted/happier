@@ -8,7 +8,7 @@ import type {
     ReviewFindingsV2,
     ReviewQuestion,
     ReviewTriageStatus,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { MarkdownView } from '@/components/markdown/MarkdownView';
 import { resolveEffectiveReviewFindings } from '@/components/sessions/reviews/messages/resolveEffectiveReviewFindings';

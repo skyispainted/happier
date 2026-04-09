@@ -6,7 +6,7 @@ import {
   openEncryptedDataKeyEnvelopeV1,
   sealEncryptedDataKeyEnvelopeV1,
   type ApprovalRequestV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import {
@@ -180,9 +180,9 @@ async function updateArtifact(params: Readonly<{
 }
 
 export function createCliApprovalsArtifactStore(params: Readonly<{ credentials: Credentials }>): Readonly<{
-  approvalsCreate: NonNullable<import('@happier-dev/protocol').ActionExecutorDeps['approvalsCreate']>;
-  approvalsGet: NonNullable<import('@happier-dev/protocol').ActionExecutorDeps['approvalsGet']>;
-  approvalsUpdate: NonNullable<import('@happier-dev/protocol').ActionExecutorDeps['approvalsUpdate']>;
+  approvalsCreate: NonNullable<import('@ks-happier/protocol').ActionExecutorDeps['approvalsCreate']>;
+  approvalsGet: NonNullable<import('@ks-happier/protocol').ActionExecutorDeps['approvalsGet']>;
+  approvalsUpdate: NonNullable<import('@ks-happier/protocol').ActionExecutorDeps['approvalsUpdate']>;
 }> {
   return {
     approvalsCreate: async ({ request, serverId }) => {

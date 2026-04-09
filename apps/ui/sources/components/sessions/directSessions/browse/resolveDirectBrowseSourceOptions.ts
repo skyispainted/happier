@@ -1,4 +1,4 @@
-import type { AccountProfile, DirectSessionsProviderId, DirectSessionsSource } from '@happier-dev/protocol';
+import type { AccountProfile, DirectSessionsProviderId, DirectSessionsSource } from '@ks-happier/protocol';
 
 import { AGENT_IDS, getAgentBehavior, getAgentCore, type AgentId } from '@/agents/catalog/catalog';
 import type { DirectBrowseLinkEnsureRequestExtras, DirectBrowseSourceOption } from '@/agents/registry/registryUiBehavior';

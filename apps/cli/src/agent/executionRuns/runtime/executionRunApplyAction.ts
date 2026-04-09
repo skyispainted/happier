@@ -4,7 +4,7 @@ import {
   ReviewFindingsV1Schema,
   ReviewFindingsV2Schema,
   ReviewFollowUpInputSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { ACPMessageData, ACPProvider } from '@/api/session/sessionMessageTypes';
 import { resolveExecutionRunIntentProfile } from '@/agent/executionRuns/profiles/intentRegistry';

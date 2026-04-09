@@ -5,7 +5,7 @@ import { homedir, tmpdir } from 'node:os';
 import { dirname, join, relative } from 'node:path';
 import net from 'node:net';
 
-import { commandExistsOnPath } from '@happier-dev/cli-common/process';
+import { commandExistsOnPath } from '@ks-happier/cli-common/process';
 import {
   applyServicePlan,
   buildServiceDefinition,
@@ -13,7 +13,7 @@ import {
   resolveServiceBackend,
   type ServiceMode,
   type ServiceSpec,
-} from '@happier-dev/cli-common/service';
+} from '@ks-happier/cli-common/service';
 import {
   checkRelayRuntimeHealth,
   extractReleasePayloadRootFromArchive,
@@ -22,11 +22,11 @@ import {
   resolveRelayRuntimeDefaults,
   type RelayRuntimeHealthResult,
   type RelayRuntimeNormalizedStatus,
-} from '@happier-dev/cli-common/firstPartyRuntime';
-import { resolveReleaseAssetBundle } from '@happier-dev/release-runtime/assets';
-import { fetchGitHubReleaseByTag } from '@happier-dev/release-runtime/github';
-import { DEFAULT_MINISIGN_PUBLIC_KEY } from '@happier-dev/release-runtime/minisign';
-import { downloadVerifiedReleaseAssetBundle } from '@happier-dev/release-runtime/verifiedDownload';
+} from '@ks-happier/cli-common/firstPartyRuntime';
+import { resolveReleaseAssetBundle } from '@ks-happier/release-runtime/assets';
+import { fetchGitHubReleaseByTag } from '@ks-happier/release-runtime/github';
+import { DEFAULT_MINISIGN_PUBLIC_KEY } from '@ks-happier/release-runtime/minisign';
+import { downloadVerifiedReleaseAssetBundle } from '@ks-happier/release-runtime/verifiedDownload';
 
 type RelayRuntimeTaskParams = Readonly<{
   platform?: NodeJS.Platform;

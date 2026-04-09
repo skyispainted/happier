@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { accountSettingsParse } from '@happier-dev/protocol';
+import { accountSettingsParse } from '@ks-happier/protocol';
 import { shouldSendReadyPushNotification } from '@/settings/notifications/notificationsPolicy';
 import { setActiveAccountSettingsSnapshot } from '@/settings/accountSettings/activeAccountSettingsSnapshot';
 

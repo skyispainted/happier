@@ -5,9 +5,9 @@ import { randomBytes } from 'node:crypto';
 
 import { describe, expect, it } from 'vitest';
 
-import { sealAccountScopedBlobCiphertext } from '@happier-dev/protocol';
+import { sealAccountScopedBlobCiphertext } from '@ks-happier/protocol';
 
-import { buildConnectedServiceCredentialRecord } from '@happier-dev/protocol';
+import { buildConnectedServiceCredentialRecord } from '@ks-happier/protocol';
 import type { Credentials } from '@/persistence';
 import type { ApiClient } from '@/api/api';
 import { resolveConnectedServiceAuthForSpawn } from './resolveConnectedServiceAuthForSpawn';

@@ -1,6 +1,6 @@
-import type { DaemonExecutionRunEntry } from '@happier-dev/protocol';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+import type { DaemonExecutionRunEntry } from '@ks-happier/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 import { machineRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedMachineRpc';
 

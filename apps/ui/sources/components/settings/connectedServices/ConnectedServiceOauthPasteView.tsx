@@ -23,7 +23,7 @@ import {
   ConnectedServiceIdSchema,
   encodeBase64,
   type ConnectedServiceId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { getConnectedServiceOauthAdapter } from '@/sync/domains/connectedServices/oauth/connectedServiceOauthAdapters';
 import { buildOauthRecordFromProxyPayload, parseConnectedServiceOauthProxyBundle } from '@/sync/domains/connectedServices/oauth/connectedServiceOauthProxyBundle';

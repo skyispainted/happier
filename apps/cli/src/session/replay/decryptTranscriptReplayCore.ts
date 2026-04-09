@@ -1,4 +1,4 @@
-import { SessionSynopsisV1Schema } from '@happier-dev/protocol';
+import { SessionSynopsisV1Schema } from '@ks-happier/protocol';
 
 import { decodeBase64, decrypt } from '@/api/encryption';
 

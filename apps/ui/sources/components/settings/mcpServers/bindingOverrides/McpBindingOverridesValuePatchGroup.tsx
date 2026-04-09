@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { useUnistyles } from 'react-native-unistyles';
 
-import type { McpValueRefV1 } from '@happier-dev/protocol';
-import { McpValueRefV1Schema } from '@happier-dev/protocol';
+import type { McpValueRefV1 } from '@ks-happier/protocol';
+import { McpValueRefV1Schema } from '@ks-happier/protocol';
 
 import { Item } from '@/components/ui/lists/Item';
 import { ItemGroup } from '@/components/ui/lists/ItemGroup';

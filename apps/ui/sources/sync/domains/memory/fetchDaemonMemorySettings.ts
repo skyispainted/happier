@@ -5,7 +5,7 @@ import {
     RPC_METHODS,
     readRpcErrorCode,
     type MemorySettingsV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { machineRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedMachineRpc';
 

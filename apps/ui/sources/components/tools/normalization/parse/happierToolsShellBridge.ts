@@ -1,7 +1,7 @@
 import {
     parseHappierToolsShellBridgeCommand,
     type HappierToolsShellBridgeCommand,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { extractShellCommand } from './shellCommand';
 

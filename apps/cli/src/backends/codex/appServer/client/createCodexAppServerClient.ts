@@ -2,8 +2,8 @@ import { spawn } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { appendFile } from 'node:fs/promises';
 
-import { expandHomeDirPath } from '@happier-dev/cli-common/providers';
-import { resolveWindowsCommandInvocation } from '@happier-dev/cli-common/process';
+import { expandHomeDirPath } from '@ks-happier/cli-common/providers';
+import { resolveWindowsCommandInvocation } from '@ks-happier/cli-common/process';
 
 import { resolveCodexCliInvocation } from '../../utils/resolveCodexCliInvocation';
 import { appendCodexCliConfigOverridesArgs } from '../../utils/appendCodexCliConfigOverridesArgs';

@@ -1,7 +1,7 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 
 import { profileDefaults } from '@/sync/domains/profiles/profile';
-import { sealAccountScopedBlobCiphertext } from '@happier-dev/protocol';
+import { sealAccountScopedBlobCiphertext } from '@ks-happier/protocol';
 
 vi.mock('expo-constants', () => ({
     default: {},

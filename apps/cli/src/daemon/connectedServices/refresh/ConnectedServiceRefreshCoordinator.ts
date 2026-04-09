@@ -4,7 +4,7 @@ import {
   sealConnectedServiceCredentialCiphertext,
   type ConnectedServiceCredentialRecordV1,
   type ConnectedServiceId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { randomBytes } from 'node:crypto';
 
 import type { ApiClient } from '@/api/api';

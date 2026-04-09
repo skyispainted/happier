@@ -29,7 +29,7 @@ function stripInternalBundledWorkspaceDependencies(value: any): any {
 
   const out: Record<string, unknown> = {};
   for (const [name, version] of Object.entries(value)) {
-    if (name.startsWith('@happier-dev/')) continue;
+    if (name.startsWith('@ks-happier/')) continue;
     out[name] = version;
   }
 
@@ -97,7 +97,7 @@ export function readBundledDependencyNames(rawPackageJson: any): string[] {
 }
 
 export function readBundledWorkspacePackageNames(rawPackageJson: any): string[] {
-  return readBundledDependencyNames(rawPackageJson).filter((packageName) => packageName.startsWith('@happier-dev/'));
+  return readBundledDependencyNames(rawPackageJson).filter((packageName) => packageName.startsWith('@ks-happier/'));
 }
 
 export function rmDirSafeSync(
@@ -327,10 +327,10 @@ function collectExternalRuntimeDepNamesFromPackageJson(packageJson: any): Readon
   const optionalDeps = packageJson?.optionalDependencies ?? {};
 
   const required = Object.keys(deps)
-    .filter((name) => typeof name === 'string' && !name.startsWith('@happier-dev/'))
+    .filter((name) => typeof name === 'string' && !name.startsWith('@ks-happier/'))
     .map((name) => ({ name, optional: false }));
   const optional = Object.keys(optionalDeps)
-    .filter((name) => typeof name === 'string' && !name.startsWith('@happier-dev/'))
+    .filter((name) => typeof name === 'string' && !name.startsWith('@ks-happier/'))
     .map((name) => ({ name, optional: true }));
 
   return [...required, ...optional];
@@ -452,7 +452,7 @@ export function vendorBundledPackageRuntimeDependencies(params: Readonly<{
   const destNodeModulesDir = resolve(params.destPackageDir, 'node_modules');
 
   // Vendoring is used while local dev daemons/sessions may already be importing from the
-  // bundled workspace copies under apps/*/node_modules/@happier-dev/*.
+  // bundled workspace copies under apps/*/node_modules/@ks-happier/*.
   //
   // Copying directly into the destination can produce transiently invalid package.json files
   // (and broken Node ESM resolution) if a reader observes a partially-copied dependency tree.

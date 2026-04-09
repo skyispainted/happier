@@ -6,7 +6,7 @@ import type { AgentInputExtraActionChip } from '@/components/sessions/agentInput
 import { createConnectedServicesAuthActionChip } from '@/components/sessions/agentInput/definitions/createConnectedServicesAuthActionChip';
 import { useFeatureEnabled } from '@/hooks/server/useFeatureEnabled';
 import { useProfile } from '@/sync/store/hooks';
-import type { ConnectedServiceId } from '@happier-dev/agents';
+import type { ConnectedServiceId } from '@ks-happier/agents';
 
 import {
   ConnectedServicesAuthModal,

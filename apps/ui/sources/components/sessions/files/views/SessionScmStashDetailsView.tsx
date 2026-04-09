@@ -22,7 +22,7 @@ import { t } from '@/text';
 import { toTestIdSafeValue } from '@/utils/ui/toTestIdSafeValue';
 import { useScmReviewViewabilityConfig } from '@/scm/review/useScmReviewViewabilityConfig';
 
-import type { ScmStashEntry } from '@happier-dev/protocol';
+import type { ScmStashEntry } from '@ks-happier/protocol';
 import {
     isManagedStashTransientErrorCode,
     resolveManagedStashRetryDelayMs,

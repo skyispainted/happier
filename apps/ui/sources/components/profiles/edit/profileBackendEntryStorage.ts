@@ -1,4 +1,4 @@
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 
 import type { AIBackendProfile } from '@/sync/domains/profiles/profileCompatibility';
 import type { ResolvedBackendCatalogEntry } from '@/agents/backendCatalog/getResolvedBackendCatalogEntries';

@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 
-import type { ScmBackendPreference } from '@happier-dev/protocol';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+import type { ScmBackendPreference } from '@ks-happier/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 
 import { defaultScmBackendRegistry } from '@/scm/defaultRegistry';
 import type { ScmBackendRegistry } from '@/scm/registry';

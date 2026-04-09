@@ -1,4 +1,4 @@
-import { getAgentAuthProbeConfig, type AgentId } from '@happier-dev/agents';
+import { getAgentAuthProbeConfig, type AgentId } from '@ks-happier/agents';
 
 import type { CliDetectSpec } from '@/backends/types';
 

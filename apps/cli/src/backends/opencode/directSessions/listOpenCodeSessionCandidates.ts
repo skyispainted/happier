@@ -1,5 +1,5 @@
-import { buildOpenCodeAgentRuntimeDescriptor } from '@happier-dev/agents';
-import type { DirectSessionCandidateV1, DirectSessionsSource } from '@happier-dev/protocol';
+import { buildOpenCodeAgentRuntimeDescriptor } from '@ks-happier/agents';
+import type { DirectSessionCandidateV1, DirectSessionsSource } from '@ks-happier/protocol';
 
 import { deriveDirectSessionActivityFromTimestamp } from '@/api/directSessions/activity/deriveDirectSessionActivityFromTimestamp';
 

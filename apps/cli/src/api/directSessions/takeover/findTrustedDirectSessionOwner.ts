@@ -1,4 +1,4 @@
-import type { DirectSessionsProviderId } from '@happier-dev/protocol';
+import type { DirectSessionsProviderId } from '@ks-happier/protocol';
 
 import type { DaemonSessionMarker } from '@/daemon/sessionRegistry';
 

@@ -1,5 +1,5 @@
-export type { ConnectedServiceId } from '@happier-dev/protocol';
-import { SESSION_PERMISSION_MODES, type ConnectedServiceId } from '@happier-dev/protocol';
+export type { ConnectedServiceId } from '@ks-happier/protocol';
+import { SESSION_PERMISSION_MODES, type ConnectedServiceId } from '@ks-happier/protocol';
 import type { AnyAgentRuntimeKindsManifest } from './runtimeKinds.js';
 
 export const AGENT_IDS = ['claude', 'codex', 'opencode', 'gemini', 'auggie', 'qwen', 'kimi', 'kilo', 'kiro', 'customAcp', 'pi', 'copilot'] as const;

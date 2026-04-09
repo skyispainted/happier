@@ -9,7 +9,7 @@ import { t } from '@/text';
 import { sync } from '@/sync/sync';
 import { storeConnectedServiceCredentialForAccount } from '@/sync/domains/connectedServices/storeConnectedServiceCredentialForAccount';
 import { getConnectedServiceRegistryEntry } from '@/sync/domains/connectedServices/connectedServiceRegistry';
-import { ConnectedServiceCredentialRecordV1Schema, ConnectedServiceIdSchema, type ConnectedServiceCredentialRecordV1, type ConnectedServiceId } from '@happier-dev/protocol';
+import { ConnectedServiceCredentialRecordV1Schema, ConnectedServiceIdSchema, type ConnectedServiceCredentialRecordV1, type ConnectedServiceId } from '@ks-happier/protocol';
 import { useFeatureEnabled } from '@/hooks/server/useFeatureEnabled';
 import { fireAndForget } from '@/utils/system/fireAndForget';
 

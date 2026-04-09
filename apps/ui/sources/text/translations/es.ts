@@ -7215,7 +7215,7 @@ settingsSession: {
     detectedCliDetected: "Detectado",
     detectedCliNotDetected: "No detectado",
     detectedCliUnknown: "Desconocido",
-    detectedCliNotSupported: "No compatible (actualiza @happier-dev/cli)",
+    detectedCliNotSupported: "No compatible (actualiza @ks-happier/cli)",
     untitledSession: "Sesión sin título",
     back: "Atrás",
     notFound: "Máquina no encontrada",

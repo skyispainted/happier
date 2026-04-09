@@ -7,7 +7,7 @@ import {
     BOX_BUNDLE_PUBLIC_KEY_BYTES,
     type ConnectedServiceId,
     CONNECTED_SERVICE_ERROR_CODES,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 import { parseIntEnv } from "@/config/env";
 import { assertNonEmptyString } from "./connectValueParsers";
 import { extractOpenAiCodexAccountId } from "./openaiCodex/openaiCodexIdTokenClaims";

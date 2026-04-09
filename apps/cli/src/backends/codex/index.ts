@@ -1,6 +1,6 @@
-import { AGENTS_CORE } from '@happier-dev/agents';
-import { resolveCodexSessionBackendMode } from '@happier-dev/agents';
-import { INSTALLABLE_KEYS } from '@happier-dev/protocol';
+import { AGENTS_CORE } from '@ks-happier/agents';
+import { resolveCodexSessionBackendMode } from '@ks-happier/agents';
+import { INSTALLABLE_KEYS } from '@ks-happier/protocol';
 
 import { checklists } from './cli/checklists';
 import { supportsCodexVendorResume } from './resume/vendorResumeSupport';

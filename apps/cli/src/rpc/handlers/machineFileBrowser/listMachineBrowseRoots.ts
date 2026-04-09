@@ -1,4 +1,4 @@
-import type { MachineFileBrowserRoot, DaemonFilesystemListRootsResponse } from '@happier-dev/protocol'
+import type { MachineFileBrowserRoot, DaemonFilesystemListRootsResponse } from '@ks-happier/protocol'
 
 export async function listMachineBrowseRoots(input: Readonly<{
   resolveRoots: () => Promise<MachineFileBrowserRoot[]>

@@ -1,6 +1,6 @@
 import type { TerminalSpawnOptions } from '@/sync/domains/settings/terminalSettings';
 import type { PermissionMode } from '@/sync/domains/permissions/permissionTypes';
-import { buildCodexAgentRuntimeDescriptor, type CodexBackendMode } from '@happier-dev/agents';
+import { buildCodexAgentRuntimeDescriptor, type CodexBackendMode } from '@ks-happier/agents';
 import {
     isVersionSupported,
     MINIMUM_CLI_BACKEND_TARGET_SPAWN_VERSION,
@@ -11,7 +11,7 @@ import type {
     BackendTargetRefV1,
     SessionMcpSelectionV1,
     WindowsRemoteSessionLaunchMode,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { buildCodexBackendTransportFields, type CodexBackendTransportFields } from '../codexBackendTransport';
 

@@ -1,4 +1,4 @@
-import { getAgentLocalControlCapability, type AgentId } from '@happier-dev/agents';
+import { getAgentLocalControlCapability, type AgentId } from '@ks-happier/agents';
 
 import { getProviderAttachOps } from '@/backends/catalog';
 import { configuration } from '@/configuration';

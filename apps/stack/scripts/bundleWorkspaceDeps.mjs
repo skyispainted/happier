@@ -42,7 +42,7 @@ async function loadCliCommonWorkspacesModule(repoRoot) {
       const stackDir = resolve(repoRoot, 'apps', 'stack');
       await ensureWorkspacePackagesBuiltForComponent(stackDir, { quiet: true, env: process.env });
       if (!existsSync(modulePath)) {
-        execFileSync('yarn', ['-s', 'workspace', '@happier-dev/cli-common', 'build'], {
+        execFileSync('yarn', ['-s', 'workspace', '@ks-happier/cli-common', 'build'], {
           cwd: repoRoot,
           stdio: 'inherit',
         });
@@ -51,7 +51,7 @@ async function loadCliCommonWorkspacesModule(repoRoot) {
   }
 
   if (!existsSync(modulePath)) {
-    throw new Error('Missing dist/ for @happier-dev/cli-common');
+    throw new Error('Missing dist/ for @ks-happier/cli-common');
   }
 
   return await import(pathToFileURL(modulePath).href);

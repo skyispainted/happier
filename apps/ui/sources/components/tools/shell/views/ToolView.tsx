@@ -30,7 +30,7 @@ import { useEnsureSidechainsLoaded } from '@/hooks/session/useEnsureSidechainsLo
 import { resolveToolTranscriptSidechainId } from './resolveToolTranscriptSidechainId';
 import { buildToolCallMessageRouteId } from '@/sync/domains/messages/messageRouteIds';
 import { Typography } from '@/constants/Typography';
-import { isGenericSubAgentToolName, isSubAgentTranscriptToolName } from '@happier-dev/protocol/tools/v2';
+import { isGenericSubAgentToolName, isSubAgentTranscriptToolName } from '@ks-happier/protocol/tools/v2';
 import { resolveInactiveSessionToolCallFailure } from '../permissions/resolveInactiveSessionToolCallFailure';
 
 

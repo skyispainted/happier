@@ -1,4 +1,4 @@
-import type { FeaturesResponse as RootLayoutFeatures } from '@happier-dev/protocol';
+import type { FeaturesResponse as RootLayoutFeatures } from '@ks-happier/protocol';
 
 type RootLayoutFeaturesOverrides = Omit<Partial<RootLayoutFeatures>, 'features' | 'capabilities'> & Readonly<{
     features?: Omit<

@@ -2,7 +2,7 @@ import { logger } from '@/ui/logger';
 import type { RpcHandlerRegistrar } from '@/api/rpc/types';
 import { run as runDifftastic } from '@/integrations/difftastic/index';
 import { validatePath } from './pathSecurity';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 interface DifftasticRequest {
     args: string[];

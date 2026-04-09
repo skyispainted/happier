@@ -2,7 +2,7 @@ import type { Metadata } from '@/api/types';
 import { configuration } from '@/configuration';
 import { logger } from '@/ui/logger';
 
-import { inferAgentIdFromSessionMetadata, resolveVendorResumeIdFromSessionMetadata } from '@happier-dev/agents';
+import { inferAgentIdFromSessionMetadata, resolveVendorResumeIdFromSessionMetadata } from '@ks-happier/agents';
 import { execFileSync } from 'node:child_process';
 import { expandHomeDirPath } from '@/utils/path/expandHomeDirPath';
 

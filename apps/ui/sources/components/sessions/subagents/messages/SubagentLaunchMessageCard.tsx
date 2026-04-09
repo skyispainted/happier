@@ -3,7 +3,7 @@ import React from 'react';
 import type { Message } from '@/sync/domains/messages/messageTypes';
 import { readStructuredUserMessageText } from '@/components/sessions/transcript/structured/readStructuredUserMessageText';
 import { t } from '@/text';
-import type { SubagentLaunchV1 } from '@happier-dev/protocol';
+import type { SubagentLaunchV1 } from '@ks-happier/protocol';
 
 import { SubagentStructuredMessageCard } from './SubagentStructuredMessageCard';
 

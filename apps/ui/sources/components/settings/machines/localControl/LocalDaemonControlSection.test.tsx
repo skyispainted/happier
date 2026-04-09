@@ -95,7 +95,7 @@ describe('LocalDaemonControlSection', () => {
 
     it('loads daemon status on mount and starts the local daemon service from the control row', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const listeners = new Map<string, {
@@ -158,7 +158,7 @@ describe('LocalDaemonControlSection', () => {
 
     it('starts the canonical background-service repair task against the active relay', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const starts: unknown[] = [];

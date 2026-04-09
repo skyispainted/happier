@@ -3,7 +3,7 @@ import { act } from 'react-test-renderer';
 import { describe, expect, it } from 'vitest';
 import { flushHookEffects, renderHook } from '@/dev/testkit';
 
-import type { ParticipantRecipientV1 } from '@happier-dev/protocol';
+import type { ParticipantRecipientV1 } from '@ks-happier/protocol';
 
 import type { SessionParticipantTarget } from '@/sync/domains/session/participants/participantTargets';
 

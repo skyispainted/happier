@@ -7,7 +7,7 @@ import type { DecryptedArtifact } from '@/sync/domains/artifacts/artifactTypes';
 import { getAgentCore, resolveAgentIdFromFlavor } from '@/agents/catalog/catalog';
 import { resolveSentFrom } from '@/sync/domains/messages/sentFrom';
 import { buildSendMessageMeta } from '@/sync/domains/messages/buildSendMessageMeta';
-import { SessionStoredMessageContentSchema, type SessionStoredMessageContent } from '@happier-dev/protocol';
+import { SessionStoredMessageContentSchema, type SessionStoredMessageContent } from '@ks-happier/protocol';
 import { t } from '@/text';
 
 type PendingStatus = 'queued' | 'discarded';

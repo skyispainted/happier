@@ -1,7 +1,7 @@
 import type {
     AcpBackendAuthConfigV1,
     AcpCatalogTransportProfileV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 type TransportProfileInput = Readonly<{
     command: string;

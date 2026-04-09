@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { PromptRegistryFetchedItemV1Schema } from '@happier-dev/protocol';
+import { PromptRegistryFetchedItemV1Schema } from '@ks-happier/protocol';
 
 import type { PromptRegistryRegistry } from '@/promptRegistries/createPromptRegistryAdapterRegistry';
 import { reloadConfiguration } from '@/configuration';

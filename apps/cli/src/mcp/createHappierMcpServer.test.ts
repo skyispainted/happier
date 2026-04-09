@@ -34,8 +34,8 @@ describe('createHappierMcpServer', () => {
   it('forwards execution.run.list request payloads through the shared action executor deps', async () => {
     const captured: { deps?: any } = {};
 
-    vi.doMock('@happier-dev/protocol', async (importOriginal) => {
-      const actual = await importOriginal<typeof import('@happier-dev/protocol')>();
+    vi.doMock('@ks-happier/protocol', async (importOriginal) => {
+      const actual = await importOriginal<typeof import('@ks-happier/protocol')>();
       return {
         ...actual,
         createActionExecutor: (deps: any) => {
@@ -63,8 +63,8 @@ describe('createHappierMcpServer', () => {
   it('prefers the session execution-run service when the client provides one', async () => {
     const captured: { deps?: any } = {};
 
-    vi.doMock('@happier-dev/protocol', async (importOriginal) => {
-      const actual = await importOriginal<typeof import('@happier-dev/protocol')>();
+    vi.doMock('@ks-happier/protocol', async (importOriginal) => {
+      const actual = await importOriginal<typeof import('@ks-happier/protocol')>();
       return {
         ...actual,
         createActionExecutor: (deps: any) => {
@@ -102,8 +102,8 @@ describe('createHappierMcpServer', () => {
   it('treats raw local execution-run rpc error payloads as errors in the fallback bridge', async () => {
     const captured: { deps?: any } = {};
 
-    vi.doMock('@happier-dev/protocol', async (importOriginal) => {
-      const actual = await importOriginal<typeof import('@happier-dev/protocol')>();
+    vi.doMock('@ks-happier/protocol', async (importOriginal) => {
+      const actual = await importOriginal<typeof import('@ks-happier/protocol')>();
       return {
         ...actual,
         createActionExecutor: (deps: any) => {
@@ -137,8 +137,8 @@ describe('createHappierMcpServer', () => {
   it('forwards prompt_registry.install through the shared action executor deps', async () => {
     const captured: { deps?: any } = {};
 
-    vi.doMock('@happier-dev/protocol', async (importOriginal) => {
-      const actual = await importOriginal<typeof import('@happier-dev/protocol')>();
+    vi.doMock('@ks-happier/protocol', async (importOriginal) => {
+      const actual = await importOriginal<typeof import('@ks-happier/protocol')>();
       return {
         ...actual,
         createActionExecutor: (deps: any) => {
@@ -192,8 +192,8 @@ describe('createHappierMcpServer', () => {
   it('routes session control deps through the shared CLI action deps (not unsupported stubs)', async () => {
     const captured: { deps?: any } = {};
 
-    vi.doMock('@happier-dev/protocol', async (importOriginal) => {
-      const actual = await importOriginal<typeof import('@happier-dev/protocol')>();
+    vi.doMock('@ks-happier/protocol', async (importOriginal) => {
+      const actual = await importOriginal<typeof import('@ks-happier/protocol')>();
       return {
         ...actual,
         createActionExecutor: (deps: any) => {

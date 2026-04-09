@@ -1,5 +1,5 @@
 {
-  "name": "@happier-dev/cli-common",
+  "name": "@ks-happier/cli-common",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -71,7 +71,7 @@
     "test": "yarn -s build && node ../../node_modules/vitest/vitest.mjs run --config vitest.config.ts"
   },
   "dependencies": {
-    "@happier-dev/agents": "0.0.0",
-    "@happier-dev/release-runtime": "0.0.0"
+    "@ks-happier/agents": "0.0.0",
+    "@ks-happier/release-runtime": "0.0.0"
   }
 }

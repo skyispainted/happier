@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 
-import type { ExecutionRunStatus } from '@happier-dev/protocol';
+import type { ExecutionRunStatus } from '@ks-happier/protocol';
 import { Text } from '@/components/ui/text/Text';
 
 

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useUnistyles } from 'react-native-unistyles';
-import { buildBackendTargetKey, type BackendTargetRefV1, isBuiltInAgentTarget } from '@happier-dev/protocol';
+import { buildBackendTargetKey, type BackendTargetRefV1, isBuiltInAgentTarget } from '@ks-happier/protocol';
 
 import { getAgentCore, isAgentId, type AgentId } from '@/agents/catalog/catalog';
 import { listProviderSubagentSettingsSections } from '@/agents/providers/registry/providerSubagentSettingsRegistry';

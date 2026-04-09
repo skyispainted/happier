@@ -11,7 +11,7 @@ import {
   TransferChunkEnvelopeSchema,
   TransferEndpointCandidateSchema,
   type TransferEndpointCandidate,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { z } from 'zod';
 import {
   createEncryptedTransferChunkEnvelope,

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
-import { getActionSpec, resolveEffectiveActionInputFields, type ActionId } from '@happier-dev/protocol';
+import { getActionSpec, resolveEffectiveActionInputFields, type ActionId } from '@ks-happier/protocol';
 
 import { Text } from '@/components/ui/text/Text';
 import { t } from '@/text';

@@ -1,4 +1,4 @@
-import { getAgentModelConfig } from '@happier-dev/agents';
+import { getAgentModelConfig } from '@ks-happier/agents';
 
 export function getSuggestedGeminiModelsForUi(): string[] {
   const cfg = getAgentModelConfig('gemini');

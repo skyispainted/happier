@@ -18,9 +18,9 @@ async function createSourceCliFixture(t) {
   await mkdir(join(repoRoot, 'apps', 'cli', 'dist'), { recursive: true });
   await mkdir(join(repoRoot, 'apps', 'ui'), { recursive: true });
   await mkdir(join(repoRoot, 'apps', 'server'), { recursive: true });
-  await writeFile(join(repoRoot, 'apps', 'cli', 'package.json'), '{ "name": "@happier-dev/cli" }\n', 'utf8');
-  await writeFile(join(repoRoot, 'apps', 'ui', 'package.json'), '{ "name": "@happier-dev/app" }\n', 'utf8');
-  await writeFile(join(repoRoot, 'apps', 'server', 'package.json'), '{ "name": "@happier-dev/server" }\n', 'utf8');
+  await writeFile(join(repoRoot, 'apps', 'cli', 'package.json'), '{ "name": "@ks-happier/cli" }\n', 'utf8');
+  await writeFile(join(repoRoot, 'apps', 'ui', 'package.json'), '{ "name": "@ks-happier/app" }\n', 'utf8');
+  await writeFile(join(repoRoot, 'apps', 'server', 'package.json'), '{ "name": "@ks-happier/server" }\n', 'utf8');
   await writeFile(
     join(repoRoot, 'apps', 'cli', 'dist', 'index.mjs'),
     'process.stdout.write(JSON.stringify(process.argv.slice(2)) + "\\n");\n',

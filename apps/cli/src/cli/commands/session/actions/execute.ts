@@ -5,7 +5,7 @@ import { createCliActionExecutor } from '@/session/actions/createCliActionExecut
 import { resolveSessionTransportContext } from '@/session/services/resolveSessionTransportContext';
 import { wantsJson, printJsonEnvelope } from '@/cli/output/jsonEnvelope';
 import { readFlagValue } from '@/cli/commands/shared/argvFlags';
-import type { ActionId } from '@happier-dev/protocol';
+import type { ActionId } from '@ks-happier/protocol';
 
 function parseInputJsonOrThrow(raw: string | null): unknown {
   const trimmed = (raw ?? '').trim();

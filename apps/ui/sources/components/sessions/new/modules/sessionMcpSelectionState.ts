@@ -2,8 +2,8 @@ import type {
     DaemonMcpServersPreviewResponse,
     ManagedMcpPreviewEntryV1,
     SessionMcpSelectionV1,
-} from '@happier-dev/protocol';
-import { SessionMcpSelectionV1Schema } from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
+import { SessionMcpSelectionV1Schema } from '@ks-happier/protocol';
 
 type PreviewSuccess = Extract<DaemonMcpServersPreviewResponse, { ok: true }>;
 

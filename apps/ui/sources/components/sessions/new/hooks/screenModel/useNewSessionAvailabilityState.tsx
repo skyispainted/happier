@@ -32,7 +32,7 @@ import { resolveTerminalSpawnOptions } from '@/sync/domains/settings/terminalSet
 import { isMachineOnline } from '@/utils/sessions/machineUtils';
 import type { Machine } from '@/sync/domains/state/storageTypes';
 import type { Settings } from '@/sync/domains/settings/settings';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 
 type ProfileAvailability = Readonly<{ available: boolean; reason?: string }>;
 

@@ -6,7 +6,7 @@ import {
   deriveAccountMachineKeyFromRecoverySecret,
   deriveSettingsSecretsKeyV1,
   encryptSecretStringV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 function makeCredentials(): Credentials {
   return {

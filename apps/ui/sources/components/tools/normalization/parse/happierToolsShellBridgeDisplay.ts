@@ -1,4 +1,4 @@
-import type { HappierToolsShellBridgeCommand } from '@happier-dev/protocol';
+import type { HappierToolsShellBridgeCommand } from '@ks-happier/protocol';
 
 export function getHappierToolsShellBridgeDisplay(command: HappierToolsShellBridgeCommand): {
     titleCommand: string;

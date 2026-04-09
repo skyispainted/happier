@@ -8,7 +8,7 @@ import { createDefaultActionExecutor } from '@/sync/ops/actions/defaultActionExe
 import { storage } from '@/sync/domains/state/storage';
 import { resolveServerIdForSessionIdFromLocalCache } from '@/sync/runtime/orchestration/serverScopedRpc/resolveServerIdForSessionIdFromLocalCache';
 import { t } from '@/text';
-import type { SessionRollbackTarget } from '@happier-dev/protocol';
+import type { SessionRollbackTarget } from '@ks-happier/protocol';
 
 export const TranscriptRollbackActionButton = React.memo((props: {
     sessionId: string;

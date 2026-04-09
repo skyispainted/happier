@@ -4,8 +4,8 @@ import { isMachineOnline } from '@/utils/sessions/machineUtils';
 import { useDaemonScopedMachineCapabilitiesCache } from '@/hooks/server/useDaemonScopedMachineCapabilitiesCache';
 import type { CapabilityDetectResult, CliAuthStatusData, CliCapabilityData, TmuxCapabilityData } from '@/sync/api/capabilities/capabilitiesProtocol';
 import { AGENT_IDS, type AgentId, getAgentCore } from '@/agents/catalog/catalog';
-import { isAgentAuthProbeSafeForBackgroundChecks } from '@happier-dev/agents';
-import { CHECKLIST_IDS } from '@happier-dev/protocol/checklists';
+import { isAgentAuthProbeSafeForBackgroundChecks } from '@ks-happier/agents';
+import { CHECKLIST_IDS } from '@ks-happier/protocol/checklists';
 import { stableJsonStringify } from '@/utils/json/stableJsonStringify';
 
 export type CLIAvailability = Readonly<{

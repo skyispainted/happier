@@ -3,7 +3,7 @@ import { mkdir, readdir, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
 
-import { planArchiveExtraction } from '@happier-dev/release-runtime';
+import { planArchiveExtraction } from '@ks-happier/release-runtime';
 
 const execFileAsync = promisify(execFile);
 

@@ -1,4 +1,4 @@
-import type { AcpBackendDefinitionV1, AcpCatalogSettingsV1 } from '@happier-dev/protocol';
+import type { AcpBackendDefinitionV1, AcpCatalogSettingsV1 } from '@ks-happier/protocol';
 
 function hasDuplicateBackendId(settings: AcpCatalogSettingsV1, id: string): boolean {
     return settings.backends.some((backend) => backend.id === id);

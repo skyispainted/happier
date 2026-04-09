@@ -3,8 +3,8 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { MemoryStatusV1Schema } from '@happier-dev/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { MemoryStatusV1Schema } from '@ks-happier/protocol';
 
 import { registerMachineMemoryRpcHandlers } from './rpcHandlers.memory';
 

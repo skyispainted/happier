@@ -7,7 +7,7 @@ import { RoundButton } from '@/components/ui/buttons/RoundButton';
 import { Text } from '@/components/ui/text/Text';
 import { Typography } from '@/constants/Typography';
 import { t } from '@/text';
-import { RPC_ERROR_MESSAGES } from '@happier-dev/protocol/rpc';
+import { RPC_ERROR_MESSAGES } from '@ks-happier/protocol/rpc';
 
 function sanitizeDetails(details: string | null): string | null {
     if (!details) return null;

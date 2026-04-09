@@ -8,7 +8,7 @@ import {
   StoredJsonContentEnvelopeSchema,
   type ConnectedServiceCredentialRecordV1,
   type ConnectedServiceId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 function extractErrorCode(json: unknown): string | null {
   if (!json || typeof json !== 'object') return null;

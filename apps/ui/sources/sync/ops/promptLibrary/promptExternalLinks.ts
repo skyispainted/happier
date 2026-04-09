@@ -1,4 +1,4 @@
-import type { PromptExternalLinkEntryV1, PromptExternalLinksV1 } from '@happier-dev/protocol';
+import type { PromptExternalLinkEntryV1, PromptExternalLinksV1 } from '@ks-happier/protocol';
 
 export function findPromptExternalLink(
   links: PromptExternalLinksV1 | null | undefined,

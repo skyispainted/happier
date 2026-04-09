@@ -4,7 +4,7 @@ import { resolveSessionPendingOwnerAccess } from "@/app/session/pending/resolveS
 import { inTx, type Tx } from "@/storage/inTx";
 import { db } from "@/storage/db";
 import { readEncryptionFeatureEnv } from "@/app/features/catalog/readFeatureEnv";
-import { isStoredContentKindAllowedForSessionByStoragePolicy, type SessionStoredContentKind } from "@happier-dev/protocol";
+import { isStoredContentKindAllowedForSessionByStoragePolicy, type SessionStoredContentKind } from "@ks-happier/protocol";
 import { didSessionActivityBadgeContributionChange } from "@/app/activity/accountActivityBadge";
 
 type ParticipantCursor = SessionParticipantCursor;

@@ -12,7 +12,7 @@ import {
     type AgentToolsDelivery,
     type AgentToolsSupportLevel,
     type VendorResumeIdField,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 import { CLAUDE_CORE } from '@/agents/providers/claude/core';
 import { CODEX_CORE } from '@/agents/providers/codex/core';
@@ -132,7 +132,7 @@ export type AgentCoreConfig = Readonly<{
     /**
      * Model selection capabilities and static suggestions.
      *
-     * Source of truth lives in `@happier-dev/agents` so CLI + UI don’t drift.
+     * Source of truth lives in `@ks-happier/agents` so CLI + UI don’t drift.
      * UI may still prefer dynamic ACP lists (`metadata.acpSessionModelsV1`) when present.
      */
     model: AgentModelConfig;

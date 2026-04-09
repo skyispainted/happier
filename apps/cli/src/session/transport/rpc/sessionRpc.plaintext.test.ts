@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
-import { readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
+import { readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 let nextRpcAck: any = null;
 

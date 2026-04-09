@@ -6,7 +6,7 @@ import {
   encodeBase64,
   sealBoxBundle,
   type ConnectedServiceId,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 
 import { assertNonEmptyString } from "../connectValueParsers";
 import { extractOpenAiCodexAccountId } from "./openaiCodexIdTokenClaims";

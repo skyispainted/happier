@@ -1,6 +1,6 @@
 import type { AcpPermissionHandler } from '@/agent/acp/AcpBackend';
 import { isDefaultWriteLikeToolName } from '@/agent/permissions/writeLikeToolNameHeuristics';
-import { isChangeTitleToolLikeName } from '@happier-dev/protocol/tools/v2';
+import { isChangeTitleToolLikeName } from '@ks-happier/protocol/tools/v2';
 
 import { permissionModeForExecutionRunPolicy } from '@/agent/executionRuns/policy/permissionModeForExecutionRunPolicy';
 

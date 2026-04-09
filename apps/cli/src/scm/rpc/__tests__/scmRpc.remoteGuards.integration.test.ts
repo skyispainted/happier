@@ -3,8 +3,8 @@ import { mkdtempSync, readFileSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
 
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 import { createTestRpcManager, runGit as git } from './testRpcHarness';
 
 describe('git RPC handlers', () => {

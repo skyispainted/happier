@@ -1,4 +1,4 @@
-import { PUSH_NOTIFICATION_ACTION_IDS } from '@happier-dev/protocol';
+import { PUSH_NOTIFICATION_ACTION_IDS } from '@ks-happier/protocol';
 
 import { normalizeServerUrl } from '@/sync/domains/server/activeServerSwitch';
 import { coerceRelativeRoute } from '@/utils/path/routeUtils';

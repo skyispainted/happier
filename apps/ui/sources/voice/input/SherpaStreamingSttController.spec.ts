@@ -27,7 +27,7 @@ let audioFrameListener: AudioFrameListener | null = null;
 const audioStreamStart = vi.fn(async () => ({ streamId: 'stream-1' }));
 const audioStreamStop = vi.fn(async () => {});
 
-vi.mock('@happier-dev/audio-stream-native', () => ({
+vi.mock('@ks-happier/audio-stream-native', () => ({
   getOptionalHappierAudioStreamNativeModule: () => ({
     start: audioStreamStart,
     stop: audioStreamStop,
@@ -49,7 +49,7 @@ const sherpaStreamingPushFrame = vi.fn((params: any) => {
   });
 });
 
-vi.mock('@happier-dev/sherpa-native', () => ({
+vi.mock('@ks-happier/sherpa-native', () => ({
   getOptionalHappierSherpaNativeModule: () => ({
     createStreamingRecognizer: sherpaStreamingCreate,
     pushAudioFrame: sherpaStreamingPushFrame,

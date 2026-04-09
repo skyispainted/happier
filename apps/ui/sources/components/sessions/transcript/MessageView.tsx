@@ -40,7 +40,7 @@ import { readMachineTargetForSession } from '@/sync/ops/sessionMachineTarget';
 import { useFeatureEnabled } from '@/hooks/server/useFeatureEnabled';
 import { resolveServerIdForSessionIdFromLocalCache } from '@/sync/runtime/orchestration/serverScopedRpc/resolveServerIdForSessionIdFromLocalCache';
 import { getImageMimeTypeFromPath } from '@/scm/utils/filePresentation';
-import { normalizeVoiceAgentTurnTranscriptText } from '@happier-dev/agents';
+import { normalizeVoiceAgentTurnTranscriptText } from '@ks-happier/agents';
 import { TranscriptRollbackActionButton } from '@/components/sessions/transcript/TranscriptRollbackActionButton';
 import type { TranscriptRollbackAction } from '@/sync/domains/sessionRollback/rollbackUiSupport';
 import { createDefaultActionExecutor } from '@/sync/ops/actions/defaultActionExecutor';

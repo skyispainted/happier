@@ -3,7 +3,7 @@ import { tmpdir } from 'os';
 import { join } from 'path';
 
 import { describe, expect, it, vi } from 'vitest';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 
 import { runScmRoute } from './dispatch';
 

@@ -619,7 +619,7 @@ async function main() {
           // eslint-disable-next-line no-console
           console.warn(`[review-pr] tip: inspect stack wiring with:`);
           // eslint-disable-next-line no-console
-          console.warn(`  npx --yes -p @happier-dev/stack hstack --sandbox-dir "${sandboxDir}" stack info ${effectiveStackName}`);
+          console.warn(`  npx --yes -p @ks-happier/stack hstack --sandbox-dir "${sandboxDir}" stack info ${effectiveStackName}`);
         }
       } else {
         await rm(markerPath, { force: false });

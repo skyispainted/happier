@@ -16,7 +16,7 @@ import { useProfile, useSettings } from '@/sync/store/hooks';
 import { useApplySettings } from '@/sync/store/settingsWriters';
 import { deleteConnectedServiceCredentialForAccount } from '@/sync/domains/connectedServices/storeConnectedServiceCredentialForAccount';
 import { connectedServiceProfileKey, resolveConnectedServiceProfileLabel } from '@/sync/domains/connectedServices/connectedServiceProfilePreferences';
-import { ConnectedServiceIdSchema, type ConnectedServiceId } from '@happier-dev/protocol';
+import { ConnectedServiceIdSchema, type ConnectedServiceId } from '@ks-happier/protocol';
 import { useFeatureEnabled } from '@/hooks/server/useFeatureEnabled';
 
 import { ConnectedServiceQuotaCard } from '../ConnectedServiceQuotaCard';

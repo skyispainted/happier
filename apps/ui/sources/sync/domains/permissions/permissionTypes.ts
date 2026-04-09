@@ -1,8 +1,8 @@
-import type { PermissionMode, PermissionModeGroupId as SharedPermissionModeGroupId } from '@happier-dev/agents';
-import { PERMISSION_MODES } from '@happier-dev/agents';
-import { parsePermissionIntentAlias } from '@happier-dev/agents';
+import type { PermissionMode, PermissionModeGroupId as SharedPermissionModeGroupId } from '@ks-happier/agents';
+import { PERMISSION_MODES } from '@ks-happier/agents';
+import { parsePermissionIntentAlias } from '@ks-happier/agents';
 
-export type { PermissionMode } from '@happier-dev/agents';
+export type { PermissionMode } from '@ks-happier/agents';
 
 // We keep the user-facing intents consistent across agents. Providers that cannot enforce
 // certain intents (e.g. Claude "read-only") are handled via effective-policy mapping.

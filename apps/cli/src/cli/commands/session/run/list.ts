@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import type { Credentials } from '@/persistence';
 import {
   ExecutionRunStatusSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { wantsJson, printJsonEnvelope } from '@/cli/output/jsonEnvelope';
 import { readFlagValue, readIntFlagValue } from '@/cli/commands/shared/argvFlags';

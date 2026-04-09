@@ -10,7 +10,7 @@ import {
     AccountEncryptionMigrateConflictResponseSchema,
     AccountEncryptionMigrateInternalResponseSchema,
     AccountEncryptionMigrateInvalidParamsReasonSchema,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 import { storePlainAccountSettingsDbValue } from "@/app/encryption/accountSettingsStorage";
 import * as privacyKit from "privacy-kit";
 import tweetnacl from "tweetnacl";

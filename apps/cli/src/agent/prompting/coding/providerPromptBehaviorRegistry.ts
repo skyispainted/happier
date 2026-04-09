@@ -1,4 +1,4 @@
-import type { PromptBlockV1 } from '@happier-dev/protocol';
+import type { PromptBlockV1 } from '@ks-happier/protocol';
 
 import { trimIdent } from '@/utils/trimIdent';
 

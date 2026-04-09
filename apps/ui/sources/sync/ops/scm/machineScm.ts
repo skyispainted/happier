@@ -41,10 +41,10 @@ import type {
     ScmWorktreePruneResponse,
     ScmWorktreeRemoveRequest,
     ScmWorktreeRemoveResponse,
-} from '@happier-dev/protocol';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
-import { isRpcMethodNotAvailableError, isRpcMethodNotFoundError, type RpcErrorCarrier } from '@happier-dev/protocol/rpcErrors';
-import { RPC_ERROR_MESSAGES, RPC_METHODS } from '@happier-dev/protocol/rpc';
+} from '@ks-happier/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
+import { isRpcMethodNotAvailableError, isRpcMethodNotFoundError, type RpcErrorCarrier } from '@ks-happier/protocol/rpcErrors';
+import { RPC_ERROR_MESSAGES, RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { storage } from '@/sync/domains/state/storage';
 import { machineRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedMachineRpc';

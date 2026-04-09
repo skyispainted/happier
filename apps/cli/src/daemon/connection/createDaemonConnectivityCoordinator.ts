@@ -1,4 +1,4 @@
-import type { ManagedConnectionState } from '@happier-dev/connection-supervisor';
+import type { ManagedConnectionState } from '@ks-happier/connection-supervisor';
 
 type ManagedDaemonConnectivityResource = Readonly<{
   name: string;

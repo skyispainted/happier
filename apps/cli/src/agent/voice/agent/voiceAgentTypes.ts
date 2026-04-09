@@ -1,6 +1,6 @@
 import type { AgentBackend, AgentId, SessionId } from '@/agent/core/AgentBackend';
-import type { VoiceAssistantAction } from '@happier-dev/protocol';
-import type { ExecutionRunResumeHandle } from '@happier-dev/protocol';
+import type { VoiceAssistantAction } from '@ks-happier/protocol';
+import type { ExecutionRunResumeHandle } from '@ks-happier/protocol';
 
 export type PermissionPolicy = 'no_tools' | 'read_only';
 export type Verbosity = 'short' | 'balanced';

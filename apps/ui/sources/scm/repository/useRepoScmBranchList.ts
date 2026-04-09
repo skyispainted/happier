@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type { ScmBranchListEntry } from '@happier-dev/protocol';
+import type { ScmBranchListEntry } from '@ks-happier/protocol';
 
 import { sortScmBranchListEntries } from './sortScmBranchListEntries';
 

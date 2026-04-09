@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import fastify from 'fastify';
 import { createHash } from 'node:crypto';
 
-import { deriveAccountMachineKeyFromRecoverySecret } from '@happier-dev/protocol';
+import { deriveAccountMachineKeyFromRecoverySecret } from '@ks-happier/protocol';
 
 import { createEnvKeyScope } from '@/testkit/env/envScope';
 import { createTempDir, removeTempDir } from '@/testkit/fs/tempDir';

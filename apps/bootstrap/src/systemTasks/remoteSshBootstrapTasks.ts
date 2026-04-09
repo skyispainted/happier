@@ -5,7 +5,7 @@ import {
   RemoteBootstrapMachineParams,
   RemoteHostTrustResolution,
   SystemTaskSshConnectionConfig,
-} from '@happier-dev/cli-common/systemTasks';
+} from '@ks-happier/cli-common/systemTasks';
 
 import { runLocalHappierJsonCommand } from './happierCli.js';
 import { buildSshCommand, redactSshText } from '../ssh/index.js';

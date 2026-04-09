@@ -1,4 +1,4 @@
-import { AGENTS_CORE, hasBuiltInAcpConfig, type AgentId } from '@happier-dev/agents';
+import { AGENTS_CORE, hasBuiltInAcpConfig, type AgentId } from '@ks-happier/agents';
 
 import type { AgentCatalogEntry } from '@/backends/types';
 

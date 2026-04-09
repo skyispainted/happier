@@ -1,4 +1,4 @@
-import { redactBugReportSensitiveText, type MemoryWindowV1 } from '@happier-dev/protocol';
+import { redactBugReportSensitiveText, type MemoryWindowV1 } from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import { resolveSessionEncryptionContextFromCredentials } from '@/session/transport/encryption/sessionEncryptionContext';

@@ -5,7 +5,7 @@ import {
   deriveBoxPublicKeyFromSeed,
   openEncryptedDataKeyEnvelopeV1,
   sealEncryptedDataKeyEnvelopeV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { TRANSFER_CHUNK_HARD_MAX_BYTES } from './transferChunkSizeLimit';
 

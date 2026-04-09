@@ -89,19 +89,19 @@ test('ensureWorkspacePackagesBuiltForComponent builds internal dist-based worksp
   await mkdir(join(root, 'apps', 'cli'), { recursive: true });
   await mkdir(join(root, 'apps', 'server'), { recursive: true });
   await writeJson(join(root, 'apps', 'ui', 'package.json'), {
-    name: '@happier-dev/app',
+    name: '@ks-happier/app',
     private: true,
     dependencies: {
-      '@happier-dev/protocol': '0.0.0',
+      '@ks-happier/protocol': '0.0.0',
     },
   });
-  await writeJson(join(root, 'apps', 'cli', 'package.json'), { name: '@happier-dev/cli', private: true });
-  await writeJson(join(root, 'apps', 'server', 'package.json'), { name: '@happier-dev/server', private: true });
+  await writeJson(join(root, 'apps', 'cli', 'package.json'), { name: '@ks-happier/cli', private: true });
+  await writeJson(join(root, 'apps', 'server', 'package.json'), { name: '@ks-happier/server', private: true });
 
   const protocolDir = join(root, 'packages', 'protocol');
   await mkdir(protocolDir, { recursive: true });
   await writeJson(join(protocolDir, 'package.json'), {
-    name: '@happier-dev/protocol',
+    name: '@ks-happier/protocol',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
@@ -147,14 +147,14 @@ test('ensureWorkspacePackagesBuiltForComponent walks the full internal workspace
   await mkdir(join(root, 'apps', 'cli'), { recursive: true });
   await mkdir(join(root, 'apps', 'server'), { recursive: true });
   await writeJson(join(root, 'apps', 'ui', 'package.json'), {
-    name: '@happier-dev/app',
+    name: '@ks-happier/app',
     private: true,
     dependencies: {
-      '@happier-dev/cli-common': '0.0.0',
+      '@ks-happier/cli-common': '0.0.0',
     },
   });
-  await writeJson(join(root, 'apps', 'cli', 'package.json'), { name: '@happier-dev/cli', private: true });
-  await writeJson(join(root, 'apps', 'server', 'package.json'), { name: '@happier-dev/server', private: true });
+  await writeJson(join(root, 'apps', 'cli', 'package.json'), { name: '@ks-happier/cli', private: true });
+  await writeJson(join(root, 'apps', 'server', 'package.json'), { name: '@ks-happier/server', private: true });
 
   const cliCommonDir = join(root, 'packages', 'cli-common');
   const agentsDir = join(root, 'packages', 'agents');
@@ -164,31 +164,31 @@ test('ensureWorkspacePackagesBuiltForComponent walks the full internal workspace
   }
 
   await writeJson(join(cliCommonDir, 'package.json'), {
-    name: '@happier-dev/cli-common',
+    name: '@ks-happier/cli-common',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
     types: './dist/index.d.ts',
     exports: { '.': { default: './dist/index.js', types: './dist/index.d.ts' } },
     dependencies: {
-      '@happier-dev/agents': '0.0.0',
+      '@ks-happier/agents': '0.0.0',
     },
     scripts: { build: 'tsc -p tsconfig.json' },
   });
   await writeJson(join(agentsDir, 'package.json'), {
-    name: '@happier-dev/agents',
+    name: '@ks-happier/agents',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
     types: './dist/index.d.ts',
     exports: { '.': { default: './dist/index.js', types: './dist/index.d.ts' } },
     dependencies: {
-      '@happier-dev/protocol': '0.0.0',
+      '@ks-happier/protocol': '0.0.0',
     },
     scripts: { build: 'tsc -p tsconfig.json' },
   });
   await writeJson(join(protocolDir, 'package.json'), {
-    name: '@happier-dev/protocol',
+    name: '@ks-happier/protocol',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
@@ -237,19 +237,19 @@ test('ensureWorkspacePackagesBuiltForComponent rebuilds internal workspaces when
   await mkdir(join(root, 'apps', 'cli'), { recursive: true });
   await mkdir(join(root, 'apps', 'server'), { recursive: true });
   await writeJson(join(root, 'apps', 'ui', 'package.json'), {
-    name: '@happier-dev/app',
+    name: '@ks-happier/app',
     private: true,
     dependencies: {
-      '@happier-dev/protocol': '0.0.0',
+      '@ks-happier/protocol': '0.0.0',
     },
   });
-  await writeJson(join(root, 'apps', 'cli', 'package.json'), { name: '@happier-dev/cli', private: true });
-  await writeJson(join(root, 'apps', 'server', 'package.json'), { name: '@happier-dev/server', private: true });
+  await writeJson(join(root, 'apps', 'cli', 'package.json'), { name: '@ks-happier/cli', private: true });
+  await writeJson(join(root, 'apps', 'server', 'package.json'), { name: '@ks-happier/server', private: true });
 
   const protocolDir = join(root, 'packages', 'protocol');
   await mkdir(protocolDir, { recursive: true });
   await writeJson(join(protocolDir, 'package.json'), {
-    name: '@happier-dev/protocol',
+    name: '@ks-happier/protocol',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',

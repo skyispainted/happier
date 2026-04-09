@@ -6,8 +6,8 @@ import {
     ExecutionRunPublicStateSchema,
     type ExecutionRunListRequest,
     type ExecutionRunPublicState,
-} from '@happier-dev/protocol';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+} from '@ks-happier/protocol';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { configuration } from '@/configuration';
 import { listExecutionRunMarkers } from '@/daemon/executionRunRegistry';

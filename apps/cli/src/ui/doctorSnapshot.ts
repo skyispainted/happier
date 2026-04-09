@@ -7,7 +7,7 @@ import {
   DoctorSnapshotSchema,
   sanitizeDoctorSnapshotUrls,
   type DoctorSnapshot as ProtocolDoctorSnapshot,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export type DoctorSnapshot = ProtocolDoctorSnapshot;
 

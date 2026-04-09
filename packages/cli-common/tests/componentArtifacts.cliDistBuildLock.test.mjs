@@ -58,7 +58,7 @@ function writeCliArtifactFixtures(repoRoot) {
     join(cliDir, 'package.json'),
     JSON.stringify(
       {
-        name: '@happier-dev/cli',
+        name: '@ks-happier/cli',
         version: '0.0.0',
         dependencies: {
           '@huggingface/transformers': '1.0.0',
@@ -66,11 +66,11 @@ function writeCliArtifactFixtures(repoRoot) {
           '@homebridge/node-pty-prebuilt-multiarch': '1.0.0',
         },
         bundledDependencies: [
-          '@happier-dev/agents',
-          '@happier-dev/cli-common',
-          '@happier-dev/connection-supervisor',
-          '@happier-dev/protocol',
-          '@happier-dev/release-runtime',
+          '@ks-happier/agents',
+          '@ks-happier/cli-common',
+          '@ks-happier/connection-supervisor',
+          '@ks-happier/protocol',
+          '@ks-happier/release-runtime',
         ],
       },
       null,
@@ -78,11 +78,11 @@ function writeCliArtifactFixtures(repoRoot) {
     ),
     'utf8',
   );
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/agents', relativeDir: ['packages', 'agents'] });
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/cli-common', relativeDir: ['packages', 'cli-common'] });
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/connection-supervisor', relativeDir: ['packages', 'connection-supervisor'] });
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/protocol', relativeDir: ['packages', 'protocol'] });
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/release-runtime', relativeDir: ['packages', 'release-runtime'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/agents', relativeDir: ['packages', 'agents'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/cli-common', relativeDir: ['packages', 'cli-common'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/connection-supervisor', relativeDir: ['packages', 'connection-supervisor'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/protocol', relativeDir: ['packages', 'protocol'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/release-runtime', relativeDir: ['packages', 'release-runtime'] });
   writeFileSync(join(cliScriptsDir, 'childProcessOptions.cjs'), 'module.exports = { withWindowsHide: (input) => input };\n', 'utf8');
   writeFileSync(join(cliScriptsDir, 'claude_launcher_runtime.cjs'), 'module.exports = { getClaudeCliPath: () => "claude", runClaudeCli: () => {} };\n', 'utf8');
   writeFileSync(join(cliScriptsDir, 'claude_local_launcher.cjs'), 'require("./claude_launcher_runtime.cjs");\n', 'utf8');

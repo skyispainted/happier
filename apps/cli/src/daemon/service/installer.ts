@@ -6,7 +6,7 @@ import { applyDaemonServiceInstallPlan, applyDaemonServiceUninstallPlan } from '
 import { planDaemonServiceInstall, planDaemonServiceUninstall } from './plan';
 import type { DaemonServiceMode } from './plan';
 import { resolveDaemonServiceInstallRuntimeTarget } from './resolveDaemonServiceInstallRuntimeTarget';
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 type SupportedPlatform = 'darwin' | 'linux' | 'win32';
 

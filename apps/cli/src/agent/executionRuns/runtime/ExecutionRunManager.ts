@@ -8,7 +8,7 @@ import {
   type BackendTargetRefV1,
   ExecutionRunPublicStateSchema,
   type ExecutionRunPublicState,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { ExecutionRunStructuredMeta } from '@/agent/executionRuns/profiles/ExecutionRunIntentProfile';
 import { VoiceAgentError, VoiceAgentManager } from '@/agent/voice/agent/VoiceAgentManager';

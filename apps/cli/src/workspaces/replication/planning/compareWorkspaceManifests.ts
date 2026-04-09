@@ -1,4 +1,4 @@
-export type { WorkspaceManifest, WorkspaceManifestEntry } from '@happier-dev/protocol';
+export type { WorkspaceManifest, WorkspaceManifestEntry } from '@ks-happier/protocol';
 
 export {
     compareWorkspaceManifests,

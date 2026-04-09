@@ -6,7 +6,7 @@ import {
     getProfileEnvironmentVariables as getProfileEnvironmentVariablesProtocol,
     isProfileCompatibleWithBackendTarget as isProfileCompatibleWithBackendTargetProtocol,
     isProfileCompatibleWithAgent as isProfileCompatibleWithAgentProtocol,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import type { AgentId } from '@/agents/catalog/catalog';
 
 export const AIBackendProfileSchema = ProtocolAIBackendProfileSchema;

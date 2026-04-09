@@ -1,4 +1,4 @@
-import type { ScmWorkingSnapshot } from '@happier-dev/protocol';
+import type { ScmWorkingSnapshot } from '@ks-happier/protocol';
 
 type ScmSnapshotEntry = Readonly<{
   path: string;

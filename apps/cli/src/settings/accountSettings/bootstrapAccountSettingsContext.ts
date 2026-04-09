@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-import type { AgentId } from '@happier-dev/agents';
+import type { AgentId } from '@ks-happier/agents';
 import {
   accountSettingsParse,
   normalizeCodexBackendMode,
   type AccountSettings,
   type BackendTargetRefV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { createHash } from 'node:crypto';
 import { serializeAxiosErrorForLog } from '@/api/client/serializeAxiosErrorForLog';

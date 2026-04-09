@@ -8,7 +8,7 @@ import {
 } from '@/api/session/agentStateRecords';
 import { PermissionRequestPushNotifier } from '@/settings/notifications/permissionRequestPushNotifier';
 import type { PermissionRequestPushSender } from '@/agent/permissions/BasePermissionHandler';
-import type { AccountSettings } from '@happier-dev/protocol';
+import type { AccountSettings } from '@ks-happier/protocol';
 
 type AgentStateRequestEntry = NonNullable<AgentState['requests']>[string];
 type AgentStateCompletedEntry = NonNullable<AgentState['completedRequests']>[string];

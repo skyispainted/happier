@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { buildBackendTargetKey, isBuiltInAgentTarget, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import { buildBackendTargetKey, isBuiltInAgentTarget, type BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { resolveProviderAgentIdForBackendTarget } from '@/agents/backendCatalog/getResolvedBackendCatalogEntries';
 import { machineCapabilitiesInvoke } from '@/sync/ops/capabilities';

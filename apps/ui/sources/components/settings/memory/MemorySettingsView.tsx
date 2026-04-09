@@ -27,7 +27,7 @@ import {
     DEFAULT_MEMORY_SETTINGS,
     type MemorySettingsV1,
     type MemoryStatusV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { MemorySettingsBudgetsSection } from './MemorySettingsBudgetsSection';
 import { MemorySettingsEmbeddingsSection } from './MemorySettingsEmbeddingsSection';
 import { MemorySettingsPrivacySection } from './MemorySettingsPrivacySection';

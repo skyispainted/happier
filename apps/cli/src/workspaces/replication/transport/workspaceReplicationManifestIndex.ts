@@ -1,4 +1,4 @@
-import type { WorkspaceManifest } from '@happier-dev/protocol/workspaces';
+import type { WorkspaceManifest } from '@ks-happier/protocol/workspaces';
 
 import { isAbsolute, relative, resolve, sep } from 'node:path';
 

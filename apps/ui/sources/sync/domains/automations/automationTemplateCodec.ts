@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { BackendTargetRefSchema, SessionMcpSelectionV1Schema, WindowsRemoteSessionLaunchModeSchema } from '@happier-dev/protocol';
+import { BackendTargetRefSchema, SessionMcpSelectionV1Schema, WindowsRemoteSessionLaunchModeSchema } from '@ks-happier/protocol';
 
 import type { AutomationTemplate } from './automationTypes';
 

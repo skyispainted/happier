@@ -14,9 +14,9 @@ async function main() {
   // Ensure those packages are built so `node --test` can execute stack scripts in a fresh checkout.
   await ensureWorkspacePackagesBuiltForComponent(packageRoot, { quiet: true, env: process.env });
 
-  // Stack unit tests execute `bin/hstack.mjs`, which runs as if `@happier-dev/stack` were installed
+  // Stack unit tests execute `bin/hstack.mjs`, which runs as if `@ks-happier/stack` were installed
   // from npm with bundled internal deps. Ensure those bundled deps exist and have their external
-  // runtime dependency trees vendored (e.g. `zod` for `@happier-dev/agents`).
+  // runtime dependency trees vendored (e.g. `zod` for `@ks-happier/agents`).
   const monorepoRoot = coerceHappyMonorepoRootFromPath(packageRoot);
   if (monorepoRoot) {
     await bundleWorkspaceDeps({ repoRoot: monorepoRoot, stackDir: packageRoot });

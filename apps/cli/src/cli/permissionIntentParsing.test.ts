@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { parsePermissionIntentAlias } from '@happier-dev/agents';
+import { parsePermissionIntentAlias } from '@ks-happier/agents';
 
 describe('parsePermissionIntentAlias', () => {
   it('maps accept-edits alias to safe-yolo intent', () => {

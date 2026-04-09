@@ -4,7 +4,7 @@ import { ActivityIndicator, Pressable, View } from 'react-native';
 import { Text } from '@/components/ui/text/Text';
 import { Typography } from '@/constants/Typography';
 import { Octicons } from '@expo/vector-icons';
-import type { ScmLogEntry } from '@happier-dev/protocol';
+import type { ScmLogEntry } from '@ks-happier/protocol';
 import { t } from '@/text';
 
 type SourceControlOperationsHistorySectionProps = Readonly<{

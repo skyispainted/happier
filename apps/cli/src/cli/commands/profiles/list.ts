@@ -1,13 +1,13 @@
 import chalk from 'chalk';
 
-import { AGENT_IDS } from '@happier-dev/agents';
+import { AGENT_IDS } from '@ks-happier/agents';
 import {
   DEFAULT_BUILT_IN_BACKEND_PROFILES,
   getRequiredConfigEnvVarNames,
   getRequiredSecretEnvVarNames,
   isProfileCompatibleWithAgent,
   type AIBackendProfile,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { wantsJson, printJsonEnvelope } from '@/cli/output/jsonEnvelope';
 import { bootstrapAccountSettingsContext } from '@/settings/accountSettings/bootstrapAccountSettingsContext';

@@ -1,4 +1,4 @@
-import { resolveReleaseAssetBundle } from '@happier-dev/release-runtime/assets';
+import { resolveReleaseAssetBundle } from '@ks-happier/release-runtime/assets';
 
 export type ReleaseAsset = Readonly<{ name: string; url: string }>;
 

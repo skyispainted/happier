@@ -9,7 +9,7 @@ import {
   resolveEffectiveServersV1,
   type McpServersSettingsV1,
   type ResolveEffectiveServersV1Result,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { createRealpathNormalizer } from './createRealpathNormalizer';
 
 export function resolveEffectiveMcpServersForDirectory(params: Readonly<{

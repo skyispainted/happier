@@ -8,7 +8,7 @@ import {
   serializeActionSpec,
   type ActionId,
   type ResolvedActionOption,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export const actionSpecSearchSchema = z.object({
   query: z.string().optional(),

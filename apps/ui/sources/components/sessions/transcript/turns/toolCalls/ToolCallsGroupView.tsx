@@ -16,7 +16,7 @@ import { TranscriptEnterWrapper } from '@/components/sessions/transcript/motion/
 import { TranscriptCollapsible } from '@/components/sessions/transcript/motion/TranscriptCollapsible';
 import type { TranscriptInteraction } from '@/utils/sessions/deriveTranscriptInteraction';
 import { resolveMessageRouteIdForDisplay } from '@/sync/domains/messages/messageRouteIds';
-import { isSubAgentTranscriptToolName } from '@happier-dev/protocol/tools/v2';
+import { isSubAgentTranscriptToolName } from '@ks-happier/protocol/tools/v2';
 import { useEnsureSidechainsLoaded } from '@/hooks/session/useEnsureSidechainsLoaded';
 import { resolveToolTranscriptSidechainId } from '@/components/tools/shell/views/resolveToolTranscriptSidechainId';
 import { Typography } from '@/constants/Typography';

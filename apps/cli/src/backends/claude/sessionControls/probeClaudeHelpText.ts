@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
 
-import { resolveWindowsCommandInvocation } from '@happier-dev/cli-common/process';
+import { resolveWindowsCommandInvocation } from '@ks-happier/cli-common/process';
 
 import { requireJavaScriptRuntimeExecutable } from '@/runtime/js/requireJavaScriptRuntimeExecutable';
 import { requireProviderCliLaunchSpec } from '@/runtime/managedTools/requireProviderCliLaunchSpec';

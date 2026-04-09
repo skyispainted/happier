@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from 'node:crypto';
 
-import { systemTasks } from '@happier-dev/cli-common';
-import type { SystemTaskJsonObject, SystemTaskJsonValue } from '@happier-dev/protocol';
+import { systemTasks } from '@ks-happier/cli-common';
+import type { SystemTaskJsonObject, SystemTaskJsonValue } from '@ks-happier/protocol';
 
 import { runLocalHappierJsonCommand } from './happierCli.js';
 import { createSecureAccessTailscaleHandler } from './kinds/secureAccessTailscale.js';

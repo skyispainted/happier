@@ -23,7 +23,7 @@ import {
   type McpServerCatalogEntryV1,
   type ResolveEffectiveServersV1Result,
   type SecretStringV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { normalizePackageRunnerInvocation } from './normalizePackageRunnerInvocation';
 import { resolveMcpValueRefPlaintext } from './resolveMcpValueRefPlaintext';

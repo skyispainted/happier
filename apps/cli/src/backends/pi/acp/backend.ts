@@ -2,7 +2,7 @@ import type { AgentBackend, AgentFactoryOptions, McpServerConfig } from '@/agent
 import type { PermissionMode } from '@/api/types';
 import { PiRpcBackend } from '@/backends/pi/rpc/PiRpcBackend';
 import { requireProviderCliLaunchSpec } from '@/runtime/managedTools/requireProviderCliLaunchSpec';
-import { providers } from '@happier-dev/agents';
+import { providers } from '@ks-happier/agents';
 
 export interface PiBackendOptions extends AgentFactoryOptions {
   mcpServers?: Record<string, McpServerConfig>;

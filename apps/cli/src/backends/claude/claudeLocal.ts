@@ -15,9 +15,9 @@ import { ensureClaudeJsRuntimeExecutable } from "./utils/ensureClaudeJsRuntimeEx
 import { resolveClaudeConfigDirOverride } from "./utils/resolveClaudeConfigDirOverride";
 import { buildMissingJavaScriptRuntimeMessage } from "@/runtime/js/buildMissingJavaScriptRuntimeMessage";
 import { isEmbeddedBunBundlePath } from "@/runtime/js/isEmbeddedBunBundlePath";
-import { resolveWindowsCommandInvocation, type CommandInvocation } from '@happier-dev/cli-common/process';
+import { resolveWindowsCommandInvocation, type CommandInvocation } from '@ks-happier/cli-common/process';
 import { resolveCliRuntimeAssetPath } from '@/runtime/assets/resolveCliRuntimeAssetPath';
-import { HAPPIER_BASE_SYSTEM_PROMPT_V1 } from '@happier-dev/protocol';
+import { HAPPIER_BASE_SYSTEM_PROMPT_V1 } from '@ks-happier/protocol';
 import { configuration } from '@/configuration';
 
 /**

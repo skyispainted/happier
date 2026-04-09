@@ -5,7 +5,7 @@ import {
   resolveMetadataStringOverrideV1,
   resolvePermissionIntentFromSessionMetadata,
   SESSION_MODE_OVERRIDE_KEY,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 export function resolvePermissionIntentFromMetadataSnapshot(opts: {
   metadata: Metadata | null | undefined;

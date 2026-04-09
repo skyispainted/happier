@@ -30,7 +30,7 @@ import {
   isLocalishServerUrl,
   isLoopbackHttpServerUrl,
 } from '@/server/serverUrlClassification';
-import { createServerUrlComparableKey } from '@happier-dev/protocol';
+import { createServerUrlComparableKey } from '@ks-happier/protocol';
 
 export async function runServerSubcommand(subcommand: string, args: string[]): Promise<boolean> {
   switch (subcommand) {

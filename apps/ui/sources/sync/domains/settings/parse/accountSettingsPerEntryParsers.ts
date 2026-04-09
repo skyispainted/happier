@@ -1,6 +1,6 @@
 import {
     ActionsSettingsV1Schema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { z } from 'zod';
 
 import { dbgSettings } from '../debugSettings';

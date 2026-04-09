@@ -18,7 +18,7 @@ const {
   })),
 }));
 
-vi.mock('@happier-dev/release-runtime/github', () => ({
+vi.mock('@ks-happier/release-runtime/github', () => ({
   fetchGitHubReleaseByTag: fetchGitHubReleaseByTagMock,
 }));
 

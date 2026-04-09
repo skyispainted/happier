@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { deriveBoxPublicKeyFromSeed } from '@happier-dev/protocol';
+import { deriveBoxPublicKeyFromSeed } from '@ks-happier/protocol';
 
 import { configuration, reloadConfiguration } from '@/configuration';
 import { updateSettings, writeCredentialsDataKey } from '@/persistence';

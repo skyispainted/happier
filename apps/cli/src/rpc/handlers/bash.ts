@@ -3,7 +3,7 @@ import { exec, ExecOptions, spawn, SpawnOptions } from 'child_process';
 import { promisify } from 'util';
 import type { RpcHandlerRegistrar } from '@/api/rpc/types';
 import { validatePath } from './pathSecurity';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 const execAsync = promisify(exec);
 

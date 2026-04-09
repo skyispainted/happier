@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import type { FeaturesResponse } from '@happier-dev/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import type { FeaturesResponse } from '@ks-happier/protocol';
 
 type GetDirectoryTreeRpcResponse =
     | Readonly<{ success: true; tree: unknown }>

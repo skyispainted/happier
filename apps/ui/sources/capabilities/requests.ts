@@ -1,7 +1,7 @@
 import type { CapabilitiesDetectRequest } from '@/sync/api/capabilities/capabilitiesProtocol';
 import { AGENT_IDS, getAgentCore } from '@/agents/catalog/catalog';
-import { isAgentAuthProbeSafeForBackgroundChecks } from '@happier-dev/agents';
-import { CHECKLIST_IDS } from '@happier-dev/protocol/checklists';
+import { isAgentAuthProbeSafeForBackgroundChecks } from '@ks-happier/agents';
+import { CHECKLIST_IDS } from '@ks-happier/protocol/checklists';
 
 function buildCliLoginStatusOverrides(): Record<string, { params: { includeLoginStatus: true } }> {
     const overrides: Record<string, { params: { includeLoginStatus: true } }> = {};

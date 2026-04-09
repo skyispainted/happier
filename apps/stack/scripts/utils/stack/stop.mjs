@@ -333,7 +333,7 @@ export async function stopStackWithEnv({
     const legacyServer = await listPidsWithEnvNeedles([
       envNeedle,
       'npm_lifecycle_event=',
-      'npm_package_name=@happier-dev/server',
+      'npm_package_name=@ks-happier/server',
     ]);
 
     const pids = [...new Set([...infraTagged, ...legacyServer])]

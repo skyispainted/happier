@@ -1,5 +1,5 @@
 {
-  "name": "@happier-dev/agents",
+  "name": "@ks-happier/agents",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -24,7 +24,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@happier-dev/protocol": "0.0.0",
+    "@ks-happier/protocol": "0.0.0",
     "zod": "4.3.6"
   },
   "devDependencies": {

@@ -5,7 +5,7 @@ import {
     type SystemTaskEvent,
     type SystemTaskResult,
     type SystemTaskSpec,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type {
     SystemTaskRunState,

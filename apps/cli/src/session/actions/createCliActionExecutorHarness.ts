@@ -1,4 +1,4 @@
-import { createActionExecutor, type ActionExecutorDeps } from '@happier-dev/protocol';
+import { createActionExecutor, type ActionExecutorDeps } from '@ks-happier/protocol';
 
 import { isActionApprovalRequiredByEnv, isActionEnabledByEnv } from '@/settings/actionsSettings';
 

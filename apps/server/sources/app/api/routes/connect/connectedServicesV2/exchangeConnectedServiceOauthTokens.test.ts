@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { encodeBase64, BOX_BUNDLE_PUBLIC_KEY_BYTES } from "@happier-dev/protocol";
+import { encodeBase64, BOX_BUNDLE_PUBLIC_KEY_BYTES } from "@ks-happier/protocol";
 
 import {
     ConnectedServiceOauthExchangeError,

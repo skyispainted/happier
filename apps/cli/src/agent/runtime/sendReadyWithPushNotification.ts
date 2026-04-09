@@ -2,7 +2,7 @@ import { logger } from '@/ui/logger'
 import type { SessionClientPort } from '@/api/session/sessionClientPort'
 import axios from 'axios'
 import { serializeAxiosErrorForLog } from '@/api/client/serializeAxiosErrorForLog'
-import { buildReadyNotificationContent, type AccountSettings } from '@happier-dev/protocol'
+import { buildReadyNotificationContent, type AccountSettings } from '@ks-happier/protocol'
 import { dispatchActivityNotificationAsync } from '@/activity/notifications/dispatchActivityNotification'
 import { getActiveAccountSettingsSnapshot } from '@/settings/accountSettings/activeAccountSettingsSnapshot'
 

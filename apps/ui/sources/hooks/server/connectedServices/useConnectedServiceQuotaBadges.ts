@@ -11,8 +11,8 @@ import { connectedServiceProfileKey } from '@/sync/domains/connectedServices/con
 import { useSettings } from '@/sync/store/hooks';
 import { fireAndForget } from '@/utils/system/fireAndForget';
 
-import type { ConnectedServiceQuotaSnapshotV1 } from '@happier-dev/protocol';
-import { ConnectedServiceIdSchema, type ConnectedServiceId } from '@happier-dev/protocol';
+import type { ConnectedServiceQuotaSnapshotV1 } from '@ks-happier/protocol';
+import { ConnectedServiceIdSchema, type ConnectedServiceId } from '@ks-happier/protocol';
 
 type ProfileRef = Readonly<{ serviceId: string; profileId: string }>;
 

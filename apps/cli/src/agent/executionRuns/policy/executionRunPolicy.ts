@@ -1,5 +1,5 @@
-import type { ExecutionRunIntent, ExecutionRunIoMode } from '@happier-dev/protocol';
-import { parsePermissionIntentAlias } from '@happier-dev/agents';
+import type { ExecutionRunIntent, ExecutionRunIoMode } from '@ks-happier/protocol';
+import { parsePermissionIntentAlias } from '@ks-happier/agents';
 
 export type ExecutionRunPolicy = Readonly<{
   maxConcurrentRuns: number | null;

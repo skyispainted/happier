@@ -1,4 +1,4 @@
-import { splitUnifiedDiffByFile, type ChangeConfidence, type ChangeEvidenceSource, type FileChangeEvidence, type TurnChangeSet } from '@happier-dev/protocol';
+import { splitUnifiedDiffByFile, type ChangeConfidence, type ChangeEvidenceSource, type FileChangeEvidence, type TurnChangeSet } from '@ks-happier/protocol';
 
 import { TurnDiffEmitter } from './turnDiffEmitter';
 

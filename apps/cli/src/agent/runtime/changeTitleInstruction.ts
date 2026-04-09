@@ -3,7 +3,7 @@ import {
   buildChangeTitleInstructionV1,
   shouldAppendChangeTitleInstructionV1,
   type ChangeTitleInstructionV1Options,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export type ChangeTitleInstructionOptions = ChangeTitleInstructionV1Options;
 

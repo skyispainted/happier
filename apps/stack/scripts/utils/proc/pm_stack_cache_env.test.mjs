@@ -585,7 +585,7 @@ test('ensureDepsInstalled regenerates server Prisma provider outputs when sqlite
   await writeFile(join(root, 'apps', 'cli', 'package.json'), '{}\n', 'utf-8');
   await writeFile(
     join(root, 'apps', 'server', 'package.json'),
-    JSON.stringify({ name: '@happier-dev/server', scripts: { 'generate:providers': 'tsx ./scripts/generateClients.ts' } }, null, 2) + '\n',
+    JSON.stringify({ name: '@ks-happier/server', scripts: { 'generate:providers': 'tsx ./scripts/generateClients.ts' } }, null, 2) + '\n',
     'utf-8',
   );
   await writeFile(join(root, 'apps', 'server', 'prisma', 'schema.prisma'), 'datasource db { provider = "postgresql" }\n', 'utf-8');
@@ -610,7 +610,7 @@ test('ensureDepsInstalled regenerates server Prisma provider outputs when sqlite
 
   await ensureDepsInstalled(componentDir, 'happier-server-light', { quiet: true });
   const out = await readFile(outputPath, 'utf-8');
-  assert.match(out, /\bworkspace @happier-dev\/server generate:providers\b/, `expected provider generation, got:\n${out}`);
+  assert.match(out, /\bworkspace @ks-happier\/server generate:providers\b/, `expected provider generation, got:\n${out}`);
 });
 
 test('ensureDepsInstalled refreshes monorepo dependencies when root yarn.lock changes', async (t) => {

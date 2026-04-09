@@ -42,14 +42,14 @@ export function classifyHappyProcess(proc: { pid: number; name?: string; cmd?: s
   // (reattach + stopSession). A false positive could cause us to adopt/kill a non-Happy process.
   const isHappy =
     (name === 'node' &&
-      (cmd.includes('@happier-dev/cli') ||
+      (cmd.includes('@ks-happier/cli') ||
         cmd.includes('dist/index.mjs') ||
         cmd.includes('bin/happier.mjs') ||
         (cmd.includes('tsx') &&
           cmd.includes('src/index.ts') &&
-          (cmd.includes('apps/cli') || cmd.includes('@happier-dev/cli'))))) ||
+          (cmd.includes('apps/cli') || cmd.includes('@ks-happier/cli'))))) ||
     cmd.includes('happier.mjs') ||
-    cmd.includes('@happier-dev/cli') ||
+    cmd.includes('@ks-happier/cli') ||
     name === 'happier';
 
   if (!isHappy) return null;

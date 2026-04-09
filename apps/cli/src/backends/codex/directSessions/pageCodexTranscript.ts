@@ -1,4 +1,4 @@
-import type { DirectSessionsSource, DirectTranscriptRawMessageV1 } from '@happier-dev/protocol';
+import type { DirectSessionsSource, DirectTranscriptRawMessageV1 } from '@ks-happier/protocol';
 
 import { resolveCodexHomesForDirectSessionsSource } from './resolveCodexHomesForDirectSessionsSource';
 import { encodeCodexDirectForwardCursor } from './codexDirectForwardCursor';

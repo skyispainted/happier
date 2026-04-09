@@ -1,4 +1,4 @@
-import { type AgentId, getBuiltInAcpConfig } from '@happier-dev/agents';
+import { type AgentId, getBuiltInAcpConfig } from '@ks-happier/agents';
 
 import type { AcpPermissionHandler } from '@/agent/acp/AcpBackend';
 import { createAcpBackend } from '@/agent/acp/createAcpBackend';

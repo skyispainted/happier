@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Platform, useWindowDimensions } from 'react-native';
 import { router } from 'expo-router';
-import { deriveAccountMachineKeyFromRecoverySecret } from '@happier-dev/protocol';
+import { deriveAccountMachineKeyFromRecoverySecret } from '@ks-happier/protocol';
 import { useAuth } from '@/auth/context/AuthContext';
 import { TokenStorage, type AuthCredentials, isLegacyAuthCredentials } from '@/auth/storage/tokenStorage';
 import { decodeBase64 } from '@/encryption/base64';

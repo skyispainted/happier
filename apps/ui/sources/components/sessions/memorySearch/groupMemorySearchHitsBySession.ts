@@ -1,4 +1,4 @@
-import type { MemorySearchHitV1 } from '@happier-dev/protocol';
+import type { MemorySearchHitV1 } from '@ks-happier/protocol';
 
 export type MemorySearchHitSessionGroup = Readonly<{
     sessionId: string;

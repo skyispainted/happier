@@ -8,7 +8,7 @@ import { resolveReplaySeedDraft } from '@/session/replay/resolveReplaySeedDraft'
 import { archiveSessionByIdBestEffort } from '@/session/services/setSessionArchivedState';
 import type { CatalogAgentId } from '@/backends/types';
 import { SPAWN_SESSION_ERROR_CODES, type SpawnSessionOptions, type SpawnSessionResult } from '@/rpc/handlers/registerSessionHandlers';
-import type { LlmTaskRunnerConfigV1 } from '@happier-dev/protocol';
+import type { LlmTaskRunnerConfigV1 } from '@ks-happier/protocol';
 
 export type RunReplaySummaryForDialogFn = typeof import('@/session/replay/summary/runReplaySummaryForDialog').runReplaySummaryForDialog;
 

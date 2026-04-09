@@ -1,4 +1,4 @@
-import { resolveCodexSessionBackendMode } from '@happier-dev/agents';
+import { resolveCodexSessionBackendMode } from '@ks-happier/agents';
 
 import type { PreflightSessionControlsProbeAdapter } from '@/capabilities/probes/preflightSessionControlsProbeAdapterTypes';
 import { withCodexAppServerClient } from '@/backends/codex/appServer/client/withCodexAppServerClient';

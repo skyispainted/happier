@@ -1,10 +1,10 @@
-import type { AgentId } from '@happier-dev/agents';
+import type { AgentId } from '@ks-happier/agents';
 import {
   providerCliPathRequiresJavaScriptRuntime,
   resolveJavaScriptRuntimeCommand,
   resolveProviderCliCommand,
   type ProviderCliCommandResolution,
-} from '@happier-dev/cli-common/providers';
+} from '@ks-happier/cli-common/providers';
 
 import { isBun } from '@/utils/runtime';
 

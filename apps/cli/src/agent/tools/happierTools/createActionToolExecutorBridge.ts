@@ -1,7 +1,7 @@
 import {
   type ActionId,
   type ResolvedActionOption,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { createActionToolNameToIdMap } from './actionToolCatalog';
 import { normalizeExecutionRunToolResult } from './normalizeExecutionRunToolResult';
 

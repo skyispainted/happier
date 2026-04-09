@@ -1,4 +1,4 @@
-import { buildCodexAgentRuntimeDescriptor, resolvePersistedCodexRuntimeIdentity, resolveVendorResumeIdFromSessionMetadata, readSessionMetadataRuntimeDescriptor } from '@happier-dev/agents';
+import { buildCodexAgentRuntimeDescriptor, resolvePersistedCodexRuntimeIdentity, resolveVendorResumeIdFromSessionMetadata, readSessionMetadataRuntimeDescriptor } from '@ks-happier/agents';
 import type { ProviderNativeForkHandler } from '@/backends/forking/providerNativeForkHandler';
 
 import { forkCodexAppServerConversationNative } from './nativeFork';

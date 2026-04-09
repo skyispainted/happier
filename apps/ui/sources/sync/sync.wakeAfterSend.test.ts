@@ -62,8 +62,8 @@ vi.mock('@/sync/ops', async (importOriginal) => {
 import { storage } from './domains/state/storage';
 import type { Session } from './domains/state/storageTypes';
 import { apiSocket } from '@/sync/api/session/apiSocket';
-import { RpcError } from '@happier-dev/protocol/rpcErrors';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
+import { RpcError } from '@ks-happier/protocol/rpcErrors';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
 
 const initialStorageState = storage.getState();
 

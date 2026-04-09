@@ -107,7 +107,7 @@ import {
   HAPPIER_DAEMON_INITIAL_PROMPT_ENV_KEY,
   normalizeDaemonInitialPrompt,
 } from '@/agent/runtime/daemonInitialPrompt';
-import { parseBooleanEnv, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import { parseBooleanEnv, type BackendTargetRefV1 } from '@ks-happier/protocol';
 import type { CatalogAgentId } from '@/backends/types';
 import { writeTerminalAttachmentInfo } from '@/terminal/attachment/terminalAttachmentInfo';
 

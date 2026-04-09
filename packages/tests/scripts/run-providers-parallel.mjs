@@ -23,10 +23,10 @@ async function resolveServerAppWorkspaceName() {
     const raw = await readFile(pkgPath, 'utf8');
     const json = JSON.parse(raw);
     const name = typeof json?.name === 'string' ? json.name.trim() : '';
-    cachedServerWorkspaceName = name || '@happier-dev/server';
+    cachedServerWorkspaceName = name || '@ks-happier/server';
     return cachedServerWorkspaceName;
   } catch {
-    cachedServerWorkspaceName = '@happier-dev/server';
+    cachedServerWorkspaceName = '@ks-happier/server';
     return cachedServerWorkspaceName;
   }
 }

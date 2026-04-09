@@ -3,7 +3,7 @@ import type { ToolCall, Message } from '@/sync/domains/messages/messageTypes';
 import { t } from '@/text';
 import { ICON_TASK } from '../icons';
 import type { KnownToolDefinition } from '../_types';
-import { SubAgentInputV2Schema, TaskInputV2Schema } from '@happier-dev/protocol';
+import { SubAgentInputV2Schema, TaskInputV2Schema } from '@ks-happier/protocol';
 
 const subAgentToolDefinition = {
         title: () => t('tools.names.subAgent'),

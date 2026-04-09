@@ -1,4 +1,4 @@
-import type { ScmDiffArea } from '@happier-dev/protocol';
+import type { ScmDiffArea } from '@ks-happier/protocol';
 
 import type { ScmFileStatus } from '@/scm/scmStatusFiles';
 import { isBinaryContent, isKnownBinaryPath } from '@/scm/utils/filePresentation';

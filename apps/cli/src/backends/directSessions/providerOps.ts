@@ -2,7 +2,7 @@ import type {
   DirectSessionCandidateV1,
   DirectSessionsSource,
   DirectTranscriptRawMessageV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { LoadedLinkedDirectSession } from '@/api/directSessions/takeover/loadLinkedDirectSession';
 import type { SpawnSessionOptions } from '@/rpc/handlers/registerSessionHandlers';

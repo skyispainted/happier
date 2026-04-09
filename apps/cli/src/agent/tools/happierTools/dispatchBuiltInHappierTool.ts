@@ -4,7 +4,7 @@ import {
   listActionSpecs,
   type ActionId,
   type ResolvedActionOption,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { getEquivalentActionIdForBuiltInTool, isActionAvailableOnToolSurface } from './actionToolCatalog';
 import type { HappierBuiltInToolDispatchResult } from './types';
 import {

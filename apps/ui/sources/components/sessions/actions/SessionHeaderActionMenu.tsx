@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Pressable, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { listActionSpecs } from '@happier-dev/protocol';
+import { listActionSpecs } from '@ks-happier/protocol';
 import { useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 

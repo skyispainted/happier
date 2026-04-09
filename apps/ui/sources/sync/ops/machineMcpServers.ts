@@ -11,8 +11,8 @@ import {
     type DaemonMcpServersPreviewResponse,
     type DaemonMcpServersTestRequest,
     type DaemonMcpServersTestResponse,
-} from '@happier-dev/protocol';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+} from '@ks-happier/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { machineRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedMachineRpc';
 

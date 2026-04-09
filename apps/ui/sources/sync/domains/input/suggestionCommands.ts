@@ -4,7 +4,7 @@
  */
 
 import Fuse from 'fuse.js';
-import { listActionSpecs } from '@happier-dev/protocol';
+import { listActionSpecs } from '@ks-happier/protocol';
 import { storage } from '../state/storage';
 import { isActionEnabledInState } from '@/sync/domains/settings/actionsSettings';
 

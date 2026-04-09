@@ -1,4 +1,4 @@
-import { buildBackendTargetKey, type AcpCatalogSettingsV1, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import { buildBackendTargetKey, type AcpCatalogSettingsV1, type BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { getAgentCore } from '@/agents/catalog/catalog';
 import { getResolvedBackendCatalogEntries, resolveBuiltInAgentIdForBackendTarget } from '@/agents/backendCatalog/getResolvedBackendCatalogEntries';

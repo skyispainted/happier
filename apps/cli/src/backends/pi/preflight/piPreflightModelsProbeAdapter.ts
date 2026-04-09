@@ -1,7 +1,7 @@
 import type { PreflightModelsProbeAdapter } from '@/capabilities/probes/preflightModelsProbeAdapterTypes';
 import { resolveProviderCliCommand } from '@/runtime/managedTools/providerCliResolution';
 import { resolveCliPathOverride } from '@/agent/acp/resolveCliPathOverride';
-import { resolveWindowsCommandInvocation } from '@happier-dev/cli-common/process';
+import { resolveWindowsCommandInvocation } from '@ks-happier/cli-common/process';
 import { killProcessTree } from '@/agent/acp/killProcessTree';
 import { spawn } from 'node:child_process';
 

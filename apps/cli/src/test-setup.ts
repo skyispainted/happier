@@ -46,7 +46,7 @@ function resolveSharedDepsLockPath(projectRoot: string): string {
 }
 
 function resolveBundledProtocolDistMarkers(projectRoot: string): string[] {
-  const protocolDistDir = join(projectRoot, 'node_modules', '@happier-dev', 'protocol', 'dist')
+  const protocolDistDir = join(projectRoot, 'node_modules', '@ks-happier', 'protocol', 'dist')
   return [
     join(protocolDistDir, 'sessionFork.js'),
     join(protocolDistDir, 'features', 'payload', 'isRecord.js'),

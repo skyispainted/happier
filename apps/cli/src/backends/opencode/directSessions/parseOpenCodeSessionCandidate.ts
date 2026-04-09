@@ -1,4 +1,4 @@
-import type { DirectSessionCandidateV1 } from '@happier-dev/protocol';
+import type { DirectSessionCandidateV1 } from '@ks-happier/protocol';
 
 function parseMaybeTimestampMs(value: unknown): number | null {
   if (typeof value === 'string' && value.trim()) {

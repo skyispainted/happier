@@ -1,6 +1,6 @@
 import type { AgentBackend } from '@/agent/core/AgentBackend';
 import type { ExecutionBudgetRegistry } from '@/daemon/executionBudget/ExecutionBudgetRegistry';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import type { ExecutionRunState } from '@/agent/executionRuns/runtime/executionRunTypes';
 import type { ExecutionRunBackendController, ExecutionRunController } from '@/agent/executionRuns/controllers/types';

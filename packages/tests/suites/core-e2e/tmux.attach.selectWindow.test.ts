@@ -99,7 +99,7 @@ describe('core e2e: tmux attach selects the correct window (isolated tmux server
 
       const attachRes = spawnSync(
         yarnCommand(),
-        ['-s', 'workspace', '@happier-dev/cli', 'dev', 'attach', sessionId],
+        ['-s', 'workspace', '@ks-happier/cli', 'dev', 'attach', sessionId],
         { cwd: repoRootDir(), env: envForAttach, encoding: 'utf8' },
       );
       expect(attachRes.status).toBe(0);

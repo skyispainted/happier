@@ -23,7 +23,7 @@ import { useHappyAction } from '@/hooks/ui/useHappyAction';
 import { useHydrateSessionForRoute } from '@/hooks/session/useHydrateSessionForRoute';
 import { HappyError } from '@/utils/errors/errors';
 import { clearSessionVisibleWhenInactive, stopSessionAndMaybeArchive } from '@/components/sessions/sessionStopArchiveFlow';
-import { resolveAgentIdFromSessionMetadata } from '@happier-dev/agents';
+import { resolveAgentIdFromSessionMetadata } from '@ks-happier/agents';
 import { resolveProfileById } from '@/sync/domains/profiles/profileUtils';
 import { getProfileDisplayName } from '@/components/profiles/profileDisplay';
 import { DEFAULT_AGENT_ID, getAgentCore, resolveAgentIdFromFlavor } from '@/agents/catalog/catalog';
@@ -45,7 +45,7 @@ import {
     resolveSessionHandoffUiAvailability,
 } from '@/sync/domains/sessionHandoff/resolveSessionHandoffUiAvailability';
 import { readMachineTargetForSession } from '@/sync/ops/sessionMachineTarget';
-import { getActionSpec } from '@happier-dev/protocol';
+import { getActionSpec } from '@ks-happier/protocol';
 import { SessionRetentionNotice } from '@/components/sessions/info/SessionRetentionNotice';
 import { useServerFeaturesSnapshotForServerId } from '@/sync/domains/features/featureDecisionRuntime';
 import {

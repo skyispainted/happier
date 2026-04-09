@@ -1,7 +1,7 @@
 import { mkdirSync, realpathSync, symlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { getProviderCliRuntimeSpec } from '@happier-dev/agents';
+import { getProviderCliRuntimeSpec } from '@ks-happier/agents';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import { createEnvKeyScope } from '@/testkit/env/envScope';

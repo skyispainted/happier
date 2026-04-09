@@ -9,9 +9,9 @@ import { createUserScopedSocketCollector } from '../../src/testkit/socketClient'
 import { decryptLegacyBase64, encryptLegacyBase64 } from '../../src/testkit/messageCrypto';
 
 import { io as socketIo } from 'socket.io-client';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import type { CapabilitiesInvokeRequest, CapabilitiesInvokeResponse } from '@happier-dev/protocol/capabilities';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import type { CapabilitiesInvokeRequest, CapabilitiesInvokeResponse } from '@ks-happier/protocol/capabilities';
 
 const run = createRunDirs({ runLabel: 'core' });
 

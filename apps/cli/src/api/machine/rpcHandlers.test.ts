@@ -7,8 +7,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import tweetnacl from 'tweetnacl';
 import axios from 'axios';
 
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { sealEncryptedDataKeyEnvelopeV1, SPAWN_SESSION_ERROR_CODES } from '@happier-dev/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { sealEncryptedDataKeyEnvelopeV1, SPAWN_SESSION_ERROR_CODES } from '@ks-happier/protocol';
 import { encrypt, encodeBase64 } from '@/api/encryption';
 import { collectBugReportMachineDiagnosticsSnapshot } from '@/diagnostics/bugReportMachineDiagnostics';
 import { removeExecutionRunMarker, writeExecutionRunMarker } from '@/daemon/executionRunRegistry';

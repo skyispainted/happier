@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Pressable, View } from 'react-native';
 import { useUnistyles } from 'react-native-unistyles';
-import { getActionSpec, resolveEffectiveActionInputFields } from '@happier-dev/protocol';
+import { getActionSpec, resolveEffectiveActionInputFields } from '@ks-happier/protocol';
 import { useRouter } from 'expo-router';
 
 import { storage, useSession } from '@/sync/domains/state/storage';

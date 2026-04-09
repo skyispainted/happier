@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { ExecutionRunPublicState } from '@happier-dev/protocol';
+import type { ExecutionRunPublicState } from '@ks-happier/protocol';
 
 import { sessionExecutionRunList, type SessionExecutionRunListResult } from '@/sync/ops/sessionExecutionRuns';
 import { subscribeExecutionRunActivity } from '@/sync/runtime/executionRuns/executionRunActivityBus';

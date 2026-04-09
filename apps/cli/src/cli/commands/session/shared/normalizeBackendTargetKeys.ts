@@ -1,4 +1,4 @@
-import { BackendTargetKeySchema, buildBackendTargetKey } from '@happier-dev/protocol';
+import { BackendTargetKeySchema, buildBackendTargetKey } from '@ks-happier/protocol';
 
 export function normalizeBackendTargetKeysFromCsv(value: string | null): string[] {
   if (!value) return [];

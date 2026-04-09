@@ -2,8 +2,8 @@ import { randomUUID } from 'node:crypto';
 
 import { render } from 'ink';
 import React from 'react';
-import { resolveAgentIdFromFlavor } from '@happier-dev/agents';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import { resolveAgentIdFromFlavor } from '@ks-happier/agents';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import type { ApiClient } from '@/api/api';
 import type { ApiSessionClient } from '@/api/session/sessionClient';

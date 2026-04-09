@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { decodeBase64, encodeBase64, sealBoxBundle } from '@happier-dev/protocol';
+import { decodeBase64, encodeBase64, sealBoxBundle } from '@ks-happier/protocol';
 
 vi.mock('@/utils/timing/time', async (importOriginal) => {
   const actual = await importOriginal<typeof import('@/utils/timing/time')>();

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 
-import type { DaemonMcpServersPreviewResponse } from '@happier-dev/protocol';
+import type { DaemonMcpServersPreviewResponse } from '@ks-happier/protocol';
 import type { AgentCoreConfig, AgentId } from '@/agents/registry/registryCore';
 
 import { DropdownMenu, type DropdownMenuItem } from '@/components/ui/forms/dropdown/DropdownMenu';

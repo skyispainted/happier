@@ -7,7 +7,7 @@ import tweetnacl from 'tweetnacl';
 import { encodeBase64, encodeBase64Url } from '@/api/encryption';
 import { configuration } from '@/configuration';
 import { applyServerSelectionFromArgs } from '@/server/serverSelection';
-import { buildConfigureServerLinks, buildTerminalConnectLinks } from '@happier-dev/cli-common/links';
+import { buildConfigureServerLinks, buildTerminalConnectLinks } from '@ks-happier/cli-common/links';
 
 function sha256Base64Url(input: Uint8Array): string {
   return createHash('sha256').update(Buffer.from(input)).digest('base64url');

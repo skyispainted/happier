@@ -1,6 +1,6 @@
 import { stat } from 'node:fs/promises';
 
-import type { DirectSessionsSource, DirectTranscriptRawMessageV1 } from '@happier-dev/protocol';
+import type { DirectSessionsSource, DirectTranscriptRawMessageV1 } from '@ks-happier/protocol';
 
 import { readJsonlFileForward } from '@/api/directSessions/filePaging/jsonlForwardReader';
 

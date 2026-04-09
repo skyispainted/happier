@@ -1,5 +1,5 @@
 import type { PermissionMode } from '@/sync/domains/permissions/permissionTypes';
-import { parsePermissionIntentAlias } from '@happier-dev/agents';
+import { parsePermissionIntentAlias } from '@ks-happier/agents';
 
 import { createReducer, reducer, type ReducerState } from '../../reducer/reducer';
 import type { Message } from '../../domains/messages/messageTypes';

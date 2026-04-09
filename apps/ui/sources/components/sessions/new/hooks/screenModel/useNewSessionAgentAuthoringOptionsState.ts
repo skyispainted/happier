@@ -7,7 +7,7 @@ import {
     SessionMcpSelectionV1Schema,
     type SessionMcpSelectionV1,
     type AcpConfigOptionOverridesV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 type PersistedAuthoringDraftLike = Readonly<{
     modelId?: string | null;

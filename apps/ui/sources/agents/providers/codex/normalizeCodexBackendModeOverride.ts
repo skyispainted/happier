@@ -1,4 +1,4 @@
-import { normalizeCodexBackendMode } from '@happier-dev/protocol';
+import { normalizeCodexBackendMode } from '@ks-happier/protocol';
 
 export type CodexBackendModeOverride = 'mcp' | 'acp' | null;
 

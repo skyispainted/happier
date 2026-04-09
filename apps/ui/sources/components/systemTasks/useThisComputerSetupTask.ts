@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { SystemTaskResult } from '@happier-dev/protocol';
+import type { SystemTaskResult } from '@ks-happier/protocol';
 
 import { buildLocalMachineSetupSystemTaskSpec } from './buildLocalMachineSetupSystemTaskSpec';
 import { getSystemTasksRunner } from './systemTasksRuntime';

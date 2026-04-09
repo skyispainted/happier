@@ -1,5 +1,5 @@
-import { systemTasks } from '@happier-dev/cli-common';
-import type { InteractiveSystemTaskEventInput, InteractiveSystemTaskKind, InteractiveSystemTaskKindMap } from '@happier-dev/cli-common/systemTasks';
+import { systemTasks } from '@ks-happier/cli-common';
+import type { InteractiveSystemTaskEventInput, InteractiveSystemTaskKind, InteractiveSystemTaskKindMap } from '@ks-happier/cli-common/systemTasks';
 import { createInterface } from 'node:readline';
 import {
   SystemTaskEventSchema,
@@ -9,7 +9,7 @@ import {
   type SystemTaskJsonValue,
   type SystemTaskEvent,
   type SystemTaskResult,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { createHsetupSystemTaskRegistry, createSystemTaskId } from '../systemTasks/registry.js';
 import {

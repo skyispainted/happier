@@ -3,7 +3,7 @@ import {
   buildOpenCodeAgentRuntimeDescriptor,
   normalizeOpenCodeServerBaseUrl,
   normalizeOpenCodeServerBaseUrlExplicit,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 export async function maybeUpdateOpenCodeSessionIdMetadata(params: {
   getOpenCodeSessionId: () => string | null;

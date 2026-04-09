@@ -1,4 +1,4 @@
-import type { SessionHandoffWorkspaceTransfer } from '@happier-dev/protocol';
+import type { SessionHandoffWorkspaceTransfer } from '@ks-happier/protocol';
 import { z } from 'zod';
 
 export type SessionHandoffDirectTargetMode = 'keep_direct' | 'convert_to_persisted';

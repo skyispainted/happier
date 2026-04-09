@@ -1,4 +1,4 @@
-import { buildAcpConfiguredBackendV1 } from '@happier-dev/protocol';
+import { buildAcpConfiguredBackendV1 } from '@ks-happier/protocol';
 
 export function buildConfiguredAcpBackendSessionMetadata(params: Readonly<{
   backendId: string;

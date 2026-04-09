@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { resolveLatestPermissionIntent } from '@happier-dev/agents';
+import { resolveLatestPermissionIntent } from '@ks-happier/agents';
 
 import { configuration } from '@/configuration';
 import { logger } from '@/ui/logger';

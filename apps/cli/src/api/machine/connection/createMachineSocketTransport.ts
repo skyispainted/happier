@@ -1,6 +1,6 @@
 import { io, type Socket } from 'socket.io-client';
 
-import type { ManagedConnectionTransport } from '@happier-dev/connection-supervisor';
+import type { ManagedConnectionTransport } from '@ks-happier/connection-supervisor';
 
 import type { DaemonToServerEvents, ServerToDaemonEvents } from '@/api/machine/socketTypes';
 import { createSocketTransportAdapter } from '@/api/connection/createSocketTransportAdapter';

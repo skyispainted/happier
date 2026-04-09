@@ -6,7 +6,7 @@ import { resolveAuthPolicyFromEnv } from "@/app/auth/authPolicy";
 import { enforceLoginEligibility } from "@/app/auth/enforceLoginEligibility";
 import { type Fastify } from "../../types";
 import { readEncryptionFeatureEnv } from "@/app/features/catalog/readFeatureEnv";
-import { resolveEffectiveDefaultAccountEncryptionMode } from "@happier-dev/protocol";
+import { resolveEffectiveDefaultAccountEncryptionMode } from "@ks-happier/protocol";
 
 export function registerKeyChallengeAuthRoute(app: Fastify): void {
     app.post('/v1/auth', {

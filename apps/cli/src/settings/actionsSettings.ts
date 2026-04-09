@@ -6,7 +6,7 @@ import {
   type ActionId,
   type ActionSurfaces,
   type ActionUiPlacement,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 const ENV_KEY = 'HAPPIER_ACTIONS_SETTINGS_V1';
 

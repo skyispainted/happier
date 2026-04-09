@@ -78,7 +78,7 @@ import {
     buildBackendTargetKey,
     type BackendTargetRefV1,
     type WindowsRemoteSessionLaunchMode,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { useNewSessionMcpSelection } from '@/components/sessions/new/hooks/useNewSessionMcpSelection';
 import { resolveEffectiveWindowsRemoteSessionLaunchMode } from '@/sync/domains/session/spawn/windowsRemoteSessionLaunchMode';
 import { useNewSessionAvailabilityState } from '@/components/sessions/new/hooks/screenModel/useNewSessionAvailabilityState';

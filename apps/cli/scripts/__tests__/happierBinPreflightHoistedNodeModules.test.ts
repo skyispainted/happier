@@ -23,7 +23,7 @@ describe('apps/cli bin/happier.mjs preflight', () => {
 
       copyCliBinRuntimeFiles({ binDir });
       writeProtocolBundleStub({
-        packageDir: join(tmp, 'node_modules', '@happier-dev', 'protocol'),
+        packageDir: join(tmp, 'node_modules', '@ks-happier', 'protocol'),
       });
       writeNodeModuleStub({
         packageDir: join(tmp, 'node_modules', 'tweetnacl'),
@@ -51,7 +51,7 @@ describe('apps/cli bin/happier.mjs preflight', () => {
     }
   });
 
-  it('allows @happier-dev/protocol to be hoisted to the repo root node_modules', () => {
+  it('allows @ks-happier/protocol to be hoisted to the repo root node_modules', () => {
     const { rootDir: tmp, cleanup } = createCliBinPreflightSandbox('happier-bin-preflight-');
     try {
       const projectRoot = join(tmp, 'apps', 'cli');
@@ -65,7 +65,7 @@ describe('apps/cli bin/happier.mjs preflight', () => {
 
       // Simulate the `hstack` clone setup behavior: only root node_modules exist.
       writeProtocolBundleStub({
-        packageDir: join(tmp, 'node_modules', '@happier-dev', 'protocol'),
+        packageDir: join(tmp, 'node_modules', '@ks-happier', 'protocol'),
       });
       writeNodeModuleStub({
         packageDir: join(tmp, 'node_modules', 'tweetnacl'),
@@ -93,7 +93,7 @@ describe('apps/cli bin/happier.mjs preflight', () => {
     }
   });
 
-  it('prints a helpful error if @happier-dev/protocol cannot be resolved', () => {
+  it('prints a helpful error if @ks-happier/protocol cannot be resolved', () => {
     const { rootDir: tmp, cleanup } = createCliBinPreflightSandbox('happier-bin-preflight-');
     try {
       const projectRoot = join(tmp, 'apps', 'cli');
@@ -108,8 +108,8 @@ describe('apps/cli bin/happier.mjs preflight', () => {
       const res = runHappierBin({ binDir, cwd: projectRoot, args: ['--help'] });
 
       expect(res.status).toBe(1);
-      expect(res.stderr).toContain('Missing bundled package: @happier-dev/protocol');
-      expect(res.stderr).toContain('Reinstall @happier-dev/cli to repair your installation.');
+      expect(res.stderr).toContain('Missing bundled package: @ks-happier/protocol');
+      expect(res.stderr).toContain('Reinstall @ks-happier/cli to repair your installation.');
     } finally {
       cleanup();
     }
@@ -120,7 +120,7 @@ describe('apps/cli bin/happier.mjs preflight', () => {
     try {
       const projectRoot = join(tmp, 'apps', 'cli');
       const binDir = join(projectRoot, 'bin');
-      const bundledProtocolDir = join(projectRoot, 'node_modules', '@happier-dev', 'protocol');
+      const bundledProtocolDir = join(projectRoot, 'node_modules', '@ks-happier', 'protocol');
       const workspaceProtocolDir = join(tmp, 'packages', 'protocol');
       const scriptsDir = join(tmp, 'scripts', 'workspaces');
 
@@ -130,11 +130,11 @@ describe('apps/cli bin/happier.mjs preflight', () => {
       writeCliProjectFixture({
         projectRoot,
         entrypointDir: 'dist',
-        entrypointContent: "import '@happier-dev/protocol/changes'; console.log('ok');\n",
+        entrypointContent: "import '@ks-happier/protocol/changes'; console.log('ok');\n",
       });
       writeFileSync(
         join(projectRoot, 'package.json'),
-        `${JSON.stringify({ name: '@happier-dev/cli', bundledDependencies: ['@happier-dev/protocol'] }, null, 2)}\n`,
+        `${JSON.stringify({ name: '@ks-happier/cli', bundledDependencies: ['@ks-happier/protocol'] }, null, 2)}\n`,
         'utf8',
       );
       copyCliBinRuntimeFiles({ binDir });

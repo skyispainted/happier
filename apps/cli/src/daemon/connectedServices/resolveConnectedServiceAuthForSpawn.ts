@@ -1,4 +1,4 @@
-import type { ConnectedServiceCredentialRecordV1, ConnectedServiceId } from '@happier-dev/protocol';
+import type { ConnectedServiceCredentialRecordV1, ConnectedServiceId } from '@ks-happier/protocol';
 
 import type { CatalogAgentId } from '@/backends/types';
 import type { ApiClient } from '@/api/api';

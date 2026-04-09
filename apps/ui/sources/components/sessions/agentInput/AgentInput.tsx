@@ -95,7 +95,7 @@ import {
 } from '@/utils/sessions/permissions/permissionPromptPolicy';
 import { buildSessionMessageRouteId } from '@/sync/domains/messages/messageRouteIds';
 import { normalizeNodeForView } from '@/components/ui/rendering/normalizeNodeForView';
-import type { AcpConfigOptionOverridesV1 } from '@happier-dev/protocol';
+import type { AcpConfigOptionOverridesV1 } from '@ks-happier/protocol';
 import type {
     AgentInputAttachment,
     AgentInputExtraActionChip,

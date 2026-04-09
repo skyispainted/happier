@@ -1,4 +1,4 @@
-import { listPublicReleaseRingCatalogEntries } from '@happier-dev/release-runtime/releaseRings';
+import { listPublicReleaseRingCatalogEntries } from '@ks-happier/release-runtime/releaseRings';
 
 export const MANIFEST_SCHEMA_VERSION = 'v1';
 

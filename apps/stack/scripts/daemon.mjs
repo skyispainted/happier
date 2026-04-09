@@ -4,7 +4,7 @@ import { getStacksStorageRoot } from './utils/paths/paths.mjs';
 import { runCaptureIfCommandExists } from './utils/proc/commands.mjs';
 import { readLastLines } from './utils/fs/tail.mjs';
 import { ensureCliBuilt } from './utils/proc/pm.mjs';
-import { resolveJavaScriptRuntimeCommand } from '@happier-dev/cli-common/providers/managedJavaScriptRuntime';
+import { resolveJavaScriptRuntimeCommand } from '@ks-happier/cli-common/providers/managedJavaScriptRuntime';
 import {
   findAnyCredentialPathInCliHome,
   findExistingStackCredentialPath,

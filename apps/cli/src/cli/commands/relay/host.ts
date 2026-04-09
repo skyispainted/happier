@@ -11,15 +11,15 @@ import { wantsJson, printJsonEnvelope } from '@/cli/output/jsonEnvelope';
 import {
   prepareFirstPartyComponentPayloadFromGitHubRelease,
   resolveRelayRuntimeDefaults,
-} from '@happier-dev/cli-common/firstPartyRuntime';
-import { resolveServiceBackend } from '@happier-dev/cli-common/service';
-import { createRelayHostEngine } from '@happier-dev/cli-common/relayHost';
+} from '@ks-happier/cli-common/firstPartyRuntime';
+import { resolveServiceBackend } from '@ks-happier/cli-common/service';
+import { createRelayHostEngine } from '@ks-happier/cli-common/relayHost';
 import {
   installRemoteFirstPartyComponent,
   type RelayRuntimeStatusSnapshot,
   type RelayRuntimeTaskParams,
   type SystemTaskSshConnectionConfig,
-} from '@happier-dev/cli-common/systemTasks';
+} from '@ks-happier/cli-common/systemTasks';
 
 type RelayHostStatusJson = Readonly<{
   installed: boolean;

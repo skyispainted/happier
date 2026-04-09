@@ -1,4 +1,4 @@
-import { getProviderCliInstallGuideUrl, getProviderCliRuntimeSpec, type AgentId } from '@happier-dev/agents';
+import { getProviderCliInstallGuideUrl, getProviderCliRuntimeSpec, type AgentId } from '@ks-happier/agents';
 
 export function buildProviderCliUnavailableMessage(params: Readonly<{
   agentId: AgentId;

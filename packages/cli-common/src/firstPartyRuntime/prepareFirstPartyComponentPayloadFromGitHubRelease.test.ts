@@ -12,15 +12,15 @@ const {
     extractReleasePayloadRootFromArchiveMock: vi.fn(),
 }));
 
-vi.mock('@happier-dev/release-runtime/github', () => ({
+vi.mock('@ks-happier/release-runtime/github', () => ({
     fetchGitHubReleaseByTag: fetchGitHubReleaseByTagMock,
 }));
 
-vi.mock('@happier-dev/release-runtime/assets', () => ({
+vi.mock('@ks-happier/release-runtime/assets', () => ({
     resolveReleaseAssetBundle: resolveReleaseAssetBundleMock,
 }));
 
-vi.mock('@happier-dev/release-runtime/verifiedDownload', () => ({
+vi.mock('@ks-happier/release-runtime/verifiedDownload', () => ({
     downloadVerifiedReleaseAssetBundle: downloadVerifiedReleaseAssetBundleMock,
 }));
 

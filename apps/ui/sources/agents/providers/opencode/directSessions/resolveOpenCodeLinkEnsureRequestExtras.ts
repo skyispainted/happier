@@ -3,7 +3,7 @@ import {
     buildOpenCodeAgentRuntimeDescriptor,
     normalizeOpenCodeBackendMode,
     readSessionMetadataRuntimeDescriptor,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 export function resolveOpenCodeLinkEnsureRequestExtras(params: Readonly<{
     candidate: Readonly<{ details?: Record<string, unknown> }>;

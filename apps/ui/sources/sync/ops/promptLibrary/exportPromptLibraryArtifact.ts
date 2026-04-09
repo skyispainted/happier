@@ -8,7 +8,7 @@ import {
   type PromptAssetScopeV1,
   type PromptExternalLinksV1,
   type PromptBundleBodyV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { storage } from '@/sync/domains/state/storage';
 import { sync } from '@/sync/sync';

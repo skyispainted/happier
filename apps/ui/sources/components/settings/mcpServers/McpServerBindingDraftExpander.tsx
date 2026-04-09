@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { useUnistyles, StyleSheet } from 'react-native-unistyles';
 
-import { McpServerBindingV1Schema, type McpServerBindingTargetV1, type McpServerBindingV1 } from '@happier-dev/protocol';
+import { McpServerBindingV1Schema, type McpServerBindingTargetV1, type McpServerBindingV1 } from '@ks-happier/protocol';
 
 import { McpBindingTargetFields, describeBindingTarget } from '@/components/settings/mcpServers/McpBindingTargetFields';
 import { InlineAddExpander } from '@/components/ui/forms/InlineAddExpander';

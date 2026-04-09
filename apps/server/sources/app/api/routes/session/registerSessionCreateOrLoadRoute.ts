@@ -8,7 +8,7 @@ import { readEncryptionFeatureEnv } from "@/app/features/catalog/readFeatureEnv"
 import {
     isSessionEncryptionModeAllowedByStoragePolicy,
     resolveEffectiveDefaultAccountEncryptionMode,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 import { resolveRequestedSessionModeRejectionCode } from "@/app/session/encryptionRejectionCodes";
 
 import { type Fastify } from "../../types";

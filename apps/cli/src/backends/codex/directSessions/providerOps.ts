@@ -1,5 +1,5 @@
 import { configuration } from '@/configuration';
-import { buildCodexSpawnRuntimeAffinityCompatFields } from '@happier-dev/agents';
+import { buildCodexSpawnRuntimeAffinityCompatFields } from '@ks-happier/agents';
 
 import {
   mergeDirectSessionEnvironmentVariables,

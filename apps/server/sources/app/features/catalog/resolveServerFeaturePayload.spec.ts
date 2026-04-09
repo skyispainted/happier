@@ -8,7 +8,7 @@ import { resolveServerFeaturePayload } from "./resolveServerFeaturePayload";
 import { resolveServerFeatureBuildPolicy } from "./serverFeatureBuildPolicy";
 import type { ServerFeatureResolver } from "./serverFeatureRegistry";
 import type { FeaturesPayloadDelta } from "../types";
-import { evaluateFeatureBuildPolicy } from "@happier-dev/protocol";
+import { evaluateFeatureBuildPolicy } from "@ks-happier/protocol";
 
 function fromPartial(partial: FeaturesPayloadDelta): ServerFeatureResolver {
     return () => partial;

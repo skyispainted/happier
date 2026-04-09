@@ -32,23 +32,23 @@ import {
   renderSystemdServiceUnit,
   renderWindowsScheduledTaskWrapperPs1,
   resolveServiceBackend,
-} from '@happier-dev/cli-common/service';
+} from '@ks-happier/cli-common/service';
 import {
   parseEnvText as parseEnvTextShared,
   resolveConfiguredRelayRuntimeBinaryOverride,
   resolveConfiguredRelayRuntimePaths,
   renderSelfHostServerEnvText as renderSelfHostServerEnvTextShared,
-} from '@happier-dev/cli-common/firstPartyRuntime';
-import { DEFAULT_MINISIGN_PUBLIC_KEY } from '@happier-dev/release-runtime/minisign';
+} from '@ks-happier/cli-common/firstPartyRuntime';
+import { DEFAULT_MINISIGN_PUBLIC_KEY } from '@ks-happier/release-runtime/minisign';
 import {
   PUBLIC_RELEASE_RING_IDS,
   getReleaseRingCatalogEntry,
   normalizePublicReleaseRingId,
-} from '@happier-dev/release-runtime/releaseRings';
-import { resolveReleaseAssetBundle } from '@happier-dev/release-runtime/assets';
-import { downloadVerifiedReleaseAssetBundle } from '@happier-dev/release-runtime/verifiedDownload';
-import { planArchiveExtraction } from '@happier-dev/release-runtime/extractPlan';
-import { fetchFirstGitHubReleaseByTags, fetchGitHubReleaseByTag } from '@happier-dev/release-runtime/github';
+} from '@ks-happier/release-runtime/releaseRings';
+import { resolveReleaseAssetBundle } from '@ks-happier/release-runtime/assets';
+import { downloadVerifiedReleaseAssetBundle } from '@ks-happier/release-runtime/verifiedDownload';
+import { planArchiveExtraction } from '@ks-happier/release-runtime/extractPlan';
+import { fetchFirstGitHubReleaseByTags, fetchGitHubReleaseByTag } from '@ks-happier/release-runtime/github';
 import { findExtractedExecutableByName } from './self_host/findExtractedExecutableByName.mjs';
 import { maybeInstallCompanionCli } from './self_host/install_companion_cli.mjs';
 import { listVersionedDirectoryIdsNewestFirst, pruneVersionedDirectories } from './self_host/version_retention.mjs';

@@ -12,8 +12,8 @@ import {
     RpcHandlerConfig,
 } from './types';
 import { Socket } from 'socket.io-client';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
-import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES } from '@happier-dev/protocol/rpc';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
+import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES } from '@ks-happier/protocol/rpc';
 
 export class RpcHandlerManager {
     private handlers: RpcHandlerMap = new Map();

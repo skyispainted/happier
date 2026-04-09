@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { FeaturesResponseSchema } from '@happier-dev/protocol';
+import { FeaturesResponseSchema } from '@ks-happier/protocol';
 
 const fetchServerFeaturesSnapshotMock = vi.fn<
   (params: Readonly<{ serverUrl: string; timeoutMs?: number }>) => Promise<unknown>

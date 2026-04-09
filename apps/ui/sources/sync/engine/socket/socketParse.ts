@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { EphemeralUpdateSchema, UpdateContainerSchema } from '@happier-dev/protocol/updates';
-import type { UpdateContainer, EphemeralUpdate } from '@happier-dev/protocol/updates';
+import { EphemeralUpdateSchema, UpdateContainerSchema } from '@ks-happier/protocol/updates';
+import type { UpdateContainer, EphemeralUpdate } from '@ks-happier/protocol/updates';
 
 const LegacySharingUpdateBodySchema = z.discriminatedUnion('t', [
     z.object({

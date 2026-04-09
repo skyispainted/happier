@@ -14,7 +14,7 @@ import {
     openEncryptedDataKeyEnvelopeV1,
     sealAccountScopedBlobCiphertext,
     sealEncryptedDataKeyEnvelopeV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export class Encryption {
 

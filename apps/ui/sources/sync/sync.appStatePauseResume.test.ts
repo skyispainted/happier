@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import type { ManagedEndpointSupervisor, ManagedEndpointSupervisorState } from '@happier-dev/connection-supervisor';
+import type { ManagedEndpointSupervisor, ManagedEndpointSupervisorState } from '@ks-happier/connection-supervisor';
 
 import type { PauseController } from '@/utils/timing/pauseController';
 

@@ -4,7 +4,7 @@ import { join, resolve } from 'node:path';
 
 import { describe, expect, it } from 'vitest';
 
-import { buildConnectedServiceCredentialRecord } from '@happier-dev/protocol';
+import { buildConnectedServiceCredentialRecord } from '@ks-happier/protocol';
 import { materializeConnectedServicesForSpawn } from './materializeConnectedServicesForSpawn';
 
 describe('materializeConnectedServicesForSpawn', () => {

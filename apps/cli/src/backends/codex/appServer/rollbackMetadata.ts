@@ -4,7 +4,7 @@ import {
     readSessionRollbackRangesV1FromMetadata,
     type SessionRollbackRangeV1,
     type SessionRollbackTarget,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 type RollbackMetadataSession = Readonly<{
     updateMetadata: (updater: (metadata: Metadata) => Metadata) => Promise<void> | void;

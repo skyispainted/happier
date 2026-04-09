@@ -1,5 +1,5 @@
 import type { Metadata } from '@/sync/domains/state/storageTypes';
-import { computeNextMetadataStringOverrideV1 } from '@happier-dev/agents';
+import { computeNextMetadataStringOverrideV1 } from '@ks-happier/agents';
 
 export function computeNextModelOverrideMetadata(params: {
     metadata: Metadata;

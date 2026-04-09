@@ -13,7 +13,7 @@ test('loadCliCommonDistModule rebuilds cli-common when the dist module is missin
     const packageDir = join(repoRoot, 'packages', 'cli-common');
     const modulePath = resolveCliCommonDistModulePathForTests(repoRoot, 'componentArtifacts');
     mkdirSync(join(packageDir, 'dist', 'componentArtifacts'), { recursive: true });
-    writeFileSync(join(packageDir, 'package.json'), JSON.stringify({ name: '@happier-dev/cli-common', type: 'module' }, null, 2));
+    writeFileSync(join(packageDir, 'package.json'), JSON.stringify({ name: '@ks-happier/cli-common', type: 'module' }, null, 2));
 
     const execCalls = [];
     const moduleSource = 'export const rebuilt = true;\n';

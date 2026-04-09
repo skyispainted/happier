@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 
-import { getReleaseRingCatalogEntry } from '@happier-dev/release-runtime/releaseRings';
+import { getReleaseRingCatalogEntry } from '@ks-happier/release-runtime/releaseRings';
 
 const require = createRequire(import.meta.url);
 const { APP_ENVIRONMENT_CONFIGS } = require('../../../apps/ui/appVariantConfig.cjs');

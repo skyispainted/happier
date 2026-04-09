@@ -1,4 +1,4 @@
-import type { ParticipantRecipientV1 } from '@happier-dev/protocol';
+import type { ParticipantRecipientV1 } from '@ks-happier/protocol';
 import * as React from 'react';
 
 import { getSuggestions } from '@/components/autocomplete/suggestions';

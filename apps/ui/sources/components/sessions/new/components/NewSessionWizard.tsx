@@ -34,7 +34,7 @@ import { isMachineOnline } from '@/utils/sessions/machineUtils';
 import type { CreatedSessionFollowUpContext } from '../hooks/useCreateNewSession';
 import { buildNewSessionProfileSelectionPopover } from '@/components/sessions/new/components/buildNewSessionProfileSelectionPopover';
 import { NewSessionProfilesBrowserContent } from '@/components/sessions/new/components/NewSessionProfilesBrowserContent';
-import type { AcpConfigOptionOverridesV1 } from '@happier-dev/protocol';
+import type { AcpConfigOptionOverridesV1 } from '@ks-happier/protocol';
 import { useNewSessionAttachmentsController } from '@/components/sessions/new/attachments/useNewSessionAttachmentsController';
 import { isMobileLayoutWidth } from '@/components/sessions/layout/isMobileLayoutWidth';
 

@@ -11,7 +11,7 @@ import {
     PUSH_NOTIFICATION_ACTION_IDS,
     PUSH_NOTIFICATION_ANDROID_CHANNEL_IDS,
     PUSH_NOTIFICATION_CATEGORY_IDS,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { TokenStorage, type AuthCredentials } from '@/auth/storage/tokenStorage';
 import { AuthProvider } from '@/auth/context/AuthContext';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
@@ -29,7 +29,7 @@ import { SettingsAnalyticsRuntime } from '@/track/settingsAnalytics/SettingsAnal
 import { syncRestore } from '@/sync/sync';
 import { storage } from '@/sync/domains/state/storage';
 import { getActiveViewingSessionId } from '@/sync/domains/session/activeViewingSession';
-import { NotificationsSettingsV1Schema } from '@happier-dev/protocol';
+import { NotificationsSettingsV1Schema } from '@ks-happier/protocol';
 import { useTrackScreens } from '@/track/useTrackScreens';
 import { RealtimeProvider } from '@/realtime/RealtimeProvider';
 import { FaviconPermissionIndicator } from '@/components/web/FaviconPermissionIndicator';
@@ -333,7 +333,7 @@ if (Platform.OS === 'android') {
 // Register interactive notification actions.
 //
 // Note: Expo docs recommend avoiding ':' and '-' in category identifiers.
-// Our category ids live in `@happier-dev/protocol` so the CLI push payload and app registration stay in sync.
+// Our category ids live in `@ks-happier/protocol` so the CLI push payload and app registration stay in sync.
 if (Platform.OS !== 'web') {
     void Notifications.setNotificationCategoryAsync(PUSH_NOTIFICATION_CATEGORY_IDS.permissionRequestV1, [
         {

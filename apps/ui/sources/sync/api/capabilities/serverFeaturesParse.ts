@@ -1,4 +1,4 @@
-import { FeaturesResponseSchema, type FeaturesResponse as ServerFeatures } from '@happier-dev/protocol';
+import { FeaturesResponseSchema, type FeaturesResponse as ServerFeatures } from '@ks-happier/protocol';
 
 export function parseServerFeatures(raw: unknown): ServerFeatures | null {
     const parsed = FeaturesResponseSchema.safeParse(raw);

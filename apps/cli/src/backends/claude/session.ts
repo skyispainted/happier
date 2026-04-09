@@ -15,7 +15,7 @@ import type { SessionClientPort } from '@/api/session/sessionClientPort';
 import type { PushNotificationClient } from '@/api/pushNotifications';
 import { createHappierMcpBridge } from '@/agent/runtime/createHappierMcpBridge';
 import type { McpServerConfig } from '@/agent';
-import type { AccountSettings } from '@happier-dev/protocol';
+import type { AccountSettings } from '@ks-happier/protocol';
 import { resolveConfiguredClaudeConfigDir } from './utils/resolveConfiguredClaudeConfigDir';
 
 export type SessionFoundInfo = {

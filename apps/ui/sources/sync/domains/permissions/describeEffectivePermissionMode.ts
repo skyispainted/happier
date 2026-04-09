@@ -8,7 +8,7 @@ import {
     readSessionModelsState,
     readSessionModesState,
 } from '@/sync/domains/sessionControl/readSessionControlMetadata';
-import { normalizePermissionModeForAgent, parsePermissionIntentAlias } from '@happier-dev/agents';
+import { normalizePermissionModeForAgent, parsePermissionIntentAlias } from '@ks-happier/agents';
 
 export type EffectivePermissionModeDescription = Readonly<{
     effectiveMode: PermissionMode;

@@ -1,6 +1,6 @@
 import type { Metadata, UserMessage } from '@/api/types';
 
-import { resolveMetadataStringOverrideV1 } from '@happier-dev/agents';
+import { resolveMetadataStringOverrideV1 } from '@ks-happier/agents';
 
 export function resolveModelOverridePrecedence(opts: {
   metadata: Metadata | null | undefined;

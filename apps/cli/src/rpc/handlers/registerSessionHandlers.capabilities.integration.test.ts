@@ -10,16 +10,16 @@ import { registerSessionHandlers } from './registerSessionHandlers';
 import { chmod, mkdtemp, rm, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { tmpdir } from 'os';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 import type {
     CapabilitiesDescribeResponse,
     CapabilitiesDetectRequest,
     CapabilitiesDetectResponse,
     CapabilitiesInvokeRequest,
     CapabilitiesInvokeResponse,
-} from '@happier-dev/protocol';
-import { CHECKLIST_IDS, resumeChecklistId } from '@happier-dev/protocol/checklists';
-import { CODEX_ACP_DEP_ID } from '@happier-dev/protocol/installables';
+} from '@ks-happier/protocol';
+import { CHECKLIST_IDS, resumeChecklistId } from '@ks-happier/protocol/checklists';
+import { CODEX_ACP_DEP_ID } from '@ks-happier/protocol/installables';
 import { createEncryptedRpcTestClient } from './encryptedRpc.testkit';
 
 function createTestRpcManager(params?: { scopePrefix?: string }) {

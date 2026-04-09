@@ -2,8 +2,8 @@ import { z } from 'zod';
 import {
     DirectSessionsProviderIdSchema,
     DirectSessionsSourceSchema,
-} from '@happier-dev/protocol';
-import type { CodexBackendMode } from '@happier-dev/agents';
+} from '@ks-happier/protocol';
+import type { CodexBackendMode } from '@ks-happier/agents';
 
 import type { Metadata } from '@/sync/domains/state/storageTypes';
 

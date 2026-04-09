@@ -1,4 +1,4 @@
-import type { SettingArtifacts, SettingDefinitionMap, SettingValueKind } from '@happier-dev/protocol';
+import type { SettingArtifacts, SettingDefinitionMap, SettingValueKind } from '@ks-happier/protocol';
 
 import { serializeDerivedSettingEntries } from './serializeDerivedSettingEntries';
 import { serializeTrackedSettingEntries } from './serializeTrackedSettingEntries';

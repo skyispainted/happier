@@ -1,4 +1,4 @@
-import { ActionsSettingsV1Schema, type ActionsSettingsV1 } from '@happier-dev/protocol';
+import { ActionsSettingsV1Schema, type ActionsSettingsV1 } from '@ks-happier/protocol';
 
 export function normalizeActionsSettings(raw: unknown): ActionsSettingsV1 {
     const parsed = ActionsSettingsV1Schema.safeParse(raw ?? null);

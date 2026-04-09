@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import type { AuthCredentials } from '@/auth/storage/tokenStorage';
-import type { ConnectedServiceCredentialRecordV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceCredentialRecordV1 } from '@ks-happier/protocol';
 
 vi.mock('@/utils/timing/time', async (importOriginal) => {
   const actual = await importOriginal<typeof import('@/utils/timing/time')>();

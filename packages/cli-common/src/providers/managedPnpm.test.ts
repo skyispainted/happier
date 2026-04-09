@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { ensureManagedPnpmCommand, managedPnpmBinPath, managedPnpmInstallDir } from './managedPnpm.js';
 
-vi.mock('@happier-dev/release-runtime', () => ({
+vi.mock('@ks-happier/release-runtime', () => ({
   fetchGitHubLatestRelease: async () => ({
     tag_name: 'v10.2.1',
     assets: [

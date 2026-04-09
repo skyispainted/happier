@@ -18,7 +18,7 @@ import { mkdir } from 'fs/promises';
 import { stat } from 'fs/promises';
 
 import { registerFileSystemHandlers } from './fileSystem';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 import { resolve } from 'path';
 
 type Handler = (data: unknown) => Promise<unknown> | unknown;

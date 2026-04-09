@@ -23,9 +23,9 @@ function readJson(dir, rel) {
 
 test('set-preview-versions updates selected package.json versions and prints JSON summary', async () => {
   const dir = mkdtempSync(path.join(tmpdir(), 'happier-preview-versions-'));
-  writeJson(dir, 'apps/cli/package.json', { name: '@happier-dev/cli', version: '1.2.3' });
-  writeJson(dir, 'apps/stack/package.json', { name: '@happier-dev/stack', version: '9.9.9' });
-  writeJson(dir, 'packages/relay-server/package.json', { name: '@happier-dev/relay-server', version: '3.4.5' });
+  writeJson(dir, 'apps/cli/package.json', { name: '@ks-happier/cli', version: '1.2.3' });
+  writeJson(dir, 'apps/stack/package.json', { name: '@ks-happier/stack', version: '9.9.9' });
+  writeJson(dir, 'packages/relay-server/package.json', { name: '@ks-happier/relay-server', version: '3.4.5' });
 
   const out = execFileSync(
     process.execPath,

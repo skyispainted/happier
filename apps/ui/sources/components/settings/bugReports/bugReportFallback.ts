@@ -6,7 +6,7 @@ import {
     type BugReportEnvironmentPayload,
     type BugReportFrequency,
     type BugReportSeverity,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export type {
     BugReportDeploymentType,

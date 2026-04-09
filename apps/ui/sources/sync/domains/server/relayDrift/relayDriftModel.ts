@@ -1,4 +1,4 @@
-import { createServerUrlComparableKey } from '@happier-dev/protocol';
+import { createServerUrlComparableKey } from '@ks-happier/protocol';
 
 export type RelayDriftRepairAction = Readonly<{
     kind: 'connectBackgroundServiceToActiveRelay';

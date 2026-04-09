@@ -1,6 +1,6 @@
 import type {
     WorkspaceCheckoutKind,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { t } from '@/text';
 

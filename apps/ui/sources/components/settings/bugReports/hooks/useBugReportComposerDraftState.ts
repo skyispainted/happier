@@ -7,7 +7,7 @@ import {
   type BugReportDeploymentType,
   type BugReportFrequency,
   type BugReportSeverity,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Profile } from '@/sync/domains/profiles/profile';
 

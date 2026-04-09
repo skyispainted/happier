@@ -1,5 +1,5 @@
-import type { ScmBackendDescribeResponse } from '@happier-dev/protocol';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+import type { ScmBackendDescribeResponse } from '@ks-happier/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 
 import type { ScmBackend } from '../../types';
 import { createSaplingCapabilities } from './capabilities';

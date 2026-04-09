@@ -9,16 +9,16 @@ const { preparePayloadMock, createRelayHostEngineMock } = vi.hoisted(() => ({
     createRelayHostEngineMock: vi.fn(),
 }));
 
-vi.mock('@happier-dev/cli-common/firstPartyRuntime', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('@happier-dev/cli-common/firstPartyRuntime')>();
+vi.mock('@ks-happier/cli-common/firstPartyRuntime', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('@ks-happier/cli-common/firstPartyRuntime')>();
     return {
         ...actual,
         prepareFirstPartyComponentPayloadFromGitHubRelease: preparePayloadMock,
     };
 });
 
-vi.mock('@happier-dev/cli-common/systemTasks', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('@happier-dev/cli-common/systemTasks')>();
+vi.mock('@ks-happier/cli-common/systemTasks', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('@ks-happier/cli-common/systemTasks')>();
     return {
         ...actual,
         createRelayHostEngine: (...args: unknown[]) => {

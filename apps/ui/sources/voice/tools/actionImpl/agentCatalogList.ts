@@ -1,6 +1,6 @@
 import { AGENT_IDS, getAgentCore, isAgentId, type AgentId } from '@/agents/catalog/catalog';
-import { buildBackendTargetKey, parseBackendTargetKey } from '@happier-dev/protocol';
-import { getAgentStaticModels } from '@happier-dev/agents';
+import { buildBackendTargetKey, parseBackendTargetKey } from '@ks-happier/protocol';
+import { getAgentStaticModels } from '@ks-happier/agents';
 import { getResolvedBackendCatalogEntries } from '@/agents/backendCatalog/getResolvedBackendCatalogEntries';
 import { storage } from '@/sync/domains/state/storage';
 import { getActiveServerSnapshot } from '@/sync/domains/server/serverRuntime';

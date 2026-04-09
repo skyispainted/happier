@@ -1,4 +1,4 @@
-import { DEFAULT_AGENT_ID } from '@happier-dev/agents';
+import { DEFAULT_AGENT_ID } from '@ks-happier/agents';
 import { isAgentId } from '@/agents/registry/registryCore';
 import type { AgentId } from '@/agents/catalog/catalog';
 

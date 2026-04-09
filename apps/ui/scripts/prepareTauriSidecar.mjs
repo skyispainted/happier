@@ -132,7 +132,7 @@ export async function prepareTauriSidecar({
 
   const result = spawnSyncImpl(
     'yarn',
-    ['-s', 'workspace', '@happier-dev/bootstrap', 'build:binary'],
+    ['-s', 'workspace', '@ks-happier/bootstrap', 'build:binary'],
     {
       stdio: 'inherit',
       env: nextEnv,

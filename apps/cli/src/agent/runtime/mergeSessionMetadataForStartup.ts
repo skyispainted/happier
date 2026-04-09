@@ -3,13 +3,13 @@ import {
     computeMonotonicUpdatedAt,
     LEGACY_ACP_SESSION_MODE_OVERRIDE_KEY,
     SESSION_MODE_OVERRIDE_KEY,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 import {
     buildAcpSessionModeOverrideV1,
     buildModelOverrideV1,
     readSessionMcpSelectionV1FromMetadata,
     type SessionAttachMetadataIdentityPolicy,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export type PermissionModeOverride = {
     mode: PermissionMode;

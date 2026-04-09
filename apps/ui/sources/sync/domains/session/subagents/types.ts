@@ -1,4 +1,4 @@
-import type { ParticipantRecipientV1 } from '@happier-dev/protocol';
+import type { ParticipantRecipientV1 } from '@ks-happier/protocol';
 
 export type SessionSubagentKind = 'execution_run' | 'agent_team_member' | 'subagent_sidechain';
 export type SessionSubagentStatus = 'running' | 'succeeded' | 'failed' | 'cancelled' | 'terminated' | 'unknown';

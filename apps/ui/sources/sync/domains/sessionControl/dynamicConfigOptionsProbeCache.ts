@@ -1,5 +1,5 @@
 import { normalizeAcpConfigOptionsArray, type AcpConfigOption } from '@/sync/acp/configOptionsControl';
-import type { ProbedResourceSnapshot } from '@happier-dev/protocol';
+import type { ProbedResourceSnapshot } from '@ks-happier/protocol';
 
 import { createPersistentProbedResourceCache } from '@/sync/runtime/probedResources/createPersistentProbedResourceCache';
 

@@ -1,4 +1,4 @@
-import { listActionSpecs, type ActionId } from '@happier-dev/protocol';
+import { listActionSpecs, type ActionId } from '@ks-happier/protocol';
 
 import { isActionEnabledInState } from '@/sync/domains/settings/actionsSettings';
 

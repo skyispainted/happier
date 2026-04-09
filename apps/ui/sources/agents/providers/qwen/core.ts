@@ -3,7 +3,7 @@ import { buildCatalogProviderCliUiConfig } from '@/agents/providers/shared/build
 import { buildAgentResumeUiConfig } from '@/agents/registry/buildAgentResumeUiConfig';
 import { buildAgentSessionStorageUiConfig } from '@/agents/registry/buildAgentSessionStorageUiConfig';
 import { buildAgentToolsUiConfig } from '@/agents/registry/buildAgentToolsUiConfig';
-import { getAgentModelConfig, getAgentSessionModesKind } from '@happier-dev/agents';
+import { getAgentModelConfig, getAgentSessionModesKind } from '@ks-happier/agents';
 
 export const QWEN_CORE: AgentCoreConfig = {
     id: 'qwen',

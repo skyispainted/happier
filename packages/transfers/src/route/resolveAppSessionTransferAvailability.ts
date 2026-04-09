@@ -1,4 +1,4 @@
-import type { FeaturesResponse } from '@happier-dev/protocol';
+import type { FeaturesResponse } from '@ks-happier/protocol';
 
 import {
     resolveAppSessionTransferRoute,

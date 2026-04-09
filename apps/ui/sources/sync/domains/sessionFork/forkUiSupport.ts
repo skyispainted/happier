@@ -1,5 +1,5 @@
 import type { Session } from '@/sync/domains/state/storageTypes';
-import { evaluateAgentSessionCapabilitySupport, inferAgentIdFromSessionMetadata } from '@happier-dev/agents';
+import { evaluateAgentSessionCapabilitySupport, inferAgentIdFromSessionMetadata } from '@ks-happier/agents';
 
 export function canForkConversation(params: { session: Session | null | undefined; replayEnabled: boolean | null | undefined }): boolean {
   const session = params.session ?? null;

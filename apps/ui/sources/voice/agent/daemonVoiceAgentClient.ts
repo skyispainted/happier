@@ -2,7 +2,7 @@ import { createRpcCallError } from '@/sync/runtime/rpcErrors';
 import { sessionRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc';
 import { storage } from '@/sync/domains/state/storage';
 import { isSocketIoAckTimeoutError } from '@/sync/runtime/socketIoAckTimeout';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 import {
   ExecutionRunActionResponseSchema,
   ExecutionRunEnsureOrStartResponseSchema,
@@ -10,8 +10,8 @@ import {
   ExecutionRunTurnStreamCancelResponseSchema,
   ExecutionRunTurnStreamReadResponseSchema,
   ExecutionRunTurnStreamStartResponseSchema,
-} from '@happier-dev/protocol';
-import type { VoiceAssistantAction } from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
+import type { VoiceAssistantAction } from '@ks-happier/protocol';
 
 import type { VoiceAgentClient, VoiceAgentStartParams, VoiceAgentStartResult, VoiceAgentTurnStreamEvent } from './types';
 import { resolveVoiceAgentBootstrapTimeoutMs } from './resolveVoiceAgentBootstrapTimeoutMs';

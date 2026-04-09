@@ -1,4 +1,4 @@
-import { buildBackendTargetKey, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import { buildBackendTargetKey, type BackendTargetRefV1 } from '@ks-happier/protocol';
 
 export function resolveExecutionRunRuntimeBackendId(backendTarget: BackendTargetRefV1): string {
   return backendTarget.kind === 'builtInAgent' ? backendTarget.agentId : 'customAcp';

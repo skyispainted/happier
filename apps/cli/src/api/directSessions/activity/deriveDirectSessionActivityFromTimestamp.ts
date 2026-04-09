@@ -1,4 +1,4 @@
-import type { DirectSessionActivityV1 } from '@happier-dev/protocol';
+import type { DirectSessionActivityV1 } from '@ks-happier/protocol';
 
 function resolveRecentActivityWindowMs(env: NodeJS.ProcessEnv): number {
   const raw = Number.parseInt(String(env.HAPPIER_DIRECT_SESSIONS_RECENT_ACTIVITY_WINDOW_MS ?? ''), 10);

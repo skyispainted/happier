@@ -6,7 +6,7 @@ import {
   V2SessionByIdResponseSchema,
   V2SessionListResponseSchema,
   V2SessionMessageResponseSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import { resolveSessionEncryptionContext } from '@/api/client/encryptionKey';

@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
 
-import { buildOpenCodeAgentRuntimeDescriptor } from '@happier-dev/agents';
+import { buildOpenCodeAgentRuntimeDescriptor } from '@ks-happier/agents';
 import { buildOpenCodeSessionEnvironmentVariables } from '../utils/opencodeSessionAffinity';
 import { resolveOpenCodeCliLaunchSpec } from '../utils/resolveOpenCodeCliCommand';
 import type { ImportedSessionHandoffBundle, OpenCodeSessionBundle } from '../../../session/handoff/types';

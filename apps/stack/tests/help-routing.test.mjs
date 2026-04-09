@@ -28,7 +28,7 @@ function runHstack(args) {
 
 test('hstack refreshes partial bundled cli-common copies before running commands', (t) => {
   const repoRoot = resolveRepoRoot();
-  const bundledPackageDir = resolve(repoRoot, 'apps', 'stack', 'node_modules', '@happier-dev', 'cli-common');
+  const bundledPackageDir = resolve(repoRoot, 'apps', 'stack', 'node_modules', '@ks-happier', 'cli-common');
   const bundledUpdateEntrypoint = resolve(bundledPackageDir, 'dist', 'update', 'index.js');
   const bundledPackageBackupDir = mkdtempSync(join(tmpdir(), 'hstack-cli-common-backup-'));
   const sourceWindowsProcessFile = resolve(

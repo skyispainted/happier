@@ -23,7 +23,7 @@ describe('bundleWorkspacePackage', () => {
       resolve(srcPackageDir, 'package.json'),
       JSON.stringify(
         {
-          name: '@happier-dev/protocol',
+          name: '@ks-happier/protocol',
           version: '0.0.0',
           type: 'module',
           exports: { '.': { default: './dist/index.js' } },
@@ -34,7 +34,7 @@ describe('bundleWorkspacePackage', () => {
     );
     writeFileSync(resolve(srcDistDir, 'index.js'), 'export {};');
 
-    const destPackageDir = resolve(rootDir, 'apps/stack/node_modules/@happier-dev/protocol');
+    const destPackageDir = resolve(rootDir, 'apps/stack/node_modules/@ks-happier/protocol');
     mkdirSync(resolve(destPackageDir, 'dist'), { recursive: true });
     const legacyTmpDir = resolve(destPackageDir, 'dist.__sync_tmp__.old-staging');
     const legacyBackupDir = resolve(destPackageDir, 'dist.__sync_backup__.old-staging');
@@ -42,7 +42,7 @@ describe('bundleWorkspacePackage', () => {
     mkdirSync(legacyBackupDir, { recursive: true });
 
     bundleWorkspacePackage({
-      packageName: '@happier-dev/protocol',
+      packageName: '@ks-happier/protocol',
       srcDir: srcPackageDir,
       destDir: destPackageDir,
     });
@@ -54,7 +54,7 @@ describe('bundleWorkspacePackage', () => {
     const destPackageJson = JSON.parse(readFileSync(destPackageJsonPath, 'utf8'));
     expect(destPackageJson).toEqual(
       expect.objectContaining({
-        name: '@happier-dev/protocol',
+        name: '@ks-happier/protocol',
         private: true,
         exports: { '.': { default: './dist/index.js' } },
       }),
@@ -82,7 +82,7 @@ describe('atomicReplaceDirSync', () => {
   it('retries a staged swap when the destination briefly reappears during the rename', () => {
     rootDir = mkdtempSync(join(tmpdir(), 'happier-cli-common-atomic-replace-'));
 
-    const destDir = resolve(rootDir, 'apps/cli/node_modules/@happier-dev/protocol');
+    const destDir = resolve(rootDir, 'apps/cli/node_modules/@ks-happier/protocol');
     const tempFileName = 'next.txt';
     const previousFileName = 'previous.txt';
 

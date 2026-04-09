@@ -4,7 +4,7 @@ import { buildToolCallMessageRouteId } from '@/sync/domains/messages/messageRout
 
 import type { SessionSubagent } from '../types';
 import { resolveSubAgentSidechainProviderLabel } from './resolveSubAgentSidechainProviderLabel';
-import { isGenericSubAgentToolName } from '@happier-dev/protocol/tools/v2';
+import { isGenericSubAgentToolName } from '@ks-happier/protocol/tools/v2';
 import { resolvePendingPermissionRouteForSubAgentTool } from './resolvePendingPermissionRouteForSubAgentTool';
 
 function readNonEmptyString(value: unknown): string | null {

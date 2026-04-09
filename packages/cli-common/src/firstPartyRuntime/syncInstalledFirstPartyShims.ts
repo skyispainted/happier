@@ -1,7 +1,7 @@
 import { copyFile, mkdir, rm, symlink } from 'node:fs/promises';
 import { dirname, relative } from 'node:path';
 
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 import type { FirstPartyComponentId } from './componentCatalog.js';
 import { resolveInstalledFirstPartyComponentPaths } from './resolveInstalledComponentPaths.js';

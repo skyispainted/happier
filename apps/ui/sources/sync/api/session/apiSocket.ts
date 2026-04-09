@@ -3,7 +3,7 @@ import { TokenStorage } from '@/auth/storage/tokenStorage';
 import { Encryption } from '@/sync/encryption/encryption';
 import { observeServerTimestamp } from '@/sync/runtime/time';
 import { createRpcCallError } from '@/sync/runtime/rpcErrors';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
 import { serverFetch, StaleServerGenerationError } from '@/sync/http/client';
 import { getActiveServerSnapshot } from '@/sync/domains/server/serverRuntime';
 import { resolveSocketIoTransports } from '@/sync/runtime/socketIoTransports';
@@ -13,7 +13,7 @@ import {
     type ManagedConnectionState,
     type ManagedConnectionTransport,
     type TransportDisconnectEvent,
-} from '@happier-dev/connection-supervisor';
+} from '@ks-happier/connection-supervisor';
 import { createSyncSocketTransport } from '@/sync/api/session/connection/createSyncSocketTransport';
 import {
     reportServerUnreachable,

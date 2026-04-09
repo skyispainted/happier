@@ -17,7 +17,7 @@ describe('ensureBundledWorkspacePackagesBuilt', () => {
             const calls: Array<{ cmd: string; args: string[]; cwd?: string }> = [];
             const runCommand = (cmd: string, args: string[], options?: { cwd?: string }) => {
                 calls.push({ cmd, args, cwd: options?.cwd });
-                if (args[0] === 'workspace' && args[1] === '@happier-dev/cli-common' && args[2] === 'build') {
+                if (args[0] === 'workspace' && args[1] === '@ks-happier/cli-common' && args[2] === 'build') {
                     const distDir = join(workspaceSrc, 'dist', 'firstPartyRuntime');
                     mkdirSync(distDir, { recursive: true });
                     writeFileSync(join(distDir, 'index.js'), 'export {};\n', 'utf8');
@@ -28,7 +28,7 @@ describe('ensureBundledWorkspacePackagesBuilt', () => {
                 repoRoot,
                 bundles: [
                     {
-                        packageName: '@happier-dev/cli-common',
+                        packageName: '@ks-happier/cli-common',
                         srcDir: workspaceSrc,
                     },
                 ],
@@ -40,7 +40,7 @@ describe('ensureBundledWorkspacePackagesBuilt', () => {
             expect(calls).toEqual([
                 {
                     cmd: 'yarn',
-                    args: ['workspace', '@happier-dev/cli-common', 'build'],
+                    args: ['workspace', '@ks-happier/cli-common', 'build'],
                     cwd: repoRoot,
                 },
             ]);
@@ -66,7 +66,7 @@ describe('ensureBundledWorkspacePackagesBuilt', () => {
                 repoRoot,
                 bundles: [
                     {
-                        packageName: '@happier-dev/protocol',
+                        packageName: '@ks-happier/protocol',
                         srcDir: workspaceSrc,
                     },
                 ],

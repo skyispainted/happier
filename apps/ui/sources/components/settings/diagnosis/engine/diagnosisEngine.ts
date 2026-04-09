@@ -1,4 +1,4 @@
-import { sanitizeBugReportUrl, sanitizeDoctorSnapshotUrls, type DoctorSnapshot } from '@happier-dev/protocol';
+import { sanitizeBugReportUrl, sanitizeDoctorSnapshotUrls, type DoctorSnapshot } from '@ks-happier/protocol';
 
 export type DiagnosisFindingSeverity = 'info' | 'warning' | 'error';
 

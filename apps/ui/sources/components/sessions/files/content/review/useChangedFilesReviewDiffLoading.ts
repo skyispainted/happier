@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type { ScmDiffArea } from '@happier-dev/protocol';
+import type { ScmDiffArea } from '@ks-happier/protocol';
 
 import type { ScmFileStatus } from '@/scm/scmStatusFiles';
 import type { ScmDiffCache } from '@/scm/diffCache/scmDiffCache';

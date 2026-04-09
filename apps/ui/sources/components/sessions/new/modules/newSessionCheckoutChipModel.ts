@@ -1,4 +1,4 @@
-import type { WorkspaceCheckoutKind } from '@happier-dev/protocol';
+import type { WorkspaceCheckoutKind } from '@ks-happier/protocol';
 
 import type { NewSessionCheckoutCreationDraft } from '@/sync/domains/state/newSessionCheckoutDraft';
 import type { ScmWorkingSnapshot } from '@/sync/domains/state/storageTypes';

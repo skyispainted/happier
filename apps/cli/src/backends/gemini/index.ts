@@ -1,4 +1,4 @@
-import { AGENTS_CORE } from '@happier-dev/agents';
+import { AGENTS_CORE } from '@ks-happier/agents';
 
 import { checklists } from './cli/checklists';
 import { geminiDaemonSpawnHooks } from '@/backends/gemini/daemon/spawnHooks';

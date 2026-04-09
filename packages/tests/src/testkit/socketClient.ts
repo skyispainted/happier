@@ -1,5 +1,5 @@
 import { io, type Socket } from 'socket.io-client';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
 
 import { attachSocketEventCollector, SocketEventCollector, type CapturedEvent } from './socketEventCollector';
 

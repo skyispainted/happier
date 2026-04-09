@@ -14,7 +14,7 @@ import { resolveClaudeCodeExperimentalEnvOverlay } from "./spawn/resolveClaudeCo
 import { ensureClaudeJsRuntimeExecutable } from "./utils/ensureClaudeJsRuntimeExecutable";
 import { resolveClaudeCliPath } from "./utils/resolveClaudeCliPath";
 import { resolveCliRuntimeAssetPath } from '@/runtime/assets/resolveCliRuntimeAssetPath';
-import { providers as agentProviders } from '@happier-dev/agents';
+import { providers as agentProviders } from '@ks-happier/agents';
 
 type ClaudeEffortLevel = 'low' | 'medium' | 'high' | 'max';
 

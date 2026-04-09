@@ -1,4 +1,4 @@
-import type { ConnectedServiceCredentialRecordV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceCredentialRecordV1 } from '@ks-happier/protocol';
 
 export function materializeClaudeSubscriptionConnectedServiceAuth(params: Readonly<{
   record: ConnectedServiceCredentialRecordV1;

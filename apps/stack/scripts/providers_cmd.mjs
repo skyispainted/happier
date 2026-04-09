@@ -3,8 +3,8 @@ import './utils/env/env.mjs';
 import { parseArgs } from './utils/cli/args.mjs';
 import { printResult, wantsHelp, wantsJson } from './utils/cli/cli.mjs';
 import { createStepPrinter } from './utils/cli/progress.mjs';
-import { AGENT_IDS, getProviderCliRuntimeSpec } from '@happier-dev/agents';
-import { installProviderCli, planProviderCliInstall, resolvePlatformFromNodePlatform } from '@happier-dev/cli-common/providers';
+import { AGENT_IDS, getProviderCliRuntimeSpec } from '@ks-happier/agents';
+import { installProviderCli, planProviderCliInstall, resolvePlatformFromNodePlatform } from '@ks-happier/cli-common/providers';
 
 function usageText() {
   return [

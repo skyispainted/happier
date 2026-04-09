@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { ChangeEntrySchema, ChangesResponseSchema } from '@happier-dev/protocol/changes';
-import { SessionStoredMessageContentSchema } from '@happier-dev/protocol';
-import { EphemeralUpdateSchema, type EphemeralUpdate, UpdateBodySchema, UpdateContainerSchema } from '@happier-dev/protocol/updates';
+import { ChangeEntrySchema, ChangesResponseSchema } from '@ks-happier/protocol/changes';
+import { SessionStoredMessageContentSchema } from '@ks-happier/protocol';
+import { EphemeralUpdateSchema, type EphemeralUpdate, UpdateBodySchema, UpdateContainerSchema } from '@ks-happier/protocol/updates';
 
 //
 // Session message

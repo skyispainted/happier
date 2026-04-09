@@ -14,8 +14,8 @@ import { registerMachineFileBrowserHandlers } from '@/rpc/handlers/machineFileBr
 import { encodeBase64, decodeBase64, encrypt, decrypt } from './encryption';
 import { backoff } from '@/utils/time';
 import { RpcHandlerManager } from './rpc/RpcHandlerManager';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
-import type { MachineTransferReceiveEnvelope, MachineTransferSendEnvelope } from '@happier-dev/protocol';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
+import type { MachineTransferReceiveEnvelope, MachineTransferSendEnvelope } from '@ks-happier/protocol';
 import { fetchChanges } from './changes';
 import { readLastChangesCursor, writeLastChangesCursor } from '@/persistence';
 import { resolveLoopbackHttpUrl } from './client/loopbackUrl';
@@ -29,7 +29,7 @@ import {
     DEFAULT_MANAGED_CONNECTION_POLICY,
     type ManagedConnectionState,
     type ManagedConnectionSupervisor,
-} from '@happier-dev/connection-supervisor';
+} from '@ks-happier/connection-supervisor';
 import { createLoopbackReadinessProbe } from '@/api/connection/createLoopbackReadinessProbe';
 import { createMachineSocketTransport } from '@/api/machine/connection/createMachineSocketTransport';
 

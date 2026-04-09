@@ -5,7 +5,7 @@ import {
     BUILT_IN_EXPO_PUSH_NOTIFICATION_CHANNEL_ID,
     type NotificationChannelV1,
     type NotificationsSettingsV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { renderSettingsView } from '@/dev/testkit/harness/settingsViewHarness';
 import { installSettingsViewCommonModuleMocks } from '../settingsViewTestHelpers';
 

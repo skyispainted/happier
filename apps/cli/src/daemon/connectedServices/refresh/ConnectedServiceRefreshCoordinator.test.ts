@@ -5,11 +5,11 @@ import { randomBytes } from 'node:crypto';
 
 import { describe, expect, it, vi } from 'vitest';
 
-import { sealAccountScopedBlobCiphertext } from '@happier-dev/protocol';
+import { sealAccountScopedBlobCiphertext } from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import type { ApiClient } from '@/api/api';
-import { buildConnectedServiceCredentialRecord } from '@happier-dev/protocol';
+import { buildConnectedServiceCredentialRecord } from '@ks-happier/protocol';
 import { ConnectedServiceRefreshCoordinator } from './ConnectedServiceRefreshCoordinator';
 
 describe('ConnectedServiceRefreshCoordinator', () => {

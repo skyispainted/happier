@@ -1,4 +1,4 @@
-import { getProviderCliInstallGuideUrl } from '@happier-dev/agents';
+import { getProviderCliInstallGuideUrl } from '@ks-happier/agents';
 
 const GEMINI_WORKSPACE_PROJECT_COMMAND = 'happier gemini project set <your-project-id>';
 

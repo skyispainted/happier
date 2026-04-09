@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ScrollView, View } from 'react-native';
-import type { ScmLogEntry } from '@happier-dev/protocol';
+import type { ScmLogEntry } from '@ks-happier/protocol';
 
 import { SourceControlOperationsHistorySection } from '@/components/sessions/files/SourceControlOperationsHistorySection';
 import { useScrollEdgeFades } from '@/components/ui/scroll/useScrollEdgeFades';

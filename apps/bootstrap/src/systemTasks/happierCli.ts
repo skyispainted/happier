@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 
-import { systemTasks } from '@happier-dev/cli-common';
+import { systemTasks } from '@ks-happier/cli-common';
 
 import {
   ensureLocalFirstPartyComponentCommand,

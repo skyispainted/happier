@@ -2,7 +2,7 @@ import {
     PUSH_NOTIFICATION_ANDROID_CHANNEL_IDS,
     PUSH_NOTIFICATION_CATEGORY_IDS,
     buildReadyNotificationContent,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { formatPermissionRequestSummary } from '@/components/tools/normalization/policy/permissionSummary';
 import type { Message } from '@/sync/domains/messages/messageTypes';

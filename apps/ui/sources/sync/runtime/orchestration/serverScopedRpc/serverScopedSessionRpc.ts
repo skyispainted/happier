@@ -1,5 +1,5 @@
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
 
 import { createRpcCallError } from '@/sync/runtime/rpcErrors';
 import { apiSocket } from '@/sync/api/session/apiSocket';
@@ -7,7 +7,7 @@ import { createEphemeralServerSocketClient } from '@/sync/runtime/orchestration/
 import { resolveScopedSessionCryptoContext } from '@/sync/runtime/orchestration/serverScopedRpc/resolveScopedSessionDataKey';
 import { resolveServerScopedSessionContext } from '@/sync/runtime/orchestration/serverScopedRpc/resolveServerScopedSessionContext';
 import type { ResolvedServerSessionRpcContext } from '@/sync/runtime/orchestration/serverScopedRpc/resolveServerScopedSessionContext';
-import { readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+import { readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 import type { SocketRpcResult } from './serverScopedRpcTypes';
 

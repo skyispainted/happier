@@ -1,4 +1,4 @@
-import type { ExecutionRunReplaySeedRequest, ExecutionRunResumeHandle, VoiceAssistantAction } from '@happier-dev/protocol';
+import type { ExecutionRunReplaySeedRequest, ExecutionRunResumeHandle, VoiceAssistantAction } from '@ks-happier/protocol';
 
 export type VoiceAgentPermissionPolicy = 'no_tools' | 'read_only';
 export type VoiceAgentAgentSource = 'session' | 'agent';

@@ -1,6 +1,6 @@
 import { createVoiceToolHandlers } from '@/voice/tools/handlers';
 import { resolveToolSessionId } from '@/voice/tools/resolveToolSessionId';
-import { listVoiceClientToolNames } from '@happier-dev/protocol';
+import { listVoiceClientToolNames } from '@ks-happier/protocol';
 
 /**
  * Static client tools for the realtime voice interface.

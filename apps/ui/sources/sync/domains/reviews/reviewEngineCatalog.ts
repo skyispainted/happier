@@ -1,4 +1,4 @@
-import { listNativeReviewEngines } from '@happier-dev/protocol';
+import { listNativeReviewEngines } from '@ks-happier/protocol';
 
 export type ExecutionRunsBackendSnapshotEntry = Readonly<{
   available?: boolean;

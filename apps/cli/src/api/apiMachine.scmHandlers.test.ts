@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import type { Machine } from '@/api/types';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { ApiMachineClient } from './apiMachine';
 

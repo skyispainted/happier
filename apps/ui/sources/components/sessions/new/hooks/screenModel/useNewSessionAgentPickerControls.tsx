@@ -6,7 +6,7 @@ import { AgentIcon } from '@/agents/registry/AgentIcon';
 import { getAgentPickerIconScale } from '@/agents/registry/registryUi';
 import type { AIBackendProfile } from '@/sync/domains/profiles/profileCompatibility';
 import { getBuiltInProfile } from '@/sync/domains/profiles/profileUtils';
-import { buildAcpConfigOptionOverridesV1, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import { buildAcpConfigOptionOverridesV1, type BackendTargetRefV1 } from '@ks-happier/protocol';
 import type { ModelMode } from '@/sync/domains/permissions/permissionTypes';
 import type { ResolvedBackendCatalogEntry } from '@/agents/backendCatalog/getResolvedBackendCatalogEntries';
 import { t } from '@/text';

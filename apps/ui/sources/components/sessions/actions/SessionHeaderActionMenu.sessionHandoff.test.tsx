@@ -105,8 +105,8 @@ vi.mock('react', async () => {
   };
 });
 
-vi.mock('@happier-dev/protocol', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@happier-dev/protocol')>();
+vi.mock('@ks-happier/protocol', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@ks-happier/protocol')>();
   return {
     ...actual,
     listActionSpecs: () => [
@@ -328,7 +328,7 @@ describe('SessionHeaderActionMenu handoff', () => {
   });
 
   it('fails closed (does not surface session.handoff) when machine transfer is disabled on the selected server', async () => {
-    const { FeaturesResponseSchema } = await import('@happier-dev/protocol');
+    const { FeaturesResponseSchema } = await import('@ks-happier/protocol');
     serverSnapshotState.current = {
       status: 'ready',
       features: FeaturesResponseSchema.parse({
@@ -366,7 +366,7 @@ describe('SessionHeaderActionMenu handoff', () => {
   });
 
   it('fails closed when direct peer is runtime-unknown and the selected server only exposes direct-peer handoff transport', async () => {
-    const { FeaturesResponseSchema } = await import('@happier-dev/protocol');
+    const { FeaturesResponseSchema } = await import('@ks-happier/protocol');
     serverSnapshotState.current = {
       status: 'ready',
       features: FeaturesResponseSchema.parse({
@@ -404,7 +404,7 @@ describe('SessionHeaderActionMenu handoff', () => {
   });
 
   it('fails closed when direct peer viability is runtime-unknown and the selected server would otherwise downgrade through server-routed fallback', async () => {
-    const { FeaturesResponseSchema } = await import('@happier-dev/protocol');
+    const { FeaturesResponseSchema } = await import('@ks-happier/protocol');
     serverSnapshotState.current = {
       status: 'ready',
       features: FeaturesResponseSchema.parse({
@@ -442,7 +442,7 @@ describe('SessionHeaderActionMenu handoff', () => {
   });
 
   it('fails closed when the selected server only offers server-routed handoff transport', async () => {
-    const { FeaturesResponseSchema } = await import('@happier-dev/protocol');
+    const { FeaturesResponseSchema } = await import('@ks-happier/protocol');
     serverSnapshotState.current = {
       status: 'ready',
       features: FeaturesResponseSchema.parse({

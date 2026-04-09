@@ -4,16 +4,16 @@ import {
     type BugReportSimilarIssue,
     type BugReportArtifactPayload,
     type BugReportFormPayload,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { captureBugReportSentryEvent } from '@/utils/system/sentry';
 
 export type {
     BugReportArtifactPayload,
     BugReportEnvironmentPayload,
     BugReportFormPayload,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
-export type { BugReportSimilarIssue } from '@happier-dev/protocol';
+export type { BugReportSimilarIssue } from '@ks-happier/protocol';
 
 export async function submitBugReportToService(input: {
     providerUrl: string;

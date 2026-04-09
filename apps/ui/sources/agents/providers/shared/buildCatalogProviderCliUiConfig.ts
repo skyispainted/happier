@@ -1,4 +1,4 @@
-import { getAgentLocalCliConfig, type AgentId } from '@happier-dev/agents';
+import { getAgentLocalCliConfig, type AgentId } from '@ks-happier/agents';
 
 import type { AgentCoreConfig } from '@/agents/registry/registryCore';
 

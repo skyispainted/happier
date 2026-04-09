@@ -1,4 +1,4 @@
-import { inferAgentIdFromSessionMetadata, resolveAgentIdFromFlavor, resolveVendorResumeIdFromSessionMetadata } from '@happier-dev/agents';
+import { inferAgentIdFromSessionMetadata, resolveAgentIdFromFlavor, resolveVendorResumeIdFromSessionMetadata } from '@ks-happier/agents';
 
 import type { Credentials } from '@/persistence';
 import { tryDecryptSessionMetadata } from '@/session/transport/encryption/sessionEncryptionContext';

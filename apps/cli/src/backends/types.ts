@@ -4,17 +4,17 @@ import type { Capability } from '@/capabilities/service';
 import type { CommandHandler } from '@/cli/commandRegistry';
 import type { CloudConnectTarget } from '@/cloud/connectTypes';
 import type { DaemonSpawnHooks } from '@/daemon/spawnHooks';
-import type { DirectSessionsProviderId } from '@happier-dev/protocol';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { DirectSessionsProviderId } from '@ks-happier/protocol';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 import type { DirectSessionProviderOps } from './directSessions/providerOps';
 import type { AcpForkContinuationHandler } from './forking/acpForkContinuationHandler';
 import type { ProviderNativeForkHandler } from './forking/providerNativeForkHandler';
 
-export { AGENT_IDS as CATALOG_AGENT_IDS, DEFAULT_AGENT_ID as DEFAULT_CATALOG_AGENT_ID } from '@happier-dev/agents';
-import type { AgentId as CatalogAgentId, VendorResumeSupportLevel } from '@happier-dev/agents';
+export { AGENT_IDS as CATALOG_AGENT_IDS, DEFAULT_AGENT_ID as DEFAULT_CATALOG_AGENT_ID } from '@ks-happier/agents';
+import type { AgentId as CatalogAgentId, VendorResumeSupportLevel } from '@ks-happier/agents';
 export type { CatalogAgentId, VendorResumeSupportLevel };
-import type { CodexBackendMode } from '@happier-dev/agents';
-import type { InstallableKey } from '@happier-dev/protocol';
+import type { CodexBackendMode } from '@ks-happier/agents';
+import type { InstallableKey } from '@ks-happier/protocol';
 import type { PreflightSessionControlsProbeAdapter } from '@/capabilities/probes/preflightSessionControlsProbeAdapterTypes';
 import type {
   CliAuthMethod,

@@ -3,7 +3,7 @@ import { encodeBase64, decodeBase64 } from "@/encryption/base64";
 import sodium from '@/encryption/libsodium.lib';
 import { decodeUTF8, encodeUTF8 } from "@/encryption/text";
 import { decryptAESGCMString, encryptAESGCMString } from "@/encryption/aes";
-import { parseSerializedJsonValue, stringifySerializedJsonValue } from '@happier-dev/protocol';
+import { parseSerializedJsonValue, stringifySerializedJsonValue } from '@ks-happier/protocol';
 
 //
 // IMPORTANT: Right now there is a bug in the AES implementation and it works only with a normal strings converted to Uint8Array. 

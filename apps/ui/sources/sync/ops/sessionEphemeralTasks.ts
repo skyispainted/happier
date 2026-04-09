@@ -1,6 +1,6 @@
-import type { EphemeralTaskRunRequest, EphemeralTaskRunResponse } from '@happier-dev/protocol';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+import type { EphemeralTaskRunRequest, EphemeralTaskRunResponse } from '@ks-happier/protocol';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 import { sessionRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc';
 import { resolvePreferredServerIdForSessionId } from '@/sync/runtime/orchestration/serverScopedRpc/resolvePreferredServerIdForSessionId';

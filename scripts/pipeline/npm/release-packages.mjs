@@ -242,7 +242,7 @@ function readPackageVersion(repoRoot, pkgDir) {
 }
 
 /**
- * @param {import('@happier-dev/release-runtime/releaseRings').PublicReleaseRingId} channel
+ * @param {import('@ks-happier/release-runtime/releaseRings').PublicReleaseRingId} channel
  */
 function resolvePreviewSuffix(channel) {
   if (channel === 'stable') return '';

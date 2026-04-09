@@ -1,0 +1,40 @@
+[Unit]
+Description=Happier Server (Light Mode)
+Documentation=https://github.com/happier-dev/happier
+After=network.target
+
+[Service]
+Type=simple
+User=happier
+Group=happier
+WorkingDirectory=/opt/happier
+
+# Environment
+EnvironmentFile=/opt/happier/.env
+Environment=NODE_ENV=production
+Environment=HAPPIER_SERVER_FLAVOR=light
+Environment=HAPPY_SERVER_FLAVOR=light
+Environment=HAPPIER_DB_PROVIDER=sqlite
+Environment=HAPPY_DB_PROVIDER=sqlite
+Environment=HAPPIER_SERVER_LIGHT_DATA_DIR=/var/lib/happier
+Environment=HAPPY_SERVER_LIGHT_DATA_DIR=/var/lib/happier
+
+# Exec
+ExecStart=/usr/bin/node apps/server/sources/main.light.ts
+Restart=on-failure
+RestartSec=10
+
+# Security
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/happier /opt/happier/.logs
+PrivateTmp=true
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=happier-server
+
+[Install]
+WantedBy=multi-user.target

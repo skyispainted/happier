@@ -1,4 +1,4 @@
-import { isMemoryRecallGuidanceSupported, type MemoryRecallGuidanceSurface } from '@happier-dev/protocol';
+import { isMemoryRecallGuidanceSupported, type MemoryRecallGuidanceSurface } from '@ks-happier/protocol';
 
 import { resolveLocalFeaturePolicyEnabled } from '@/sync/domains/features/featureLocalPolicy';
 import { isActionEnabledInState } from '@/sync/domains/settings/actionsSettings';

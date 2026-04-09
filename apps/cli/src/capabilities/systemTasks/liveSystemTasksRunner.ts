@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 
-import { SystemTaskSpecSchema } from '@happier-dev/protocol';
+import { SystemTaskSpecSchema } from '@ks-happier/protocol';
 import {
   createRelayRuntimeInstallOrUpdateTaskKind,
   createRelayRuntimeStartTaskKind,
@@ -8,7 +8,7 @@ import {
   createRelayRuntimeStopTaskKind,
   type RelayRuntimeStatusSnapshot,
   type RelayRuntimeTaskParams,
-} from '@happier-dev/cli-common/systemTasks';
+} from '@ks-happier/cli-common/systemTasks';
 import {
   installOrUpdateLiveRelayRuntime,
   readLiveRelayRuntimeStatus,

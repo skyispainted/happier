@@ -4,7 +4,7 @@ import { join } from 'node:path';
 
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { buildCodexAgentRuntimeDescriptorV1 } from '@happier-dev/protocol';
+import { buildCodexAgentRuntimeDescriptorV1 } from '@ks-happier/protocol';
 import {
   createCodexAppServerProcessEnv,
   writeFakeCodexAppServerScript,

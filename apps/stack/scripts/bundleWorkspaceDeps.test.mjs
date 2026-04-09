@@ -40,12 +40,12 @@ export function resolveWorkspaceBundlesFromPackageJson({ repoRoot, hostPackageDi
   const bundled = Array.isArray(pkg.bundledDependencies) ? pkg.bundledDependencies : [];
   const bundles = [];
   for (const name of bundled) {
-    if (typeof name !== 'string' || !name.startsWith('@happier-dev/')) continue;
-    const short = name.slice('@happier-dev/'.length);
+    if (typeof name !== 'string' || !name.startsWith('@ks-happier/')) continue;
+    const short = name.slice('@ks-happier/'.length);
     bundles.push({
       name,
       srcDir: resolve(repoRoot, 'packages', short),
-      destDir: resolve(hostPackageDir, 'node_modules', '@happier-dev', short),
+      destDir: resolve(hostPackageDir, 'node_modules', '@ks-happier', short),
     });
   }
   return bundles;
@@ -101,7 +101,7 @@ export function vendorBundledPackageRuntimeDependencies({ srcPackageJsonPath, de
   mkdirSync(destNodeModulesDir, { recursive: true });
   const seen = new Set();
   for (const name of Object.keys(deps)) {
-    if (name.startsWith('@happier-dev/')) continue;
+    if (name.startsWith('@ks-happier/')) continue;
     vendorOne({ repoRoot, name, destNodeModulesDir, seen });
   }
 }
@@ -115,9 +115,9 @@ test('bundledDependencies are declared in dependencies', () => {
   const deps = stackPackageJson.dependencies ?? {};
 
   assert.equal(
-    bundled.includes('@happier-dev/connection-supervisor'),
+    bundled.includes('@ks-happier/connection-supervisor'),
     true,
-    'Expected @happier-dev/connection-supervisor to be bundled with @happier-dev/stack',
+    'Expected @ks-happier/connection-supervisor to be bundled with @ks-happier/stack',
   );
 
   for (const name of bundled) {
@@ -142,42 +142,42 @@ function createBundleFixture(prefix = 'happy-stack-bundle-workspace-deps-') {
   mkdirSync(resolve(releaseRuntimeDir, 'dist'), { recursive: true });
   mkdirSync(stackDir, { recursive: true });
   writeJson(resolve(stackDir, 'package.json'), {
-    name: '@happier-dev/stack',
+    name: '@ks-happier/stack',
     private: true,
     bundledDependencies: [
-      '@happier-dev/agents',
-      '@happier-dev/cli-common',
-      '@happier-dev/connection-supervisor',
-      '@happier-dev/protocol',
-      '@happier-dev/release-runtime',
+      '@ks-happier/agents',
+      '@ks-happier/cli-common',
+      '@ks-happier/connection-supervisor',
+      '@ks-happier/protocol',
+      '@ks-happier/release-runtime',
     ],
     dependencies: {
-      '@happier-dev/agents': '0.0.0',
-      '@happier-dev/cli-common': '0.0.0',
-      '@happier-dev/connection-supervisor': '0.0.0',
-      '@happier-dev/protocol': '0.0.0',
-      '@happier-dev/release-runtime': '0.0.0',
+      '@ks-happier/agents': '0.0.0',
+      '@ks-happier/cli-common': '0.0.0',
+      '@ks-happier/connection-supervisor': '0.0.0',
+      '@ks-happier/protocol': '0.0.0',
+      '@ks-happier/release-runtime': '0.0.0',
     },
   });
 
-  // bundleWorkspaceDeps also bundles @happier-dev/release-runtime. Keep a minimal, build-like
+  // bundleWorkspaceDeps also bundles @ks-happier/release-runtime. Keep a minimal, build-like
   // workspace package present so these tests focus on bundling behavior instead of fixture setup.
   writeJson(resolve(cliCommonDir, 'package.json'), {
-    name: '@happier-dev/cli-common',
+    name: '@ks-happier/cli-common',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
     types: './dist/index.d.ts',
     exports: { '.': { default: './dist/index.js', types: './dist/index.d.ts' } },
     dependencies: {
-      '@happier-dev/agents': '0.0.0',
+      '@ks-happier/agents': '0.0.0',
     },
   });
   writeFileSync(resolve(cliCommonDir, 'dist', 'index.js'), 'export const common = 1;\n', 'utf8');
   writeCliCommonWorkspacesStub(cliCommonDir);
 
   writeJson(resolve(agentsDir, 'package.json'), {
-    name: '@happier-dev/agents',
+    name: '@ks-happier/agents',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
@@ -185,13 +185,13 @@ function createBundleFixture(prefix = 'happy-stack-bundle-workspace-deps-') {
     exports: { '.': { default: './dist/index.js', types: './dist/index.d.ts' } },
     scripts: { postinstall: 'echo should-not-run' },
     dependencies: {
-      '@happier-dev/protocol': '0.0.0',
+      '@ks-happier/protocol': '0.0.0',
     },
   });
   writeFileSync(resolve(agentsDir, 'dist', 'index.js'), 'export const agents = 1;\n', 'utf8');
 
   writeJson(resolve(protocolDir, 'package.json'), {
-    name: '@happier-dev/protocol',
+    name: '@ks-happier/protocol',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
@@ -202,7 +202,7 @@ function createBundleFixture(prefix = 'happy-stack-bundle-workspace-deps-') {
   writeFileSync(resolve(protocolDir, 'dist', 'index.js'), 'export const protocol = 1;\n', 'utf8');
 
   writeJson(resolve(connectionSupervisorDir, 'package.json'), {
-    name: '@happier-dev/connection-supervisor',
+    name: '@ks-happier/connection-supervisor',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
@@ -213,7 +213,7 @@ function createBundleFixture(prefix = 'happy-stack-bundle-workspace-deps-') {
   writeFileSync(resolve(connectionSupervisorDir, 'dist', 'index.js'), 'export const supervisor = 1;\n', 'utf8');
 
   writeJson(resolve(releaseRuntimeDir, 'package.json'), {
-    name: '@happier-dev/release-runtime',
+    name: '@ks-happier/release-runtime',
     version: '0.0.0',
     type: 'module',
     main: './dist/index.js',
@@ -230,7 +230,7 @@ test('bundleWorkspaceDeps copies dist + writes a sanitized package.json without 
   const { repoRoot, stackDir, cliCommonDir } = createBundleFixture();
   try {
     writeJson(resolve(cliCommonDir, 'package.json'), {
-      name: '@happier-dev/cli-common',
+      name: '@ks-happier/cli-common',
       version: '0.0.0',
       type: 'module',
       main: './dist/index.js',
@@ -243,13 +243,13 @@ test('bundleWorkspaceDeps copies dist + writes a sanitized package.json without 
     await bundleWorkspaceDeps({ repoRoot, stackDir });
 
     const bundledPkgJson = JSON.parse(
-      readFileSync(resolve(stackDir, 'node_modules', '@happier-dev', 'cli-common', 'package.json'), 'utf8'),
+      readFileSync(resolve(stackDir, 'node_modules', '@ks-happier', 'cli-common', 'package.json'), 'utf8'),
     );
     assert.equal(bundledPkgJson.scripts, undefined);
-    assert.equal(bundledPkgJson.name, '@happier-dev/cli-common');
+    assert.equal(bundledPkgJson.name, '@ks-happier/cli-common');
     assert.equal(bundledPkgJson.private, true);
 
-    const bundledDistPath = resolve(stackDir, 'node_modules', '@happier-dev', 'cli-common', 'dist', 'index.js');
+    const bundledDistPath = resolve(stackDir, 'node_modules', '@ks-happier', 'cli-common', 'dist', 'index.js');
     assert.ok(existsSync(bundledDistPath), 'dist/index.js should be copied to bundled location');
   } finally {
     rmSync(repoRoot, { recursive: true, force: true });
@@ -261,9 +261,9 @@ test('bundleWorkspaceDeps bundles internal deps required by the stack host packa
   try {
     await bundleWorkspaceDeps({ repoRoot, stackDir });
 
-    assert.ok(existsSync(resolve(stackDir, 'node_modules', '@happier-dev', 'agents', 'dist', 'index.js')));
-    assert.ok(existsSync(resolve(stackDir, 'node_modules', '@happier-dev', 'connection-supervisor', 'dist', 'index.js')));
-    assert.ok(existsSync(resolve(stackDir, 'node_modules', '@happier-dev', 'protocol', 'dist', 'index.js')));
+    assert.ok(existsSync(resolve(stackDir, 'node_modules', '@ks-happier', 'agents', 'dist', 'index.js')));
+    assert.ok(existsSync(resolve(stackDir, 'node_modules', '@ks-happier', 'connection-supervisor', 'dist', 'index.js')));
+    assert.ok(existsSync(resolve(stackDir, 'node_modules', '@ks-happier', 'protocol', 'dist', 'index.js')));
   } finally {
     rmSync(repoRoot, { recursive: true, force: true });
   }
@@ -274,11 +274,11 @@ test('bundleWorkspaceDeps throws when cli-common dist/ is missing', async () => 
   try {
     rmSync(resolve(cliCommonDir, 'dist'), { recursive: true, force: true });
     writeJson(resolve(cliCommonDir, 'package.json'), {
-      name: '@happier-dev/cli-common',
+      name: '@ks-happier/cli-common',
       version: '0.0.0',
       main: './dist/index.js',
     });
-    await assert.rejects(bundleWorkspaceDeps({ repoRoot, stackDir }), /Missing dist\/ for @happier-dev\/cli-common/);
+    await assert.rejects(bundleWorkspaceDeps({ repoRoot, stackDir }), /Missing dist\/ for @ks-happier\/cli-common/);
   } finally {
     rmSync(repoRoot, { recursive: true, force: true });
   }
@@ -287,7 +287,7 @@ test('bundleWorkspaceDeps throws when cli-common dist/ is missing', async () => 
 test('bundleWorkspaceDeps throws when cli-common package.json is malformed', async () => {
   const { repoRoot, stackDir, cliCommonDir } = createBundleFixture('happy-stack-bundle-workspace-deps-bad-json-');
   try {
-    writeFileSync(resolve(cliCommonDir, 'package.json'), '{"name":"@happier-dev/cli-common"', 'utf8');
+    writeFileSync(resolve(cliCommonDir, 'package.json'), '{"name":"@ks-happier/cli-common"', 'utf8');
     await assert.rejects(bundleWorkspaceDeps({ repoRoot, stackDir }), SyntaxError);
   } finally {
     rmSync(repoRoot, { recursive: true, force: true });
@@ -303,7 +303,7 @@ test('bundleWorkspaceDeps vendors external runtime dependency trees for bundled 
     mkdirSync(depBDir, { recursive: true });
 
     writeJson(resolve(cliCommonDir, 'package.json'), {
-      name: '@happier-dev/cli-common',
+      name: '@ks-happier/cli-common',
       version: '0.0.0',
       type: 'module',
       main: './dist/index.js',
@@ -333,7 +333,7 @@ test('bundleWorkspaceDeps vendors external runtime dependency trees for bundled 
     assert.equal(
       JSON.parse(
         readFileSync(
-          resolve(stackDir, 'node_modules', '@happier-dev', 'cli-common', 'node_modules', 'dep-a', 'package.json'),
+          resolve(stackDir, 'node_modules', '@ks-happier', 'cli-common', 'node_modules', 'dep-a', 'package.json'),
           'utf8',
         ),
       ).name,
@@ -345,7 +345,7 @@ test('bundleWorkspaceDeps vendors external runtime dependency trees for bundled 
           resolve(
             stackDir,
             'node_modules',
-            '@happier-dev',
+            '@ks-happier',
             'cli-common',
             'node_modules',
             'dep-a',

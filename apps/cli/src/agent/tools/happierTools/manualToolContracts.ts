@@ -3,7 +3,7 @@ import {
   BackendTargetRefSchema,
   ExecutionRunIntentSchema,
   ExecutionRunStartRequestSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import {
   defaultIoModeForExecutionRunIntent,
   defaultPermissionModeForExecutionRunIntent,

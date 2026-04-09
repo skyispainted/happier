@@ -1,4 +1,4 @@
-import { providers as agentProviders } from '@happier-dev/agents';
+import { providers as agentProviders } from '@ks-happier/agents';
 
 export type ClaudeEffortLevel = 'low' | 'medium' | 'high' | 'max';
 

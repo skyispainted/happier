@@ -1,4 +1,4 @@
-import type { DirectSessionsProviderId } from '@happier-dev/protocol';
+import type { DirectSessionsProviderId } from '@ks-happier/protocol';
 
 export function getPreferredDirectBrowseProviderId(
     providerIds: readonly DirectSessionsProviderId[],

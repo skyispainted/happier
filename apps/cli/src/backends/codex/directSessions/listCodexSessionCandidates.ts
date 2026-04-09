@@ -1,4 +1,4 @@
-import type { DirectSessionCandidateV1, DirectSessionsSource } from '@happier-dev/protocol';
+import type { DirectSessionCandidateV1, DirectSessionsSource } from '@ks-happier/protocol';
 
 import { createCodexAppServerClient } from '../appServer/client/createCodexAppServerClient';
 import { listCodexDirectSessionCandidatesViaExistingAppServerClient } from '../appServer/session/listCodexDirectSessionCandidatesViaAppServer';

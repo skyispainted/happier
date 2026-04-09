@@ -1,4 +1,4 @@
-import type { FeaturesResponse as ServerFeatures } from '@happier-dev/protocol';
+import type { FeaturesResponse as ServerFeatures } from '@ks-happier/protocol';
 
 import { normalizeBaseUrl, withAbortTimeout } from '@/diagnostics/httpClient';
 import { parseServerFeatures } from './serverFeaturesParse';

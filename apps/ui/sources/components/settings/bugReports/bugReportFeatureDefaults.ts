@@ -1,4 +1,4 @@
-import { DEFAULT_BUG_REPORTS_CAPABILITIES, type BugReportsCapabilities } from '@happier-dev/protocol';
+import { DEFAULT_BUG_REPORTS_CAPABILITIES, type BugReportsCapabilities } from '@ks-happier/protocol';
 
 export type BugReportsFeature = BugReportsCapabilities & Readonly<{ enabled: boolean }>;
 

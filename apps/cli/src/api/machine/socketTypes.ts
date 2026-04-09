@@ -1,6 +1,6 @@
 import type { SocketRpcCallPayload, SocketRpcCallResponse, SocketRpcRequestPayload, Update } from '../types';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
-import type { MachineTransferReceiveEnvelope, MachineTransferSendEnvelope } from '@happier-dev/protocol';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
+import type { MachineTransferReceiveEnvelope, MachineTransferSendEnvelope } from '@ks-happier/protocol';
 
 export interface ServerToDaemonEvents {
   update: (data: Update) => void;

@@ -4,7 +4,7 @@ import {
   BUG_REPORT_DEFAULT_ISSUE_OWNER,
   BUG_REPORT_DEFAULT_ISSUE_REPO,
   appendBugReportReporterToSummary,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { clearBugReportUserActionTrail, recordBugReportUserAction } from '@/utils/system/bugReportActionTrail';
 import { clearBugReportLogBuffer } from '@/utils/system/bugReportLogBuffer';

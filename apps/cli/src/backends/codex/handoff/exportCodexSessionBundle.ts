@@ -1,13 +1,13 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-import { buildCodexAgentRuntimeDescriptor, resolvePersistedCodexRuntimeIdentity } from '@happier-dev/agents';
-import type { DirectSessionsSource } from '@happier-dev/protocol';
+import { buildCodexAgentRuntimeDescriptor, resolvePersistedCodexRuntimeIdentity } from '@ks-happier/agents';
+import type { DirectSessionsSource } from '@ks-happier/protocol';
 import {
   DirectSessionsSourceSchema,
   readAgentRuntimeDescriptorV1ForProvider,
   readCanonicalAgentRuntimeDescriptorV1ForProvider,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { collectCodexSessionRolloutFiles } from '../directSessions/collectCodexSessionRolloutFiles';
 import { resolveCodexHomesForDirectSessionsSource } from '../directSessions/resolveCodexHomesForDirectSessionsSource';

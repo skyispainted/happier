@@ -103,7 +103,7 @@ export interface StartOptions {
      */
     existingSessionId?: string
     /** Account settings snapshot for this runner (used for notification policy + seeds). */
-    accountSettings?: import('@happier-dev/protocol').AccountSettings | null
+    accountSettings?: import('@ks-happier/protocol').AccountSettings | null
 }
 
 export async function runClaude(credentials: Credentials, options: StartOptions = {}): Promise<void> {

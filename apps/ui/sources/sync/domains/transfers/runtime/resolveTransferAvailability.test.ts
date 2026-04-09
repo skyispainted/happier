@@ -1,5 +1,5 @@
-import { FeaturesResponseSchema, type FeaturesResponse } from '@happier-dev/protocol';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
+import { FeaturesResponseSchema, type FeaturesResponse } from '@ks-happier/protocol';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
 import { describe, expect, it } from 'vitest';
 
 function createServerFeaturesResponse(partial?: Readonly<{

@@ -7,9 +7,9 @@ import { spawn } from 'node:child_process';
 import { resolveServerReleaseAssets, resolveUiWebReleaseAssets } from '../src/releaseAssets.mjs';
 import { resolveRunnerCacheRoot, resolveServerRunnerTarget } from '../src/target.mjs';
 import { parseRunnerInvocation } from '../src/runnerConfig.mjs';
-import { downloadVerifiedReleaseAssetBundle } from '@happier-dev/release-runtime/verifiedDownload';
-import { planArchiveExtraction } from '@happier-dev/release-runtime/extractPlan';
-import { fetchGitHubReleaseByTag } from '@happier-dev/release-runtime/github';
+import { downloadVerifiedReleaseAssetBundle } from '@ks-happier/release-runtime/verifiedDownload';
+import { planArchiveExtraction } from '@ks-happier/release-runtime/extractPlan';
+import { fetchGitHubReleaseByTag } from '@ks-happier/release-runtime/github';
 
 const OWNER = 'happier-dev';
 const REPO = 'happier';

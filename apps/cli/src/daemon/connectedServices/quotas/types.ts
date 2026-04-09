@@ -2,7 +2,7 @@ import type {
   ConnectedServiceCredentialRecordV1,
   ConnectedServiceId,
   ConnectedServiceQuotaSnapshotV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export type ConnectedServiceQuotaFetcher = Readonly<{
   serviceId: ConnectedServiceId;

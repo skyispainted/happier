@@ -1,4 +1,4 @@
-import type { PromptAssetReadRequest } from '@happier-dev/protocol';
+import type { PromptAssetReadRequest } from '@ks-happier/protocol';
 
 import { writePromptAssetTransferPayload } from '@/promptAssets/shared/promptAssetTransferPayload';
 import type { PromptAssetAdapter } from '@/promptAssets/types';

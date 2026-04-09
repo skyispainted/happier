@@ -79,7 +79,7 @@ export function writeCliProjectFixture(options: {
 
   ensureDirectorySync(binDir);
   ensureDirectorySync(join(options.projectRoot, options.entrypointDir));
-  writeSandboxJsonFile(join(options.projectRoot, 'package.json'), { name: '@happier-dev/cli' });
+  writeSandboxJsonFile(join(options.projectRoot, 'package.json'), { name: '@ks-happier/cli' });
   writeSandboxTextFile(join(options.projectRoot, options.entrypointDir, 'index.mjs'), options.entrypointContent);
 
   return { binDir };
@@ -93,7 +93,7 @@ export function writeProtocolBundleStub(options: {
   writeSandboxPackage({
     packageDir: options.packageDir,
     manifest: {
-      name: '@happier-dev/protocol',
+      name: '@ks-happier/protocol',
       version: '0.0.0',
       type: 'module',
       main: './dist/index.js',

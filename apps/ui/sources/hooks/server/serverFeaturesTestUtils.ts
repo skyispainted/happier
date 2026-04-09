@@ -1,6 +1,6 @@
 import { vi } from 'vitest';
 
-import type { FeaturesResponse } from '@happier-dev/protocol';
+import type { FeaturesResponse } from '@ks-happier/protocol';
 
 type FixtureOverrides = {
     friendsEnabled?: boolean;

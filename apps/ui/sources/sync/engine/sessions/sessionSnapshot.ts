@@ -1,4 +1,4 @@
-import { V2SessionListResponseSchema, type V2SessionListResponse } from '@happier-dev/protocol';
+import { V2SessionListResponseSchema, type V2SessionListResponse } from '@ks-happier/protocol';
 
 import type { AuthCredentials } from '@/auth/storage/tokenStorage';
 import { serverFetch } from '@/sync/http/client';

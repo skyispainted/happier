@@ -6,8 +6,8 @@
  * - experimental (requires explicit opt-in).
  */
 
-import { buildBackendTargetKey } from '@happier-dev/protocol';
-import { AGENTS_CORE, evaluateVendorResumeEligibility, resolveAgentIdFromFlavor, resolveAgentIdFromSessionMetadata } from '@happier-dev/agents';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
+import { AGENTS_CORE, evaluateVendorResumeEligibility, resolveAgentIdFromFlavor, resolveAgentIdFromSessionMetadata } from '@ks-happier/agents';
 import type { Settings } from '@/sync/domains/settings/settings';
 
 import { deriveAcpBackendIdFromFlavor, isAcpFlavorPrefix } from './acpFlavor';

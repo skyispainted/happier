@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
 import { installVoiceAgentCommonModuleMocks } from './voiceAgentTestHelpers';
 
 vi.mock('@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc', () => ({
@@ -301,7 +301,7 @@ describe('DaemonVoiceAgentClient', () => {
   });
 
   it('forwards displayUserText separately from the execution payload when starting a turn stream', async () => {
-    const { SESSION_RPC_METHODS } = await import('@happier-dev/protocol/rpc');
+    const { SESSION_RPC_METHODS } = await import('@ks-happier/protocol/rpc');
     const { sessionRpcWithServerScope } = await import('@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc');
     vi.mocked(sessionRpcWithServerScope).mockResolvedValueOnce({ streamId: 'stream-1' } as any);
 
@@ -423,7 +423,7 @@ describe('DaemonVoiceAgentClient', () => {
       },
     };
 
-    const { SESSION_RPC_METHODS } = await import('@happier-dev/protocol/rpc');
+    const { SESSION_RPC_METHODS } = await import('@ks-happier/protocol/rpc');
     const { sessionRpcWithServerScope } = await import('@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc');
     vi.mocked(sessionRpcWithServerScope).mockImplementation(async (args: any) => {
       if (args?.method === SESSION_RPC_METHODS.EXECUTION_RUN_STREAM_START) {
@@ -468,7 +468,7 @@ describe('DaemonVoiceAgentClient', () => {
       },
     };
 
-    const { SESSION_RPC_METHODS } = await import('@happier-dev/protocol/rpc');
+    const { SESSION_RPC_METHODS } = await import('@ks-happier/protocol/rpc');
     const { sessionRpcWithServerScope } = await import('@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc');
     let readCount = 0;
     vi.mocked(sessionRpcWithServerScope).mockImplementation(async (args: any) => {
@@ -527,7 +527,7 @@ describe('DaemonVoiceAgentClient', () => {
         },
       };
 
-      const { SESSION_RPC_METHODS } = await import('@happier-dev/protocol/rpc');
+      const { SESSION_RPC_METHODS } = await import('@ks-happier/protocol/rpc');
       const { sessionRpcWithServerScope } = await import('@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc');
       vi.mocked(sessionRpcWithServerScope).mockImplementation(async (args: any) => {
         if (args?.method === SESSION_RPC_METHODS.EXECUTION_RUN_STREAM_START) {

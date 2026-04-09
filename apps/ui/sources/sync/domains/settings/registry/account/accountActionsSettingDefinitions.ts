@@ -3,7 +3,7 @@ import {
     DEFAULT_ACTIONS_SETTINGS_V1,
     buildSettingArtifacts,
     defineSettingDefinitions,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 type ActionSettingsOverrideLike = Readonly<{
     enabled?: boolean;

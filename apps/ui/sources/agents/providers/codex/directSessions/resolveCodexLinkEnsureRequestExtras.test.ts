@@ -1,4 +1,4 @@
-import { readSessionMetadataRuntimeDescriptor } from '@happier-dev/agents';
+import { readSessionMetadataRuntimeDescriptor } from '@ks-happier/agents';
 import { describe, expect, it } from 'vitest';
 
 import { resolveCodexLinkEnsureRequestExtras } from './resolveCodexLinkEnsureRequestExtras';

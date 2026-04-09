@@ -1,6 +1,6 @@
 import {
   SystemTaskSpecSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { type Capability } from '../service';
 import { getLiveSystemTasksRunnerAdapter } from '../systemTasks/liveSystemTasksRunner';

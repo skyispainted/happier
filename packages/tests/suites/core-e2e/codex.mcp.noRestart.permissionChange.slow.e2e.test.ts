@@ -227,7 +227,7 @@ try {
       args: [
         '-s',
         'workspace',
-        '@happier-dev/cli',
+        '@ks-happier/cli',
         'dev',
         'codex',
         '--existing-session',

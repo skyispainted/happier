@@ -1,5 +1,5 @@
-import { MachineTransferSendEnvelopeSchema } from '@happier-dev/protocol';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
+import { MachineTransferSendEnvelopeSchema } from '@ks-happier/protocol';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
 import { Server, Socket } from 'socket.io';
 
 const MACHINE_TRANSFER_MAX_BYTES_ERROR = 'Server-routed machine transfer exceeds the configured max-bytes limit';

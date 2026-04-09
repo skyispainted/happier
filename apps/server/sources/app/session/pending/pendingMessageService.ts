@@ -9,7 +9,7 @@ import type { PendingMessageRow } from "@/app/session/pending/mapPendingMessageR
 import { db } from "@/storage/db";
 import { inTx } from "@/storage/inTx";
 import { readEncryptionFeatureEnv } from "@/app/features/catalog/readFeatureEnv";
-import { isStoredContentKindAllowedForSessionByStoragePolicy, type SessionStoredContentKind } from "@happier-dev/protocol";
+import { isStoredContentKindAllowedForSessionByStoragePolicy, type SessionStoredContentKind } from "@ks-happier/protocol";
 import { resolveEncryptionWriteRejectionCode, type EncryptionPolicyRejectionCode } from "@/app/session/encryptionRejectionCodes";
 import { reserveNextPendingQueuePosition } from "@/app/session/pending/reserveNextPendingQueuePosition";
 

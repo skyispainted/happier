@@ -4,7 +4,7 @@ import type {
     UserMessage,
 } from '../types';
 import { SessionMessageContentSchema, UserMessageSchema } from '../types';
-import { coerceSessionUserPromptV1 } from '@happier-dev/protocol';
+import { coerceSessionUserPromptV1 } from '@ks-happier/protocol';
 import { summarizeValueShapeForLog } from '@/diagnostics/eventShapeForLog';
 
 export function handleSessionNewMessageUpdate(params: {

@@ -27,9 +27,9 @@ import type { AgentState, Metadata } from '@/api/types';
 import { resolveAgentRequestKind } from '@/agent/permissions/requestKind';
 import { isToolAllowedForSession } from '@/agent/permissions/permissionToolIdentifier';
 import { applyAllowedToolsToAllowlist, applyUpdatedPermissionsToAllowlist, seedAllowlistFromCompletedRequests } from '@/agent/permissions/applyPermissionAllowlistUpdates';
-import { computeNextMetadataStringOverrideV1, SESSION_MODE_OVERRIDE_KEY } from '@happier-dev/agents';
-import { isClaudeLocalPermissionBridgeAgentStateRequest } from '@happier-dev/agents';
-import { isChangeTitleToolLikeName } from '@happier-dev/protocol/tools/v2';
+import { computeNextMetadataStringOverrideV1, SESSION_MODE_OVERRIDE_KEY } from '@ks-happier/agents';
+import { isClaudeLocalPermissionBridgeAgentStateRequest } from '@ks-happier/agents';
+import { isChangeTitleToolLikeName } from '@ks-happier/protocol/tools/v2';
 
 type PermissionResponse = PermissionRpcPayload;
 
@@ -979,4 +979,4 @@ export class PermissionHandler {
         return this.responses;
     }
 }
-import { isGenericSubAgentToolName } from '@happier-dev/protocol/tools/v2';
+import { isGenericSubAgentToolName } from '@ks-happier/protocol/tools/v2';

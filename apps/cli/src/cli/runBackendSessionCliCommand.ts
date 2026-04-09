@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import type { AgentId, CodexBackendMode } from '@happier-dev/agents';
+import type { AgentId, CodexBackendMode } from '@ks-happier/agents';
 
 import type { Credentials } from '@/persistence';
 import { readCredentials } from '@/persistence';

@@ -1,6 +1,6 @@
 import type { ScmUiBackendPlugin } from '@/scm/registry/scmUiBackendPlugin';
 import { resolveChangeSetModel, resolveSupportedDiffAreas } from '@/scm/registry/scmUiBackendPlugin';
-import { inferScmRemoteTarget } from '@happier-dev/protocol';
+import { inferScmRemoteTarget } from '@ks-happier/protocol';
 
 export const gitScmUiPlugin: ScmUiBackendPlugin = {
     id: 'git',

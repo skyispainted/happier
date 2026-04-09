@@ -1,4 +1,4 @@
-import { TransferEndpointCandidateSchema, type TransferEndpointCandidate } from '@happier-dev/protocol';
+import { TransferEndpointCandidateSchema, type TransferEndpointCandidate } from '@ks-happier/protocol';
 
 function normalizeTransferEndpointCandidate(candidate: TransferEndpointCandidate): string | null {
     const parsedCandidate = TransferEndpointCandidateSchema.safeParse(candidate);

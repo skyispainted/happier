@@ -10,7 +10,7 @@ import {
     createSessionTerminalMetadataSchema,
     createSessionSystemSessionV1Schema,
     WindowsRemoteSessionLaunchModeSchema,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 
 //
 // Agent states

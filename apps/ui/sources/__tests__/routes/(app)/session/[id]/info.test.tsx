@@ -216,8 +216,8 @@ vi.mock('@/sync/domains/sessionFork/forkUiSupport', () => ({ canForkConversation
 vi.mock('@/sync/domains/sessionFork/executeSessionForkAction', () => ({ executeSessionForkAction: vi.fn() }));
 vi.mock('@/sync/domains/sessionHandoff/handoffUiSupport', () => ({ canHandoffConversation: () => true }));
 vi.mock('@/sync/domains/sessionHandoff/runSessionHandoffPickerFlow', () => ({ runSessionHandoffPickerFlow: vi.fn() }));
-vi.mock('@happier-dev/protocol', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('@happier-dev/protocol')>();
+vi.mock('@ks-happier/protocol', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('@ks-happier/protocol')>();
     return {
         ...actual,
         getActionSpec: () => ({
@@ -227,8 +227,8 @@ vi.mock('@happier-dev/protocol', async (importOriginal) => {
         }),
     };
 });
-vi.mock('@happier-dev/agents', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('@happier-dev/agents')>();
+vi.mock('@ks-happier/agents', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('@ks-happier/agents')>();
     return {
         ...actual,
         resolveAgentIdFromSessionMetadata: (metadata: Record<string, unknown> | null | undefined) => {

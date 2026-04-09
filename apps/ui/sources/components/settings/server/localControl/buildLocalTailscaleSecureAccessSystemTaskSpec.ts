@@ -1,5 +1,5 @@
-import { SYSTEM_TASK_PROTOCOL_VERSION, type SystemTaskSpec } from '@happier-dev/protocol';
-import { createTailscaleSecureAccessTaskSpec } from '@happier-dev/protocol';
+import { SYSTEM_TASK_PROTOCOL_VERSION, type SystemTaskSpec } from '@ks-happier/protocol';
+import { createTailscaleSecureAccessTaskSpec } from '@ks-happier/protocol';
 
 export function buildLocalTailscaleSecureAccessSystemTaskSpec(params: Readonly<{
     upstreamUrl: string;

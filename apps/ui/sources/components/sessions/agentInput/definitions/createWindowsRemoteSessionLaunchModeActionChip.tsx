@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Pressable, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import type { WindowsRemoteSessionLaunchMode } from '@happier-dev/protocol';
+import type { WindowsRemoteSessionLaunchMode } from '@ks-happier/protocol';
 
 import type {
     AgentInputExtraActionChip,

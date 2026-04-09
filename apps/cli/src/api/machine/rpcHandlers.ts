@@ -11,7 +11,7 @@ import {
   type SpawnSessionOptions,
   type SpawnSessionResult,
 } from '@/rpc/handlers/registerSessionHandlers';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 import {
   AcpConfigOptionOverridesV1Schema,
   AgentRuntimeDescriptorV1Schema,
@@ -19,7 +19,7 @@ import {
   SessionContinueWithReplayRpcParamsSchema,
   SessionForkRpcParamsSchema,
   SessionMcpSelectionV1Schema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { isPermissionMode } from '@/api/types';
 import { CATALOG_AGENT_IDS } from '@/backends/types';
 import type { CatalogAgentId } from '@/backends/types';
@@ -34,7 +34,7 @@ import { updateSessionMetadataWithRetry } from '@/session/metadata/updateSession
 import { archiveSessionByIdBestEffort } from '@/session/services/setSessionArchivedState';
 import { listExecutionRunMarkers } from '@/daemon/executionRunRegistry';
 import psList from 'ps-list';
-import type { DaemonExecutionRunEntry, DaemonExecutionRunProcessInfo } from '@happier-dev/protocol';
+import type { DaemonExecutionRunEntry, DaemonExecutionRunProcessInfo } from '@ks-happier/protocol';
 
 import type { RpcHandlerManager } from '../rpc/RpcHandlerManager';
 import type { MemoryWorkerHandle } from '@/daemon/memory/memoryWorker';
@@ -58,13 +58,13 @@ import type {
   MachineTransferReceiveEnvelope,
   MachineTransferSendEnvelope,
   TransferEndpointCandidate,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import {
   applyOpenCodeSessionAffinityMetadata,
   buildOpenCodeSessionEnvironmentVariables,
   readOpenCodeSessionAffinityFromMetadata,
 } from '@/backends/opencode/utils/opencodeSessionAffinity';
-import { inferAgentIdFromSessionMetadata, resolveVendorResumeIdFromSessionMetadata } from '@happier-dev/agents';
+import { inferAgentIdFromSessionMetadata, resolveVendorResumeIdFromSessionMetadata } from '@ks-happier/agents';
 import { getAcpForkContinuationHandler } from '@/backends/catalog';
 import { dispatchProviderNativeFork } from '@/session/fork/providerNativeForkDispatch';
 import { createPromptAssetAdapterRegistry } from '@/promptAssets/createPromptAssetAdapterRegistry';

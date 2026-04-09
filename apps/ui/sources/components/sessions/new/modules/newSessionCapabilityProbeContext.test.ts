@@ -5,8 +5,8 @@ describe('resolveNewSessionCapabilityProbeContext (stability)', () => {
         vi.resetModules();
 
         const resolveAgentConfiguredRuntimeKind = vi.fn(() => 'appServer');
-        vi.doMock('@happier-dev/agents', async (importOriginal) => {
-            const actual = await importOriginal<typeof import('@happier-dev/agents')>();
+        vi.doMock('@ks-happier/agents', async (importOriginal) => {
+            const actual = await importOriginal<typeof import('@ks-happier/agents')>();
             return {
                 ...actual,
                 resolveAgentConfiguredRuntimeKind,
@@ -33,8 +33,8 @@ describe('resolveNewSessionCapabilityProbeContext (stability)', () => {
 
         let runtimeKind = 'appServer';
         const resolveAgentConfiguredRuntimeKind = vi.fn(() => runtimeKind);
-        vi.doMock('@happier-dev/agents', async (importOriginal) => {
-            const actual = await importOriginal<typeof import('@happier-dev/agents')>();
+        vi.doMock('@ks-happier/agents', async (importOriginal) => {
+            const actual = await importOriginal<typeof import('@ks-happier/agents')>();
             return {
                 ...actual,
                 resolveAgentConfiguredRuntimeKind,

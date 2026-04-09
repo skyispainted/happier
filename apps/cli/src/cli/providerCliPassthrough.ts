@@ -1,6 +1,6 @@
 import { spawnSync } from 'node:child_process';
 
-import type { AgentId } from '@happier-dev/agents';
+import type { AgentId } from '@ks-happier/agents';
 
 import { requireProviderCliLaunchSpec } from '@/runtime/managedTools/requireProviderCliLaunchSpec';
 

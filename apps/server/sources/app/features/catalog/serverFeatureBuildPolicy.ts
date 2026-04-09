@@ -2,7 +2,7 @@ import {
     resolveEmbeddedFeaturePolicyEnv,
     resolveFeatureBuildPolicyFromEnvOrEmbedded,
     type FeatureBuildPolicy,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 
 type Cached = Readonly<{
     key: string;

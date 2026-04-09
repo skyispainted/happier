@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
 
-import { defineSettingDefinitions } from '@happier-dev/protocol';
+import { defineSettingDefinitions } from '@ks-happier/protocol';
 
 import { assertProviderSettingKeysCompatible } from './assertProviderSettingKeysCompatible';
 

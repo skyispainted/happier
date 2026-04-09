@@ -11,7 +11,7 @@ import { AGENT_IDS, getAgentCore } from '@/agents/catalog/catalog';
 import { useSetting } from '@/sync/domains/state/storage';
 import { t } from '@/text';
 import { useUnistyles } from 'react-native-unistyles';
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 
 const PROVIDER_SETTINGS_AGENT_IDS = AGENT_IDS.filter((agentId) => agentId !== 'customAcp');
 

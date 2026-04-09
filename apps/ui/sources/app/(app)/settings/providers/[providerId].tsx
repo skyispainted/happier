@@ -22,8 +22,8 @@ import { getProviderSettingsPlugin } from '@/agents/providers/registry/providerS
 import { getProviderLocalAuthPlugin } from '@/agents/providers/registry/providerLocalAuthRegistry';
 import type { ProviderSettingFieldDef, TranslatableText } from '@/agents/providers/shared/providerSettingsPlugin';
 import { t } from '@/text';
-import { buildBackendTargetKey } from '@happier-dev/protocol';
-import { getAgentSessionModeDescriptor, getAgentStaticModels, getProviderCliRuntimeSpec, isAgentAuthProbeSafeForBackgroundChecks } from '@happier-dev/agents';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
+import { getAgentSessionModeDescriptor, getAgentStaticModels, getProviderCliRuntimeSpec, isAgentAuthProbeSafeForBackgroundChecks } from '@ks-happier/agents';
 import {
     buildCatalogModelList,
     classifySessionModeDescriptor,

@@ -1,4 +1,4 @@
-import type { AgentCore, ConnectedServiceId, ConnectedServiceKind } from '@happier-dev/agents';
+import type { AgentCore, ConnectedServiceId, ConnectedServiceKind } from '@ks-happier/agents';
 
 type ConnectedServiceV2ProfileProjection = Readonly<{
   profileId: string;

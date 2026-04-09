@@ -1291,7 +1291,7 @@ async function runOneScenario(params: {
   // Extract fixtures using the same repo logic used for curated allowlists.
   await runLoggedCommand({
     command: yarnCommand(),
-    args: ['-s', 'workspace', '@happier-dev/cli', 'tool:trace:extract', '--out', fixturesFile, mergedTraceFile],
+    args: ['-s', 'workspace', '@ks-happier/cli', 'tool:trace:extract', '--out', fixturesFile, mergedTraceFile],
     cwd: repoRootDir(),
     env: { ...process.env, CI: '1' },
     stdoutPath: resolve(join(testDir, 'tooltrace.extract.stdout.log')),
@@ -1446,7 +1446,7 @@ export async function runProviderContractMatrix(): Promise<ProviderContractMatri
   const skipWarnings: string[] = [];
   try {
     // Provider runs execute the CLI in dev mode (tsx). Ensure shared workspace packages are built so
-    // `@happier-dev/*` ESM exports are up-to-date before starting provider processes.
+    // `@ks-happier/*` ESM exports are up-to-date before starting provider processes.
     const setupDir = run.testDir('setup');
     await ensureCliSharedDepsBuilt({ testDir: setupDir, env: process.env });
     await ensureCliDistBuilt(

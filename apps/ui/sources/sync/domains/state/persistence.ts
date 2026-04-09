@@ -29,7 +29,7 @@ import {
     type AcpConfigOptionOverridesV1,
     type BackendTargetRefV1,
     type SessionMcpSelectionV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 var persistedStorage: MMKV | null = null;
 
 const pendingSettingsSchemaByKey: Readonly<Record<string, z.ZodTypeAny>> = Object.freeze({

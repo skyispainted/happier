@@ -1,9 +1,9 @@
-import type { AgentId, ProviderCliRuntimeInstallPlatform } from '@happier-dev/agents';
+import type { AgentId, ProviderCliRuntimeInstallPlatform } from '@ks-happier/agents';
 import {
   installProviderCli as installProviderCliDefault,
   resolvePlatformFromNodePlatform,
   type InstallProviderCliResult,
-} from '@happier-dev/cli-common/providers';
+} from '@ks-happier/cli-common/providers';
 
 export type ProviderCliInstallInvocationParams = Readonly<{
   dryRun?: boolean;

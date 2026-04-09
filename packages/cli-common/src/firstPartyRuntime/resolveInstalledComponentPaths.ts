@@ -1,4 +1,4 @@
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 import { joinPathForPathShape } from '../path/pathShape.js';
 import type { FirstPartyComponentId } from './componentCatalog.js';

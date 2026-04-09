@@ -1,4 +1,4 @@
-import type { AccountSettings } from '@happier-dev/protocol';
+import type { AccountSettings } from '@ks-happier/protocol';
 
 import { configuration } from '@/configuration';
 import { resolveAgentRequestKind, type AgentRequestKind } from '@/agent/permissions/requestKind';

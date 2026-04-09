@@ -1,4 +1,4 @@
-import { type V2SessionByIdResponse, V2SessionByIdResponseSchema } from '@happier-dev/protocol';
+import { type V2SessionByIdResponse, V2SessionByIdResponseSchema } from '@ks-happier/protocol';
 import { runtimeFetchWithServerReachability } from '@/sync/runtime/connectivity/serverReachabilityRuntimeFetch';
 
 function normalizeId(raw: unknown): string {

@@ -29,7 +29,7 @@ import { useEnabledAgentIds } from '@/agents/hooks/useEnabledAgentIds';
 import { DEFAULT_AGENT_ID, getAgentCore, type AgentId } from '@/agents/catalog/catalog';
 import { getResolvedBackendCatalogEntries, type ResolvedBackendCatalogEntry } from '@/agents/backendCatalog/getResolvedBackendCatalogEntries';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 import { supportsDirectTranscriptStorageForNewSession } from '@/components/sessions/new/modules/newSessionTranscriptStorage';
 import { readAccountTranscriptStorageDefaults, type SessionTranscriptStorageMode } from '@/sync/domains/session/transcriptStorageDefaults';
 import { MachinePreviewModal } from './MachinePreviewModal';

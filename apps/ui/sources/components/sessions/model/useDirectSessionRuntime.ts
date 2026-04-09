@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { DirectSessionStatusGetResponse } from '@happier-dev/protocol';
+import type { DirectSessionStatusGetResponse } from '@ks-happier/protocol';
 
 import { readDirectSessionLink } from '@/sync/domains/session/directSessions/readDirectSessionLink';
 import type { Metadata } from '@/sync/domains/state/storageTypes';

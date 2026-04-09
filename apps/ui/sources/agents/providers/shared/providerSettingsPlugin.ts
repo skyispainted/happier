@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { SettingDefinitionMap } from '@happier-dev/protocol';
+import type { SettingDefinitionMap } from '@ks-happier/protocol';
 
 import type { AgentId } from '@/agents/registry/registryCore';
 import type { TranslationKeyNoParams } from '@/text';

@@ -1,8 +1,8 @@
 import { accessSync, constants as fsConstants, existsSync, readFileSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-import { expandHomeDirPath, resolveHomeDirFromEnvironment } from '@happier-dev/cli-common/providers';
-import { resolveWindowsCommandPath } from '@happier-dev/cli-common/process';
+import { expandHomeDirPath, resolveHomeDirFromEnvironment } from '@ks-happier/cli-common/providers';
+import { resolveWindowsCommandPath } from '@ks-happier/cli-common/process';
 
 import { requireJavaScriptRuntimeExecutable } from '@/runtime/js/requireJavaScriptRuntimeExecutable';
 import { requireProviderCliCommand } from '@/runtime/managedTools/requireProviderCliCommand';

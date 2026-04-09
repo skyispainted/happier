@@ -56,8 +56,8 @@ async function loadCliCommonWorkspacesModule() {
 
   if (!existsSync(modulePath)) {
     // `build:shared` is invoked by tests/e2e harnesses that may not have pre-built workspace packages.
-    // Ensure `@happier-dev/cli-common` is compiled before importing its build helpers.
-    execYarn(['-s', 'workspace', '@happier-dev/cli-common', 'build'], { cwd: repoRoot, stdio: 'inherit' });
+    // Ensure `@ks-happier/cli-common` is compiled before importing its build helpers.
+    execYarn(['-s', 'workspace', '@ks-happier/cli-common', 'build'], { cwd: repoRoot, stdio: 'inherit' });
   }
 
   if (!existsSync(modulePath)) {
@@ -229,7 +229,7 @@ export function main() {
 
     const protocolDist = resolve(repoRoot, 'packages', 'protocol', 'dist', 'index.js');
     if (!existsSync(protocolDist)) {
-      throw new Error(`Expected @happier-dev/protocol build output missing: ${protocolDist}`);
+      throw new Error(`Expected @ks-happier/protocol build output missing: ${protocolDist}`);
     }
 
     // If the CLI currently has bundled workspace deps under apps/cli/node_modules,

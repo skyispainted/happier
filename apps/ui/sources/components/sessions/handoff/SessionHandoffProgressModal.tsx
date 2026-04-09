@@ -9,7 +9,7 @@ import {
     resolveSessionHandoffProgressTimeline,
     type SessionHandoffProgressCheckpoint,
     type SessionHandoffStatus,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { CustomModalInjectedProps } from '@/modal';
 import { useModalCardChrome } from '@/modal/components/card/useModalCardChrome';

@@ -18,7 +18,7 @@ describe('providers harness: buildProviderDevCommandArgs', () => {
     expect(args).toEqual([
       '-s',
       'workspace',
-      '@happier-dev/cli',
+      '@ks-happier/cli',
       'dev',
       'claude',
       '--existing-session',

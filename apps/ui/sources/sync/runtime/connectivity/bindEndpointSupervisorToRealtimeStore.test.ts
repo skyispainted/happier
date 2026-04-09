@@ -4,7 +4,7 @@ import {
     createManagedEndpointSupervisor,
     DEFAULT_MANAGED_CONNECTION_POLICY,
     type ReadinessProbeResult,
-} from '@happier-dev/connection-supervisor';
+} from '@ks-happier/connection-supervisor';
 
 import { storage } from '@/sync/domains/state/storage';
 import { PauseController } from '@/utils/timing/pauseController';

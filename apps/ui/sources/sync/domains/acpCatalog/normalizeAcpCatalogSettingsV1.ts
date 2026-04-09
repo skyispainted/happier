@@ -1,4 +1,4 @@
-import type { AcpCatalogSettingsV1 } from '@happier-dev/protocol';
+import type { AcpCatalogSettingsV1 } from '@ks-happier/protocol';
 
 export function normalizeAcpCatalogSettingsV1(settings: unknown): AcpCatalogSettingsV1 {
     const raw = settings && typeof settings === 'object' && !Array.isArray(settings)

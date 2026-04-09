@@ -2,7 +2,7 @@ import type { AcpRuntimeSessionClient } from '@/agent/acp/sessionClient';
 import type { ACPMessageData } from '@/api/session/sessionMessageTypes';
 import type { ApiSessionClient } from '@/api/session/sessionClient';
 import type { Metadata, PermissionMode, Session } from '@/api/types';
-import type { V2SessionListResponse, V2SessionRecord } from '@happier-dev/protocol';
+import type { V2SessionListResponse, V2SessionRecord } from '@ks-happier/protocol';
 
 import { createTestMetadata } from './sessionMetadata';
 

@@ -1,4 +1,4 @@
-import { resolveMetadataStringOverrideV1 } from '@happier-dev/agents';
+import { resolveMetadataStringOverrideV1 } from '@ks-happier/agents';
 
 import type { Session } from '../state/storageTypes';
 

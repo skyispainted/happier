@@ -1,4 +1,4 @@
-import type { ScmWorkingEntry } from '@happier-dev/protocol';
+import type { ScmWorkingEntry } from '@ks-happier/protocol';
 
 export type SaplingStatusEntry = {
     kind: ScmWorkingEntry['kind'];

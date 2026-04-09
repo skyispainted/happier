@@ -1,4 +1,4 @@
-import type { DirectTranscriptRawMessageV1 } from '@happier-dev/protocol';
+import type { DirectTranscriptRawMessageV1 } from '@ks-happier/protocol';
 
 function parseMaybeTimestampMs(value: unknown): number {
   if (typeof value === 'string' && value.trim()) {

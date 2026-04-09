@@ -1,9 +1,9 @@
 import { join, win32 as win32Path } from 'node:path';
 
-import { getReleaseRingCatalogEntry, type PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import { getReleaseRingCatalogEntry, type PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 import { buildLaunchAgentPlistXml, buildLaunchdPath } from './darwin';
-import { buildServicePath, planServiceAction, renderSystemdServiceUnit, renderWindowsScheduledTaskWrapperPs1 } from '@happier-dev/cli-common/service';
+import { buildServicePath, planServiceAction, renderSystemdServiceUnit, renderWindowsScheduledTaskWrapperPs1 } from '@ks-happier/cli-common/service';
 
 export type DaemonServicePlatform = 'darwin' | 'linux' | 'win32';
 export type DaemonServiceMode = 'user' | 'system';

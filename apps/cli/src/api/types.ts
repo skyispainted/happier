@@ -1,8 +1,8 @@
 import { z } from 'zod'
 import { UsageSchema } from '@/api/usage'
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc'
-import { SentFromSchema } from '@happier-dev/protocol'
-import type { ExecutionRunPublicState } from '@happier-dev/protocol'
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc'
+import { SentFromSchema } from '@ks-happier/protocol'
+import type { ExecutionRunPublicState } from '@ks-happier/protocol'
 import type {
   AcpConfigOptionOverridesV1,
   AcpSessionModeOverrideV1,
@@ -10,22 +10,22 @@ import type {
   ModelOverrideV1,
   SessionRollbackRangesV1,
   SessionTerminalMetadata,
-} from '@happier-dev/protocol'
-import { SESSION_PERMISSION_MODES, createSessionPermissionModeSchema } from '@happier-dev/protocol'
-import { SessionStoredMessageContentSchema, type SessionStoredMessageContent } from '@happier-dev/protocol'
+} from '@ks-happier/protocol'
+import { SESSION_PERMISSION_MODES, createSessionPermissionModeSchema } from '@ks-happier/protocol'
+import { SessionStoredMessageContentSchema, type SessionStoredMessageContent } from '@ks-happier/protocol'
 
 export {
   EphemeralUpdateSchema,
   MessageAckResponseSchema,
   UpdateMetadataAckResponseSchema,
   UpdateStateAckResponseSchema,
-} from '@happier-dev/protocol/updates'
+} from '@ks-happier/protocol/updates'
 
 import {
   SessionBroadcastContainerSchema,
   UpdateBodySchema as ProtocolUpdateBodySchema,
   UpdateContainerSchema as ProtocolUpdateContainerSchema,
-} from '@happier-dev/protocol/updates'
+} from '@ks-happier/protocol/updates'
 import type {
   EphemeralUpdate,
   MessageAckResponse,
@@ -34,7 +34,7 @@ import type {
   UpdateContainer as ProtocolUpdateContainer,
   UpdateMetadataAckResponse,
   UpdateStateAckResponse,
-} from '@happier-dev/protocol/updates'
+} from '@ks-happier/protocol/updates'
 
 /**
  * Permission mode values - includes both Claude and Codex modes

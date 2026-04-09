@@ -3,7 +3,7 @@ import { chmod, mkdir, open, readFile, rename, rm, stat } from 'node:fs/promises
 import type { FileHandle } from 'node:fs/promises';
 import { delimiter, dirname, join } from 'node:path';
 
-import { fetchGitHubLatestRelease } from '@happier-dev/release-runtime';
+import { fetchGitHubLatestRelease } from '@ks-happier/release-runtime';
 
 import { resolveWindowsCommandOnPath } from '../process/index.js';
 import { createManagedToolScratchDir } from './createManagedToolScratchDir.js';

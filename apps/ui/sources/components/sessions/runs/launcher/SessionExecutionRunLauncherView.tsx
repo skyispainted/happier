@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ActivityIndicator, Pressable, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
-import { getActionSpec, resolveEffectiveActionInputFields } from '@happier-dev/protocol';
+import { getActionSpec, resolveEffectiveActionInputFields } from '@ks-happier/protocol';
 
 import { buildResumeSessionExtrasFromUiState, DEFAULT_AGENT_ID, getAgentCore, resolveAgentIdFromFlavor } from '@/agents/catalog/catalog';
 import { useEnabledAgentIds } from '@/agents/hooks/useEnabledAgentIds';

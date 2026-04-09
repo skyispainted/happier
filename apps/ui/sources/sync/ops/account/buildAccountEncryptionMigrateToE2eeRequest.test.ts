@@ -5,7 +5,7 @@ import {
   buildConnectedServiceCredentialRecord,
   openAccountScopedBlobCiphertext,
   openConnectedServiceCredentialCiphertext,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { resolveAccountScopedCryptoMaterialFromCredentials } from '@/sync/domains/connectedServices/resolveAccountScopedCryptoMaterialFromCredentials';
 import { encodeAutomationTemplateForTransport } from '@/sync/domains/automations/automationTemplateTransport';

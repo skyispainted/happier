@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { PlanOutputV1Schema, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import { PlanOutputV1Schema, type BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import type {
   ExecutionRunIntentProfile,

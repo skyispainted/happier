@@ -1,6 +1,6 @@
 import type {
   SessionHandoffProviderBundleTransferPublication as ProtocolSessionHandoffProviderBundleTransferPublication,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export type SessionHandoffProviderBundleTransferPublication =
   ProtocolSessionHandoffProviderBundleTransferPublication;

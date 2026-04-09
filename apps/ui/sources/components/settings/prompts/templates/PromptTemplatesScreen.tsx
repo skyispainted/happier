@@ -3,7 +3,7 @@ import { ScrollView, View } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { Stack, useRouter } from 'expo-router';
-import type { PromptInvocationsV1 } from '@happier-dev/protocol';
+import type { PromptInvocationsV1 } from '@ks-happier/protocol';
 
 import { ItemGroup } from '@/components/ui/lists/ItemGroup';
 import { Item } from '@/components/ui/lists/Item';

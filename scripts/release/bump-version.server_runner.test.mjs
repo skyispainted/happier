@@ -21,11 +21,11 @@ test('bump-version bumps server app and server runner versions in sync', async (
   const dir = await mkdtemp(join(tmpdir(), 'happier-bump-version-server-'));
 
   const appPkg = await writePkgJson(join(dir, 'apps', 'server'), {
-    name: '@happier-dev/server',
+    name: '@ks-happier/server',
     version: '0.1.0',
   });
   const runnerPkg = await writePkgJson(join(dir, 'packages', 'relay-server'), {
-    name: '@happier-dev/relay-server',
+    name: '@ks-happier/relay-server',
     version: '0.1.0',
   });
 
@@ -45,11 +45,11 @@ test('bump-version rejects server version bumps when app and server runner versi
   const dir = await mkdtemp(join(tmpdir(), 'happier-bump-version-server-mismatch-'));
 
   await writePkgJson(join(dir, 'apps', 'server'), {
-    name: '@happier-dev/server',
+    name: '@ks-happier/server',
     version: '0.1.0',
   });
   await writePkgJson(join(dir, 'packages', 'relay-server'), {
-    name: '@happier-dev/relay-server',
+    name: '@ks-happier/relay-server',
     version: '0.2.0',
   });
 

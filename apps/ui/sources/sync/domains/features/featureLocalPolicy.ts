@@ -1,4 +1,4 @@
-import { parseBooleanEnv, type FeatureId } from '@happier-dev/protocol';
+import { parseBooleanEnv, type FeatureId } from '@ks-happier/protocol';
 import type { Settings } from '@/sync/domains/settings/settings';
 import { resolveUiFeatureToggleEnabled } from './featureRegistry';
 

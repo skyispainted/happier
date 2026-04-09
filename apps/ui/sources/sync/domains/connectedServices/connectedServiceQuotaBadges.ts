@@ -1,4 +1,4 @@
-import type { ConnectedServiceQuotaSnapshotV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceQuotaSnapshotV1 } from '@ks-happier/protocol';
 
 import { clampQuotaPct, deriveQuotaUtilizationPct } from './deriveQuotaUtilizationPct';
 

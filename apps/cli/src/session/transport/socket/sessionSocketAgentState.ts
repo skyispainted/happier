@@ -2,7 +2,7 @@ import type { Socket } from 'socket.io-client';
 
 import { createSessionScopedSocket } from '@/api/session/sockets';
 import { SessionMessageContentSchema } from '@/api/types';
-import { UpdateContainerSchema, type UpdateContainer } from '@happier-dev/protocol/updates';
+import { UpdateContainerSchema, type UpdateContainer } from '@ks-happier/protocol/updates';
 import { decodeBase64, decrypt } from '@/api/encryption';
 import {
   isSessionUserMessage,

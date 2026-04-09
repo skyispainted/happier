@@ -1,4 +1,4 @@
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 import {
   DaemonTerminalCloseRequestSchema,
   DaemonTerminalEnsureRequestSchema,
@@ -7,8 +7,8 @@ import {
   DaemonTerminalRestartRequestSchema,
   DaemonTerminalStreamReadRequestSchema,
   type DaemonTerminalErrorCode,
-} from '@happier-dev/protocol';
-import { expandHomeDirPath } from '@happier-dev/cli-common/providers';
+} from '@ks-happier/protocol';
+import { expandHomeDirPath } from '@ks-happier/cli-common/providers';
 
 import type { RpcHandlerManager } from '../rpc/RpcHandlerManager';
 import { validatePath } from '@/rpc/handlers/pathSecurity';

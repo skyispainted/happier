@@ -6,13 +6,13 @@ import {
   buildOpenCodeAgentRuntimeDescriptor,
   normalizeCodexBackendMode,
   type CodexBackendMode,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 import {
   readCanonicalAgentRuntimeDescriptorV1ForProvider,
   type AgentRuntimeDescriptorV1,
   type DirectSessionsProviderId,
   type DirectSessionsSource,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import { fetchSessionById, fetchSessionsPage, getOrCreateSessionByTag } from '@/session/transport/http/sessionsHttp';

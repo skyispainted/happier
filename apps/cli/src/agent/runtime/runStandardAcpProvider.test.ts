@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 
 import { runStandardAcpProvider, type StandardAcpProviderConfig, type StandardAcpProviderRunOptions } from './runStandardAcpProvider';
 

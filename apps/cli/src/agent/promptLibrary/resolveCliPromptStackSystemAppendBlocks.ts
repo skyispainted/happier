@@ -4,7 +4,7 @@ import {
   PromptStacksV1Schema,
   openEncryptedDataKeyEnvelopeV1,
   resolvePromptStackSystemAppendBlocksV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { decodeBase64, decryptWithDataKey } from '@/api/encryption';
 import { resolveLoopbackHttpUrl } from '@/api/client/loopbackUrl';

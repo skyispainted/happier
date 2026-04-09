@@ -1,6 +1,6 @@
 import { spawn, type ChildProcess, type SpawnOptions } from 'child_process';
 
-import { getReleaseRingCatalogEntry } from '@happier-dev/release-runtime/releaseRings';
+import { getReleaseRingCatalogEntry } from '@ks-happier/release-runtime/releaseRings';
 import { configuration } from '@/configuration';
 import { resolveDaemonLaunchSpec } from './resolveDaemonLaunchSpec';
 

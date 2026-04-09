@@ -1,7 +1,7 @@
 import type { ApiClient } from '@/api/api'
 import type { ApiSessionClient } from '@/api/session/sessionClient'
 import type { AgentState, Metadata, Session } from '@/api/types'
-import type { SessionAttachMetadataIdentityPolicy } from '@happier-dev/protocol'
+import type { SessionAttachMetadataIdentityPolicy } from '@ks-happier/protocol'
 import { setupOfflineReconnection } from '@/api/offline/setupOfflineReconnection'
 import { createBaseSessionForAttach } from '@/agent/runtime/createBaseSessionForAttach'
 import {

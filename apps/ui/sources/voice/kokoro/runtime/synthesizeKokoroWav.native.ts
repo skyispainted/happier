@@ -98,7 +98,7 @@ async function getSpeakerCountForAssetsDir(opts: {
 function getOptionalNativeModuleFromWorkspace(): KokoroNativeModuleLike | null {
   try {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const mod = require('@happier-dev/sherpa-native') as any;
+    const mod = require('@ks-happier/sherpa-native') as any;
     const getter = mod?.getOptionalHappierSherpaNativeModule;
     if (typeof getter !== 'function') return null;
     return (getter() as KokoroNativeModuleLike | null) ?? null;

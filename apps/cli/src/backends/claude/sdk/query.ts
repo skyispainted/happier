@@ -29,8 +29,8 @@ import { createManagedChildProcess } from '@/subprocess/supervision/managedChild
 import { resolveJavaScriptRuntimeExecutable } from '@/runtime/js/resolveJavaScriptRuntimeExecutable'
 import { buildMissingJavaScriptRuntimeMessage } from '@/runtime/js/buildMissingJavaScriptRuntimeMessage'
 import { stripNestedSessionDetectionEnv } from '@/utils/processEnv/stripNestedSessionDetectionEnv'
-import { resolveWindowsCommandInvocation } from '@happier-dev/cli-common/process'
-import { resolveExistingManagedJavaScriptRuntimeCommand } from '@happier-dev/cli-common/providers'
+import { resolveWindowsCommandInvocation } from '@ks-happier/cli-common/process'
+import { resolveExistingManagedJavaScriptRuntimeCommand } from '@ks-happier/cli-common/providers'
 
 /**
  * Query class manages Claude Code process interaction

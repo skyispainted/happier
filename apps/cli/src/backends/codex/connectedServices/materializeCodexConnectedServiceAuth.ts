@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-import type { ConnectedServiceCredentialRecordV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceCredentialRecordV1 } from '@ks-happier/protocol';
 
 import { requireConnectedServiceOauthCredentialRecord } from '@/daemon/connectedServices/shared/connectedServiceCredentialRecord';
 import { writeJsonAtomic } from '@/utils/fs/writeJsonAtomic';

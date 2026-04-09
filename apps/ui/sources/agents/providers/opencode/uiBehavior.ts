@@ -4,7 +4,7 @@ import {
     normalizeOpenCodeServerBaseUrl,
     readOpenCodeSessionAffinityFromMetadata,
     normalizeOpenCodeBackendMode,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 import { getActiveServerSnapshot } from '@/sync/domains/server/serverRuntime';
 import { resolveOpenCodeBrowseSourceOptions } from '@/agents/providers/opencode/directSessions/resolveOpenCodeBrowseSourceOptions';
 import { resolveOpenCodeLinkEnsureRequestExtras } from '@/agents/providers/opencode/directSessions/resolveOpenCodeLinkEnsureRequestExtras';

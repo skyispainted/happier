@@ -1,4 +1,4 @@
-import { buildPromptPlanV1, renderPromptPlanV1 } from '@happier-dev/protocol';
+import { buildPromptPlanV1, renderPromptPlanV1 } from '@ks-happier/protocol';
 
 import { resolveCodingProviderBehaviorBlocks } from '@/agent/prompting/coding/providerPromptBehaviorRegistry';
 

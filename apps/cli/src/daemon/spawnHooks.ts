@@ -1,5 +1,5 @@
-import type { CodexBackendMode } from '@happier-dev/agents';
-import type { AgentRuntimeDescriptorV1 } from '@happier-dev/protocol';
+import type { CodexBackendMode } from '@ks-happier/agents';
+import type { AgentRuntimeDescriptorV1 } from '@ks-happier/protocol';
 
 import { resolveCanonicalCodexBackendMode } from '@/rpc/handlers/codexBackendMode';
 

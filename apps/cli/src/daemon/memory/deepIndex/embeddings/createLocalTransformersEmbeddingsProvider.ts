@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
-import type { MemoryEmbeddingsLocalTransformersConfig } from '@happier-dev/protocol';
+import type { MemoryEmbeddingsLocalTransformersConfig } from '@ks-happier/protocol';
 
 import { resolveCliRuntimeAssetPath } from '@/runtime/assets/resolveCliRuntimeAssetPath';
 

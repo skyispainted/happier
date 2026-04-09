@@ -1,4 +1,4 @@
-import { RPC_ERROR_CODES, RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_ERROR_CODES, RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { readRpcErrorCode } from '../../runtime/rpcErrors';
 import {

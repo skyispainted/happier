@@ -1,1 +1,1 @@
-export { verifyMinisign } from '@happier-dev/release-runtime/minisign';
+export { verifyMinisign } from '@ks-happier/release-runtime/minisign';

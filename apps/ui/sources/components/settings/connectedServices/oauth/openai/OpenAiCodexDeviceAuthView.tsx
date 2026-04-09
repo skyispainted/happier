@@ -23,7 +23,7 @@ import {
   ConnectedServiceIdSchema,
   encodeBase64,
   type ConnectedServiceId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import {
   pollOpenAiCodexDeviceAuthViaProxy,

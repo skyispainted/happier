@@ -2,7 +2,7 @@ import { z } from "zod";
 
 import type { Fastify } from "../../../types";
 import { db } from "@/storage/db";
-import { ConnectedServiceIdSchema, type ConnectedServiceId } from "@happier-dev/protocol";
+import { ConnectedServiceIdSchema, type ConnectedServiceId } from "@ks-happier/protocol";
 
 import { isConnectedServiceCredentialMetadataV2 } from "./credentialMetadataV2";
 import { isConnectedServiceCredentialMetadataV3 } from "../connectedServicesV3/credentialMetadataV3";

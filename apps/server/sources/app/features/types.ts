@@ -1,7 +1,7 @@
-import type { FeaturesResponse } from "@happier-dev/protocol";
+import type { FeaturesResponse } from "@ks-happier/protocol";
 
-export { OAuthProviderStatusSchema as oauthProviderStatusSchema, FeaturesResponseSchema as featuresSchema } from "@happier-dev/protocol";
-export type { FeaturesResponse } from "@happier-dev/protocol";
+export { OAuthProviderStatusSchema as oauthProviderStatusSchema, FeaturesResponseSchema as featuresSchema } from "@ks-happier/protocol";
+export type { FeaturesResponse } from "@ks-happier/protocol";
 
 type DeepPartial<T> =
     T extends (...args: never[]) => unknown

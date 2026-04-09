@@ -13,7 +13,7 @@ import { useProfile } from '@/sync/store/hooks';
 import { useSettings } from '@/sync/store/hooks';
 import { Modal } from '@/modal';
 import { CONNECTED_SERVICES_REGISTRY, getConnectedServiceRegistryEntry } from '@/sync/domains/connectedServices/connectedServiceRegistry';
-import type { ConnectedServiceId } from '@happier-dev/protocol';
+import type { ConnectedServiceId } from '@ks-happier/protocol';
 import { useFeatureEnabled } from '@/hooks/server/useFeatureEnabled';
 import { ConnectedServiceQuotaBadgesView } from '@/components/settings/connectedServices/ConnectedServiceQuotaBadgesView';
 import { useConnectedServiceQuotaBadges } from '@/hooks/server/connectedServices/useConnectedServiceQuotaBadges';

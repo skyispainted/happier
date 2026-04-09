@@ -2,7 +2,7 @@ import Fastify from "fastify";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { serializerCompiler, validatorCompiler, ZodTypeProvider } from "fastify-type-provider-zod";
 
-import { ConnectedServiceQuotaSnapshotV1Schema } from "@happier-dev/protocol";
+import { ConnectedServiceQuotaSnapshotV1Schema } from "@ks-happier/protocol";
 
 import { db } from "@/storage/db";
 import { connectRoutes } from "./connectRoutes";

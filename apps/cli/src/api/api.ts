@@ -26,14 +26,14 @@ import {
   SealedConnectedServiceCredentialV1Schema,
   SealedConnectedServiceQuotaSnapshotV1Schema,
   StoredJsonContentEnvelopeSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import type {
   ConnectedServiceCredentialRecordV1,
   ConnectedServiceId,
   ConnectedServiceQuotaSnapshotV1,
   SealedConnectedServiceCredentialV1,
   SealedConnectedServiceQuotaSnapshotV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { resolveSessionCreateEncryptionMode } from '@/api/session/resolveSessionCreateEncryptionMode';
 
 export class MachineIdConflictError extends Error {

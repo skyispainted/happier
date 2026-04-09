@@ -2,7 +2,7 @@ import {
   getAgentLocalControlCapability,
   inferAgentIdFromSessionMetadata,
   type AgentId,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 import { getProviderAttachOps } from '@/backends/catalog';
 import type { Credentials } from '@/persistence';

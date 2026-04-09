@@ -7,8 +7,8 @@ import type {
     DaemonMcpServersPreviewResponse,
     McpServerCatalogEntryV1,
     SessionMcpSelectionV1,
-} from '@happier-dev/protocol';
-import { resolveManagedSessionMcpSelectionV1 } from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
+import { resolveManagedSessionMcpSelectionV1 } from '@ks-happier/protocol';
 
 import { getAgentCore, type AgentId } from '@/agents/catalog/catalog';
 import {

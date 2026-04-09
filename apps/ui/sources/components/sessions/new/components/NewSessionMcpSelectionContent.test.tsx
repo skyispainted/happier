@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
-import type { McpServersSettingsV1, SessionMcpSelectionV1 } from '@happier-dev/protocol';
+import type { McpServersSettingsV1, SessionMcpSelectionV1 } from '@ks-happier/protocol';
 import { createCapturingComponent, createPassThroughComponent, createPassThroughModule } from '@/dev/testkit/mocks/components';
 import { createUseSettingMock, installPartialStorageModuleMock } from '@/dev/testkit/mocks/storage';
 import { installNewSessionComponentsCommonModuleMocks } from './newSessionComponentsTestHelpers';

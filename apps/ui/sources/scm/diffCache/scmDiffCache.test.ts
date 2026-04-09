@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import type { ScmDiffArea } from '@happier-dev/protocol';
+import type { ScmDiffArea } from '@ks-happier/protocol';
 
 import { ScmDiffCache } from './scmDiffCache';
 

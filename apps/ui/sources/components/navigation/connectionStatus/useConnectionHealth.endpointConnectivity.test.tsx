@@ -6,7 +6,7 @@ import { installConnectionStatusCommonModuleMocks } from './connectionStatusTest
 
 (globalThis as any).IS_REACT_ACT_ENVIRONMENT = true;
 
-let endpointStatus: import('@happier-dev/connection-supervisor').ManagedConnectionPhase = 'online';
+let endpointStatus: import('@ks-happier/connection-supervisor').ManagedConnectionPhase = 'online';
 let socketStatus: import('./connectionHealthTypes').ConnectionSocketStatus = 'connected';
 let hasSyncError: boolean = false;
 let machines: Array<Record<string, unknown>> = [];

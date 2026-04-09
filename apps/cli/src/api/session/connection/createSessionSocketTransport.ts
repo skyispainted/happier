@@ -2,7 +2,7 @@ import axios from 'axios';
 import { io, type Socket } from 'socket.io-client';
 import { randomUUID } from 'node:crypto';
 
-import type { ManagedConnectionTransport } from '@happier-dev/connection-supervisor';
+import type { ManagedConnectionTransport } from '@ks-happier/connection-supervisor';
 
 import type { ClientToServerEvents, ServerToClientEvents } from '@/api/types';
 import { createSocketTransportAdapter } from '@/api/connection/createSocketTransportAdapter';

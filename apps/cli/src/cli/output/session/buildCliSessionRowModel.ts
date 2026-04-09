@@ -1,8 +1,8 @@
-import { inferAgentIdFromSessionMetadata, evaluateVendorResumeEligibility, type VendorResumeEligibility } from '@happier-dev/agents';
+import { inferAgentIdFromSessionMetadata, evaluateVendorResumeEligibility, type VendorResumeEligibility } from '@ks-happier/agents';
 import {
   readSystemSessionMetadataFromMetadata,
   type AccountSettings,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import { tryDecryptSessionMetadata } from '@/session/transport/encryption/sessionEncryptionContext';

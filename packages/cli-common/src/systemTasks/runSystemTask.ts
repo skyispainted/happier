@@ -6,7 +6,7 @@ import {
   SystemTaskSpecSchema,
   type SystemTaskEvent,
   type SystemTaskResult,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { redactSensitiveSystemTaskJsonValue } from './interactiveTaskKinds.js';
 

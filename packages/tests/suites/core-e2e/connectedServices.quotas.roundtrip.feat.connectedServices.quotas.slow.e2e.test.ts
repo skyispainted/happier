@@ -5,7 +5,7 @@ import {
   ConnectedServiceQuotaSnapshotV1Schema,
   openAccountScopedBlobCiphertext,
   sealAccountScopedBlobCiphertext,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { createRunDirs } from '../../src/testkit/runDir';
 import { startServerLight, type StartedServer } from '../../src/testkit/process/serverLight';

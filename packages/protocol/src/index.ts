@@ -1,4 +1,4 @@
-export const HAPPY_PROTOCOL_PACKAGE = '@happier-dev/protocol';
+export const HAPPY_PROTOCOL_PACKAGE = '@ks-happier/protocol';
 
 export type {
   SettingAnalyticsIdentityScope,
@@ -1579,7 +1579,7 @@ export * from './actions/index.js';
 export * from './tools/happierToolsShellBridge.js';
 export * from './tools/v2/index.js';
 
-// Provider E2E specs (used by `@happier-dev/tests` to run real provider contract matrix)
+// Provider E2E specs (used by `@ks-happier/tests` to run real provider contract matrix)
 export { E2eCliProviderSpecV1Schema, type E2eCliProviderSpecV1 } from './e2e/providerSpec.js';
 export {
   E2eCliProviderScenarioRegistryV1Schema,

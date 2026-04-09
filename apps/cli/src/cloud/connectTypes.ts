@@ -1,5 +1,5 @@
 import type { CatalogAgentId } from '@/backends/types';
-import type { CloudConnectTargetStatus, CloudVendorKey } from '@happier-dev/agents';
+import type { CloudConnectTargetStatus, CloudVendorKey } from '@ks-happier/agents';
 
 export type { CloudConnectTargetStatus, CloudVendorKey };
 

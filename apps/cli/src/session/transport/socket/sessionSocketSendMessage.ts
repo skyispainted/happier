@@ -1,9 +1,9 @@
 import type { Socket } from 'socket.io-client';
 
-import { MessageAckResponseSchema } from '@happier-dev/protocol/updates';
+import { MessageAckResponseSchema } from '@ks-happier/protocol/updates';
 
 import { createSessionScopedSocket } from '@/api/session/sockets';
-import type { SessionStoredMessageContent } from '@happier-dev/protocol';
+import type { SessionStoredMessageContent } from '@ks-happier/protocol';
 import { resolveSessionControlSocketAckTimeoutMs, resolveSessionControlSocketConnectTimeoutMs } from '@/session/transport/shared/sessionTimeouts';
 import { waitForSocketConnect } from './waitForSocketConnect';
 

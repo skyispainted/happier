@@ -7,7 +7,7 @@ import {
   V2SessionListResponseSchema,
   decodeV2SessionListCursorV1,
   encodeV2SessionListCursorV1,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 import { resolveApiHotEndpointRateLimit } from "@/app/api/utils/apiRateLimitCatalog";
 import { PROFILE_SELECT, toShareUserProfile } from "@/app/share/types";
 import { db } from "@/storage/db";

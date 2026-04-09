@@ -1,7 +1,7 @@
 import React from 'react';
 
-import type { AgentId } from '@happier-dev/agents';
-import { getProviderCliRuntimeSpec } from '@happier-dev/agents';
+import type { AgentId } from '@ks-happier/agents';
+import { getProviderCliRuntimeSpec } from '@ks-happier/agents';
 
 import type { Credentials } from '@/persistence';
 import type { PermissionMode } from '@/api/types';

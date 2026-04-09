@@ -1,4 +1,4 @@
-import { CODEX_PROVIDER_FIELDS } from '@happier-dev/agents';
+import { CODEX_PROVIDER_FIELDS } from '@ks-happier/agents';
 
 import type { ProviderSettingsPlugin } from '@/agents/providers/shared/providerSettingsPlugin';
 

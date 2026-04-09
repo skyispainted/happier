@@ -1,4 +1,4 @@
-import { resolveProviderCliCommand } from '@happier-dev/cli-common/providers';
+import { resolveProviderCliCommand } from '@ks-happier/cli-common/providers';
 
 let cachedResolvedClaudeCliPath: string | null = null;
 

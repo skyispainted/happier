@@ -5,7 +5,7 @@ import { HappyError } from '@/utils/errors/errors';
 import {
     AccountEncryptionModeResponseSchema,
     type AccountEncryptionModeResponse,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 type AccountEncryptionMode = AccountEncryptionModeResponse['mode'];
 

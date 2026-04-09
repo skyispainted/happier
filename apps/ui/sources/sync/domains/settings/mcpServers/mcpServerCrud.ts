@@ -1,4 +1,4 @@
-import type { McpServerBindingV1, McpServerCatalogEntryV1, McpServersSettingsV1 } from '@happier-dev/protocol';
+import type { McpServerBindingV1, McpServerCatalogEntryV1, McpServersSettingsV1 } from '@ks-happier/protocol';
 
 function hasDuplicateServerName(settings: McpServersSettingsV1, name: string): boolean {
     return settings.servers.some((s) => s.name === name);

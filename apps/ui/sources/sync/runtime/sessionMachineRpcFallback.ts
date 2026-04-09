@@ -5,8 +5,8 @@ import { resolvePreferredServerIdForSessionId } from '@/sync/runtime/orchestrati
 import { machineRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedMachineRpc';
 import { sessionRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc';
 import { readRpcErrorCode } from '@/sync/runtime/rpcErrors';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { resolveAppSessionTransferAvailability } from '@happier-dev/transfers';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { resolveAppSessionTransferAvailability } from '@ks-happier/transfers';
 import {
     canUseSessionRpc,
     readMachineTargetForSession,

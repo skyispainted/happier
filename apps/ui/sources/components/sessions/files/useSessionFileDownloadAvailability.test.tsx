@@ -1,4 +1,4 @@
-import { FeaturesResponseSchema, type FeaturesResponse } from '@happier-dev/protocol';
+import { FeaturesResponseSchema, type FeaturesResponse } from '@ks-happier/protocol';
 import { describe, expect, it, vi } from 'vitest';
 
 import { renderHook } from '@/dev/testkit/hooks/renderHook';

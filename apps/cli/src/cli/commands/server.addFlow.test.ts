@@ -5,7 +5,7 @@ import { join } from 'node:path';
 
 import { reloadConfiguration } from '@/configuration';
 import { readSettings } from '@/persistence';
-import { FeaturesResponseSchema } from '@happier-dev/protocol';
+import { FeaturesResponseSchema } from '@ks-happier/protocol';
 
 let promptAnswers: string[] = [];
 let promptQuestions: string[] = [];

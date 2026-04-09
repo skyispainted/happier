@@ -14,11 +14,11 @@ vi.mock('@/session/actions/createCliActionExecutor', () => ({
 }));
 
 describe('happier session actions --json contract', () => {
-  let protocol: typeof import('@happier-dev/protocol');
+  let protocol: typeof import('@ks-happier/protocol');
   let handleSessionCommand: typeof import('../index').handleSessionCommand;
 
   beforeAll(async () => {
-    protocol = await import('@happier-dev/protocol');
+    protocol = await import('@ks-happier/protocol');
     ({ handleSessionCommand } = await import('../index'));
   });
 

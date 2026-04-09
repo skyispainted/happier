@@ -1,5 +1,5 @@
 import type { Prisma } from "@prisma/client";
-import type { V2SessionRecord } from "@happier-dev/protocol";
+import type { V2SessionRecord } from "@ks-happier/protocol";
 
 function encodeSessionDataEncryptionKey(value: Uint8Array | null): string | null {
     return value ? Buffer.from(value).toString("base64") : null;

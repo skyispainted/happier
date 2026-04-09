@@ -1,6 +1,6 @@
 type UnknownRecord = Record<string, unknown>;
 
-import { splitUnifiedDiffByFile } from '@happier-dev/protocol';
+import { splitUnifiedDiffByFile } from '@ks-happier/protocol';
 
 function asRecord(value: unknown): UnknownRecord | null {
     if (!value || typeof value !== 'object' || Array.isArray(value)) return null;

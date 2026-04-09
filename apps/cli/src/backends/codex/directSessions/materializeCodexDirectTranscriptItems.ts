@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 
-import type { DirectTranscriptRawMessageV1 } from '@happier-dev/protocol';
+import type { DirectTranscriptRawMessageV1 } from '@ks-happier/protocol';
 
 import { mapCodexRolloutEventToActions } from '../localControl/rolloutMapper';
 import { createCodexRolloutSemanticTracker } from '../rollout/createCodexRolloutSemanticTracker';

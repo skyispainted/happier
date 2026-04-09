@@ -1,6 +1,6 @@
 import { useFeatureDecision } from './useFeatureDecision';
 import type { FeatureScopeParams } from './featureScope';
-import type { FeatureDecision } from '@happier-dev/protocol';
+import type { FeatureDecision } from '@ks-happier/protocol';
 
 export type AutomationsSupport = Readonly<{
     enabled: boolean;

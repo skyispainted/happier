@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, View } from 'react-native';
 
-import { parseDoctorSnapshotSafe } from '@happier-dev/protocol';
+import { parseDoctorSnapshotSafe } from '@ks-happier/protocol';
 import { Switch } from '@/components/ui/forms/Switch';
 import { Text, TextInput } from '@/components/ui/text/Text';
 import { t, type TranslationKey } from '@/text';

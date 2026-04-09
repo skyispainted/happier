@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import { spawn } from 'node:child_process';
 
-import { inferAgentIdFromSessionMetadata, type AgentId } from '@happier-dev/agents';
+import { inferAgentIdFromSessionMetadata, type AgentId } from '@ks-happier/agents';
 
 import { getProviderAttachOps } from '@/backends/catalog';
 import { configuration } from '@/configuration';

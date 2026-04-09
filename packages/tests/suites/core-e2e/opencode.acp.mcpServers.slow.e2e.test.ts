@@ -3,7 +3,7 @@ import { randomBytes, randomUUID } from 'node:crypto';
 import { chmod, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 
-import { deriveSettingsSecretsKeyV1, sealSecretsDeepV1 } from '@happier-dev/protocol';
+import { deriveSettingsSecretsKeyV1, sealSecretsDeepV1 } from '@ks-happier/protocol';
 
 import { createRunDirs } from '../../src/testkit/runDir';
 import { startServerLight, type StartedServer } from '../../src/testkit/process/serverLight';
@@ -287,7 +287,7 @@ new acp.AgentSideConnection((conn) => new FakeAgent(conn), stream);
       args: [
         '-s',
         'workspace',
-        '@happier-dev/cli',
+        '@ks-happier/cli',
         'dev',
         'opencode',
         '--existing-session',

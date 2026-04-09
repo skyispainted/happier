@@ -3,7 +3,7 @@ import {
     buildBackendTargetKey,
     isBuiltInAgentTarget,
     type BackendTargetRefV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { DEFAULT_AGENT_ID, isAgentId } from '@/agents/catalog/catalog';
 import {

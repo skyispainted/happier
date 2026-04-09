@@ -1,4 +1,4 @@
-import { normalizePublicReleaseRingId, type PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import { normalizePublicReleaseRingId, type PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 import { expandHomeDirPath } from '../providers/resolution.js';
 
 type RelayRuntimeMode = 'user' | 'system';

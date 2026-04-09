@@ -14,13 +14,13 @@ import {
     computeNextMetadataConfigOptionOverrideV1,
     LEGACY_ACP_SESSION_MODE_OVERRIDE_KEY,
     SESSION_MODE_OVERRIDE_KEY,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 import {
     AcpConfigOptionOverridesV1Schema,
     buildAcpSessionModeOverrideV1,
     buildModelOverrideV1,
     parseSessionMcpSelectionV1Json,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { AgentState, Metadata, PermissionMode } from '@/api/types';
 import { configuration } from '@/configuration';

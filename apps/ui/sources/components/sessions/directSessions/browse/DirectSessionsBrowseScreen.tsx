@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import type { DirectSessionsProviderId, DirectSessionsSource } from '@happier-dev/protocol';
+import type { DirectSessionsProviderId, DirectSessionsSource } from '@ks-happier/protocol';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';

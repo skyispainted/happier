@@ -1,4 +1,4 @@
-import { parseBooleanEnv } from '@happier-dev/protocol';
+import { parseBooleanEnv } from '@ks-happier/protocol';
 
 export function supportsPierreRuntime(): boolean {
     if (typeof window === 'undefined') return false;

@@ -20,8 +20,8 @@ import {
   ConnectedServiceIdSchema,
   ConnectedServiceProfileIdSchema,
   type ConnectedServiceId,
-} from '@happier-dev/protocol';
-import type { ConnectedServiceQuotaSnapshotV1 } from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
+import type { ConnectedServiceQuotaSnapshotV1 } from '@ks-happier/protocol';
 import { useFeatureEnabled } from '@/hooks/server/useFeatureEnabled';
 
 import { ConnectedServiceDetailActionsGroup } from './detail/ConnectedServiceDetailActionsGroup';

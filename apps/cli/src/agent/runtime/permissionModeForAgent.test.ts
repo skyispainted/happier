@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { normalizePermissionModeForAgent } from '@happier-dev/agents';
+import { normalizePermissionModeForAgent } from '@ks-happier/agents';
 
 describe('normalizePermissionModeForAgent', () => {
   it('maps safe-yolo to Claude acceptEdits', () => {

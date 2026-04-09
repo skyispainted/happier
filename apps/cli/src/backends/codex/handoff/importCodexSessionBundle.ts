@@ -4,11 +4,11 @@ import { dirname, isAbsolute, join, relative, resolve } from 'node:path';
 import {
   buildCodexAgentRuntimeDescriptor,
   resolvePersistedCodexRuntimeIdentity,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 import {
   DirectSessionsSourceSchema,
   readCanonicalAgentRuntimeDescriptorV1ForProvider,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { CodexSessionBundle, ImportedSessionHandoffBundle } from '../../../session/handoff/types';
 import { resolveConfiguredCodexHome } from '../utils/resolveConfiguredCodexHome';

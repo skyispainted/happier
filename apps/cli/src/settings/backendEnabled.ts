@@ -1,8 +1,8 @@
 import {
   buildBackendTargetKey,
   type BackendTargetRefV1,
-} from '@happier-dev/protocol';
-import type { AgentId } from '@happier-dev/agents';
+} from '@ks-happier/protocol';
+import type { AgentId } from '@ks-happier/agents';
 
 export function assertBackendEnabledByAccountSettings(params: Readonly<{
   agentId?: AgentId;

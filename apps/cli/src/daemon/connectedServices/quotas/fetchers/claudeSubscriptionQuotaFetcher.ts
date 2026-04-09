@@ -1,5 +1,5 @@
 import type { ConnectedServiceQuotaFetcher } from '../types';
-import type { ConnectedServiceCredentialRecordV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceCredentialRecordV1 } from '@ks-happier/protocol';
 
 const DEFAULT_USAGE_URL = 'https://api.anthropic.com/api/oauth/usage';
 const DEFAULT_BETA_HEADER_VALUE = 'oauth-2025-04-20';

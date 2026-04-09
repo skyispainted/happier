@@ -1,7 +1,7 @@
 import { Buffer } from 'node:buffer';
 import { randomUUID } from 'node:crypto';
 
-import type { DaemonTerminalErrorCode, DaemonTerminalStreamEvent } from '@happier-dev/protocol';
+import type { DaemonTerminalErrorCode, DaemonTerminalStreamEvent } from '@ks-happier/protocol';
 
 import type { Disposable, PtyProvider, PtyProcess } from './ptyProvider';
 import { createTerminalUrlDetector } from './terminalUrlDetection';

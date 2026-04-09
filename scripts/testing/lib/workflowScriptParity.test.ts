@@ -8,16 +8,16 @@ function createPackageJsonText(): string {
     {
       scripts: {
         test: 'yarn -s test:unit',
-        'test:unit': 'yarn workspace @happier-dev/protocol test && yarn workspace @happier-dev/transfers test && yarn workspace @happier-dev/agents test && yarn workspace @happier-dev/cli-common test && yarn workspace @happier-dev/connection-supervisor test && yarn workspace @happier-dev/bootstrap test && yarn workspace @happier-dev/app test && yarn workspace @happier-dev/cli test:unit && yarn --cwd apps/server test:unit && yarn --cwd packages/relay-server test && yarn --cwd apps/stack test:unit',
-        'test:integration': 'yarn workspace @happier-dev/app test:integration && yarn workspace @happier-dev/cli test:integration && yarn --cwd apps/server test:integration && yarn --cwd apps/stack test:integration',
-        'test:e2e:core:fast': 'yarn workspace @happier-dev/tests test:core:fast',
-        'test:e2e:core:slow': 'yarn workspace @happier-dev/tests test:core:slow',
-        'test:e2e:ui': 'yarn workspace @happier-dev/tests test:ui:e2e',
-        'test:e2e:ui:wsrepl:lima': 'yarn workspace @happier-dev/tests test:ui:e2e:wsrepl:lima',
-        'test:e2e:ui:wsrepl:lima:self': 'yarn workspace @happier-dev/tests test:ui:e2e:wsrepl:lima:self',
-        'test:e2e:mobile': 'yarn workspace @happier-dev/tests test:mobile:e2e:android',
-        'test:providers': 'yarn workspace @happier-dev/tests test:providers',
-        'test:stress': 'yarn workspace @happier-dev/tests test:stress',
+        'test:unit': 'yarn workspace @ks-happier/protocol test && yarn workspace @ks-happier/transfers test && yarn workspace @ks-happier/agents test && yarn workspace @ks-happier/cli-common test && yarn workspace @ks-happier/connection-supervisor test && yarn workspace @ks-happier/bootstrap test && yarn workspace @ks-happier/app test && yarn workspace @ks-happier/cli test:unit && yarn --cwd apps/server test:unit && yarn --cwd packages/relay-server test && yarn --cwd apps/stack test:unit',
+        'test:integration': 'yarn workspace @ks-happier/app test:integration && yarn workspace @ks-happier/cli test:integration && yarn --cwd apps/server test:integration && yarn --cwd apps/stack test:integration',
+        'test:e2e:core:fast': 'yarn workspace @ks-happier/tests test:core:fast',
+        'test:e2e:core:slow': 'yarn workspace @ks-happier/tests test:core:slow',
+        'test:e2e:ui': 'yarn workspace @ks-happier/tests test:ui:e2e',
+        'test:e2e:ui:wsrepl:lima': 'yarn workspace @ks-happier/tests test:ui:e2e:wsrepl:lima',
+        'test:e2e:ui:wsrepl:lima:self': 'yarn workspace @ks-happier/tests test:ui:e2e:wsrepl:lima:self',
+        'test:e2e:mobile': 'yarn workspace @ks-happier/tests test:mobile:e2e:android',
+        'test:providers': 'yarn workspace @ks-happier/tests test:providers',
+        'test:stress': 'yarn workspace @ks-happier/tests test:stress',
         'test:db-contract:docker': 'yarn -s test:db-contract:postgres:docker && yarn -s test:db-contract:mysql:docker',
         'test:wiring:self': 'node --import tsx --test scripts/testing/lib/*.test.ts scripts/testing/*.test.ts',
         'test:wiring': 'node --import tsx ./scripts/testing/validateTestWiring.ts',
@@ -37,16 +37,16 @@ function createWorkflowText(): string {
 jobs:
   testing:
     steps:
-      - run: yarn workspace @happier-dev/protocol test
-      - run: yarn workspace @happier-dev/transfers test
-      - run: yarn workspace @happier-dev/agents test
-      - run: yarn workspace @happier-dev/cli-common test
-      - run: yarn workspace @happier-dev/connection-supervisor test
-      - run: yarn workspace @happier-dev/bootstrap test
-      - run: yarn workspace @happier-dev/app test:unit
-      - run: yarn workspace @happier-dev/app test:integration
-      - run: yarn workspace @happier-dev/cli test:unit
-      - run: yarn workspace @happier-dev/cli test:integration
+      - run: yarn workspace @ks-happier/protocol test
+      - run: yarn workspace @ks-happier/transfers test
+      - run: yarn workspace @ks-happier/agents test
+      - run: yarn workspace @ks-happier/cli-common test
+      - run: yarn workspace @ks-happier/connection-supervisor test
+      - run: yarn workspace @ks-happier/bootstrap test
+      - run: yarn workspace @ks-happier/app test:unit
+      - run: yarn workspace @ks-happier/app test:integration
+      - run: yarn workspace @ks-happier/cli test:unit
+      - run: yarn workspace @ks-happier/cli test:integration
       - run: yarn --cwd apps/server test:unit
       - run: yarn --cwd apps/server test:integration
       - run: yarn --cwd apps/server test:server:db-contract
@@ -58,7 +58,7 @@ jobs:
       - run: yarn -s test:e2e:ui
       - run: yarn -s test:e2e:ui:wsrepl:lima
       - run: yarn -s test:e2e:mobile
-      - run: yarn workspace @happier-dev/tests providers:run all smoke
+      - run: yarn workspace @ks-happier/tests providers:run all smoke
       - run: yarn test:stress
       - run: yarn test:wiring:self && yarn test:wiring && yarn test:policy && yarn test:inventory && yarn test:migration:inventory
 `;

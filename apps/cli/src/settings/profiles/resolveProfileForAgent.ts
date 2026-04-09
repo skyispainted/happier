@@ -1,5 +1,5 @@
-import { AGENT_IDS, type AgentId } from '@happier-dev/agents';
-import { isProfileCompatibleWithAgent, resolveBackendProfile, type AIBackendProfile } from '@happier-dev/protocol';
+import { AGENT_IDS, type AgentId } from '@ks-happier/agents';
+import { isProfileCompatibleWithAgent, resolveBackendProfile, type AIBackendProfile } from '@ks-happier/protocol';
 
 function formatCandidatesList(candidates: ReadonlyArray<Readonly<{ id: string; name: string }>>): string {
   return candidates.map((c) => `${c.id} (${c.name})`).join(', ');

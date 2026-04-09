@@ -7,7 +7,7 @@ import { AttachmentFilePicker } from '@/components/sessions/attachments/Attachme
 import { PopoverBoundaryProvider } from '@/components/ui/popover';
 import { t } from '@/text';
 import { Text } from '@/components/ui/text/Text';
-import type { AcpConfigOptionOverridesV1 } from '@happier-dev/protocol';
+import type { AcpConfigOptionOverridesV1 } from '@ks-happier/protocol';
 import type { CreatedSessionFollowUpContext } from '../hooks/useCreateNewSession';
 import { useNewSessionAttachmentsController } from '@/components/sessions/new/attachments/useNewSessionAttachmentsController';
 import { isMobileLayoutWidth } from '@/components/sessions/layout/isMobileLayoutWidth';

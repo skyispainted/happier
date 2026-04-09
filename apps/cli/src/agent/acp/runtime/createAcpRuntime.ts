@@ -17,7 +17,7 @@ import { importAcpReplayHistoryV1 } from '@/agent/acp/history/importAcpReplayHis
 import { importAcpReplaySidechainV1 } from '@/agent/acp/history/importAcpReplaySidechain';
 import { createCatalogAcpBackend } from '@/agent/acp/createCatalogAcpBackend';
 import type { AcpRuntimeSessionClient } from '@/agent/acp/sessionClient';
-import { getAgentModelConfig, type AgentId } from '@happier-dev/agents';
+import { getAgentModelConfig, type AgentId } from '@ks-happier/agents';
 import { updateMetadataBestEffort } from '@/api/session/sessionWritesBestEffort';
 import { createStreamedTranscriptWriter } from '@/api/session/streamedTranscriptWriter';
 

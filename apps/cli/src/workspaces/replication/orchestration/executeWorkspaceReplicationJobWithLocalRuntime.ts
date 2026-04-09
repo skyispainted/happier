@@ -9,7 +9,7 @@ import type {
     ScmSourceControllerWorkspaceTransferStrategy,
 } from '@/scm/sourceController/workspaceTransfer';
 import { inferWorkspaceManifestSafeFilterPolicyFromEntries } from '@/scm/sourceController/workspaceExportPackaging/workspaceManifestSafeFilterPolicy';
-import type { WorkspaceManifest } from '@happier-dev/protocol';
+import type { WorkspaceManifest } from '@ks-happier/protocol';
 
 import { createWorkspaceReplicationBaselineStore } from '../baseline/workspaceReplicationBaselineStore';
 import type { WorkspaceReplicationJobStore } from '../jobs/workspaceReplicationJobStore';

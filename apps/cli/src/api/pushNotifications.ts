@@ -13,7 +13,7 @@ import {
     collectExpoPushTokensMarkedUnregistered,
     PUSH_NOTIFICATION_ANDROID_CHANNEL_IDS,
     PUSH_NOTIFICATION_CATEGORY_IDS,
-} from '@happier-dev/protocol'
+} from '@ks-happier/protocol'
 
 export interface PushToken {
     id: string

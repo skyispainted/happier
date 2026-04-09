@@ -1,4 +1,4 @@
-import type { BackendTargetRefV1, ExecutionRunPublicState } from '@happier-dev/protocol';
+import type { BackendTargetRefV1, ExecutionRunPublicState } from '@ks-happier/protocol';
 
 import type { Message, ToolCall, ToolCallMessage } from '@/sync/domains/messages/messageTypes';
 import { resolveToolTranscriptSidechainId } from '@/components/tools/shell/views/resolveToolTranscriptSidechainId';

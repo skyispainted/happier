@@ -1,6 +1,6 @@
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
-import { readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
+import { readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 import { createRpcCallError } from '@/sync/runtime/rpcErrors';
 import { apiSocket } from '@/sync/api/session/apiSocket';

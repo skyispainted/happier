@@ -16,7 +16,7 @@ import {
     type ManagedConnectionState,
     type ManagedConnectionTransport,
     type TransportDisconnectEvent,
-} from '@happier-dev/connection-supervisor';
+} from '@ks-happier/connection-supervisor';
 import {
     reportServerUnreachable,
     startServerReachabilitySupervisor,

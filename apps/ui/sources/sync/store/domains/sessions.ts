@@ -43,7 +43,7 @@ import { projectManager } from '../../runtime/orchestration/projectManager';
 import { isModelMode, type PermissionMode } from '@/sync/domains/permissions/permissionTypes';
 import { isModelSelectableForSession } from '@/sync/domains/models/modelOptions';
 import { resolveAgentIdFromFlavor } from '@/agents/registry/registryCore';
-import { parsePermissionIntentAlias, resolveMetadataStringOverrideV1, resolvePermissionIntentFromSessionMetadata } from '@happier-dev/agents';
+import { parsePermissionIntentAlias, resolveMetadataStringOverrideV1, resolvePermissionIntentFromSessionMetadata } from '@ks-happier/agents';
 import {
     applyReachableTargetsToSessionListRenderables,
     buildSessionListViewDataWithServerScope,

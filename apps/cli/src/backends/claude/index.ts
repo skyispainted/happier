@@ -1,4 +1,4 @@
-import { AGENTS_CORE } from '@happier-dev/agents';
+import { AGENTS_CORE } from '@ks-happier/agents';
 
 import { claudeDaemonSpawnHooks } from '@/backends/claude/daemon/spawnHooks';
 import type { AgentCatalogEntry } from '../types';

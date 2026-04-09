@@ -2,7 +2,7 @@ import {
   ReviewFindingsV1Schema,
   ReviewFindingsV2Schema,
   ReviewTriageOverlaySchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type {
   ExecutionRunIntentProfile,

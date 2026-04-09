@@ -1,5 +1,5 @@
-import { listNativeReviewEngines, type NativeReviewEngineId } from '@happier-dev/protocol';
-import type { BackendTargetRefV1, ExecutionRunRetentionPolicy } from '@happier-dev/protocol';
+import { listNativeReviewEngines, type NativeReviewEngineId } from '@ks-happier/protocol';
+import type { BackendTargetRefV1, ExecutionRunRetentionPolicy } from '@ks-happier/protocol';
 
 import type { ExecutionRunProfileBoundedCompleteResult } from '@/agent/executionRuns/profiles/ExecutionRunIntentProfile';
 import type { ExecutionRunBackendFactory } from '@/agent/executionRuns/registry/executionRunBackendTypes';

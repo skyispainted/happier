@@ -1,4 +1,4 @@
-import { SPAWN_SESSION_ERROR_CODES, type SpawnSessionErrorCode, type SpawnSessionResult } from '@happier-dev/protocol';
+import { SPAWN_SESSION_ERROR_CODES, type SpawnSessionErrorCode, type SpawnSessionResult } from '@ks-happier/protocol';
 import { isSocketIoAckTimeoutError } from '@/sync/runtime/socketIoAckTimeout';
 
 export function isPlainObject(value: unknown): value is Record<string, unknown> {

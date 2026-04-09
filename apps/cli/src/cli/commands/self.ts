@@ -9,17 +9,17 @@ import {
   FIRST_PARTY_COMPONENT_IDS,
   installVersionedPayload,
   resolveFirstPartyComponentPublicReleaseVariant,
-} from '@happier-dev/cli-common/firstPartyRuntime';
-import type { FirstPartyComponentId } from '@happier-dev/cli-common/firstPartyRuntime';
+} from '@ks-happier/cli-common/firstPartyRuntime';
+import type { FirstPartyComponentId } from '@ks-happier/cli-common/firstPartyRuntime';
 import {
   compareVersions,
   readNpmDistTagVersion,
   readUpdateCache,
   resolveNpmPackageNameOverride,
   writeUpdateCache,
-} from '@happier-dev/cli-common/update';
-import { fetchGitHubReleaseByTag } from '@happier-dev/release-runtime/github';
-import { normalizePublicReleaseRingId, type PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+} from '@ks-happier/cli-common/update';
+import { fetchGitHubReleaseByTag } from '@ks-happier/release-runtime/github';
+import { normalizePublicReleaseRingId, type PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 import { resolvePublicReleaseRingIdFromCliArgs } from '@/cli/runtime/publicReleaseChannel';
 import {
   resolveCliBinaryAssetBundleFromReleaseAssets,

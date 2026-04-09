@@ -5,7 +5,7 @@ import {
   openBoxBundle,
   type ConnectedServiceCredentialRecordV1,
   type ConnectedServiceId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 type ProxyExchangePayload = Readonly<{
   serviceId: ConnectedServiceId;

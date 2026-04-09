@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 
-import { getFirstPartyComponentCatalogEntry } from '@happier-dev/cli-common/firstPartyRuntime';
+import { getFirstPartyComponentCatalogEntry } from '@ks-happier/cli-common/firstPartyRuntime';
 
 import { pathExists } from '../../utils/fs/fs.mjs';
 import {

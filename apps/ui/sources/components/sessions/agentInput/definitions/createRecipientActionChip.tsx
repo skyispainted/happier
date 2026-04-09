@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 
-import type { ParticipantRecipientV1 } from '@happier-dev/protocol';
+import type { ParticipantRecipientV1 } from '@ks-happier/protocol';
 
 import type {
     AgentInputExtraActionChip,

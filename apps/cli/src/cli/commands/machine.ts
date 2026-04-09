@@ -13,7 +13,7 @@ import type {
   SystemTaskJsonObject,
   SystemTaskResult,
   SystemTaskSpec,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { showMachineHelp } from './machine/help';
 

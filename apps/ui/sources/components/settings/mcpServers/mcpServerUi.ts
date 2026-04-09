@@ -7,13 +7,13 @@ import type {
     McpPreviewScopeKindV1,
     McpServerBindingV1,
     McpServerCatalogEntryV1,
-} from '@happier-dev/protocol';
-import type { AgentToolsDelivery } from '@happier-dev/agents';
+} from '@ks-happier/protocol';
+import type { AgentToolsDelivery } from '@ks-happier/agents';
 
 import { getAgentCore, resolveAgentIdFromFlavor } from '@/agents/registry/registryCore';
 import type { Machine } from '@/sync/domains/state/storageTypes';
 import { t, type TranslationKeyNoParams } from '@/text';
-import { inferMcpServerAuthModeV1 } from '@happier-dev/protocol';
+import { inferMcpServerAuthModeV1 } from '@ks-happier/protocol';
 
 export function describeMachine(machineId: string, machines: readonly Machine[]): string {
     const machine = machines.find((item) => item.id === machineId) ?? null;

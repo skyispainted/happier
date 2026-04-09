@@ -109,9 +109,9 @@ async function createPackSandbox({ monorepoRoot, packageRelDir }) {
 }
 
 export function analyzeTarList(paths) {
-  const hasAgents = paths.some((p) => p.startsWith('package/node_modules/@happier-dev/agents/'));
-  const hasCliCommon = paths.some((p) => p.startsWith('package/node_modules/@happier-dev/cli-common/'));
-  const hasProtocol = paths.some((p) => p.startsWith('package/node_modules/@happier-dev/protocol/'));
+  const hasAgents = paths.some((p) => p.startsWith('package/node_modules/@ks-happier/agents/'));
+  const hasCliCommon = paths.some((p) => p.startsWith('package/node_modules/@ks-happier/cli-common/'));
+  const hasProtocol = paths.some((p) => p.startsWith('package/node_modules/@ks-happier/protocol/'));
   return { hasAgents, hasCliCommon, hasProtocol };
 }
 
@@ -225,9 +225,9 @@ async function main() {
       `[pack] dir: ${packDir}`,
       `[pack] tarball: ${basename(tarballPath)} (generated in a temp sandbox)`,
       `[pack] bundledDependencies (best-effort):`,
-      `- @happier-dev/agents:   ${hasAgents ? '✅ present' : shouldEnforceBundledDeps ? '❌ missing' : '↪ not required'}`,
-      `- @happier-dev/cli-common: ${hasCliCommon ? '✅ present' : shouldEnforceBundledDeps ? '❌ missing' : '↪ not required'}`,
-      `- @happier-dev/protocol: ${hasProtocol ? '✅ present' : shouldEnforceBundledDeps ? '❌ missing' : '↪ not required'}`,
+      `- @ks-happier/agents:   ${hasAgents ? '✅ present' : shouldEnforceBundledDeps ? '❌ missing' : '↪ not required'}`,
+      `- @ks-happier/cli-common: ${hasCliCommon ? '✅ present' : shouldEnforceBundledDeps ? '❌ missing' : '↪ not required'}`,
+      `- @ks-happier/protocol: ${hasProtocol ? '✅ present' : shouldEnforceBundledDeps ? '❌ missing' : '↪ not required'}`,
     ];
     if (!ok) {
       lines.push('', '[pack] NOTE: missing bundled deps in tarball; publish would likely break for npm consumers.');

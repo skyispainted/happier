@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { UNSUPPORTED_AGENT_SESSION_CAPABILITIES, type AgentCore } from '@happier-dev/agents';
+import { UNSUPPORTED_AGENT_SESSION_CAPABILITIES, type AgentCore } from '@ks-happier/agents';
 
 import { filterConnectedServiceV2ProfilesForAgent } from './filterConnectedServiceV2ProfilesForAgent';
 

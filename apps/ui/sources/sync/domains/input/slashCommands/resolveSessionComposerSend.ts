@@ -1,6 +1,6 @@
 import { parseSessionSlashCommand } from './parseSessionSlashCommand';
-import type { ActionId, PromptInvocationsV1 } from '@happier-dev/protocol';
-import { normalizePromptInvocationTokenV1 } from '@happier-dev/protocol';
+import type { ActionId, PromptInvocationsV1 } from '@ks-happier/protocol';
+import { normalizePromptInvocationTokenV1 } from '@ks-happier/protocol';
 
 export type SessionComposerSendResolution =
     | { kind: 'noop' }

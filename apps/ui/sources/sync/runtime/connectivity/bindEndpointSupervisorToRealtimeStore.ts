@@ -1,4 +1,4 @@
-import type { ManagedEndpointSupervisor } from '@happier-dev/connection-supervisor';
+import type { ManagedEndpointSupervisor } from '@ks-happier/connection-supervisor';
 
 import { storage } from '@/sync/domains/state/storage';
 import type { PauseController } from '@/utils/timing/pauseController';

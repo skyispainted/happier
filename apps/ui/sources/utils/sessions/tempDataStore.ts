@@ -1,8 +1,8 @@
 import { randomUUID } from '@/platform/randomUUID';
 import type { AgentId } from '@/agents/catalog/catalog';
 import type { NewSessionCheckoutCreationDraft } from '@/sync/domains/state/newSessionCheckoutDraft';
-import type { AcpConfigOptionOverridesV1, BackendTargetRefV1, SessionMcpSelectionV1 } from '@happier-dev/protocol';
-import type { CodexBackendMode } from '@happier-dev/agents';
+import type { AcpConfigOptionOverridesV1, BackendTargetRefV1, SessionMcpSelectionV1 } from '@ks-happier/protocol';
+import type { CodexBackendMode } from '@ks-happier/agents';
 import type { PermissionMode, ModelMode } from '@/sync/domains/permissions/permissionTypes';
 import type { NewSessionAutomationDraft } from '@/sync/domains/automations/automationDraft';
 

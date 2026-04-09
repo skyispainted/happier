@@ -5,7 +5,7 @@ import { dirname, join, relative, sep } from 'node:path';
 import type {
   PromptBundleBodyV1,
   PromptBundleEntryV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { configuration } from '@/configuration';
 

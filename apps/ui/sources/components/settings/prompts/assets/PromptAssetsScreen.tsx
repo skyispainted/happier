@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Stack, useRouter } from 'expo-router';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 
-import { type PromptAssetDiscoveryItemV1, type PromptAssetScopeV1, type PromptAssetTypeDescriptorV1 } from '@happier-dev/protocol';
+import { type PromptAssetDiscoveryItemV1, type PromptAssetScopeV1, type PromptAssetTypeDescriptorV1 } from '@ks-happier/protocol';
 
 import { ContextBar } from '@/components/settings/contextBar/ContextBar';
 import { layout } from '@/components/ui/layout/layout';

@@ -1,4 +1,4 @@
-import type { ScmWorkingSnapshot as ProtocolScmWorkingSnapshot } from '@happier-dev/protocol';
+import type { ScmWorkingSnapshot as ProtocolScmWorkingSnapshot } from '@ks-happier/protocol';
 
 import type { ScmCapabilities, ScmStatus, ScmWorkingSnapshot as UiScmWorkingSnapshot } from '@/sync/domains/state/storageTypes';
 import { sessionScmStatusSnapshot } from '@/sync/ops';

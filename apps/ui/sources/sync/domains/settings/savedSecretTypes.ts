@@ -1,4 +1,4 @@
-import { SavedSecretSchema as ProtocolSavedSecretSchema } from '@happier-dev/protocol';
+import { SavedSecretSchema as ProtocolSavedSecretSchema } from '@ks-happier/protocol';
 import { z } from 'zod';
 
 export const SavedSecretSchema = ProtocolSavedSecretSchema;

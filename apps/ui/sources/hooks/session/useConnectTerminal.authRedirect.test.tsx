@@ -2,7 +2,7 @@ import React from 'react';
 import { act } from 'react-test-renderer';
 import { describe, expect, it, vi } from 'vitest';
 import tweetnacl from 'tweetnacl';
-import { deriveAccountMachineKeyFromRecoverySecret, openTerminalProvisioningV2Payload } from '@happier-dev/protocol';
+import { deriveAccountMachineKeyFromRecoverySecret, openTerminalProvisioningV2Payload } from '@ks-happier/protocol';
 import { renderScreen } from '@/dev/testkit';
 import { installSessionHooksCommonModuleMocks } from './sessionHooksTestHelpers';
 

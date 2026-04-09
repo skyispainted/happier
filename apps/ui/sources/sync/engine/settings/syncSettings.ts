@@ -24,7 +24,7 @@ import {
     AccountSettingsV2UpdateResponseSchema,
     openAccountScopedBlobCiphertext,
     sealAccountScopedBlobCiphertext,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { applyCrashReportsOptOut } from '@/utils/system/sentry';
 import { emitAccountSettingChangedEvents } from '@/track/settingsAnalytics/emitSettingChangedEvent';
 import type { SettingsAnalyticsSource } from '@/track/settingsAnalytics/types';

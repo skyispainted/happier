@@ -3,7 +3,7 @@ import {
   LEGACY_ACP_CONFIG_OPTION_OVERRIDES_KEY,
   readMetadataAliasValue,
   SESSION_CONFIG_OPTION_OVERRIDES_KEY,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 type ConfigOptionValueId = string;
 

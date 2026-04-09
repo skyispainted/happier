@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES } from '@happier-dev/protocol/rpc';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES } from '@ks-happier/protocol/rpc';
 
 const sessionRpcMock = vi.hoisted(() => vi.fn());
 const machineRpcMock = vi.hoisted(() => vi.fn());

@@ -15,7 +15,7 @@ import {
 } from "@/app/session/pending/pendingMessageService";
 import { randomKeyNaked } from "@/utils/keys/randomKeyNaked";
 import { log } from "@/utils/logging/log";
-import { SessionStoredMessageContentSchema } from "@happier-dev/protocol";
+import { SessionStoredMessageContentSchema } from "@ks-happier/protocol";
 import { resolveApiHotEndpointRateLimit } from "@/app/api/utils/apiRateLimitCatalog";
 
 type SessionStoredMessageContent = z.infer<typeof SessionStoredMessageContentSchema>;

@@ -34,7 +34,7 @@ import {
 } from '@/sync/domains/state/storage';
 import type { ScmStatusFiles } from '@/scm/scmStatusFiles';
 import { t } from '@/text';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 import { SessionRightPanelGitSubTabsBar } from './SessionRightPanelGitSubTabsBar';
 import { SessionRightPanelGitCommitTabContent } from './SessionRightPanelGitCommitTabContent';
 import { SessionRightPanelGitHistoryTab } from './SessionRightPanelGitHistoryTab';

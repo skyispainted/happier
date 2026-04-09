@@ -1,5 +1,5 @@
 import type { ConnectParsedOptions } from './parseConnectArgs';
-import type { ConnectedServiceId } from '@happier-dev/protocol';
+import type { ConnectedServiceId } from '@ks-happier/protocol';
 
 export type ConnectAuthIntent =
   | Readonly<{ kind: 'oauth'; serviceId: ConnectedServiceId }>

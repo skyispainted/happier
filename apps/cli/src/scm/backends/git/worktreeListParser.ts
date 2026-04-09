@@ -1,4 +1,4 @@
-import type { ScmWorktree } from '@happier-dev/protocol';
+import type { ScmWorktree } from '@ks-happier/protocol';
 
 function normalizeBranchRef(rawBranch: string | null): string | null {
     if (!rawBranch) return null;

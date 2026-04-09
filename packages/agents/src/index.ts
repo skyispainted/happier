@@ -1,4 +1,4 @@
-export const HAPPY_AGENTS_PACKAGE = '@happier-dev/agents';
+export const HAPPY_AGENTS_PACKAGE = '@ks-happier/agents';
 
 export {
     AGENT_IDS,
@@ -232,7 +232,7 @@ export {
 } from './sessions/replay/happierReplayPrompt.js';
 export { normalizeVoiceAgentTurnTranscriptText } from './voice/normalizeVoiceAgentTurnTranscriptText.js';
 
-// Provider CLI runtime surface (used by bundled products like apps/cli via @happier-dev/cli-common).
+// Provider CLI runtime surface (used by bundled products like apps/cli via @ks-happier/cli-common).
 export {
   PROVIDER_CLI_RUNTIME_SPECS,
   getProviderCliRuntimeSpec,

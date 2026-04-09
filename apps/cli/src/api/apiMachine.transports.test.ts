@@ -120,7 +120,7 @@ describe('ApiMachineClient transports', () => {
     bindApiSessionSocketMock(mockIo, machineSocket);
 
     const mod = await import('./apiMachine');
-    const { SOCKET_RPC_EVENTS } = await import('@happier-dev/protocol/socketRpc');
+    const { SOCKET_RPC_EVENTS } = await import('@ks-happier/protocol/socketRpc');
 
     const machine: Machine = {
       id: 'test-machine',

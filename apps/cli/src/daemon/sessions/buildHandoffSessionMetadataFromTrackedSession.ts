@@ -1,4 +1,4 @@
-import { inferAgentIdFromSessionMetadata } from '@happier-dev/agents';
+import { inferAgentIdFromSessionMetadata } from '@ks-happier/agents';
 
 import type { Metadata } from '@/api/types';
 import {

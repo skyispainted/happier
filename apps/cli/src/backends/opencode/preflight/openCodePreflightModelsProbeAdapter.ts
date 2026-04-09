@@ -2,7 +2,7 @@ import type { PreflightModelsProbeAdapter } from '@/capabilities/probes/prefligh
 import { resolveCliPathOverride } from '@/agent/acp/resolveCliPathOverride';
 import { killProcessTree } from '@/agent/acp/killProcessTree';
 import { resolveProviderCliCommand } from '@/runtime/managedTools/providerCliResolution';
-import { resolveWindowsCommandInvocation } from '@happier-dev/cli-common/process';
+import { resolveWindowsCommandInvocation } from '@ks-happier/cli-common/process';
 import { spawn } from 'node:child_process';
 
 import { asRecord, normalizeString } from '../server/openCodeParsing';

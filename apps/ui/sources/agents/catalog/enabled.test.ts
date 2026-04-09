@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 
 import { getEnabledAgentIds, isAgentEnabled } from './enabled';
 

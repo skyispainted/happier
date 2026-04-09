@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View } from 'react-native';
 import { Octicons } from '@expo/vector-icons';
-import { evaluateSessionHandoffWorkspaceTransferSourcePathSafety, getActionSpec } from '@happier-dev/protocol';
+import { evaluateSessionHandoffWorkspaceTransferSourcePathSafety, getActionSpec } from '@ks-happier/protocol';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 
 import type { CustomModalInjectedProps } from '@/modal';

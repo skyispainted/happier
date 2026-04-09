@@ -1,7 +1,7 @@
 import { EventEmitter } from 'events';
 import { PassThrough } from 'stream';
 
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const execMock = vi.hoisted(() => vi.fn());

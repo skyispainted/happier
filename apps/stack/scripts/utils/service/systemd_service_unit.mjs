@@ -1,1 +1,1 @@
-export { renderSystemdServiceUnit } from '@happier-dev/cli-common/service';
+export { renderSystemdServiceUnit } from '@ks-happier/cli-common/service';

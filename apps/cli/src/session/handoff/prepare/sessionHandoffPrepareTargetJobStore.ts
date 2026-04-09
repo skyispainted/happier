@@ -8,7 +8,7 @@ import {
   SessionHandoffPrepareTargetRequestSchema,
   SessionHandoffPrepareTargetResultGetResponseSchema,
   SessionHandoffStatusSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import {
   releaseSessionHandoffPrepareTargetJobLease,

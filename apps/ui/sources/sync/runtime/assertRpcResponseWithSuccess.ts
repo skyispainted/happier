@@ -1,4 +1,4 @@
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
 import { createRpcCallError } from './rpcErrors';
 
 export function assertRpcResponseWithSuccess<T extends { success: boolean }>(value: unknown): T {

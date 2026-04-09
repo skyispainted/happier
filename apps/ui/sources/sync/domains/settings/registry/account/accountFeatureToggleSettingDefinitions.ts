@@ -1,4 +1,4 @@
-import { defineSettingDefinitions } from '@happier-dev/protocol';
+import { defineSettingDefinitions } from '@ks-happier/protocol';
 import { z } from 'zod';
 
 export const ACCOUNT_FEATURE_TOGGLE_SETTING_DEFINITIONS = defineSettingDefinitions({

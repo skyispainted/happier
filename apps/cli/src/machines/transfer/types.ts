@@ -1,7 +1,7 @@
 import type {
   MachineTransferStrategy,
   MachineTransferUnavailableReasonCode,
-} from '@happier-dev/transfers';
+} from '@ks-happier/transfers';
 
 export type { MachineTransferStrategy };
 

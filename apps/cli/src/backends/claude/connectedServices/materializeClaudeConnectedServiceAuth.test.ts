@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildConnectedServiceCredentialRecord } from '@happier-dev/protocol';
+import { buildConnectedServiceCredentialRecord } from '@ks-happier/protocol';
 
 import { materializeClaudeConnectedServiceAuth } from './materializeClaudeConnectedServiceAuth';
 

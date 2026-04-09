@@ -8,7 +8,7 @@ import {
   handleAcpStatusRunning,
 } from '@/agent/acp/bridge/acpCommonHandlers';
 import { createAcpAgentMessageForwarder } from '@/agent/acp/bridge/createAcpAgentMessageForwarder';
-import { isChangeTitleToolNameAlias } from '@happier-dev/protocol/tools/v2';
+import { isChangeTitleToolNameAlias } from '@ks-happier/protocol/tools/v2';
 import { logger } from '@/ui/logger';
 import { MessageBuffer } from '@/ui/ink/messageBuffer';
 import { createEventShapeLoggerForLog } from '@/diagnostics/eventShapeForLog';

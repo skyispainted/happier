@@ -1,4 +1,4 @@
-import type { PromptAssetScopeV1, PromptAssetTypeDescriptorV1 } from '@happier-dev/protocol';
+import type { PromptAssetScopeV1, PromptAssetTypeDescriptorV1 } from '@ks-happier/protocol';
 
 export function listPromptAssetTypesForScope(
   types: readonly PromptAssetTypeDescriptorV1[],

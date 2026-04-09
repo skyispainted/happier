@@ -1,4 +1,4 @@
-import type { WorkspaceManifest } from '@happier-dev/protocol';
+import type { WorkspaceManifest } from '@ks-happier/protocol';
 
 import type { TransferPayloadSource } from '@/machines/transfer/transferPayloadSource';
 import type { WorkspaceExportBlobProvider } from '@/scm/sourceController/workspaceExportStaging/stageWorkspaceEntries';

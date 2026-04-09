@@ -1,4 +1,4 @@
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const createStubBackend = () => ({

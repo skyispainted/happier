@@ -1,7 +1,7 @@
 import { randomBytes } from 'node:crypto';
 import axios from 'axios';
 import tweetnacl from 'tweetnacl';
-import { deriveAccountMachineKeyFromRecoverySecret } from '@happier-dev/protocol';
+import { deriveAccountMachineKeyFromRecoverySecret } from '@ks-happier/protocol';
 
 import { configuration } from '@/configuration';
 import { readCredentials } from '@/persistence';

@@ -1,4 +1,4 @@
-import { readAgentRuntimeDescriptorV1ForProvider } from '@happier-dev/protocol';
+import { readAgentRuntimeDescriptorV1ForProvider } from '@ks-happier/protocol';
 
 import { normalizeCodexBackendMode, type CodexBackendMode } from '../providerSettings/definitions/codex.js';
 import {

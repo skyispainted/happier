@@ -2,7 +2,7 @@ import { chmodSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync 
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { executeSystemTask } from '@happier-dev/cli-common/systemTasks';
+import { executeSystemTask } from '@ks-happier/cli-common/systemTasks';
 import { describe, expect, it, vi } from 'vitest';
 
 import { createHsetupSystemTaskRegistry } from './registry.js';

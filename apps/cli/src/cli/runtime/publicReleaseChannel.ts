@@ -4,7 +4,7 @@ import {
   getReleaseRingCatalogEntry,
   normalizePublicReleaseRingId,
   type PublicReleaseRingId,
-} from '@happier-dev/release-runtime/releaseRings';
+} from '@ks-happier/release-runtime/releaseRings';
 
 function normalizeInvokerCandidate(raw: string): string {
   return basename(String(raw ?? '').trim())

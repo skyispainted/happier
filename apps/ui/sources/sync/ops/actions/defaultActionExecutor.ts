@@ -7,8 +7,8 @@ import {
   type ActionExecutorDeps,
   type ActionId,
   type ApprovalRequestV1,
-} from '@happier-dev/protocol';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+} from '@ks-happier/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import {
     sessionExecutionRunAction,

@@ -2,7 +2,7 @@ import { flushHookEffects } from '@/dev/testkit/hooks/flushHookEffects';
 import * as React from 'react';
 import { act } from 'react-test-renderer';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { buildSystemSessionMetadataV1 } from '@happier-dev/protocol';
+import { buildSystemSessionMetadataV1 } from '@ks-happier/protocol';
 
 import { AppPaneProvider } from '@/components/appShell/panes/AppPaneProvider';
 import { renderScreen, standardCleanup } from '@/dev/testkit';

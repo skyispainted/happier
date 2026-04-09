@@ -42,8 +42,8 @@ vi.mock('../../sync', () => ({
 }));
 
 import { sessionStop } from '../../ops';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
-import { RpcError } from '@happier-dev/protocol/rpcErrors';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
+import { RpcError } from '@ks-happier/protocol/rpcErrors';
 
 describe('sessionStop', () => {
   beforeEach(() => {

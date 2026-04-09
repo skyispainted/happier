@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { RPC_ERROR_CODES } from '@happier-dev/protocol/rpc';
+import { RPC_ERROR_CODES } from '@ks-happier/protocol/rpc';
 
 const { mockSessionRpcWithServerScope, mockResolveContext, mockApiSend, mockCreateEphemeralClient } = vi.hoisted(
   () => ({

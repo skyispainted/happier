@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 
-import type { TurnChangeSet, ToolNormalizationProtocol } from '@happier-dev/protocol';
+import type { TurnChangeSet, ToolNormalizationProtocol } from '@ks-happier/protocol';
 
 import { buildTurnChangeSetDiffInput } from '@/agent/tools/diff/buildTurnChangeSetDiffInput';
 

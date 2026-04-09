@@ -3,7 +3,7 @@ import { tmpdir } from 'os';
 import { join } from 'path';
 
 import type { RpcHandlerRegistrar } from '@/api/rpc/types';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { TransferSessionStore } from '../core/transferSessionStore';
 import type { TransferPathAllowanceRegistry } from '../targets/createTransferPathAllowanceRegistry';

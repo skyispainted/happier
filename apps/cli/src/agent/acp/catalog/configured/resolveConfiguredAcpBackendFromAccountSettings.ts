@@ -3,7 +3,7 @@ import type {
   AcpBackendCapabilitiesV1,
   AcpCatalogTransportProfileV1,
   McpValueRefV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { readAcpCatalogSettingsFromAccountSettings } from '../readAcpCatalogSettingsFromAccountSettings';
 

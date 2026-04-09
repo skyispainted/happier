@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { AuthCredentials } from '@/auth/storage/tokenStorage';
 import type { Encryption } from '@/sync/encryption/encryption';
-import { openAccountScopedBlobCiphertext, sealAccountScopedBlobCiphertext } from '@happier-dev/protocol';
+import { openAccountScopedBlobCiphertext, sealAccountScopedBlobCiphertext } from '@ks-happier/protocol';
 
 function createBaseMockSettings(): Record<string, unknown> {
     return {

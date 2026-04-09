@@ -2,11 +2,11 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
-import { resolveReleaseAssetBundle } from '@happier-dev/release-runtime/assets';
-import { fetchGitHubReleaseByTag } from '@happier-dev/release-runtime/github';
-import { DEFAULT_MINISIGN_PUBLIC_KEY } from '@happier-dev/release-runtime/minisign';
-import { downloadVerifiedReleaseAssetBundle } from '@happier-dev/release-runtime/verifiedDownload';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
+import { resolveReleaseAssetBundle } from '@ks-happier/release-runtime/assets';
+import { fetchGitHubReleaseByTag } from '@ks-happier/release-runtime/github';
+import { DEFAULT_MINISIGN_PUBLIC_KEY } from '@ks-happier/release-runtime/minisign';
+import { downloadVerifiedReleaseAssetBundle } from '@ks-happier/release-runtime/verifiedDownload';
 
 import type { FirstPartyComponentId } from './componentCatalog.js';
 import {

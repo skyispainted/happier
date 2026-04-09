@@ -43,7 +43,7 @@ import { buildContentKeyBinding } from '@/auth/oauth/contentKeyBinding';
 import { buildAccountEncryptionMigrateToE2eeRequest } from '@/sync/ops/account/buildAccountEncryptionMigrateToE2eeRequest';
 import { getConnectedServiceCredentialPlain } from '@/sync/api/account/apiConnectedServicesV3';
 import { isWebMobileLikeQrScannerHost } from '@/utils/platform/webMobileHeuristics';
-import { AccountEncryptionMigrateInvalidParamsReasonSchema } from '@happier-dev/protocol';
+import { AccountEncryptionMigrateInvalidParamsReasonSchema } from '@ks-happier/protocol';
 
 
 export default React.memo(() => {

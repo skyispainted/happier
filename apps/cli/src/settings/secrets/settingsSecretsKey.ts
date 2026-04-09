@@ -1,7 +1,7 @@
 import {
   deriveSettingsSecretsKeySetV1,
   type AccountScopedCryptoMaterial,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 

@@ -7,8 +7,8 @@ const { installVersionedPayloadMock } = vi.hoisted(() => ({
   })),
 }));
 
-vi.mock('@happier-dev/cli-common/firstPartyRuntime', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@happier-dev/cli-common/firstPartyRuntime')>();
+vi.mock('@ks-happier/cli-common/firstPartyRuntime', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@ks-happier/cli-common/firstPartyRuntime')>();
   return {
     ...actual,
     installVersionedPayload: installVersionedPayloadMock,

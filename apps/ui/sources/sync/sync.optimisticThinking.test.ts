@@ -54,8 +54,8 @@ import { Encryption } from '@/sync/encryption/encryption';
 import { storage } from './domains/state/storage';
 import type { Session } from './domains/state/storageTypes';
 import { apiSocket } from '@/sync/api/session/apiSocket';
-import { RPC_ERROR_CODES, SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { RpcError } from '@happier-dev/protocol/rpcErrors';
+import { RPC_ERROR_CODES, SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { RpcError } from '@ks-happier/protocol/rpcErrors';
 
 const initialStorageState = storage.getState();
 

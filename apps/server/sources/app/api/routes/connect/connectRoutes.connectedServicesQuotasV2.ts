@@ -6,7 +6,7 @@ import {
     ConnectedServiceIdSchema,
     SealedConnectedServiceQuotaSnapshotV1Schema,
     type ConnectedServiceId,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 import { NotFoundSchema } from "../../schemas/notFoundSchema";
 
 const MAX_QUOTA_SNAPSHOT_CIPHERTEXT_CHARS = 200_000;

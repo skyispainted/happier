@@ -3,7 +3,7 @@ import { lstat, readdir, realpath, stat } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join, resolve } from 'node:path';
 
-import type { DirectSessionsSource } from '@happier-dev/protocol';
+import type { DirectSessionsSource } from '@ks-happier/protocol';
 import { resolveConfiguredCodexHome } from '../utils/resolveConfiguredCodexHome';
 
 export type CodexDirectSessionHomeEntry = Readonly<{

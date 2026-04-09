@@ -8,7 +8,7 @@ import {
     LEGACY_ACP_SESSION_MODELS_STATE_KEY,
     readMetadataAliasValue,
     SESSION_MODELS_STATE_KEY,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 export type AgentType = AgentId;
 

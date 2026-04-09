@@ -7,7 +7,7 @@ import {
     type McpServerBindingV1,
     type McpServerCatalogEntryTransportV1,
     type McpServerCatalogEntryV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { McpServerBindingEditor } from '@/components/settings/mcpServers/McpServerBindingEditor';
 import { McpServerBindingDraftExpander } from '@/components/settings/mcpServers/McpServerBindingDraftExpander';

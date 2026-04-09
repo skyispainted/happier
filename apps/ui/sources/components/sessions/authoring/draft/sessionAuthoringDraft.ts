@@ -8,8 +8,8 @@ import type {
     SessionAuthoringValueV1,
     SessionMcpSelectionV1,
     WindowsRemoteSessionLaunchMode,
-} from '@happier-dev/protocol';
-import type { CodexBackendMode } from '@happier-dev/agents';
+} from '@ks-happier/protocol';
+import type { CodexBackendMode } from '@ks-happier/agents';
 
 import type { AutomationTargetType } from '@/sync/domains/automations/automationTypes';
 

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { SPAWN_SESSION_ERROR_CODES } from '@happier-dev/protocol';
+import { SPAWN_SESSION_ERROR_CODES } from '@ks-happier/protocol';
 
 const machineRpcWithServerScopeMock = vi.hoisted(() => vi.fn());
 const readMachineTargetForSessionMock = vi.hoisted(() => vi.fn());

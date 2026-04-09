@@ -1,4 +1,4 @@
-import type { ExecutionRunPublicState } from '@happier-dev/protocol';
+import type { ExecutionRunPublicState } from '@ks-happier/protocol';
 
 type ExecutionRunMessagingShape = Readonly<{
     status?: unknown;

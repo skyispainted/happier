@@ -5,7 +5,7 @@ import type {
     PromptAssetDiscoverResponseV1,
     PromptAssetListTypesResponseV1,
     PromptAssetReadResponseV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { pressTestInstanceAsync, renderScreen } from '@/dev/testkit';
 import {
     installPromptAssetsCommonModuleMocks,

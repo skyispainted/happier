@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { View, Platform, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 
-import { getActionSpec, type ActionId } from '@happier-dev/protocol';
+import { getActionSpec, type ActionId } from '@ks-happier/protocol';
 
 import { SearchHeader } from '@/components/ui/forms/SearchHeader';
 import { SelectionTiles } from '@/components/ui/forms/SelectionTiles';

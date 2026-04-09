@@ -1,4 +1,4 @@
-import { isHiddenSystemSession } from '@happier-dev/protocol';
+import { isHiddenSystemSession } from '@ks-happier/protocol';
 import { resolveBestMachineDisplayRenderableForHost, type MachineDisplayRenderable } from '@/sync/domains/machines/machineDisplayRenderable';
 import { formatPathRelativeToHome } from '@/utils/sessions/formatPathRelativeToHome';
 import { normalizeNonEmptyString } from '@/utils/strings/normalizeNonEmptyString';

@@ -262,7 +262,7 @@ async function readPackageJsonIfExists(pkgJsonPath) {
 async function ensureServerGeneratedProviderOutputs(componentDir, installDir, { quiet = false, env, pm }) {
   const componentPkgJsonPath = join(componentDir, 'package.json');
   const componentPkg = await readPackageJsonIfExists(componentPkgJsonPath);
-  if (componentPkg?.name !== '@happier-dev/server') {
+  if (componentPkg?.name !== '@ks-happier/server') {
     return;
   }
   if (typeof componentPkg?.scripts?.['generate:providers'] !== 'string') {
@@ -285,7 +285,7 @@ async function ensureServerGeneratedProviderOutputs(componentDir, installDir, { 
 
   if (pm.name === 'yarn') {
     await ensureYarnReady({ dir: installDir, env, quiet });
-    await run(pm.cmd, ['-s', 'workspace', '@happier-dev/server', 'generate:providers'], {
+    await run(pm.cmd, ['-s', 'workspace', '@ks-happier/server', 'generate:providers'], {
       cwd: installDir,
       stdio,
       env,
@@ -668,7 +668,7 @@ export async function ensureWorkspacePackagesBuiltForComponent(componentDir, { q
     for (const src of depSources) {
       if (!src || typeof src !== 'object') continue;
       for (const name of Object.keys(src)) {
-        if (!name.startsWith('@happier-dev/')) continue;
+        if (!name.startsWith('@ks-happier/')) continue;
         if (name === currentPkgName) continue;
         internalDeps.push(name);
       }
@@ -872,7 +872,7 @@ fi
 
 # Fallback: run hstack from runtime install if present.
 HOME_DIR="\${HAPPIER_STACK_HOME_DIR:-$HOME/.happier-stack}"
-RUNTIME="$HOME_DIR/runtime/node_modules/@happier-dev/stack/bin/hstack.mjs"
+RUNTIME="$HOME_DIR/runtime/node_modules/@ks-happier/stack/bin/hstack.mjs"
 if [[ -f "$RUNTIME" ]]; then
   exec node "$RUNTIME" happier "$@"
 fi

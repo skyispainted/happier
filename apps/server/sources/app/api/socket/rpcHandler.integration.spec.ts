@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
-import { RPC_ERROR_CODES } from "@happier-dev/protocol/rpc";
-import { SOCKET_RPC_EVENTS } from "@happier-dev/protocol/socketRpc";
+import { RPC_ERROR_CODES } from "@ks-happier/protocol/rpc";
+import { SOCKET_RPC_EVENTS } from "@ks-happier/protocol/socketRpc";
 import { createDbMocks, installDbModuleMock } from "../testkit/dbMocks";
 import { createFakeSocket, getSocketHandler } from "../testkit/socketHarness";
 import { createEnvReset } from "../testkit/env";

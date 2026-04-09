@@ -1,4 +1,4 @@
-import { computeNextMetadataStringOverrideV1 } from '@happier-dev/agents';
+import { computeNextMetadataStringOverrideV1 } from '@ks-happier/agents';
 
 import type { Credentials } from '@/persistence';
 

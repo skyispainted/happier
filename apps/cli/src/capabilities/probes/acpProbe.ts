@@ -16,8 +16,8 @@ import { logger } from '@/ui/logger';
 import type { TransportHandler } from '@/agent/transport';
 import { nodeToWebStreams } from '@/agent/acp/nodeToWebStreams';
 import { killProcessTree } from '@/agent/acp/killProcessTree';
-import { AsyncTtlCache } from '@happier-dev/protocol';
-import { resolveWindowsCommandInvocation } from '@happier-dev/cli-common/process';
+import { AsyncTtlCache } from '@ks-happier/protocol';
+import { resolveWindowsCommandInvocation } from '@ks-happier/cli-common/process';
 
 export type AcpProbeResult =
     | { ok: true; checkedAt: number; agentCapabilities: InitializeResponse['agentCapabilities'] }

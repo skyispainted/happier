@@ -5,8 +5,8 @@ import {
   resolveMetadataStringOverrideV1,
   resolvePermissionIntentFromSessionMetadata,
   type PermissionIntent,
-} from '@happier-dev/agents';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+} from '@ks-happier/agents';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { waitForTranscriptEncryptedMessageByLocalId } from '@/api/session/transcriptMessageLookup';
 import type { Credentials } from '@/persistence';

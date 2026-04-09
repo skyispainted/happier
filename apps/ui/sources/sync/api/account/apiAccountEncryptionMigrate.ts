@@ -6,14 +6,14 @@ import {
   AccountEncryptionMigrateSuccessResponseSchema,
   AccountEncryptionMigrateAnyErrorResponseSchema,
   type AccountEncryptionMigrateRequest,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
-export { AccountEncryptionMigrateRequestSchema, type AccountEncryptionMigrateRequest } from '@happier-dev/protocol';
+export { AccountEncryptionMigrateRequestSchema, type AccountEncryptionMigrateRequest } from '@ks-happier/protocol';
 
 export async function migrateAccountEncryptionMode(
   credentials: AuthCredentials,
   request: AccountEncryptionMigrateRequest,
-): Promise<import('@happier-dev/protocol').AccountEncryptionMigrateSuccessResponse> {
+): Promise<import('@ks-happier/protocol').AccountEncryptionMigrateSuccessResponse> {
   return await backoff(async () => {
     const response = await serverFetch(
       '/v1/account/encryption/migrate',

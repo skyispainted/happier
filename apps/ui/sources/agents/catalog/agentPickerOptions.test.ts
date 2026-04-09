@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { AGENT_IDS, type AgentId } from '@happier-dev/agents';
+import { AGENT_IDS, type AgentId } from '@ks-happier/agents';
 import { getAgentPickerOptions } from './agentPickerOptions';
 
 describe('agents/agentPickerOptions', () => {

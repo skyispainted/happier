@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { tmpdir } from 'node:os';
 import { setTimeout as delay } from 'node:timers/promises';
 import { loadCliCommonDistModule } from '../../../../scripts/ensureCliCommonDistModule.mjs';
-import { listPublicReleaseRingCatalogEntries, normalizePublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import { listPublicReleaseRingCatalogEntries, normalizePublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 const {
   CLI_BINARY_TARGETS,

@@ -1,5 +1,5 @@
-import type { ActionId } from '@happier-dev/protocol';
-import { isActionSpecSurfacedOn, listActionSpecs, serializeActionSpec } from '@happier-dev/protocol';
+import type { ActionId } from '@ks-happier/protocol';
+import { isActionSpecSurfacedOn, listActionSpecs, serializeActionSpec } from '@ks-happier/protocol';
 
 export const HAPPIER_MCP_ACTION_SPECS_RESOURCE_URI = 'happier://action-specs/catalog';
 

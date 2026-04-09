@@ -1113,10 +1113,10 @@ async function cmdSetup({ rootDir, argv }) {
               'hstack'
             )} from any terminal.`
           )}\n` +
-          `${dim(`If you skip this, you can always run commands via ${cyan('npx --yes -p @happier-dev/stack hstack ...')}.`)}`,
+          `${dim(`If you skip this, you can always run commands via ${cyan('npx --yes -p @ks-happier/stack hstack ...')}.`)}`,
         options: [
           { label: `yes (${green('recommended')}, default) — enable ${cyan('hstack')} in your terminal`, value: true },
-          { label: `no — keep using ${cyan('npx --yes -p @happier-dev/stack hstack ...')}`, value: false },
+          { label: `no — keep using ${cyan('npx --yes -p @ks-happier/stack hstack ...')}`, value: false },
         ],
         defaultIndex: 0,
       });

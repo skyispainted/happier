@@ -1,5 +1,5 @@
-import { buildHappierReplayPromptFromDialog, type HappierReplayStrategy, type HappierReplayDialogItem } from '@happier-dev/agents';
-import type { LlmTaskRunnerConfigV1 } from '@happier-dev/protocol';
+import { buildHappierReplayPromptFromDialog, type HappierReplayStrategy, type HappierReplayDialogItem } from '@ks-happier/agents';
+import type { LlmTaskRunnerConfigV1 } from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import { resolveCliFeatureDecision } from '@/features/featureDecisionService';

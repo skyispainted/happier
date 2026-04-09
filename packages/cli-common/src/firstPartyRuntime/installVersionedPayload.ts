@@ -1,5 +1,5 @@
 import type { FirstPartyComponentId } from './componentCatalog.js';
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 import { listInstalledVersionIdsNewestFirst } from './listInstalledVersionIdsNewestFirst.js';
 import { promoteVersionedPayload, type FirstPartyPayloadPromotionResult } from './promoteVersionedPayload.js';
 import { pruneRetainedVersions } from './pruneRetainedVersions.js';

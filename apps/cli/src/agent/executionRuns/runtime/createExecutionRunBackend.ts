@@ -1,6 +1,6 @@
 import type { AgentBackend } from '@/agent/core/AgentBackend';
-import type { AgentId } from '@happier-dev/agents';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { AgentId } from '@ks-happier/agents';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { createConfiguredAcpBackend } from '@/agent/acp/catalog/configured/createConfiguredAcpBackend';
 import { materializeConfiguredAcpEnvironment } from '@/agent/acp/catalog/configured/materializeConfiguredAcpEnvironment';

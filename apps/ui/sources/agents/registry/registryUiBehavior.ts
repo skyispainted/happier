@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { AccountProfile, AcpConfigOptionOverridesV1, DirectSessionLinkEnsureRequest, DirectSessionsSource } from '@happier-dev/protocol';
+import type { AccountProfile, AcpConfigOptionOverridesV1, DirectSessionLinkEnsureRequest, DirectSessionsSource } from '@ks-happier/protocol';
 import type { DetailsTab } from '@/components/appShell/panes/model/appPaneReducer';
 import type { AgentId } from './registryCore';
 import { AGENT_IDS, getAgentCore, resolveAgentIdFromFlavor } from './registryCore';

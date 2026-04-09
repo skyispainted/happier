@@ -6,7 +6,7 @@ import {
   ConnectedServiceErrorCodeSchema,
   ConnectedServiceIdSchema,
   type ConnectedServiceId,
-} from "@happier-dev/protocol";
+} from "@ks-happier/protocol";
 
 import {
   ConnectedServiceOauthExchangeError,

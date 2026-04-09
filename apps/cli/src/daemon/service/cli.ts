@@ -28,8 +28,8 @@ import { resolveDaemonServiceRuntimeTarget } from './runtimeTarget';
 import { resolveDaemonServiceInstallRuntimeTarget } from './resolveDaemonServiceInstallRuntimeTarget';
 import { resolveLinuxSystemUserPaths } from './resolveLinuxSystemUserPaths';
 import { inferPublicReleaseRingIdFromEnvAndArgv } from '@/cli/runtime/publicReleaseChannel';
-import { normalizePublicReleaseRingId, type PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
-import { expandHomeDirPath } from '@happier-dev/cli-common/providers';
+import { normalizePublicReleaseRingId, type PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
+import { expandHomeDirPath } from '@ks-happier/cli-common/providers';
 
 export type DaemonServiceCliAction =
   | 'paths'

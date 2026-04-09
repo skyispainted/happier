@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 
 import type { Credentials } from '@/persistence';
-import { ExecutionRunSendRequestSchema } from '@happier-dev/protocol';
+import { ExecutionRunSendRequestSchema } from '@ks-happier/protocol';
 
 import { wantsJson, printJsonEnvelope } from '@/cli/output/jsonEnvelope';
 import { hasFlag } from '@/cli/commands/shared/argvFlags';

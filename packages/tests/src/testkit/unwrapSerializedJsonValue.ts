@@ -1,4 +1,4 @@
-import { parseSerializedJsonValue } from '@happier-dev/protocol';
+import { parseSerializedJsonValue } from '@ks-happier/protocol';
 
 export function unwrapSerializedJsonValue(value: unknown): unknown {
   if (typeof value === 'string') {

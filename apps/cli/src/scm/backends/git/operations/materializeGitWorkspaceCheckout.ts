@@ -1,7 +1,7 @@
 import { lstat, mkdir, readdir, rename, rm } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 
 import { normalizeCommitRef, runScmCommand } from '../../../runtime';
 import { buildScmNonInteractiveEnv } from '../../shared/nonInteractiveEnv';

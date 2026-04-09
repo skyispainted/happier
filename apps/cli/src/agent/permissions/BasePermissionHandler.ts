@@ -14,7 +14,7 @@ import { updateAgentStateBestEffort as updateAgentStateBestEffortShared } from "
 import { isToolAllowedForSession, makeToolIdentifier } from './permissionToolIdentifier';
 import { applyAllowedToolsToAllowlist, applyUpdatedPermissionsToAllowlist, seedAllowlistFromCompletedRequests } from './applyPermissionAllowlistUpdates';
 import { recordToolTraceEvent, type ToolTraceProtocol } from '@/agent/tools/trace/toolTrace';
-import type { AccountSettings } from '@happier-dev/protocol';
+import type { AccountSettings } from '@ks-happier/protocol';
 import type {
     PermissionRequestPushSender as PermissionRequestPushSenderFromSettings,
 } from '@/settings/notifications/permissionRequestPush';

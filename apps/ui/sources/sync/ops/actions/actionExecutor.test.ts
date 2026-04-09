@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import type { ActionId } from '@happier-dev/protocol';
+import type { ActionId } from '@ks-happier/protocol';
 
-import { createActionExecutor } from '@happier-dev/protocol';
+import { createActionExecutor } from '@ks-happier/protocol';
 
 describe('createActionExecutor', () => {
     it('rejects disabled actions before executing', async () => {

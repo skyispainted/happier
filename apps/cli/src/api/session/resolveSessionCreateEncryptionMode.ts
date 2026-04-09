@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { AccountEncryptionModeResponseSchema } from '@happier-dev/protocol';
+import { AccountEncryptionModeResponseSchema } from '@ks-happier/protocol';
 
 import { fetchServerFeaturesSnapshot } from '@/features/serverFeaturesClient';
 

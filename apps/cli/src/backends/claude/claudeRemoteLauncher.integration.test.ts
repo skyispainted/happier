@@ -9,7 +9,7 @@ import { Session } from './session';
 import type { EnhancedMode } from './loop';
 import { hashClaudeEnhancedModeForQueue } from './remote/modeHash';
 import { readFile } from 'node:fs/promises';
-import { accountSettingsParse } from '@happier-dev/protocol';
+import { accountSettingsParse } from '@ks-happier/protocol';
 import { setActiveAccountSettingsSnapshot } from '@/settings/accountSettings/activeAccountSettingsSnapshot';
 
 vi.mock('@/agent/runtime/createHappierMcpBridge', () => ({

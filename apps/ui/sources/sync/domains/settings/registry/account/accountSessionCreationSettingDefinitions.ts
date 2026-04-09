@@ -3,7 +3,7 @@ import {
     BackendTargetRefSchema,
     buildSettingArtifacts,
     defineSettingDefinitions,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { z } from 'zod';
 
 import {

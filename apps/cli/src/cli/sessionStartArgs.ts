@@ -5,7 +5,7 @@ import {
   getAgentSessionModesKind,
   parsePermissionIntentAlias as parsePermissionIntentAliasShared,
   type AgentId,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 export type ParsedSessionStartArgs = {
   startedBy: 'daemon' | 'terminal' | undefined;

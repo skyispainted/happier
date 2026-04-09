@@ -1,4 +1,4 @@
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 import { describe, expect, test } from 'vitest';
 
 import { canAgentResume, canResumeSession, canResumeSessionWithOptions, getAgentVendorResumeId } from './resumeCapabilities';

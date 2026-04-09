@@ -1,8 +1,8 @@
 import { realpathSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-import type { DirectSessionsProviderId, DirectSessionsSource } from '@happier-dev/protocol';
-import { expandHomeDirPath } from '@happier-dev/cli-common/providers';
+import type { DirectSessionsProviderId, DirectSessionsSource } from '@ks-happier/protocol';
+import { expandHomeDirPath } from '@ks-happier/cli-common/providers';
 
 import {
   resolveConfiguredClaudeConfigDir,

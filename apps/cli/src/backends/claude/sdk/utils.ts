@@ -5,8 +5,8 @@
 
 import { join } from 'node:path'
 import { closeSync, existsSync, openSync, readdirSync, readSync, realpathSync, statSync } from 'node:fs'
-import { getProviderCliInstallGuideUrl, getProviderCliManualInstallSummaryLines } from '@happier-dev/agents'
-import { resolveProviderCliCommand } from '@happier-dev/cli-common/providers'
+import { getProviderCliInstallGuideUrl, getProviderCliManualInstallSummaryLines } from '@ks-happier/agents'
+import { resolveProviderCliCommand } from '@ks-happier/cli-common/providers'
 import { logger } from '@/ui/logger'
 import { isBun } from '@/utils/runtime'
 import { stripNestedSessionDetectionEnv } from '@/utils/processEnv/stripNestedSessionDetectionEnv'

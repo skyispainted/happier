@@ -1,4 +1,4 @@
-import { resolveWindowsCommandInvocation } from '@happier-dev/cli-common/process';
+import { resolveWindowsCommandInvocation } from '@ks-happier/cli-common/process';
 
 export function resolveCommandInvocation(params) {
   const command = String(params?.command ?? '').trim();

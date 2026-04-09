@@ -14,7 +14,7 @@ import type {
   StartSessionResult,
 } from '@/agent/core';
 import { logger } from '@/ui/logger';
-import { redactBugReportSensitiveText } from '@happier-dev/protocol';
+import { redactBugReportSensitiveText } from '@ks-happier/protocol';
 
 import { mapPiRpcEventToAgentMessages } from './eventMapping';
 import type {

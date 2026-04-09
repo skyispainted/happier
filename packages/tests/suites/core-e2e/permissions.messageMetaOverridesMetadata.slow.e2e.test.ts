@@ -157,7 +157,7 @@ new acp.AgentSideConnection((conn) => new FakeAgent(conn), stream);
       args: [
         '-s',
         'workspace',
-        '@happier-dev/cli',
+        '@ks-happier/cli',
         'dev',
         'codex',
         '--existing-session',

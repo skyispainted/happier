@@ -1,8 +1,8 @@
 import {
     parseHappierToolsShellBridgeCommand,
     type HappierToolsShellBridgeCommand,
-} from '@happier-dev/protocol';
-import { isChangeTitleToolNameAlias } from '@happier-dev/protocol/tools/v2';
+} from '@ks-happier/protocol';
+import { isChangeTitleToolNameAlias } from '@ks-happier/protocol/tools/v2';
 
 type UnknownRecord = Record<string, unknown>;
 

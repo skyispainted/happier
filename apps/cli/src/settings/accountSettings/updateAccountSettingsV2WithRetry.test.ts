@@ -9,7 +9,7 @@ import {
   sealAccountScopedBlobCiphertext,
   type AccountSettingsStoredContentEnvelope,
   type AccountSettingsV2UpdateResponse,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { updateAccountSettingsV2WithRetry } from './updateAccountSettingsV2WithRetry';
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { ReadinessProbeResult } from '@happier-dev/connection-supervisor';
+import type { ReadinessProbeResult } from '@ks-happier/connection-supervisor';
 
 import { resolveLoopbackHttpUrl } from '@/api/client/loopbackUrl';
 

@@ -1,4 +1,4 @@
-import type { ParticipantRecipientV1 } from '@happier-dev/protocol';
+import type { ParticipantRecipientV1 } from '@ks-happier/protocol';
 import {
     clampUtf16,
     coerceNonEmpty,

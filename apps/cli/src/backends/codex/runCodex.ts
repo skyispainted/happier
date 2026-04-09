@@ -41,8 +41,8 @@ import { createCodexAcpRuntime } from './acp/runtime';
 import { createCodexAppServerRuntime } from './appServer/runtime';
 import { buildCodexAppServerConfigOverrides } from './appServer/buildCodexAppServerConfigOverrides';
 import { seedCodexAppServerPendingSessionOverrides } from './appServer/seedPendingSessionOverrides';
-import { SessionRollbackRpcParamsSchema } from '@happier-dev/protocol';
-import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES, SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { SessionRollbackRpcParamsSchema } from '@ks-happier/protocol';
+import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES, SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 import { syncCodexAcpSessionModeFromPermissionMode } from './acp/syncSessionModeFromPermissionMode';
 import { publishInFlightSteerCapability } from './utils/publishInFlightSteerCapability';
 import { createStartupMetadataOverrides } from '@/agent/runtime/createStartupMetadataOverrides';
@@ -111,7 +111,7 @@ import {
     SESSION_MODELS_STATE_KEY,
     SESSION_MODES_STATE_KEY,
     type CodexBackendMode,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 	import type { CodexMcpClient } from './codexMcpClient';
 	import { resolveCodexBackendModeForRun } from './utils/resolveCodexBackendModeForRun';
 	import { resolveCodexRequestedDirectory } from './utils/resolveCodexRequestedDirectory';
@@ -166,7 +166,7 @@ export async function runCodex(opts: {
         steerPrompt: (prompt: string) => Promise<void>;
         sendPrompt: (prompt: string) => Promise<void>;
         flushTurn: () => Promise<void>;
-        rollbackConversation: (request: import('@happier-dev/protocol').SessionRollbackRpcParams) => Promise<import('@happier-dev/protocol').SessionRollbackRpcResult>;
+        rollbackConversation: (request: import('@ks-happier/protocol').SessionRollbackRpcParams) => Promise<import('@ks-happier/protocol').SessionRollbackRpcResult>;
     }>;
 
     //

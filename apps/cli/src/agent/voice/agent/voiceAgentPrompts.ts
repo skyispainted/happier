@@ -1,5 +1,5 @@
-import { buildLocalVoiceAgentSystemPrompt } from '@happier-dev/agents';
-import { buildPromptPlanV1, renderPromptPlanV1, type PromptBlockV1 } from '@happier-dev/protocol';
+import { buildLocalVoiceAgentSystemPrompt } from '@ks-happier/agents';
+import { buildPromptPlanV1, renderPromptPlanV1, type PromptBlockV1 } from '@ks-happier/protocol';
 
 import { listDisabledActionIdsForSurfaceFromEnv } from '../../../settings/actionsSettings';
 

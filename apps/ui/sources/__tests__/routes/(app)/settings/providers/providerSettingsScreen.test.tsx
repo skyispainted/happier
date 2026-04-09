@@ -351,7 +351,7 @@ vi.mock('@/sync/domains/permissions/permissionModeOptions', () => ({
     ],
 }));
 
-vi.mock('@happier-dev/agents', async (importOriginal) => {
+vi.mock('@ks-happier/agents', async (importOriginal) => {
     const actual: any = await importOriginal();
     return {
         ...actual,

@@ -6,7 +6,7 @@ import type {
   WorkspaceManifest,
   SessionHandoffWorkspaceTransfer,
   TransferEndpointCandidate,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { relative, resolve, sep } from 'node:path';
 

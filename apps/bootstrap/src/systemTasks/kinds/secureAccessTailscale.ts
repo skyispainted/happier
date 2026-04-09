@@ -1,4 +1,4 @@
-import * as systemTasks from '@happier-dev/cli-common/systemTasks';
+import * as systemTasks from '@ks-happier/cli-common/systemTasks';
 import {
   extractTailscaleServeHttpsUrl,
   runTailscaleLogin,
@@ -10,7 +10,7 @@ import {
   type RunTailscaleServeEnableResult,
   type TailscaleSecureAccessTaskResult,
   type TailscaleStatusSnapshot,
-} from '@happier-dev/cli-common/tailscale';
+} from '@ks-happier/cli-common/tailscale';
 
 import { ensureTailscaleInstalled, type EnsureTailscaleInstalledResult } from '../../integrations/tailscale/ensureTailscaleInstalled.js';
 

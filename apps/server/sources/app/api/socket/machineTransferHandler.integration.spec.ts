@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
 
 import { createFakeSocket, getSocketHandler } from '../testkit/socketHarness';
 

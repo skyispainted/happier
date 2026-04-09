@@ -43,8 +43,8 @@ import type {
     ScmWorktreePruneResponse,
     ScmWorktreeRemoveRequest,
     ScmWorktreeRemoveResponse,
-} from '@happier-dev/protocol';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+} from '@ks-happier/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import type { RpcHandlerRegistrar } from '@/api/rpc/types';
 import {

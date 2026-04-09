@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 
-import { parsePermissionIntentAlias } from '@happier-dev/agents';
-import type { PermissionIntent } from '@happier-dev/agents';
+import { parsePermissionIntentAlias } from '@ks-happier/agents';
+import type { PermissionIntent } from '@ks-happier/agents';
 
 import type { Credentials } from '@/persistence';
 import { wantsJson, printJsonEnvelope } from '@/cli/output/jsonEnvelope';

@@ -4,7 +4,7 @@ import {
   ReviewAssumptionSchema,
   ReviewFindingSchema,
   ReviewQuestionSchema,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export const ReviewFollowUpIntentInputSchema = z.object({
   kind: z.literal('review_follow_up.v1'),

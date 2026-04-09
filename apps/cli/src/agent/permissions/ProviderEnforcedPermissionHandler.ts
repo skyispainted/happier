@@ -18,8 +18,8 @@ import {
   type PermissionResult,
 } from '@/agent/permissions/BasePermissionHandler';
 import type { ToolTraceProtocol } from '@/agent/tools/trace/toolTrace';
-import type { AccountSettings } from '@happier-dev/protocol';
-import { isChangeTitleToolLikeName } from '@happier-dev/protocol/tools/v2';
+import type { AccountSettings } from '@ks-happier/protocol';
+import { isChangeTitleToolLikeName } from '@ks-happier/protocol/tools/v2';
 
 export type { PermissionResult, PendingRequest };
 

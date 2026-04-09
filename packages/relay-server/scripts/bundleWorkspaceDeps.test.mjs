@@ -38,12 +38,12 @@ export function resolveWorkspaceBundlesFromPackageJson({ repoRoot, hostPackageDi
   const bundled = Array.isArray(pkg.bundledDependencies) ? pkg.bundledDependencies : [];
   const bundles = [];
   for (const name of bundled) {
-    if (typeof name !== 'string' || !name.startsWith('@happier-dev/')) continue;
-    const short = name.slice('@happier-dev/'.length);
+    if (typeof name !== 'string' || !name.startsWith('@ks-happier/')) continue;
+    const short = name.slice('@ks-happier/'.length);
     bundles.push({
       name,
       srcDir: resolve(repoRoot, 'packages', short),
-      destDir: resolve(hostPackageDir, 'node_modules', '@happier-dev', short),
+      destDir: resolve(hostPackageDir, 'node_modules', '@ks-happier', short),
     });
   }
   return bundles;
@@ -99,7 +99,7 @@ export function vendorBundledPackageRuntimeDependencies({ srcPackageJsonPath, de
   mkdirSync(destNodeModulesDir, { recursive: true });
   const seen = new Set();
   for (const name of Object.keys(deps)) {
-    if (name.startsWith('@happier-dev/')) continue;
+    if (name.startsWith('@ks-happier/')) continue;
     vendorOne({ repoRoot, name, destNodeModulesDir, seen });
   }
 }
@@ -131,13 +131,13 @@ test('bundleWorkspaceDeps vendors external runtime dependency trees for bundled 
     const depADir = resolve(tempRoot, 'node_modules', 'dep-a');
     const depBDir = resolve(tempRoot, 'node_modules', 'dep-b');
 
-    mkdirSync(resolve(relayDir, 'node_modules', '@happier-dev', 'release-runtime'), { recursive: true });
+    mkdirSync(resolve(relayDir, 'node_modules', '@ks-happier', 'release-runtime'), { recursive: true });
     writeJson(resolve(relayDir, 'package.json'), {
-      name: '@happier-dev/relay-server',
+      name: '@ks-happier/relay-server',
       private: true,
-      bundledDependencies: ['@happier-dev/release-runtime'],
+      bundledDependencies: ['@ks-happier/release-runtime'],
       dependencies: {
-        '@happier-dev/release-runtime': '0.0.0',
+        '@ks-happier/release-runtime': '0.0.0',
       },
     });
     mkdirSync(resolve(cliCommonDir, 'dist'), { recursive: true });
@@ -146,21 +146,21 @@ test('bundleWorkspaceDeps vendors external runtime dependency trees for bundled 
     mkdirSync(depBDir, { recursive: true });
 
     writeJson(resolve(cliCommonDir, 'package.json'), {
-      name: '@happier-dev/cli-common',
+      name: '@ks-happier/cli-common',
       version: '0.0.0',
       type: 'module',
       main: './dist/index.js',
       types: './dist/index.d.ts',
       exports: { '.': { default: './dist/index.js', types: './dist/index.d.ts' } },
       dependencies: {
-        '@happier-dev/release-runtime': '0.0.0',
+        '@ks-happier/release-runtime': '0.0.0',
       },
     });
     writeFileSync(resolve(cliCommonDir, 'dist', 'index.js'), 'export const common = 1;\n', 'utf8');
     writeCliCommonWorkspacesStub(cliCommonDir);
 
     writeJson(resolve(releaseRuntimeDir, 'package.json'), {
-      name: '@happier-dev/release-runtime',
+      name: '@ks-happier/release-runtime',
       version: '0.0.0',
       type: 'module',
       main: './dist/index.js',
@@ -187,7 +187,7 @@ test('bundleWorkspaceDeps vendors external runtime dependency trees for bundled 
 
     await bundleWorkspaceDeps({ repoRoot: tempRoot, relayDir });
 
-    const bundledRuntimeDir = resolve(relayDir, 'node_modules', '@happier-dev', 'release-runtime');
+    const bundledRuntimeDir = resolve(relayDir, 'node_modules', '@ks-happier', 'release-runtime');
     assert.equal(existsSync(resolve(bundledRuntimeDir, 'node_modules', 'dep-a', 'package.json')), true);
     assert.equal(
       existsSync(resolve(bundledRuntimeDir, 'node_modules', 'dep-a', 'node_modules', 'dep-b', 'package.json')),

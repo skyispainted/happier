@@ -4,7 +4,7 @@ import { Octicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useUnistyles } from 'react-native-unistyles';
 
-import type { ScmBranchListEntry } from '@happier-dev/protocol';
+import type { ScmBranchListEntry } from '@ks-happier/protocol';
 
 import { DropdownMenu } from '@/components/ui/forms/dropdown/DropdownMenu';
 import { Text } from '@/components/ui/text/Text';

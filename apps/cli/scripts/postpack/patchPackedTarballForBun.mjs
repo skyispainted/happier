@@ -55,7 +55,7 @@ function stripInternalWorkspaceDeps(pkgJson) {
   if (!deps) return pkgJson;
 
   for (const key of Object.keys(deps)) {
-    if (key.startsWith('@happier-dev/')) {
+    if (key.startsWith('@ks-happier/')) {
       delete deps[key];
     }
   }

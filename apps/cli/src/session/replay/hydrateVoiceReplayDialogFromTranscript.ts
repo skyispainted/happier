@@ -1,5 +1,5 @@
-import { normalizeVoiceAgentTurnTranscriptText, type HappierReplayDialogItem } from '@happier-dev/agents';
-import { SessionSynopsisV1Schema, VoiceAgentTurnV1Schema } from '@happier-dev/protocol';
+import { normalizeVoiceAgentTurnTranscriptText, type HappierReplayDialogItem } from '@ks-happier/agents';
+import { SessionSynopsisV1Schema, VoiceAgentTurnV1Schema } from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 import { fetchSessionById } from '@/session/transport/http/sessionsHttp';

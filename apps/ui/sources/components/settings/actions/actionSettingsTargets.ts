@@ -6,7 +6,7 @@ import {
     type ActionSurfaces,
     type ActionUiPlacement,
     type ActionsSettingsV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import type { TranslationKey } from '@/text';
 import { isExecutionRunsFeatureAction } from '@/sync/domains/actions/isExecutionRunsFeatureAction';
 import { isInventoryPrivacyAction } from '@/sync/domains/settings/actionSettingsPolicy';

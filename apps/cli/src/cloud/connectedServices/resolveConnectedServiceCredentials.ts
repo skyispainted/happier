@@ -10,7 +10,7 @@ import {
   openConnectedServiceCredentialCiphertext,
   type ConnectedServiceCredentialRecordV1,
   type ConnectedServiceId,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { ApiClient } from '@/api/api';
 import type { Credentials } from '@/persistence';

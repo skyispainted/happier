@@ -5,7 +5,7 @@ import {
   type ConnectedServiceCredentialRecordV1,
   type ConnectedServiceId,
   type ConnectedServiceQuotaSnapshotV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Credentials } from '@/persistence';
 

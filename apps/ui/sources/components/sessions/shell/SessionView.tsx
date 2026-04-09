@@ -32,7 +32,7 @@ import { setActiveViewingSessionId, clearActiveViewingSessionId } from '@/sync/d
 import { canResumeSessionWithOptions } from '@/agents/runtime/resumeCapabilities';
 import { DEFAULT_AGENT_ID, getAgentCore, resolveAgentIdFromFlavor, buildResumeSessionExtrasFromUiState } from '@/agents/catalog/catalog';
 import { buildSessionComposerNextMessageMetaOverridesFromUiState } from '@/agents/registry/registryUiBehavior';
-import { resolveAgentIdFromSessionMetadata } from '@happier-dev/agents';
+import { resolveAgentIdFromSessionMetadata } from '@ks-happier/agents';
 import { useResumeCapabilityOptions } from '@/agents/hooks/useResumeCapabilityOptions';
 import { useSession } from '@/sync/domains/state/storage';
 import { Session, type Metadata } from '@/sync/domains/state/storageTypes';
@@ -133,7 +133,7 @@ import { readDirectSessionLink } from '@/sync/domains/session/directSessions/rea
 import type { SessionParticipantTarget } from '@/sync/domains/session/participants/participantTargets';
 import type { Message } from '@/sync/domains/messages/messageTypes';
 import type { PendingMessage } from '@/sync/domains/state/storageTypes';
-import { isHiddenSystemSession } from '@happier-dev/protocol';
+import { isHiddenSystemSession } from '@ks-happier/protocol';
 import { resolveNextOptimisticAcpConfigOptionOverrides } from './resolveNextOptimisticAcpConfigOptionOverrides';
 
 

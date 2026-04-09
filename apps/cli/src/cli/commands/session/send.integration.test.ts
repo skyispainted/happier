@@ -2,9 +2,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createServer, type Server } from 'node:http';
 import { join } from 'node:path';
 
-import { deriveBoxPublicKeyFromSeed, sealEncryptedDataKeyEnvelopeV1 } from '@happier-dev/protocol';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
+import { deriveBoxPublicKeyFromSeed, sealEncryptedDataKeyEnvelopeV1 } from '@ks-happier/protocol';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
 import {
   bindApiSessionSocketMock,
   bindApiSessionSocketSequenceMock,

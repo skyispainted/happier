@@ -4,7 +4,7 @@ import { Encryption } from "@/sync/encryption/encryption";
 import sodium from '@/encryption/libsodium.lib';
 import { getReadyServerFeatures } from '@/sync/api/capabilities/getReadyServerFeatures';
 import { serverFetch } from '@/sync/http/client';
-import { readServerEnabledBit } from '@happier-dev/protocol';
+import { readServerEnabledBit } from '@ks-happier/protocol';
 
 const CONTENT_KEY_BINDING_PREFIX = new TextEncoder().encode('Happy content key v1\u0000');
 

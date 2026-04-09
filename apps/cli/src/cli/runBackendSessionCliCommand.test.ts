@@ -21,7 +21,7 @@ import * as authModule from '@/ui/auth';
 import * as persistenceModule from '@/persistence';
 import * as accountSettingsModule from '@/settings/accountSettings/bootstrapAccountSettingsContext';
 import * as providerSettingsModule from '@/settings/providerSettings';
-import { AIBackendProfileSchema } from '@happier-dev/protocol';
+import { AIBackendProfileSchema } from '@ks-happier/protocol';
 import type { Credentials } from '@/persistence';
 
 afterEach(() => {

@@ -1,4 +1,4 @@
-import type { PromptBlockV1 } from '@happier-dev/protocol';
+import type { PromptBlockV1 } from '@ks-happier/protocol';
 
 import { buildHappierToolsPromptAppendix } from '@/agent/tools/happierTools/runtime/buildHappierToolsPromptAppendix';
 

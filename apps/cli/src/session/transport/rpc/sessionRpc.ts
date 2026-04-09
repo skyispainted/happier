@@ -1,6 +1,6 @@
 import { createSessionScopedSocket } from '@/api/session/sockets';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
-import { createRpcCallError } from '@happier-dev/protocol/rpcErrors';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
+import { createRpcCallError } from '@ks-happier/protocol/rpcErrors';
 import { decodeBase64, decrypt, encodeBase64, encrypt } from '@/api/encryption';
 import type { SessionEncryptionContext, SessionStoredContentEncryptionMode } from '@/session/transport/encryption/sessionEncryptionContext';
 import { waitForSocketConnect } from '@/session/transport/socket/waitForSocketConnect';

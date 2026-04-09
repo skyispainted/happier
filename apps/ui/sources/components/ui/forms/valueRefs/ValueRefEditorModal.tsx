@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 
-import type { McpValueRefV1 } from '@happier-dev/protocol';
+import type { McpValueRefV1 } from '@ks-happier/protocol';
 
 import type { CustomModalInjectedProps } from '@/modal';
 import { Modal } from '@/modal';

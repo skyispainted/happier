@@ -65,7 +65,7 @@ function normalizeBase(version) {
 }
 
 /**
- * @param {import('@happier-dev/release-runtime/releaseRings').PublicReleaseRingId} channel
+ * @param {import('@ks-happier/release-runtime/releaseRings').PublicReleaseRingId} channel
  */
 function computeUiVersion(channel, baseVersion) {
   if (channel === 'stable') return baseVersion;

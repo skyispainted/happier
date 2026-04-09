@@ -1,4 +1,4 @@
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 import type { AgentId } from '@/agents/registry/registryCore';
 import { AGENT_IDS } from '@/agents/registry/registryCore';
 

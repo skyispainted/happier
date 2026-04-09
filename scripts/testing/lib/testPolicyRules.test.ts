@@ -41,11 +41,11 @@ test('collectPolicyFindings keeps hidden skip aliases report-only for provider r
   );
 });
 
-test('collectPolicyFindings bans @happier-dev/tests internals from non-test source', () => {
+test('collectPolicyFindings bans @ks-happier/tests internals from non-test source', () => {
   const report = collectPolicyFindings([
     {
       filePath: 'apps/ui/sources/sync/runtime.ts',
-      content: "import { helper } from '@happier-dev/tests/src/testkit/foo';",
+      content: "import { helper } from '@ks-happier/tests/src/testkit/foo';",
     },
   ]);
 

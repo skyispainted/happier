@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { z } from 'zod';
-import { resolveWindowsCommandInvocation } from '@happier-dev/cli-common/process';
+import { resolveWindowsCommandInvocation } from '@ks-happier/cli-common/process';
 
 import { PERMISSION_MODES, isPermissionMode } from '@/api/types';
 import { runClaude, type StartOptions } from '@/backends/claude/runClaude';

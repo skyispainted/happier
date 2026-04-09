@@ -2,13 +2,13 @@ import {
     normalizeCodexBackendMode as normalizeCanonicalCodexBackendMode,
     resolveMetadataStringOverrideV1,
     type CodexBackendMode,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 import {
     SessionAuthoringTerminalV1Schema,
     SessionAuthoringValueV1Schema,
     type SessionAuthoringTerminalV1,
     type SessionAuthoringValueV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { Session } from '@/sync/domains/state/storageTypes';
 

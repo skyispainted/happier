@@ -1,4 +1,4 @@
-import { getAgentToolsCapability, resolveAgentIdFromFlavor, type AgentId } from '@happier-dev/agents';
+import { getAgentToolsCapability, resolveAgentIdFromFlavor, type AgentId } from '@ks-happier/agents';
 
 export function resolveAgentToolsDelivery(agentId: AgentId | string): 'native_mcp' | 'shell_bridge' | 'unsupported' {
   try {

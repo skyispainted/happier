@@ -1,8 +1,8 @@
-import { AGENT_IDS } from '@happier-dev/agents';
+import { AGENT_IDS } from '@ks-happier/agents';
 import {
     ExecutionRunPublicStateSchema,
     type ExecutionRunPublicState,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import type { RawHistoryRow } from './getSessionHistory';
 

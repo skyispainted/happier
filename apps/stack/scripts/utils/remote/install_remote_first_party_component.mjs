@@ -4,8 +4,8 @@ import {
   getFirstPartyComponentCatalogEntry,
   prepareFirstPartyComponentPayloadFromGitHubRelease,
   resolveFirstPartyComponentPublicReleaseVariant,
-} from '@happier-dev/cli-common/firstPartyRuntime';
-import { normalizePublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+} from '@ks-happier/cli-common/firstPartyRuntime';
+import { normalizePublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 import { run, runCapture } from '../proc/proc.mjs';
 

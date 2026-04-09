@@ -1,6 +1,6 @@
 import { io, type Socket } from 'socket.io-client';
 
-import type { ManagedConnectionTransport, TransportDisconnectEvent } from '@happier-dev/connection-supervisor';
+import type { ManagedConnectionTransport, TransportDisconnectEvent } from '@ks-happier/connection-supervisor';
 
 type SyncSocket = Socket;
 

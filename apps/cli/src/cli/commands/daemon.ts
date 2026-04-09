@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 
-import { createServerUrlComparableKey } from '@happier-dev/protocol';
+import { createServerUrlComparableKey } from '@ks-happier/protocol';
 
 import { checkIfDaemonRunningAndCleanupStaleState, listDaemonSessions, stopDaemon, stopDaemonSession } from '@/daemon/controlClient';
 import { startDaemon } from '@/daemon/startDaemon';

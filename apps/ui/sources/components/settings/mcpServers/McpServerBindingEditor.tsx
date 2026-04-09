@@ -13,7 +13,7 @@ import { t } from '@/text';
 import { Typography } from '@/constants/Typography';
 import type { Machine } from '@/sync/domains/state/storageTypes';
 import type { SavedSecret } from '@/sync/domains/settings/savedSecretTypes';
-import type { McpServerBindingTargetV1, McpServerBindingV1, McpServerCatalogEntryTransportV1 } from '@happier-dev/protocol';
+import type { McpServerBindingTargetV1, McpServerBindingV1, McpServerCatalogEntryTransportV1 } from '@ks-happier/protocol';
 
 import { McpWorkspaceRootPickerModal } from './McpWorkspaceRootPickerModal';
 import { McpBindingOverridesEditorModal } from './McpBindingOverridesEditorModal';

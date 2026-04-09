@@ -1,4 +1,4 @@
-import type { ActionId } from '@happier-dev/protocol';
+import type { ActionId } from '@ks-happier/protocol';
 
 import type { PermissionMode } from '@/sync/domains/permissions/permissionTypes';
 

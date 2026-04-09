@@ -1,4 +1,4 @@
-import { AGENTS_CORE, type AgentId } from '@happier-dev/agents';
+import { AGENTS_CORE, type AgentId } from '@ks-happier/agents';
 
 import type { AgentCoreConfig } from './registryCore';
 

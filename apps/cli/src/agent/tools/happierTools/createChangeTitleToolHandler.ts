@@ -1,4 +1,4 @@
-import type { ActionId } from '@happier-dev/protocol';
+import type { ActionId } from '@ks-happier/protocol';
 
 type ActionExecutorResult = Readonly<
   | { ok: true; result: unknown }

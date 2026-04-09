@@ -1,4 +1,4 @@
-import type { ManagedEndpointSupervisor } from '@happier-dev/connection-supervisor';
+import type { ManagedEndpointSupervisor } from '@ks-happier/connection-supervisor';
 
 import { runtimeFetch } from '@/utils/system/runtimeFetch';
 

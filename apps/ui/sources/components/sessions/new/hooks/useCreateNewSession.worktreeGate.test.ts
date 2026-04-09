@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { act } from 'react-test-renderer';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { buildBackendTargetKey } from '@happier-dev/protocol';
+import { buildBackendTargetKey } from '@ks-happier/protocol';
 import { AIBackendProfileSchema } from '@/sync/domains/profiles/profileCompatibility';
 import { settingsDefaults as testSettingsDefaults } from '@/sync/domains/settings/settings';
 import type { Session } from '@/sync/domains/state/storageTypes';

@@ -1,7 +1,7 @@
 import type { SpawnSessionOptions } from '@/rpc/handlers/registerSessionHandlers';
 import { resolveCanonicalCodexBackendMode } from '@/rpc/handlers/registerSessionHandlers';
 import type { TerminalMode, TerminalSpawnOptions } from '@/terminal/runtime/terminalConfig';
-import { AgentRuntimeDescriptorV1Schema, BackendTargetRefSchema, SessionMcpSelectionV1Schema } from '@happier-dev/protocol';
+import { AgentRuntimeDescriptorV1Schema, BackendTargetRefSchema, SessionMcpSelectionV1Schema } from '@ks-happier/protocol';
 import * as z from 'zod';
 
 const TERMINAL_MODES = ['plain', 'tmux', 'windows_terminal', 'windows_console'] as const satisfies readonly TerminalMode[];

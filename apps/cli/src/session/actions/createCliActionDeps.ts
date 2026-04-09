@@ -4,7 +4,7 @@ import {
   listNativeReviewEngines,
   parseBackendTargetKey,
   type ActionExecutorDeps,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import {
   AGENT_IDS,
   DEFAULT_AGENT_ID,
@@ -17,7 +17,7 @@ import {
   readMetadataAliasValue,
   type AgentId,
   type PermissionIntent,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 import { createCliApprovalsArtifactStore } from '@/approvals/cliApprovalsArtifactStore';
 import type { Credentials } from '@/persistence';
 import { createSpawnedSession } from '@/session/services/createSpawnedSession';
@@ -55,7 +55,7 @@ import {
 import { resolveSessionTransportContext } from '@/session/services/resolveSessionTransportContext';
 import { fetchSessionById, fetchSessionByIdCompat } from '@/session/transport/http/sessionsHttp';
 import { callSessionRpc } from '@/session/transport/rpc/sessionRpc';
-import { readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+import { readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 function notSupported(): never {
   throw new Error('action_not_supported_in_cli');

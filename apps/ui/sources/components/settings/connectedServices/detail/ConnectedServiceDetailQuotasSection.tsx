@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { connectedServiceProfileKey, resolveConnectedServiceProfileLabel } from '@/sync/domains/connectedServices/connectedServiceProfilePreferences';
-import type { ConnectedServiceId, ConnectedServiceQuotaSnapshotV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceId, ConnectedServiceQuotaSnapshotV1 } from '@ks-happier/protocol';
 import { t } from '@/text';
 
 import { ConnectedServiceQuotaCard } from '../ConnectedServiceQuotaCard';

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { useUnistyles } from 'react-native-unistyles';
 
-import type { McpServerBindingTargetV1 } from '@happier-dev/protocol';
+import type { McpServerBindingTargetV1 } from '@ks-happier/protocol';
 
 import { DropdownMenu, type DropdownMenuItem } from '@/components/ui/forms/dropdown/DropdownMenu';
 import { Item } from '@/components/ui/lists/Item';

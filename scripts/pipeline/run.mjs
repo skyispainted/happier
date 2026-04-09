@@ -1044,7 +1044,7 @@ function runJsonScript({ repoRoot, env, scriptRel, args }) {
             args: rest,
             options: {
           'package-dir': { type: 'string', default: 'apps/cli' },
-          'workspace-name': { type: 'string', default: '@happier-dev/cli' },
+          'workspace-name': { type: 'string', default: '@ks-happier/cli' },
           'skip-build': { type: 'string', default: 'false' },
           'dry-run': { type: 'boolean', default: false },
         },
@@ -1052,7 +1052,7 @@ function runJsonScript({ repoRoot, env, scriptRel, args }) {
       });
 
       const pkgDir = String(values['package-dir'] ?? '').trim() || 'apps/cli';
-      const workspaceName = String(values['workspace-name'] ?? '').trim() || '@happier-dev/cli';
+      const workspaceName = String(values['workspace-name'] ?? '').trim() || '@ks-happier/cli';
       const skipBuild = String(values['skip-build'] ?? '').trim() || 'false';
       const dryRun = values['dry-run'] === true;
 

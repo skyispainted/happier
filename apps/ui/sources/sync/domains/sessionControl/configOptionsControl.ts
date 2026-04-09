@@ -10,7 +10,7 @@ import {
     SESSION_CONFIG_OPTION_OVERRIDES_KEY,
     SESSION_MODELS_STATE_KEY,
     SESSION_MODES_STATE_KEY,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 import {
     parseSessionConfigOptionsState,

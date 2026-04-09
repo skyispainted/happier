@@ -4,7 +4,7 @@ import type { RawSessionListRow, RawSessionRecord } from '@/session/transport/ht
 import {
   readSystemSessionMetadataFromMetadata,
   type SessionSummary as ProtocolSessionSummary,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export type SessionSummary = Readonly<ProtocolSessionSummary>;
 

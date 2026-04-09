@@ -119,7 +119,7 @@ export type ProviderScenario = {
   // For multi-step scenarios, use `steps` instead.
   prompt?: (ctx: { workspaceDir: string }) => string;
   /**
-   * Optional extra CLI args to pass to `yarn workspace @happier-dev/cli dev <provider> ...`.
+   * Optional extra CLI args to pass to `yarn workspace @ks-happier/cli dev <provider> ...`.
    *
    * Useful for provider CLI flags that must be set at process start (e.g. Claude `--mcp-config`),
    * without relying on writing global config into the host HOME directory.

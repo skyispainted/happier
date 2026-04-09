@@ -4,8 +4,8 @@ import { Stack, useFocusEffect, useLocalSearchParams, useRouter } from 'expo-rou
 import { Ionicons } from '@expo/vector-icons';
 import { useUnistyles } from 'react-native-unistyles';
 
-import type { ExecutionRunPublicState } from '@happier-dev/protocol';
-import { isRpcMethodNotAvailableError } from '@happier-dev/protocol/rpcErrors';
+import type { ExecutionRunPublicState } from '@ks-happier/protocol';
+import { isRpcMethodNotAvailableError } from '@ks-happier/protocol/rpcErrors';
 import { sessionExecutionRunList } from '@/sync/ops/sessionExecutionRuns';
 import { useHydrateSessionForRoute } from '@/hooks/session/useHydrateSessionForRoute';
 import { useSessionExecutionRunLaunchability } from '@/hooks/session/useSessionExecutionRunLaunchability';

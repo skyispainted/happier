@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { INSTALLABLES_CATALOG } from '@happier-dev/protocol/installables';
+import { INSTALLABLES_CATALOG } from '@ks-happier/protocol/installables';
 
 import { capabilities } from './extraCapabilities';
 

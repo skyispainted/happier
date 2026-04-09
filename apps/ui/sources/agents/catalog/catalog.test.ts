@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-import { AGENT_IDS as SHARED_AGENT_IDS } from '@happier-dev/agents';
+import { AGENT_IDS as SHARED_AGENT_IDS } from '@ks-happier/agents';
 
 import { AGENT_IDS, DEFAULT_AGENT_ID, getAgentCore } from './catalog';
 

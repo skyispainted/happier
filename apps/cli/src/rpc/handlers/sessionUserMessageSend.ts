@@ -1,5 +1,5 @@
-import { SessionUserMessageSendRequestSchema } from '@happier-dev/protocol';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { SessionUserMessageSendRequestSchema } from '@ks-happier/protocol';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import type { RpcHandlerRegistrar } from '@/api/rpc/types';
 

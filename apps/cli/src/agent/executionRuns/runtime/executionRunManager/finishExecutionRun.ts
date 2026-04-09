@@ -8,7 +8,7 @@ import { readBackendResumableChildSessionId } from '@/agent/executionRuns/contro
 import type { ExecutionRunState } from '@/agent/executionRuns/runtime/executionRunTypes';
 import type { ExecutionBudgetRegistry } from '@/daemon/executionBudget/ExecutionBudgetRegistry';
 import { writeExecutionRunMarker } from '@/daemon/executionRunRegistry';
-import type { ExecutionRunResumeHandle } from '@happier-dev/protocol';
+import type { ExecutionRunResumeHandle } from '@ks-happier/protocol';
 
 type EnqueueMarkerWrite = (runId: string, write: () => Promise<void>) => Promise<void>;
 

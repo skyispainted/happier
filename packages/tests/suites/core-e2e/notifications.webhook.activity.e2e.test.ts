@@ -8,7 +8,7 @@ import {
   BUILT_IN_EXPO_PUSH_NOTIFICATION_CHANNEL_ID,
   accountSettingsParse,
   resolveNotificationChannelsV1FromAccountSettings,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { sendWebhookActivityNotificationAsync } from '../../../../apps/cli/src/activity/notifications/sendWebhookActivityNotification';
 
 import { createRunDirs } from '../../src/testkit/runDir';

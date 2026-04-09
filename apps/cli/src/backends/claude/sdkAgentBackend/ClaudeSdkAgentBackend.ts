@@ -8,7 +8,7 @@ import { createSubprocessStderrAppender, type BoundedTextFileAppender } from '@/
 import { CHANGE_TITLE_INSTRUCTION } from '@/agent/runtime/changeTitleInstruction';
 import { emitCanonicalTurnDiffTool } from '@/agent/runtime/emitCanonicalTurnDiffTool';
 import { ensureClaudeJsRuntimeExecutable } from '@/backends/claude/utils/ensureClaudeJsRuntimeExecutable';
-import { CHANGE_TITLE_TOOL_NAME_ALIASES } from '@happier-dev/protocol/tools/v2';
+import { CHANGE_TITLE_TOOL_NAME_ALIASES } from '@ks-happier/protocol/tools/v2';
 import { ClaudeTurnChangeTracker } from '../utils/ClaudeTurnChangeTracker';
 import { isClaudeExplicitDiffToolInput } from '../utils/isClaudeExplicitDiffToolInput';
 import { isReadOnlyClaudeSdkToolAllowed } from './isReadOnlyClaudeSdkToolAllowed';

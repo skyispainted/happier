@@ -3,7 +3,7 @@ import {
     V2SessionByIdNotFoundSchema,
     type V2SessionListResponse,
     type V2SessionRecord,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { HappyError } from '@/utils/errors/errors';
 

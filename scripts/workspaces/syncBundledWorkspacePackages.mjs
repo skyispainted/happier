@@ -205,7 +205,7 @@ function readBundledWorkspacePackageNamesFromHostPackageJson(raw) {
       : [];
 
   return bundledDependencies
-    .filter((value) => typeof value === 'string' && value.startsWith('@happier-dev/'));
+    .filter((value) => typeof value === 'string' && value.startsWith('@ks-happier/'));
 }
 
 function resolveDefaultBundledWorkspacePackageNames(repoRoot, hostApps, readFileImpl = readFileSync) {
@@ -308,7 +308,7 @@ export function syncBundledWorkspacePackages(opts = {}) {
     if (!exists(srcPackageJsonPath)) continue;
 
     for (const hostApp of hostApps) {
-      const destPackageDir = resolve(repoRoot, 'apps', hostApp, 'node_modules', '@happier-dev', pkg);
+      const destPackageDir = resolve(repoRoot, 'apps', hostApp, 'node_modules', '@ks-happier', pkg);
       const destDist = resolve(destPackageDir, 'dist');
       if (exists(srcDist)) {
         try {

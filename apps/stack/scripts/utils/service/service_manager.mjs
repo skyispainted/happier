@@ -5,7 +5,7 @@ import {
   buildServiceDefinition,
   planServiceAction,
   applyServicePlan,
-} from '@happier-dev/cli-common/service';
+} from '@ks-happier/cli-common/service';
 
 export { resolveServiceBackend, buildServiceDefinition, planServiceAction };
 

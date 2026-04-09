@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import type { CapabilitiesDescribeResponse } from '@happier-dev/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import type { CapabilitiesDescribeResponse } from '@ks-happier/protocol';
 
 describe('registerCapabilitiesHandlers prewarm', () => {
   it('warms capability service during handler registration', async () => {

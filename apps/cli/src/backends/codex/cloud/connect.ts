@@ -1,5 +1,5 @@
 import type { CloudConnectTarget } from '@/cloud/connectTypes';
-import { AGENTS_CORE } from '@happier-dev/agents';
+import { AGENTS_CORE } from '@ks-happier/agents';
 import { authenticateCodex } from './authenticate';
 
 export const codexCloudConnect: CloudConnectTarget = {

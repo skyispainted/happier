@@ -21,7 +21,7 @@ import { useEnsureSidechainsLoaded } from '@/hooks/session/useEnsureSidechainsLo
 import { ChainTranscriptList } from '@/components/sessions/transcript/ChainTranscriptList';
 import { sync } from '@/sync/sync';
 import { resolveToolTranscriptSidechainId } from './resolveToolTranscriptSidechainId';
-import { isSubAgentTranscriptToolName } from '@happier-dev/protocol/tools/v2';
+import { isSubAgentTranscriptToolName } from '@ks-happier/protocol/tools/v2';
 import { resolveInactiveSessionToolCallFailure } from '../permissions/resolveInactiveSessionToolCallFailure';
 import { ToolError } from '@/components/tools/shell/presentation/ToolError';
 import { resolveToolPermissionTerminalErrorMessage } from '../permissions/resolveToolPermissionTerminalErrorMessage';

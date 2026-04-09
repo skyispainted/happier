@@ -1,4 +1,4 @@
-import { MessageAckResponseSchema } from '@happier-dev/protocol/updates';
+import { MessageAckResponseSchema } from '@ks-happier/protocol/updates';
 
 import { storage } from '@/sync/domains/state/storage';
 import { resolveSentFrom } from '@/sync/domains/messages/sentFrom';

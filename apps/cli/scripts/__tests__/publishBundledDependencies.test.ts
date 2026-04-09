@@ -27,12 +27,12 @@ describe('apps/cli package publish contract', () => {
       ? cliPackageJson.bundledDependencies.map((v) => String(v))
       : [];
 
-    expect(bundled).toContain('@happier-dev/agents');
-    expect(bundled).toContain('@happier-dev/cli-common');
-    expect(bundled).toContain('@happier-dev/connection-supervisor');
-    expect(bundled).toContain('@happier-dev/protocol');
-    expect(bundled).toContain('@happier-dev/transfers');
-    expect(bundled).toContain('@happier-dev/release-runtime');
+    expect(bundled).toContain('@ks-happier/agents');
+    expect(bundled).toContain('@ks-happier/cli-common');
+    expect(bundled).toContain('@ks-happier/connection-supervisor');
+    expect(bundled).toContain('@ks-happier/protocol');
+    expect(bundled).toContain('@ks-happier/transfers');
+    expect(bundled).toContain('@ks-happier/release-runtime');
     expect(bundled).toContain('tweetnacl');
 
     // External runtime deps used by protocol should be declared on protocol itself

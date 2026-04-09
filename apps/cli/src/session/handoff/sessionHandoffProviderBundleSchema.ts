@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { SessionHandoffCodexAffinitySchema } from '@happier-dev/protocol';
+import { SessionHandoffCodexAffinitySchema } from '@ks-happier/protocol';
 
 // Internal (CLI-only) contract for the provider bundle file transferred during session handoff.
 // This is intentionally not part of the shared protocol surface.

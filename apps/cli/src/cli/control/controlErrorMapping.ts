@@ -1,4 +1,4 @@
-import { SessionControlErrorCodeSchema } from '@happier-dev/protocol';
+import { SessionControlErrorCodeSchema } from '@ks-happier/protocol';
 
 export type ControlCliMappedError = Readonly<{ code: string; unexpected: boolean; message?: string }>;
 

@@ -13,7 +13,7 @@ import type { NewSessionAutomationDraft } from '@/sync/domains/automations/autom
 import type { Machine } from '@/sync/domains/state/storageTypes';
 import type { NewSessionCheckoutCreationDraft } from '@/sync/domains/state/newSessionCheckoutDraft';
 import type { PermissionMode, ModelMode } from '@/sync/domains/permissions/permissionTypes';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 import type { AgentId } from '@/agents/catalog/catalog';
 import type { Settings } from '@/sync/domains/settings/settings';
 

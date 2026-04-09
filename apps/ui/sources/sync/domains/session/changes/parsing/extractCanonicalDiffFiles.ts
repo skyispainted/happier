@@ -1,4 +1,4 @@
-import type { FileChangeEvidence } from '@happier-dev/protocol';
+import type { FileChangeEvidence } from '@ks-happier/protocol';
 
 import type { TurnChangeToolMetadata } from './readTurnChangeToolMetadata';
 

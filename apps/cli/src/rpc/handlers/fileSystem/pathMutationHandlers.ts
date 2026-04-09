@@ -4,7 +4,7 @@ import { basename, dirname, resolve as resolvePath } from 'path';
 
 import type { RpcHandlerRegistrar } from '@/api/rpc/types';
 import { logger } from '@/ui/logger';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 import { validatePath } from '../pathSecurity';
 

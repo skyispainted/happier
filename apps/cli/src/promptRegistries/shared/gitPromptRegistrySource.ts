@@ -4,7 +4,7 @@ import { basename, join, relative, resolve, sep } from 'node:path';
 import type {
   PromptRegistryFetchItemResponseV1,
   PromptRegistryItemSummaryV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { buildPromptBundleBodyFromDirectory } from '@/promptAssets/shared/promptBundleDirectory';
 

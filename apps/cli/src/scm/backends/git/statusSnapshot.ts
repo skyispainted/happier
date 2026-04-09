@@ -3,7 +3,7 @@ import {
     createGitScmCapabilities,
     type ScmWorkingEntry,
     type ScmWorkingSnapshot,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { parseGitStatusPorcelainV2Z, parseNumStatZ } from './statusParser';
 import { parseGitWorktreeListPorcelain } from './worktreeListParser';

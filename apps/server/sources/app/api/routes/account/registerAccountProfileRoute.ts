@@ -3,7 +3,7 @@ import { getPublicUrl } from "@/storage/blob/files";
 import { fetchLinkedProvidersForAccount } from "@/app/auth/providers/linkedProviders";
 import { type Fastify } from "../../types";
 import { isServerFeatureEnabledForRequest } from "@/app/features/catalog/serverFeatureGate";
-import { ConnectedServiceIdSchema } from "@happier-dev/protocol";
+import { ConnectedServiceIdSchema } from "@ks-happier/protocol";
 import { isConnectedServiceCredentialMetadataV2 } from "../connect/connectedServicesV2/credentialMetadataV2";
 import { resolveApiHotEndpointRateLimit } from "@/app/api/utils/apiRateLimitCatalog";
 

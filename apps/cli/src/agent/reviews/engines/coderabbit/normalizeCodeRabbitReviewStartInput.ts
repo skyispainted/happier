@@ -1,4 +1,4 @@
-import { ReviewStartInputSchema, type ReviewStartInput } from '@happier-dev/protocol';
+import { ReviewStartInputSchema, type ReviewStartInput } from '@ks-happier/protocol';
 
 export function normalizeCodeRabbitReviewStartInput(params: Readonly<{
   intentInput: unknown;

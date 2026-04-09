@@ -1,7 +1,7 @@
 import { realpathSync } from 'node:fs'
 import { isAbsolute, posix, win32 } from 'node:path'
 
-import type { MachineFileBrowserRoot } from '@happier-dev/protocol'
+import type { MachineFileBrowserRoot } from '@ks-happier/protocol'
 
 type MachineBrowsePathValidationResult =
   | Readonly<{ valid: true; resolvedPath: string }>

@@ -6,7 +6,7 @@
  * daemon-side credential resolution.
  */
 
-import { ConnectedServiceIdSchema, type ConnectedServiceId } from '@happier-dev/protocol';
+import { ConnectedServiceIdSchema, type ConnectedServiceId } from '@ks-happier/protocol';
 
 export type ConnectedServicesBindingsV1 = Readonly<{
   v: 1;

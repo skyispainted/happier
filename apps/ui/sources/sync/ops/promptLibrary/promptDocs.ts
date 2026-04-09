@@ -1,7 +1,7 @@
 import {
   PromptDocBodyV1Schema,
   type PromptDocBodyV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { sync } from '@/sync/sync';
 import { storage } from '@/sync/domains/state/storage';

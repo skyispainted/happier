@@ -1,4 +1,4 @@
-import type { PromptRegistryItemSummaryV1 } from '@happier-dev/protocol';
+import type { PromptRegistryItemSummaryV1 } from '@ks-happier/protocol';
 
 import { buildSkillsShRegistryItemId } from './skillsShRegistryItemId';
 import {

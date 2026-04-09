@@ -174,8 +174,8 @@ vi.mock('@/scm/utils/filePresentation', () => ({
     getImageMimeTypeFromPath: () => null,
 }));
 
-vi.mock('@happier-dev/agents', async (importOriginal) => {
-    const actual = await importOriginal<typeof import('@happier-dev/agents')>();
+vi.mock('@ks-happier/agents', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('@ks-happier/agents')>();
     return {
         ...actual,
         normalizeVoiceAgentTurnTranscriptText: (text: string) => text,

@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { buildMessageUpdatedUpdate, buildNewMessageUpdate, eventRouter } from "@/app/events/eventRouter";
 import { catchupFollowupFetchesCounter, catchupFollowupReturnedCounter } from "@/app/monitoring/metrics2";
-import { SessionStoredMessageContentSchema } from "@happier-dev/protocol";
+import { SessionStoredMessageContentSchema } from "@ks-happier/protocol";
 import { createSessionMessage } from "@/app/session/sessionWriteService";
 import { parseSessionMessageSidechainId } from "@/app/session/parseSessionMessageSidechainId";
 import { checkSessionAccess } from "@/app/share/accessControl";

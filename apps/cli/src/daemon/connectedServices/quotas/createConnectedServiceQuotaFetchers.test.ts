@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { buildConnectedServiceCredentialRecord } from '@happier-dev/protocol';
+import { buildConnectedServiceCredentialRecord } from '@ks-happier/protocol';
 
 import { createConnectedServiceQuotaFetchers } from './createConnectedServiceQuotaFetchers';
 

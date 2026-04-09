@@ -19,9 +19,9 @@ import {
   type ActionId,
   getActionSpec,
   isActionSpecSurfacedOn,
-} from '@happier-dev/protocol';
-import { RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { MemorySearchResultV1Schema, MemoryWindowV1Schema, type MemorySearchResultV1, type MemoryWindowV1 } from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
+import { RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { MemorySearchResultV1Schema, MemoryWindowV1Schema, type MemorySearchResultV1, type MemoryWindowV1 } from '@ks-happier/protocol';
 
 export function createHappierMcpServer(
   client: HappyMcpSessionClient,

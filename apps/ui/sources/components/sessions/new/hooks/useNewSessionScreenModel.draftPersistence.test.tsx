@@ -804,7 +804,7 @@ vi.mock('@/components/sessions/agentInput/sessionActions/listAgentInputActionChi
     listAgentInputActionChipActionIds: () => [],
 }));
 
-vi.mock('@happier-dev/protocol', async (importOriginal) => {
+vi.mock('@ks-happier/protocol', async (importOriginal) => {
     const actual = await importOriginal<any>();
     return {
         ...actual,
@@ -816,7 +816,7 @@ vi.mock('@/sync/domains/actions/buildActionDraftInput', () => ({
     buildActionDraftInput: () => ({}),
 }));
 
-vi.mock('@happier-dev/agents', async (importOriginal) => {
+vi.mock('@ks-happier/agents', async (importOriginal) => {
     const actual = await importOriginal<any>();
     return {
         ...actual,

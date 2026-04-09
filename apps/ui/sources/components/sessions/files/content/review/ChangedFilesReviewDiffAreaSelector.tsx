@@ -4,7 +4,7 @@ import { Pressable, View } from 'react-native';
 import { Text } from '@/components/ui/text/Text';
 import { Typography } from '@/constants/Typography';
 
-import type { ScmDiffArea } from '@happier-dev/protocol';
+import type { ScmDiffArea } from '@ks-happier/protocol';
 
 export function ChangedFilesReviewDiffAreaSelector(props: Readonly<{
     theme: any;

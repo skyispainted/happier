@@ -1,6 +1,6 @@
 import { rm } from 'node:fs/promises';
 
-import type { WorkspaceManifest } from '@happier-dev/protocol';
+import type { WorkspaceManifest } from '@ks-happier/protocol';
 
 import type { ScmBackendRegistry } from '@/scm/registry';
 import { applyWorkspaceSyncArtifacts } from '@/scm/sourceController/applyWorkspaceSyncArtifacts';

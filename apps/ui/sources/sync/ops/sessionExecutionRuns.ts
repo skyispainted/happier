@@ -11,9 +11,9 @@ import type {
     ExecutionRunStartResponse,
     ExecutionRunStopRequest,
     ExecutionRunStopResponse,
-} from '@happier-dev/protocol';
-import { RPC_ERROR_CODES, SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+} from '@ks-happier/protocol';
+import { RPC_ERROR_CODES, SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 import { sessionRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedSessionRpc';
 import { resolvePreferredServerIdForSessionId } from '@/sync/runtime/orchestration/serverScopedRpc/resolvePreferredServerIdForSessionId';

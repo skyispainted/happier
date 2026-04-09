@@ -1,5 +1,5 @@
 import React from 'react';
-import { getActionSpec, type ActionId } from '@happier-dev/protocol';
+import { getActionSpec, type ActionId } from '@ks-happier/protocol';
 
 import type { AgentInputExtraActionChip } from '@/components/sessions/agentInput/agentInputContracts';
 import { listAgentInputActionChipActionIds } from '@/components/sessions/agentInput/sessionActions/listAgentInputActionChipActionIds';

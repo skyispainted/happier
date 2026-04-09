@@ -1,4 +1,4 @@
-import { SessionMcpSelectionV1Schema, isBuiltInAgentTarget } from '@happier-dev/protocol';
+import { SessionMcpSelectionV1Schema, isBuiltInAgentTarget } from '@ks-happier/protocol';
 
 import { getModelOverrideForSpawn } from '@/sync/domains/models/modelOverride';
 import { getPermissionModeOverrideForSpawn } from '@/sync/domains/permissions/permissionModeOverride';

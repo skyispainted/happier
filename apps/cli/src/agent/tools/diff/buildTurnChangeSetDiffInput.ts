@@ -1,5 +1,5 @@
-import type { TurnChangeSet } from '@happier-dev/protocol';
-import type { ToolNormalizationProtocol } from '@happier-dev/protocol';
+import type { TurnChangeSet } from '@ks-happier/protocol';
+import type { ToolNormalizationProtocol } from '@ks-happier/protocol';
 
 import { buildSessionChangeToolMetadata } from './sessionChangeToolMetadata';
 

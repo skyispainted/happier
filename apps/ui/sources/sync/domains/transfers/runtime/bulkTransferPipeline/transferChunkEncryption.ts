@@ -3,7 +3,7 @@ import {
     deriveBoxPublicKeyFromSeed,
     openEncryptedDataKeyEnvelopeV1,
     sealEncryptedDataKeyEnvelopeV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { decodeBase64, encodeBase64 } from '@/encryption/base64';
 import { getRandomBytes } from '@/platform/cryptoRandom';

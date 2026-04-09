@@ -31,22 +31,22 @@ describe('resolveCliTestLaunchSpec', () => {
       mkdirSync(resolve(repoRoot, 'apps', 'cli', 'scripts'), { recursive: true });
       mkdirSync(resolve(repoRoot, 'apps', 'cli', 'tools'), { recursive: true });
       mkdirSync(resolve(repoRoot, 'apps', 'cli', 'bin'), { recursive: true });
-      mkdirSync(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'release-runtime'), { recursive: true });
+      mkdirSync(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'release-runtime'), { recursive: true });
       mkdirSync(resolve(repoRoot, 'packages', 'release-runtime', 'dist'), { recursive: true });
       mkdirSync(resolve(repoRoot, '.project'), { recursive: true });
 
       writeFileSync(resolve(repoRoot, 'package.json'), JSON.stringify({ name: 'repo', private: true }), 'utf8');
-      writeFileSync(resolve(repoRoot, 'apps', 'cli', 'package.json'), JSON.stringify({ name: '@happier-dev/cli' }), 'utf8');
+      writeFileSync(resolve(repoRoot, 'apps', 'cli', 'package.json'), JSON.stringify({ name: '@ks-happier/cli' }), 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'tsconfig.json'), '{}', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'src', 'index.ts'), 'export const ok = true;\n', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'scripts', 'claude_launcher_runtime.cjs'), 'module.exports = {};\n', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'tools', 'launch-helper.txt'), 'tools\n', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'bin', 'launch-helper.txt'), 'bin\n', 'utf8');
       writeFileSync(
-        resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'release-runtime', 'package.json'),
+        resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'release-runtime', 'package.json'),
         JSON.stringify(
           {
-            name: '@happier-dev/release-runtime',
+            name: '@ks-happier/release-runtime',
             version: '0.0.0',
             type: 'module',
             main: './dist/index.js',
@@ -62,16 +62,16 @@ describe('resolveCliTestLaunchSpec', () => {
       );
       writeFileSync(
         resolve(repoRoot, 'packages', 'release-runtime', 'package.json'),
-        JSON.stringify({ name: '@happier-dev/release-runtime' }),
+        JSON.stringify({ name: '@ks-happier/release-runtime' }),
         'utf8',
       );
 
       sharedDepsBuildMock.ensureCliSharedDepsBuilt.mockImplementationOnce(async () => {
-        mkdirSync(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'release-runtime', 'dist'), {
+        mkdirSync(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'release-runtime', 'dist'), {
           recursive: true,
         });
         writeFileSync(
-          resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'release-runtime', 'dist', 'github.js'),
+          resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'release-runtime', 'dist', 'github.js'),
           'export const live = true;\n',
           'utf8',
         );
@@ -100,7 +100,7 @@ describe('resolveCliTestLaunchSpec', () => {
       expect(existsSync(resolve(snapshotDir, 'scripts', 'claude_launcher_runtime.cjs'))).toBe(true);
       expect(existsSync(resolve(snapshotDir, 'tools', 'launch-helper.txt'))).toBe(true);
       expect(existsSync(resolve(snapshotDir, 'bin', 'launch-helper.txt'))).toBe(true);
-      expect(existsSync(resolve(snapshotDir, 'node_modules', '@happier-dev', 'release-runtime', 'dist', 'github.js'))).toBe(true);
+      expect(existsSync(resolve(snapshotDir, 'node_modules', '@ks-happier', 'release-runtime', 'dist', 'github.js'))).toBe(true);
       const nodeModulesEntry = lstatSync(resolve(snapshotDir, 'node_modules'));
       expect(nodeModulesEntry.isSymbolicLink() || nodeModulesEntry.isDirectory()).toBe(true);
       expect(spec.env?.TSX_TSCONFIG_PATH).toBe(resolve(snapshotDir, 'tsconfig.json'));
@@ -118,21 +118,21 @@ describe('resolveCliTestLaunchSpec', () => {
       mkdirSync(resolve(repoRoot, 'apps', 'cli', 'scripts'), { recursive: true });
       mkdirSync(resolve(repoRoot, 'apps', 'cli', 'tools'), { recursive: true });
       mkdirSync(resolve(repoRoot, 'apps', 'cli', 'bin'), { recursive: true });
-      mkdirSync(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'release-runtime', 'dist'), { recursive: true });
+      mkdirSync(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'release-runtime', 'dist'), { recursive: true });
       mkdirSync(resolve(repoRoot, 'packages', 'release-runtime', 'dist'), { recursive: true });
 
       writeFileSync(resolve(repoRoot, 'package.json'), JSON.stringify({ name: 'repo', private: true }), 'utf8');
-      writeFileSync(resolve(repoRoot, 'apps', 'cli', 'package.json'), JSON.stringify({ name: '@happier-dev/cli' }), 'utf8');
+      writeFileSync(resolve(repoRoot, 'apps', 'cli', 'package.json'), JSON.stringify({ name: '@ks-happier/cli' }), 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'tsconfig.json'), '{}', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'src', 'index.ts'), 'export const ok = true;\n', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'scripts', 'claude_launcher_runtime.cjs'), 'module.exports = {};\n', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'tools', 'launch-helper.txt'), 'tools\n', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'bin', 'launch-helper.txt'), 'bin\n', 'utf8');
       writeFileSync(
-        resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'release-runtime', 'package.json'),
+        resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'release-runtime', 'package.json'),
         JSON.stringify(
           {
-            name: '@happier-dev/release-runtime',
+            name: '@ks-happier/release-runtime',
             version: '0.0.0',
             type: 'module',
             main: './dist/index.js',
@@ -147,10 +147,10 @@ describe('resolveCliTestLaunchSpec', () => {
       );
       writeFileSync(
         resolve(repoRoot, 'packages', 'release-runtime', 'package.json'),
-        JSON.stringify({ name: '@happier-dev/release-runtime' }),
+        JSON.stringify({ name: '@ks-happier/release-runtime' }),
         'utf8',
       );
-      writeFileSync(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@happier-dev', 'release-runtime', 'dist', 'index.js'), 'export {};\n', 'utf8');
+      writeFileSync(resolve(repoRoot, 'apps', 'cli', 'node_modules', '@ks-happier', 'release-runtime', 'dist', 'index.js'), 'export {};\n', 'utf8');
 
       sharedDepsBuildMock.ensureCliSharedDepsBuilt.mockClear();
 
@@ -189,7 +189,7 @@ describe('resolveCliTestLaunchSpec', () => {
       mkdirSync(resolve(repoRoot, 'apps', 'cli', 'node_modules'), { recursive: true });
 
       writeFileSync(resolve(repoRoot, 'package.json'), JSON.stringify({ name: 'repo', private: true }), 'utf8');
-      writeFileSync(resolve(repoRoot, 'apps', 'cli', 'package.json'), JSON.stringify({ name: '@happier-dev/cli' }), 'utf8');
+      writeFileSync(resolve(repoRoot, 'apps', 'cli', 'package.json'), JSON.stringify({ name: '@ks-happier/cli' }), 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'tsconfig.json'), '{}', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'src', 'index.ts'), 'export const ok = true;\n', 'utf8');
       writeFileSync(resolve(repoRoot, 'apps', 'cli', 'scripts', 'claude_launcher_runtime.cjs'), 'module.exports = {};\n', 'utf8');

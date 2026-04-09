@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
-import { SOCKET_RPC_EVENTS } from '@happier-dev/protocol/socketRpc';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
+import { SOCKET_RPC_EVENTS } from '@ks-happier/protocol/socketRpc';
 import { ApiSessionClient } from './session/sessionClient';
 import type { RawJSONLines } from '@/backends/claude/types';
 import { decodeBase64, decrypt, encodeBase64, encrypt } from './encryption';
@@ -44,7 +44,7 @@ vi.mock('./session/connection/createSessionSocketTransport', () => ({
     }),
 }));
 
-vi.mock('@happier-dev/connection-supervisor', () => ({
+vi.mock('@ks-happier/connection-supervisor', () => ({
     DEFAULT_MANAGED_CONNECTION_POLICY: {},
     createManagedConnectionSupervisor: (params: {
         createTransport: () => unknown;

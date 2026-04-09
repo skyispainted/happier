@@ -7,7 +7,7 @@ import { connectRoutes } from "./connectRoutes";
 import { auth } from "@/app/auth/auth";
 import { createAppCloseTracker } from "../../testkit/appLifecycle";
 import tweetnacl from "tweetnacl";
-import { openBoxBundle } from "@happier-dev/protocol";
+import { openBoxBundle } from "@ks-happier/protocol";
 
 const { trackApp, closeTrackedApps } = createAppCloseTracker();
 

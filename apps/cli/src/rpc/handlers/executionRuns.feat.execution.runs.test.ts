@@ -6,8 +6,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { AgentBackend, AgentMessage, AgentMessageHandler, SessionId } from '@/agent/core/AgentBackend';
 import type { ACPMessageData } from '@/api/session/sessionMessageTypes';
-import { FeaturesResponseSchema, type ExecutionRunPublicState, type ExecutionRunStartResponse } from '@happier-dev/protocol';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { FeaturesResponseSchema, type ExecutionRunPublicState, type ExecutionRunStartResponse } from '@ks-happier/protocol';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 import type { CliServerFeaturesSnapshot } from '@/features/serverFeaturesClient';
 
 import { createEncryptedRpcTestClient } from './encryptedRpc.testkit';

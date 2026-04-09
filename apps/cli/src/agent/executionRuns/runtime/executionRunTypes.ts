@@ -1,4 +1,4 @@
-import type { BackendTargetRefV1, ExecutionRunDisplay, ExecutionRunIntent, ExecutionRunResumeHandle } from '@happier-dev/protocol';
+import type { BackendTargetRefV1, ExecutionRunDisplay, ExecutionRunIntent, ExecutionRunResumeHandle } from '@ks-happier/protocol';
 
 import type { ExecutionRunStructuredMeta } from '@/agent/executionRuns/profiles/ExecutionRunIntentProfile';
 

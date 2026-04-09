@@ -6,7 +6,7 @@ import {
     SESSION_CONFIG_OPTIONS_STATE_KEY,
     SESSION_MODELS_STATE_KEY,
     SESSION_MODES_STATE_KEY,
-} from '@happier-dev/agents';
+} from '@ks-happier/agents';
 
 import { createTempDir, removeTempDir } from '@/testkit/fs/tempDir';
 

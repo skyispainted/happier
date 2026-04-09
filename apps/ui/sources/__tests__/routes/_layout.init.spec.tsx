@@ -1,6 +1,6 @@
 import React from 'react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { PUSH_NOTIFICATION_ANDROID_CHANNEL_IDS } from '@happier-dev/protocol';
+import { PUSH_NOTIFICATION_ANDROID_CHANNEL_IDS } from '@ks-happier/protocol';
 import type { RenderScreenResult } from '@/dev/testkit';
 import { installRouteRootCommonModuleMocks } from './routeRootTestHelpers';
 

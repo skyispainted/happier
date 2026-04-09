@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { buildCodexAgentRuntimeDescriptor, type CodexBackendMode } from '@happier-dev/agents';
+import { buildCodexAgentRuntimeDescriptor, type CodexBackendMode } from '@ks-happier/agents';
 import {
     AgentRuntimeDescriptorV1Schema,
     BackendTargetRefSchema,
@@ -9,7 +9,7 @@ import {
     type AgentRuntimeDescriptorV1,
     type BackendTargetRefV1,
     type SessionAuthoringValueV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { isPermissionMode, type PermissionMode } from '../../permissions/permissionTypes';
 
 import { buildCodexBackendTransportFields, type CodexBackendTransportFields } from '../codexBackendTransport';

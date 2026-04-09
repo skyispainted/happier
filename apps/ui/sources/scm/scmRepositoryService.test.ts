@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import type { ScmWorkingSnapshot as ProtocolScmWorkingSnapshot } from '@happier-dev/protocol';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+import type { ScmWorkingSnapshot as ProtocolScmWorkingSnapshot } from '@ks-happier/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 import { sessionScmStatusSnapshot } from '@/sync/ops';
 import { machineScmStatusSnapshot } from '@/sync/ops/scm/machineScm';
 import { storage } from '@/sync/domains/state/storage';

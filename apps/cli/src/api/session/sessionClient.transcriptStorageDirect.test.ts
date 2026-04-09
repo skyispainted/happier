@@ -7,7 +7,7 @@ import {
   createApiSessionSocketStub,
   flushApiSessionClientMessageCommitQueue,
 } from '@/testkit/backends/apiSessionSocketHarness';
-import { SESSION_RPC_METHODS } from '@happier-dev/protocol/rpc';
+import { SESSION_RPC_METHODS } from '@ks-happier/protocol/rpc';
 
 let sessionSocketStub: ApiSessionSocketStub | null = null;
 let userSocketStub: ApiSessionSocketStub | null = null;
@@ -46,7 +46,7 @@ vi.mock('./connection/createSessionSocketTransport', () => ({
   },
 }));
 
-vi.mock('@happier-dev/connection-supervisor', () => ({
+vi.mock('@ks-happier/connection-supervisor', () => ({
   DEFAULT_MANAGED_CONNECTION_POLICY: {},
   createManagedConnectionSupervisor: (params: { createTransport: () => unknown; onConnected?: () => Promise<void> | void }) => ({
     start: async () => {

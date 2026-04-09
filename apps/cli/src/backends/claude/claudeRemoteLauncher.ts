@@ -42,8 +42,8 @@ import { tryReadTextFileTail } from '@/agent/runtime/readTextFileTail';
 import { readClaudeSessionJsonlMessages } from './utils/readClaudeSessionJsonlMessages';
 import { normalizeClaudeToolUseNamesInRawJsonLines } from './utils/normalizeClaudeToolUseNames';
 import { CHANGE_TITLE_INSTRUCTION } from '@/agent/runtime/changeTitleInstruction';
-import { CHANGE_TITLE_TOOL_NAME_ALIASES } from '@happier-dev/protocol/tools/v2';
-import type { AccountSettings } from '@happier-dev/protocol';
+import { CHANGE_TITLE_TOOL_NAME_ALIASES } from '@ks-happier/protocol/tools/v2';
+import type { AccountSettings } from '@ks-happier/protocol';
 import { buildTurnChangeSetDiffInput } from '@/agent/tools/diff/buildTurnChangeSetDiffInput';
 import { ClaudeTurnChangeTracker } from './utils/ClaudeTurnChangeTracker';
 import { isClaudeExplicitDiffToolInput } from './utils/isClaudeExplicitDiffToolInput';
@@ -1123,4 +1123,4 @@ export async function claudeRemoteLauncher(session: Session): Promise<'switch' |
 
     return exitReason || 'exit';
 }
-import { isGenericSubAgentToolName } from '@happier-dev/protocol/tools/v2';
+import { isGenericSubAgentToolName } from '@ks-happier/protocol/tools/v2';

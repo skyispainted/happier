@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { ParticipantRecipientV1 } from '@happier-dev/protocol';
+import type { ParticipantRecipientV1 } from '@ks-happier/protocol';
 import type { SessionParticipantTarget } from '@/sync/domains/session/participants/participantTargets';
 import type { DeferredPromise } from './testUtils/deferredPromise';
 import { createDeferredPromise } from './testUtils/deferredPromise';

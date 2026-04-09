@@ -3,7 +3,7 @@ import type { ExecutionRunController, ExecutionRunVoiceAgentController } from '@
 import { VoiceAgentManager } from '@/agent/voice/agent/VoiceAgentManager';
 import type { ExecutionRunState } from '@/agent/executionRuns/runtime/executionRunTypes';
 import type { ExecutionBudgetRegistry } from '@/daemon/executionBudget/ExecutionBudgetRegistry';
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
 import { resumeBackendControllerForResumableRun } from '@/agent/executionRuns/runtime/resumeBackendController';
 import type { ACPMessageData, ACPProvider } from '@/api/session/sessionMessageTypes';
 import type { StreamedTranscriptWriterSession } from '@/api/session/streamedTranscriptWriter';

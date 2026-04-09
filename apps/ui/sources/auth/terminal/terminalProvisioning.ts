@@ -1,6 +1,6 @@
 import {
     sealTerminalProvisioningV2Payload,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { decodeBase64 } from '@/encryption/base64';
 import { encryptBox } from '@/encryption/libsodium';

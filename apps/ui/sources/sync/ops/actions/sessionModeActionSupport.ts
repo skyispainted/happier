@@ -1,5 +1,5 @@
-import type { ResolvedActionOption } from '@happier-dev/protocol';
-import { DEFAULT_AGENT_ID, resolveAgentIdFromFlavor } from '@happier-dev/agents';
+import type { ResolvedActionOption } from '@ks-happier/protocol';
+import { DEFAULT_AGENT_ID, resolveAgentIdFromFlavor } from '@ks-happier/agents';
 
 import {
   computeSessionModePickerControl,

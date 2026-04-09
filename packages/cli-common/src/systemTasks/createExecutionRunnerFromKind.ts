@@ -1,6 +1,6 @@
 import {
   type SystemTaskJsonValue,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { type InteractiveSystemTaskKind, buildPromptEventData } from './interactiveTaskKinds.js';
 import { SystemTaskExecutionError, type SystemTaskExecutionRunner } from './runSystemTask.js';

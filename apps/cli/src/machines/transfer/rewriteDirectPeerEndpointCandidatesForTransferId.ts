@@ -1,4 +1,4 @@
-import type { TransferEndpointCandidate } from '@happier-dev/protocol';
+import type { TransferEndpointCandidate } from '@ks-happier/protocol';
 
 export function rewriteDirectPeerEndpointCandidatesForTransferId(input: Readonly<{
   endpointCandidates: readonly TransferEndpointCandidate[];

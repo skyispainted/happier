@@ -1,1 +1,1 @@
-export { renderWindowsScheduledTaskWrapperPs1 } from '@happier-dev/cli-common/service';
+export { renderWindowsScheduledTaskWrapperPs1 } from '@ks-happier/cli-common/service';

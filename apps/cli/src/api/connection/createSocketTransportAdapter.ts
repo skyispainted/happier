@@ -1,4 +1,4 @@
-import type { ManagedConnectionTransport, TransportDisconnectEvent } from '@happier-dev/connection-supervisor';
+import type { ManagedConnectionTransport, TransportDisconnectEvent } from '@ks-happier/connection-supervisor';
 
 /**
  * Minimal socket shape required by the transport adapter.

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 
-test('dev-box Dockerfile includes CLI workspace deps (avoid fetching internal @happier-dev/* from npm)', () => {
+test('dev-box Dockerfile includes CLI workspace deps (avoid fetching internal @ks-happier/* from npm)', () => {
   const repoRoot = process.cwd();
   const dockerfilePath = path.join(repoRoot, 'docker', 'dev-box', 'Dockerfile');
   const raw = fs.readFileSync(dockerfilePath, 'utf8');

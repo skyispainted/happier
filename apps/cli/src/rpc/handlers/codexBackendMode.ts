@@ -1,8 +1,8 @@
-import type { CodexBackendMode } from '@happier-dev/agents';
+import type { CodexBackendMode } from '@ks-happier/agents';
 import {
   normalizeCodexBackendMode,
   readCanonicalAgentRuntimeDescriptorV1ForProvider,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 export function resolveCanonicalCodexBackendMode(params: Readonly<{
     codexBackendMode?: unknown;

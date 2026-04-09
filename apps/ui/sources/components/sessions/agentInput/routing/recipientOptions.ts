@@ -1,4 +1,4 @@
-import type { ParticipantRecipientV1 } from '@happier-dev/protocol';
+import type { ParticipantRecipientV1 } from '@ks-happier/protocol';
 
 import { t } from '@/text';
 import type { SessionParticipantTarget } from '@/sync/domains/session/participants/participantTargets';

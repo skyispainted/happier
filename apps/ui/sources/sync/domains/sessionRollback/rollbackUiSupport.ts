@@ -1,7 +1,7 @@
 import type { Message } from '@/sync/domains/messages/messageTypes';
 import type { Session } from '@/sync/domains/state/storageTypes';
-import { evaluateAgentSessionCapabilitySupport, inferAgentIdFromSessionMetadata } from '@happier-dev/agents';
-import { readSessionRollbackRangesV1FromMetadata, type SessionRollbackTarget } from '@happier-dev/protocol';
+import { evaluateAgentSessionCapabilitySupport, inferAgentIdFromSessionMetadata } from '@ks-happier/agents';
+import { readSessionRollbackRangesV1FromMetadata, type SessionRollbackTarget } from '@ks-happier/protocol';
 
 export type TranscriptRollbackAction = Readonly<{
     target: SessionRollbackTarget;

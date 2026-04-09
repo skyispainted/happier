@@ -1,5 +1,5 @@
-import type { ScmOperationErrorCode } from '@happier-dev/protocol';
-import { SCM_OPERATION_ERROR_CODES } from '@happier-dev/protocol';
+import type { ScmOperationErrorCode } from '@ks-happier/protocol';
+import { SCM_OPERATION_ERROR_CODES } from '@ks-happier/protocol';
 
 import { showDaemonUnavailableAlert } from '@/utils/errors/daemonUnavailableAlert';
 

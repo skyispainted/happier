@@ -3,8 +3,8 @@ import {
   AcpConfigOptionOverridesV1Schema,
   AcpSessionModeOverrideV1Schema,
   ModelOverrideV1Schema,
-} from '@happier-dev/protocol';
-import { resolveMetadataStringOverrideV1, resolvePermissionIntentFromSessionMetadata } from '@happier-dev/agents';
+} from '@ks-happier/protocol';
+import { resolveMetadataStringOverrideV1, resolvePermissionIntentFromSessionMetadata } from '@ks-happier/agents';
 
 type ForkInheritedSpawnOverrides = {
   permissionMode?: PermissionMode;

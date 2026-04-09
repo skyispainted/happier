@@ -31,17 +31,17 @@ function createExitMock() {
 describe('resolveRuntimeEntrypointPath', () => {
   it('resolves a dist entrypoint under runtime/node_modules', () => {
     expect(
-      resolveRuntimeEntrypointPath({ homeDir: '/home/x/.happier', packageName: '@happier-dev/cli' }),
-    ).toBe('/home/x/.happier/runtime/node_modules/@happier-dev/cli/dist/index.mjs');
+      resolveRuntimeEntrypointPath({ homeDir: '/home/x/.happier', packageName: '@ks-happier/cli' }),
+    ).toBe('/home/x/.happier/runtime/node_modules/@ks-happier/cli/dist/index.mjs');
   });
 
   it('scopes runtime entrypoints by public release ring for side-by-side installs', () => {
     expect(
-      resolveRuntimeEntrypointPath({ homeDir: '/home/x/.happier', packageName: '@happier-dev/cli', publicReleaseRing: 'publicdev' }),
-    ).toBe('/home/x/.happier/runtime.dev/node_modules/@happier-dev/cli/dist/index.mjs');
+      resolveRuntimeEntrypointPath({ homeDir: '/home/x/.happier', packageName: '@ks-happier/cli', publicReleaseRing: 'publicdev' }),
+    ).toBe('/home/x/.happier/runtime.dev/node_modules/@ks-happier/cli/dist/index.mjs');
     expect(
-      resolveRuntimeEntrypointPath({ homeDir: '/home/x/.happier', packageName: '@happier-dev/cli', publicReleaseRing: 'preview' }),
-    ).toBe('/home/x/.happier/runtime.preview/node_modules/@happier-dev/cli/dist/index.mjs');
+      resolveRuntimeEntrypointPath({ homeDir: '/home/x/.happier', packageName: '@ks-happier/cli', publicReleaseRing: 'preview' }),
+    ).toBe('/home/x/.happier/runtime.preview/node_modules/@ks-happier/cli/dist/index.mjs');
   });
 
   it('throws when packageName is empty', () => {
@@ -55,13 +55,13 @@ describe('maybeReexecToRuntime', () => {
   it('execs into the runtime entrypoint when present and not already reexeced', async () => {
     const exec = vi.fn();
     const exit = createExitMock();
-    const exists = (path: string) => path.endsWith('/runtime/node_modules/@happier-dev/cli/dist/index.mjs');
+    const exists = (path: string) => path.endsWith('/runtime/node_modules/@ks-happier/cli/dist/index.mjs');
     const readVersion = (path: string) => (path.includes('/runtime/') ? '9.9.9' : '1.0.0');
 
     await maybeReexecToRuntime({
       cliRootDir: '/repo/apps/cli',
       homeDir: '/home/x/.happier',
-      packageName: '@happier-dev/cli',
+      packageName: '@ks-happier/cli',
       argv: ['self', 'check'],
       env: {},
       exec,
@@ -73,7 +73,7 @@ describe('maybeReexecToRuntime', () => {
     expect(ensureJavaScriptRuntimeExecutableMock).toHaveBeenCalledWith({ isBunRuntime: false });
     expect(exec).toHaveBeenCalledWith(
       process.execPath,
-      expect.arrayContaining(['/home/x/.happier/runtime/node_modules/@happier-dev/cli/dist/index.mjs', 'self', 'check']),
+      expect.arrayContaining(['/home/x/.happier/runtime/node_modules/@ks-happier/cli/dist/index.mjs', 'self', 'check']),
       expect.any(Object),
     );
     expect(exit).toHaveBeenCalledWith(0);
@@ -81,13 +81,13 @@ describe('maybeReexecToRuntime', () => {
 
   it('does not exec into runtime when runtime version is not newer', async () => {
     const exec = vi.fn();
-    const exists = (path: string) => path.endsWith('/runtime/node_modules/@happier-dev/cli/dist/index.mjs');
+    const exists = (path: string) => path.endsWith('/runtime/node_modules/@ks-happier/cli/dist/index.mjs');
     const readVersion = (path: string) => (path.includes('/runtime/') ? '1.0.0' : '9.9.9');
 
     await maybeReexecToRuntime({
       cliRootDir: '/repo/apps/cli',
       homeDir: '/home/x/.happier',
-      packageName: '@happier-dev/cli',
+      packageName: '@ks-happier/cli',
       argv: ['self', 'check'],
       env: {},
       exec,
@@ -106,13 +106,13 @@ describe('maybeReexecToRuntime', () => {
       throw err;
     });
     const exit = createExitMock();
-    const exists = (path: string) => path.endsWith('/runtime/node_modules/@happier-dev/cli/dist/index.mjs');
+    const exists = (path: string) => path.endsWith('/runtime/node_modules/@ks-happier/cli/dist/index.mjs');
     const readVersion = (path: string) => (path.includes('/runtime/') ? '9.9.9' : '1.0.0');
 
     await maybeReexecToRuntime({
       cliRootDir: '/repo/apps/cli',
       homeDir: '/home/x/.happier',
-      packageName: '@happier-dev/cli',
+      packageName: '@ks-happier/cli',
       argv: ['self', 'check'],
       env: {},
       exec,
@@ -127,7 +127,7 @@ describe('maybeReexecToRuntime', () => {
   it('uses the ensured JavaScript runtime instead of process.execPath under Bun', async () => {
     const exec = vi.fn();
     const exit = createExitMock();
-    const exists = (path: string) => path.endsWith('/runtime/node_modules/@happier-dev/cli/dist/index.mjs');
+    const exists = (path: string) => path.endsWith('/runtime/node_modules/@ks-happier/cli/dist/index.mjs');
     const readVersion = (path: string) => (path.includes('/runtime/') ? '9.9.9' : '1.0.0');
     isBunMock.mockReturnValue(true);
     ensureJavaScriptRuntimeExecutableMock.mockResolvedValue('/managed/js-runtime');
@@ -135,7 +135,7 @@ describe('maybeReexecToRuntime', () => {
     await maybeReexecToRuntime({
       cliRootDir: '/repo/apps/cli',
       homeDir: '/home/x/.happier',
-      packageName: '@happier-dev/cli',
+      packageName: '@ks-happier/cli',
       argv: ['self', 'check'],
       env: {},
       exec,
@@ -147,7 +147,7 @@ describe('maybeReexecToRuntime', () => {
     expect(ensureJavaScriptRuntimeExecutableMock).toHaveBeenCalledWith({ isBunRuntime: true });
     expect(exec).toHaveBeenCalledWith(
       '/managed/js-runtime',
-      expect.arrayContaining(['/home/x/.happier/runtime/node_modules/@happier-dev/cli/dist/index.mjs', 'self', 'check']),
+      expect.arrayContaining(['/home/x/.happier/runtime/node_modules/@ks-happier/cli/dist/index.mjs', 'self', 'check']),
       expect.any(Object),
     );
     expect(exit).toHaveBeenCalledWith(0);
@@ -156,7 +156,7 @@ describe('maybeReexecToRuntime', () => {
   it('fails closed when bun cannot resolve a JavaScript runtime for reexec', async () => {
     const exec = vi.fn();
     const exit = createExitMock();
-    const exists = (path: string) => path.endsWith('/runtime/node_modules/@happier-dev/cli/dist/index.mjs');
+    const exists = (path: string) => path.endsWith('/runtime/node_modules/@ks-happier/cli/dist/index.mjs');
     const readVersion = (path: string) => (path.includes('/runtime/') ? '9.9.9' : '1.0.0');
     isBunMock.mockReturnValue(true);
     ensureJavaScriptRuntimeExecutableMock.mockResolvedValue(null);
@@ -164,7 +164,7 @@ describe('maybeReexecToRuntime', () => {
     await maybeReexecToRuntime({
       cliRootDir: '/repo/apps/cli',
       homeDir: '/home/x/.happier',
-      packageName: '@happier-dev/cli',
+      packageName: '@ks-happier/cli',
       argv: ['self', 'check'],
       env: {},
       exec,

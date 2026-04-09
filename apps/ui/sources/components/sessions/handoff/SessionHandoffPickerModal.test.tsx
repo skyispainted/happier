@@ -45,7 +45,7 @@ function findElementByTestId(node: React.ReactNode, testID: string): React.React
     return findElementByTestId(props.children, testID);
 }
 
-vi.mock('@happier-dev/protocol', () => ({
+vi.mock('@ks-happier/protocol', () => ({
     getActionSpec: () => ({ id: 'session.handoff', title: 'session.handoff.title', description: 'session.handoff.description' }),
     evaluateSessionHandoffWorkspaceTransferSourcePathSafety: (params: {
         sourcePath?: string;

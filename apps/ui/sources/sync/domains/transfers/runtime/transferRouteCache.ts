@@ -1,10 +1,10 @@
-import type { TransferEndpointCandidate } from '@happier-dev/protocol';
+import type { TransferEndpointCandidate } from '@ks-happier/protocol';
 import {
     createMachineTransferRouteCache,
     DEFAULT_MACHINE_TRANSFER_ROUTE_CACHE_NEGATIVE_TTL_MS,
     DEFAULT_MACHINE_TRANSFER_ROUTE_CACHE_POSITIVE_TTL_MS,
     type TransferRouteViabilityRecord,
-} from '@happier-dev/transfers';
+} from '@ks-happier/transfers';
 
 const DEFAULT_SERVER_SCOPE_ID = '__default__';
 

@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useUnistyles } from 'react-native-unistyles';
 
-import { getBuiltInAcpConfig, type AgentId } from '@happier-dev/agents';
+import { getBuiltInAcpConfig, type AgentId } from '@ks-happier/agents';
 
 import { getAgentCore } from '@/agents/catalog/catalog';
 import { Item } from '@/components/ui/lists/Item';

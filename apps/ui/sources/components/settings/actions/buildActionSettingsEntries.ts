@@ -2,7 +2,7 @@ import {
     listActionSpecs,
     type ActionId,
     type ActionsSettingsV1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import {
     getActionSettingsTargetContext,

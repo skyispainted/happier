@@ -8,7 +8,7 @@ import { ItemGroup } from '@/components/ui/lists/ItemGroup';
 import { Text } from '@/components/ui/text/Text';
 import { resolveConnectedServiceProfileLabel, connectedServiceProfileKey } from '@/sync/domains/connectedServices/connectedServiceProfilePreferences';
 import { computeConnectedServiceQuotaSummaryBadges } from '@/sync/domains/connectedServices/connectedServiceQuotaBadges';
-import type { ConnectedServiceId, ConnectedServiceQuotaSnapshotV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceId, ConnectedServiceQuotaSnapshotV1 } from '@ks-happier/protocol';
 import { t } from '@/text';
 
 import { ConnectedServiceQuotaBadgesView } from '../ConnectedServiceQuotaBadgesView';

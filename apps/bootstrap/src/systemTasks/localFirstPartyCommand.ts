@@ -7,9 +7,9 @@ import {
   resolveInstalledFirstPartyComponentPaths,
   type FirstPartyComponentId,
   type PreparedFirstPartyComponentPayload,
-} from '@happier-dev/cli-common/firstPartyRuntime';
-import { SystemTaskExecutionError } from '@happier-dev/cli-common/systemTasks';
-import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings';
+} from '@ks-happier/cli-common/firstPartyRuntime';
+import { SystemTaskExecutionError } from '@ks-happier/cli-common/systemTasks';
+import type { PublicReleaseRingId } from '@ks-happier/release-runtime/releaseRings';
 
 export function resolveExplicitOrInstalledLocalFirstPartyCommand(params: Readonly<{
   componentId: FirstPartyComponentId;

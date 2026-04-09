@@ -11,7 +11,7 @@ import { fetchAccountEncryptionMode } from '@/sync/api/account/apiAccountEncrypt
 import { getConnectedServiceQuotaSnapshotSealed, requestConnectedServiceQuotaSnapshotRefresh } from '@/sync/api/account/apiConnectedServicesQuotasV2';
 import { getConnectedServiceQuotaSnapshotPlain, requestConnectedServiceQuotaSnapshotRefreshV3 } from '@/sync/api/account/apiConnectedServicesQuotasV3';
 import { openConnectedServiceQuotaSnapshot } from '@/sync/domains/connectedServices/openConnectedServiceQuotaSnapshot';
-import type { ConnectedServiceId, ConnectedServiceQuotaSnapshotV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceId, ConnectedServiceQuotaSnapshotV1 } from '@ks-happier/protocol';
 import { t } from '@/text';
 
 import { ConnectedServiceQuotaMeterRow } from './ConnectedServiceQuotaMeterRow';

@@ -4,7 +4,7 @@ import { inTx, type Tx } from "@/storage/inTx";
 import { isPrismaErrorCode } from "@/storage/prisma";
 import { log } from "@/utils/logging/log";
 import { readEncryptionFeatureEnv } from "@/app/features/catalog/readFeatureEnv";
-import { isStoredContentKindAllowedForSessionByStoragePolicy, type SessionStoredContentKind } from "@happier-dev/protocol";
+import { isStoredContentKindAllowedForSessionByStoragePolicy, type SessionStoredContentKind } from "@ks-happier/protocol";
 import { resolveEncryptionWriteRejectionCode, type EncryptionPolicyRejectionCode } from "@/app/session/encryptionRejectionCodes";
 import { isDeepStrictEqual } from "node:util";
 import { parseSessionMessageSidechainId } from "./parseSessionMessageSidechainId";

@@ -1,4 +1,4 @@
-import type { ConnectedServiceCredentialRecordV1 } from '@happier-dev/protocol';
+import type { ConnectedServiceCredentialRecordV1 } from '@ks-happier/protocol';
 
 export type ConnectedServiceOauthCredentialRecord = ConnectedServiceCredentialRecordV1 & { kind: 'oauth' };
 export type ConnectedServiceOauthCredentialRecordWithExpiry = ConnectedServiceOauthCredentialRecord & { expiresAt: number };

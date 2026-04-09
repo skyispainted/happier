@@ -76,7 +76,7 @@ test('npm-e2e-smoke phase1 supervisor detection uses wide ps output (avoids trun
   assert.match(
     raw,
     /ps\s+-eo\s+pid,args\s+-ww/,
-    'expected phase1 supervisor detection to use ps -ww so the @happier-dev/stack/scripts/run.mjs path is not truncated'
+    'expected phase1 supervisor detection to use ps -ww so the @ks-happier/stack/scripts/run.mjs path is not truncated'
   );
 });
 
@@ -346,12 +346,12 @@ test('release binary scripts load cli-common artifact builders through the lazy 
 
   assert.doesNotMatch(
     cliBuildRaw,
-    /@happier-dev\/cli-common\/componentArtifacts/,
+    /@ks-happier\/cli-common\/componentArtifacts/,
     'expected build-cli-binaries to avoid direct cli-common dist imports'
   );
   assert.doesNotMatch(
     serverBuildRaw,
-    /@happier-dev\/cli-common\/componentArtifacts/,
+    /@ks-happier\/cli-common\/componentArtifacts/,
     'expected build-server-binaries to avoid direct cli-common dist imports'
   );
   assert.match(
@@ -404,8 +404,8 @@ test('remote install shims keep npm cache bounded across repeated setup runs', a
   );
   assert.match(
     hostSystemdRaw,
-    /rm -rf "\$prefix\/lib\/node_modules\/@happier-dev\/cli"/,
-    'expected remote systemd install shim to remove existing @happier-dev/cli before reinstall'
+    /rm -rf "\$prefix\/lib\/node_modules\/@ks-happier\/cli"/,
+    'expected remote systemd install shim to remove existing @ks-happier/cli before reinstall'
   );
 });
 

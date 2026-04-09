@@ -1,4 +1,4 @@
-import { readAcpConfiguredBackendV1FromMetadata, type BackendTargetRefV1 } from '@happier-dev/protocol';
+import { readAcpConfiguredBackendV1FromMetadata, type BackendTargetRefV1 } from '@ks-happier/protocol';
 
 import { DEFAULT_AGENT_ID, resolveAgentIdFromFlavor, type AgentId } from '@/agents/catalog/catalog';
 import type { Session } from '@/sync/domains/state/storageTypes';

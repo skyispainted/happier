@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { randomUUID } from 'node:crypto';
 
-import { SessionRollbackRpcResultSchema, readSessionRollbackRangesV1FromMetadata } from '@happier-dev/protocol';
+import { SessionRollbackRpcResultSchema, readSessionRollbackRangesV1FromMetadata } from '@ks-happier/protocol';
 
 import {
   readFakeCodexAppServerRequestLog,

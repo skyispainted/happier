@@ -9,7 +9,7 @@ import {
     type CompletedConversationTurn,
     type SessionRollbackRpcParams,
     type SessionRollbackRpcResult,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 import { TurnChangeSetCollector } from '@/agent/tools/diff/turnChangeSetCollector';
 import { emitCanonicalTurnDiffTool } from '@/agent/runtime/emitCanonicalTurnDiffTool';
 import { logger } from '@/ui/logger';

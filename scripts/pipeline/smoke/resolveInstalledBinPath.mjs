@@ -15,7 +15,7 @@ export function resolveInstalledBinPath(prefixDir, options = {}) {
     path.join(prefixDir, exe),
     path.join(prefixDir, 'node_modules', '.bin', exe),
     path.join(prefixDir, 'lib', 'node_modules', '.bin', exe),
-    path.join(prefixDir, 'lib', 'node_modules', '@happier-dev', 'cli', 'bin', platform === 'win32' ? 'happier.mjs' : 'happier.mjs'),
+    path.join(prefixDir, 'lib', 'node_modules', '@ks-happier', 'cli', 'bin', platform === 'win32' ? 'happier.mjs' : 'happier.mjs'),
   ];
 
   for (const candidate of candidates) {

@@ -238,7 +238,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('starts the local system task flow and renders task progress after the entry row is pressed', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const taskIdByKind = new Map<string, string>();
@@ -292,7 +292,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('treats a not_authenticated local setup result as a guided follow-up instead of a hard failure', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const taskIdByKind = new Map<string, string>();
@@ -385,7 +385,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('can adopt an existing local installation by reading daemon status and continuing with provider setup', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const taskIdByKind = new Map<string, string>();
@@ -468,7 +468,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('shows the canonical provider setup flow after the local setup task succeeds', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const taskIdByKind = new Map<string, string>();
@@ -519,7 +519,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('auto-starts the local setup task when requested by the setup continuation route', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         const starts: unknown[] = [];
         const runner = createSystemTaskRunner({
@@ -551,7 +551,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('does not show the provider setup flow when the local setup task succeeds without a machine id', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const taskIdByKind = new Map<string, string>();
@@ -601,7 +601,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('starts remote bootstrap against the public relay identity when the app is using a local relay alias', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         activeServerSnapshotState = {
             serverId: 'relay-example',
@@ -679,7 +679,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('can include remote relay runtime installation when the user opts into running a Relay on that machine', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         const starts: unknown[] = [];
         const runner = createSystemTaskRunner({
@@ -718,7 +718,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('restarts remote bootstrap with an explicit host-trust resolution after a prompt_required result', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const starts: unknown[] = [];
@@ -811,7 +811,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('retries remote bootstrap without attempting a prompt response while the host-trust prompt is still pending', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const starts: unknown[] = [];
@@ -900,7 +900,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('restarts remote bootstrap with desktop approval enabled and shows provider follow-up after success', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const starts: unknown[] = [];
@@ -1030,7 +1030,7 @@ describe('MachineSetupFlowScreen', () => {
 
     it('clears a stale remote prompt when the relay runtime toggle changes before retrying', async () => {
         const { createSystemTaskRunner } = await import('@/components/systemTasks/createSystemTaskRunner');
-        const { SystemTaskSpecSchema } = await import('@happier-dev/protocol');
+        const { SystemTaskSpecSchema } = await import('@ks-happier/protocol');
 
         let nextTaskId = 1;
         const starts: unknown[] = [];

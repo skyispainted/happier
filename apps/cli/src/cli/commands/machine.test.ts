@@ -4,7 +4,7 @@ import {
   SYSTEM_TASK_PROTOCOL_VERSION,
   type SystemTaskEvent,
   type SystemTaskResult,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import { handleMachineCommand } from './machine';
 

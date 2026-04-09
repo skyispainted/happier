@@ -23,7 +23,7 @@ function readJson(dir, rel) {
 
 test('pipeline run exposes npm-set-preview-versions (write=false compute-only)', async () => {
   const dir = mkdtempSync(path.join(tmpdir(), 'happier-preview-versions-'));
-  writeJson(dir, 'apps/cli/package.json', { name: '@happier-dev/cli', version: '1.2.3' });
+  writeJson(dir, 'apps/cli/package.json', { name: '@ks-happier/cli', version: '1.2.3' });
 
   const out = execFileSync(
     process.execPath,

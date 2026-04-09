@@ -1,0 +1,32 @@
+[Unit]
+Description=Happier Server (Light Mode)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/happier/apps/server
+
+# 环境变量
+Environment=NODE_ENV=production
+Environment=HAPPIER_SERVER_FLAVOR=light
+Environment=HAPPIER_DB_PROVIDER=sqlite
+Environment=HAPPIER_SERVER_LIGHT_DATA_DIR=/var/lib/happier
+Environment=DATABASE_URL=file:/var/lib/happier/happier-server-light.sqlite
+Environment=METRICS_ENABLED=false
+Environment=SENTRY_ENABLED=false
+Environment=PORT=3005
+
+# 启动命令
+ExecStart=/home/ubuntu/happier/start-light.sh
+Restart=on-failure
+RestartSec=10
+
+# 日志
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=happier-server
+
+[Install]
+WantedBy=multi-user.target

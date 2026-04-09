@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
     BUILT_IN_EXPO_PUSH_NOTIFICATION_CHANNEL_ID,
     DEFAULT_NOTIFICATIONS_SETTINGS_V1,
-} from '@happier-dev/protocol';
+} from '@ks-happier/protocol';
 
 import {
     addWebhookNotificationChannel,

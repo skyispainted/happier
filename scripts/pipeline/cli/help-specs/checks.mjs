@@ -55,7 +55,7 @@ export const COMMAND_HELP_CHECKS = {
       'node scripts/pipeline/run.mjs smoke-cli [--package-dir <dir>] [--workspace-name <name>] [--skip-build true|false] [--dry-run]',
     options: [
       '--package-dir <dir>               (default: apps/cli).',
-      '--workspace-name <name>           (default: @happier-dev/cli).',
+      '--workspace-name <name>           (default: @ks-happier/cli).',
       '--skip-build <bool>               true|false (default: false).',
       '--dry-run',
     ],

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import type { CodexBackendMode } from '@happier-dev/agents';
-import { buildCodexAgentRuntimeDescriptorV1 } from '@happier-dev/protocol';
-import { buildOpenCodeAgentRuntimeDescriptorV1 } from '@happier-dev/protocol';
+import type { CodexBackendMode } from '@ks-happier/agents';
+import { buildCodexAgentRuntimeDescriptorV1 } from '@ks-happier/protocol';
+import { buildOpenCodeAgentRuntimeDescriptorV1 } from '@ks-happier/protocol';
 
 const fetchSessionsPageMock = vi.fn();
 const fetchSessionByIdMock = vi.fn();

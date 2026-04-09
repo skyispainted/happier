@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { normalizePermissionModeForGroup } from '@happier-dev/agents';
+import { normalizePermissionModeForGroup } from '@ks-happier/agents';
 
 describe('normalizePermissionModeForGroup', () => {
   it('maps codex-like modes into claude modes', () => {

@@ -1,5 +1,5 @@
 import type { AuthCredentials } from '@/auth/storage/tokenStorage';
-import type { ChangeEntry } from '@happier-dev/protocol/changes';
+import type { ChangeEntry } from '@ks-happier/protocol/changes';
 import { planSyncActionsFromChanges, type PlannedChangeActions } from './changesPlanner';
 
 export type FetchChangesFn = (params: {

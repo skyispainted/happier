@@ -8,7 +8,7 @@ import { resolveInstalledBinPath } from '../pipeline/smoke/resolveInstalledBinPa
 
 test('resolveInstalledBinPath falls back to the installed package bin when npm prefix shims are absent', () => {
   const prefixDir = fs.mkdtempSync(path.join(os.tmpdir(), 'cli-smoke-prefix-'));
-  const packageBinDir = path.join(prefixDir, 'lib', 'node_modules', '@happier-dev', 'cli', 'bin');
+  const packageBinDir = path.join(prefixDir, 'lib', 'node_modules', '@ks-happier', 'cli', 'bin');
   fs.mkdirSync(packageBinDir, { recursive: true });
 
   const binPath = path.join(packageBinDir, 'happier.mjs');

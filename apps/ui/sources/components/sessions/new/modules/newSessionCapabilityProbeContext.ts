@@ -1,5 +1,5 @@
-import type { BackendTargetRefV1 } from '@happier-dev/protocol';
-import { resolveAgentConfiguredRuntimeKind } from '@happier-dev/agents';
+import type { BackendTargetRefV1 } from '@ks-happier/protocol';
+import { resolveAgentConfiguredRuntimeKind } from '@ks-happier/agents';
 
 import { resolveProviderAgentIdForBackendTarget } from '@/agents/backendCatalog/getResolvedBackendCatalogEntries';
 import type { Settings } from '@/sync/domains/settings/settings';

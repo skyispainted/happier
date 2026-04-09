@@ -2,9 +2,9 @@
  * Machine operations for remote procedure calls
  */
 
-import type { SpawnSessionResult } from '@happier-dev/protocol';
-import { SPAWN_SESSION_ERROR_CODES } from '@happier-dev/protocol';
-import { RPC_ERROR_CODES, RPC_METHODS, isRpcMethodNotFoundResult } from '@happier-dev/protocol/rpc';
+import type { SpawnSessionResult } from '@ks-happier/protocol';
+import { SPAWN_SESSION_ERROR_CODES } from '@ks-happier/protocol';
+import { RPC_ERROR_CODES, RPC_METHODS, isRpcMethodNotFoundResult } from '@ks-happier/protocol/rpc';
 
 import { apiSocket } from '../api/session/apiSocket';
 import type { MachineMetadata } from '../domains/state/storageTypes';
@@ -22,7 +22,7 @@ import { isPlainObject, normalizeSpawnSessionResult } from './_shared';
 import { isSocketIoAckTimeoutError } from '@/sync/runtime/socketIoAckTimeout';
 import { mergeMachineMetadataForVersionMismatch } from './machineMetadataMerge';
 import { machineRpcWithServerScope } from '@/sync/runtime/orchestration/serverScopedRpc/serverScopedMachineRpc';
-import { readRpcErrorCode } from '@happier-dev/protocol/rpcErrors';
+import { readRpcErrorCode } from '@ks-happier/protocol/rpcErrors';
 
 export type { SpawnHappySessionRpcParams, SpawnSessionOptions } from '../domains/session/spawn/spawnSessionPayload';
 export { buildSpawnHappySessionRpcParams } from '../domains/session/spawn/spawnSessionPayload';

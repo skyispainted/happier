@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import tweetnacl from 'tweetnacl';
-import { openBoxBundle, TERMINAL_PROVISIONING_V2_PLAINTEXT_BYTES, TERMINAL_PROVISIONING_V2_VERSION_BYTE } from '@happier-dev/protocol';
+import { openBoxBundle, TERMINAL_PROVISIONING_V2_PLAINTEXT_BYTES, TERMINAL_PROVISIONING_V2_VERSION_BYTE } from '@ks-happier/protocol';
 
 import { buildTerminalResponseV1, buildTerminalResponseV2, decideTerminalProvisioningMode } from './terminalProvisioning';
 import { encodeBase64 } from '@/encryption/base64';

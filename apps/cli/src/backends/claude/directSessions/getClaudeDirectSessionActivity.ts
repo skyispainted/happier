@@ -1,6 +1,6 @@
 import { stat } from 'node:fs/promises';
 
-import type { DirectSessionsSource } from '@happier-dev/protocol';
+import type { DirectSessionsSource } from '@ks-happier/protocol';
 
 import { resolveClaudeDirectSessionFile } from './resolveClaudeDirectSessionFile';
 

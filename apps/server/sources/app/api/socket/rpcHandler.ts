@@ -1,7 +1,7 @@
 import { log } from "@/utils/logging/log";
 import { Server, Socket } from "socket.io";
-import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES } from "@happier-dev/protocol/rpc";
-import { SOCKET_RPC_EVENTS } from "@happier-dev/protocol/socketRpc";
+import { RPC_ERROR_CODES, RPC_ERROR_MESSAGES } from "@ks-happier/protocol/rpc";
+import { SOCKET_RPC_EVENTS } from "@ks-happier/protocol/socketRpc";
 import { resolveRpcForwardTimeoutMs } from "./rpcForwardTimeout";
 import { resolveRpcMethodAvailabilityGraceMs, resolveRpcMethodAvailabilityPollMs } from "./rpcMethodAvailabilityGrace";
 import { createRpcRedisRegistryCoordinator, type RpcRedisRegistryConfig } from "./rpcRedisRegistryCoordinator";

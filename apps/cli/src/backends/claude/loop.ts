@@ -6,7 +6,7 @@ import { claudeLocalLauncher, LauncherResult } from "./claudeLocalLauncher"
 import { claudeRemoteLauncher } from "./claudeRemoteLauncher"
 import type { JsRuntime } from "./runClaude"
 import type { PushNotificationClient } from "@/api/pushNotifications"
-import type { AccountSettings } from '@happier-dev/protocol';
+import type { AccountSettings } from '@ks-happier/protocol';
 import type { McpServerConfig } from '@/agent';
 
 // Re-export permission mode type from api/types

@@ -35,11 +35,11 @@ function writeWorkspacePackageFixture({ repoRoot, packageName, relativeDir }) {
 function writeCliRuntimePackageFixture(
   repoRoot,
   bundledDependencies = [
-    '@happier-dev/agents',
-    '@happier-dev/cli-common',
-    '@happier-dev/connection-supervisor',
-    '@happier-dev/protocol',
-    '@happier-dev/release-runtime',
+    '@ks-happier/agents',
+    '@ks-happier/cli-common',
+    '@ks-happier/connection-supervisor',
+    '@ks-happier/protocol',
+    '@ks-happier/release-runtime',
   ],
 ) {
   const cliDir = join(repoRoot, 'apps', 'cli');
@@ -48,7 +48,7 @@ function writeCliRuntimePackageFixture(
     join(cliDir, 'package.json'),
     JSON.stringify(
       {
-        name: '@happier-dev/cli',
+        name: '@ks-happier/cli',
         version: '0.0.0',
         dependencies: {
           '@huggingface/transformers': '1.0.0',
@@ -63,11 +63,11 @@ function writeCliRuntimePackageFixture(
     'utf8',
   );
 
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/agents', relativeDir: ['packages', 'agents'] });
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/cli-common', relativeDir: ['packages', 'cli-common'] });
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/connection-supervisor', relativeDir: ['packages', 'connection-supervisor'] });
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/protocol', relativeDir: ['packages', 'protocol'] });
-  writeWorkspacePackageFixture({ repoRoot, packageName: '@happier-dev/release-runtime', relativeDir: ['packages', 'release-runtime'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/agents', relativeDir: ['packages', 'agents'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/cli-common', relativeDir: ['packages', 'cli-common'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/connection-supervisor', relativeDir: ['packages', 'connection-supervisor'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/protocol', relativeDir: ['packages', 'protocol'] });
+  writeWorkspacePackageFixture({ repoRoot, packageName: '@ks-happier/release-runtime', relativeDir: ['packages', 'release-runtime'] });
 }
 
 test('resolveCurrentBinaryTarget maps the current platform to a supported binary target', async () => {
@@ -210,12 +210,12 @@ test('buildCliBinaryArtifactPayload compiles the local CLI binary into the paylo
     assert.equal(readFileSync(join(payloadDir, 'happier'), 'utf8'), '#!/bin/sh\necho happier\n');
     assert.equal(readFileSync(join(payloadDir, 'package-dist', 'index.mjs'), 'utf8'), 'console.log("cli");\n');
     assert.equal(
-      readFileSync(join(payloadDir, 'node_modules', '@happier-dev', 'protocol', 'dist', 'index.mjs'), 'utf8'),
-      'export const packageName = "@happier-dev/protocol";\n',
+      readFileSync(join(payloadDir, 'node_modules', '@ks-happier', 'protocol', 'dist', 'index.mjs'), 'utf8'),
+      'export const packageName = "@ks-happier/protocol";\n',
     );
     assert.equal(
-      readFileSync(join(payloadDir, 'node_modules', '@happier-dev', 'connection-supervisor', 'dist', 'index.mjs'), 'utf8'),
-      'export const packageName = "@happier-dev/connection-supervisor";\n',
+      readFileSync(join(payloadDir, 'node_modules', '@ks-happier', 'connection-supervisor', 'dist', 'index.mjs'), 'utf8'),
+      'export const packageName = "@ks-happier/connection-supervisor";\n',
     );
     assert.equal(readFileSync(join(payloadDir, 'node_modules', 'node-pty', 'index.js'), 'utf8'), 'module.exports = { spawn() {} };\n');
     assert.equal(
@@ -274,7 +274,7 @@ test('buildCliBinaryArtifactPayload removes compile-generated node_modules befor
       join(repoRoot, 'apps', 'cli', 'package.json'),
       JSON.stringify(
         {
-          name: '@happier-dev/cli',
+          name: '@ks-happier/cli',
           version: '0.0.0',
           dependencies: {
             '@huggingface/transformers': '1.0.0',
@@ -283,10 +283,10 @@ test('buildCliBinaryArtifactPayload removes compile-generated node_modules befor
             tar: '7.0.0',
           },
           bundledDependencies: [
-            '@happier-dev/agents',
-            '@happier-dev/cli-common',
-            '@happier-dev/protocol',
-            '@happier-dev/release-runtime',
+            '@ks-happier/agents',
+            '@ks-happier/cli-common',
+            '@ks-happier/protocol',
+            '@ks-happier/release-runtime',
           ],
         },
         null,
@@ -493,10 +493,10 @@ test('buildCliBinaryArtifactPayload derives bundled workspace packages from apps
     mkdirSync(homebridgePtyDir, { recursive: true });
     writeFileSync(join(repoRoot, 'package.json'), JSON.stringify({ name: 'repo', private: true }, null, 2));
     writeCliRuntimePackageFixture(repoRoot, [
-      '@happier-dev/agents',
-      '@happier-dev/cli-common',
-      '@happier-dev/protocol',
-      '@happier-dev/release-runtime',
+      '@ks-happier/agents',
+      '@ks-happier/cli-common',
+      '@ks-happier/protocol',
+      '@ks-happier/release-runtime',
     ]);
     writeFileSync(join(cliDistDir, 'index.mjs'), 'console.log("cli");\n', 'utf8');
     writeFileSync(join(cliScriptsDir, 'childProcessOptions.cjs'), 'module.exports = { withWindowsHide: (input) => input };\n', 'utf8');
@@ -545,8 +545,8 @@ test('buildCliBinaryArtifactPayload derives bundled workspace packages from apps
       },
     });
 
-    assert.equal(existsSync(join(payloadDir, 'node_modules', '@happier-dev', 'connection-supervisor')), false);
-    assert.equal(existsSync(join(payloadDir, 'node_modules', '@happier-dev', 'protocol')), true);
+    assert.equal(existsSync(join(payloadDir, 'node_modules', '@ks-happier', 'connection-supervisor')), false);
+    assert.equal(existsSync(join(payloadDir, 'node_modules', '@ks-happier', 'protocol')), true);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

@@ -1,7 +1,7 @@
 import { readStoredSessionMessages } from '@/sync/domains/messages/readStoredSessionMessages';
 import { storage } from '@/sync/domains/state/storage';
 import { getSessionName } from '@/utils/sessions/sessionUtils';
-import { isHiddenSystemSession } from '@happier-dev/protocol';
+import { isHiddenSystemSession } from '@ks-happier/protocol';
 
 import {
   compareSessionKeyDesc,
