@@ -43,9 +43,6 @@ echo ""
 echo "[2/2] 编译服务器..."
 cd $PROJECT_ROOT/apps/server
 
-echo "  - 安装依赖..."
-yarn install --frozen-lockfile 2>/dev/null || yarn install
-
 echo "  - 编译 TypeScript..."
 yarn build
 
