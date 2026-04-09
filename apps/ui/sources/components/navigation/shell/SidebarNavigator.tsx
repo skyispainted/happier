@@ -18,6 +18,19 @@ export const SidebarNavigator = React.memo(() => {
     const editorFocusModeEnabled = useLocalSetting('editorFocusModeEnabled');
     const desktopDrawerEnabled = auth.isAuthenticated && isTablet;
     const showPermanentDrawer = desktopDrawerEnabled && !editorFocusModeEnabled;
+
+    // Track when auth state changes to force navigator remount
+    const [navigatorKey, setNavigatorKey] = React.useState(0);
+    const prevAuthenticatedRef = React.useRef(auth.isAuthenticated);
+
+    React.useEffect(() => {
+        if (prevAuthenticatedRef.current !== auth.isAuthenticated) {
+            // Auth state changed, force remount of navigator
+            setNavigatorKey(k => k + 1);
+            prevAuthenticatedRef.current = auth.isAuthenticated;
+        }
+    }, [auth.isAuthenticated]);
+
     const { theme } = useUnistyles();
     const { width: windowWidth } = useWindowDimensions();
     const sidebarCollapsed = useLocalSetting('sidebarCollapsed');
@@ -173,14 +186,14 @@ export const SidebarNavigator = React.memo(() => {
 
     if (!desktopDrawerEnabled) {
         // Use a stable key when unauthenticated to avoid remounts during auth state transitions
-        return <Stack key="stack-nav" screenOptions={stackNavigationOptions} />;
+        return <Stack key={`stack-${navigatorKey}`} screenOptions={stackNavigationOptions} />;
     }
 
     return (
         // Use a different key when authenticated to force remount when transitioning from Stack to Drawer
         // This prevents "Couldn't find the drawer status in the state object" error after OAuth login
         <Drawer
-            key="drawer-nav"
+            key={`drawer-${navigatorKey}`}
             screenOptions={drawerNavigationOptions}
             drawerContent={showPermanentDrawer ? drawerContent : undefined}
         />
