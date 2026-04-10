@@ -128,11 +128,27 @@ async function sendWebhookNotification(params: {
     }
 
     try {
+        // FULL REQUEST LOG
+        log({ module: "webhook-dispatch" }, `=== WEBHOOK REQUEST ===`);
+        log({ module: "webhook-dispatch" }, `URL: ${url}`);
+        log({ module: "webhook-dispatch" }, `Headers: ${JSON.stringify(headers)}`);
+        log({ module: "webhook-dispatch" }, `Body (first 200 chars): ${body.substring(0, 200)}`);
+        log({ module: "webhook-dispatch" }, `Body length: ${body.length} bytes`);
+        log({ module: "webhook-dispatch" }, `=== END REQUEST ===`);
+
         const response = await axios.post(url, payload, {
             headers,
             timeout: 10_000,
             validateStatus: () => true,
         });
+
+        // FULL RESPONSE LOG
+        log({ module: "webhook-dispatch" }, `=== WEBHOOK RESPONSE ===`);
+        log({ module: "webhook-dispatch" }, `Status: ${response.status}`);
+        log({ module: "webhook-dispatch" }, `StatusText: ${response.statusText}`);
+        log({ module: "webhook-dispatch" }, `Response Headers: ${JSON.stringify(response.headers)}`);
+        log({ module: "webhook-dispatch" }, `Data: ${typeof response.data === "string" ? response.data : JSON.stringify(response.data).substring(0, 200)}`);
+        log({ module: "webhook-dispatch" }, `=== END RESPONSE ===`);
 
         if (response.status >= 400) {
             return { success: false, error: `HTTP ${response.status}` };
@@ -141,6 +157,11 @@ async function sendWebhookNotification(params: {
         return { success: true };
     } catch (error) {
         const message = error instanceof Error ? error.message : "Unknown error";
+        const stack = error instanceof Error ? error.stack : "";
+        log({ module: "webhook-dispatch", level: "warn" }, `=== WEBHOOK ERROR ===`);
+        log({ module: "webhook-dispatch", level: "warn" }, `Error: ${message}`);
+        log({ module: "webhook-dispatch", level: "warn" }, `Stack: ${stack}`);
+        log({ module: "webhook-dispatch", level: "warn" }, `=== END ERROR ===`);
         return { success: false, error: message };
     }
 }
