@@ -3,11 +3,11 @@
   "private": true,
   "scripts": {
     "postinstall": "node scripts/pipeline/expo/eas-postinstall.mjs",
-    "build:packages": "yarn workspace @happier-dev/protocol build && yarn workspace @happier-dev/transfers build && yarn workspace @happier-dev/agents build && yarn workspace @happier-dev/connection-supervisor build",
+    "build:packages": "yarn workspace @happier-dev/protocol build && yarn workspace @happier-dev/cli-common build && yarn workspace @happier-dev/agents build && yarn workspace @happier-dev/transfers build && yarn workspace @happier-dev/connection-supervisor build && yarn workspace @happier-dev/release-runtime build",
     "dev": "node ./apps/stack/scripts/repo_local.mjs dev",
     "stop": "node ./apps/stack/scripts/repo_local.mjs stop",
     "start": "node ./apps/stack/scripts/repo_local.mjs start",
-    "build": "node ./apps/stack/scripts/repo_local.mjs build",
+    "build": "yarn build:packages && node ./apps/stack/scripts/repo_local.mjs build",
     "tui": "node ./apps/stack/scripts/repo_local.mjs tui",
     "tui:with-tauri": "node ./apps/stack/scripts/repo_local.mjs tui --tauri",
     "tui:with-mobile-tauri": "node ./apps/stack/scripts/repo_local.mjs tui --tauri --mobile",
