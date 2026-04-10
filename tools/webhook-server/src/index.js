@@ -7,6 +7,8 @@ const SIGNING_SECRET = process.env.SIGNING_SECRET || '';
 // WPS协作配置
 const WPS_APP_ID = process.env.WPS_APP_ID || '';
 const WPS_SECRET_KEY = process.env.WPS_SECRET_KEY || '';
+const WPS_ENCRYPT_KEY = process.env.WPS_ENCRYPT_KEY || '';
+const WPS_COMPANY_ID = process.env.WPS_COMPANY_ID || '';
 const WPS_API_URL = process.env.WPS_API_URL || 'https://openapi.wps.cn';
 
 let wpsClient = null;
@@ -22,6 +24,8 @@ async function initWpsClient() {
     const { WpsClient } = require('@skyispainted/wps-xiezuo-sdk');
     wpsClient = new WpsClient(WPS_APP_ID, WPS_SECRET_KEY, WPS_API_URL);
     console.log('[wps] WPS客户端初始化成功');
+    if (WPS_COMPANY_ID) console.log(`[wps] Company ID: ${WPS_COMPANY_ID} (已配置，供查询使用)`);
+    if (WPS_ENCRYPT_KEY) console.log(`[wps] Encrypt Key: 已配置`);
     return wpsClient;
   } catch (err) {
     console.error('[wps] 初始化失败:', err.message);
@@ -186,6 +190,8 @@ server.listen(PORT, '0.0.0.0', () => {
   console.log(`Signature verification: ${SIGNING_SECRET ? 'ENABLED' : 'DISABLED'}`);
   if (WPS_APP_ID) {
     console.log(`WPS推送: 已配置 (${WPS_API_URL})`);
+    if (WPS_COMPANY_ID) console.log(`WPS Company ID: ${WPS_COMPANY_ID}`);
+    if (WPS_ENCRYPT_KEY) console.log(`WPS Encrypt Key: 已配置`);
   } else {
     console.log(`WPS推送: 未配置 (设置 WPS_APP_ID / WPS_SECRET_KEY 启用)`);
   }
