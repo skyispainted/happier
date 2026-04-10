@@ -1,5 +1,5 @@
 {
-  "name": "@happier-dev/cli-common",
+  "name": "@ks-happier/cli-common",
   "version": "0.0.0",
   "private": true,
   "type": "module",
