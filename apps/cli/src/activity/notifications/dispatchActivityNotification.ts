@@ -2,6 +2,7 @@ import {
   resolveNotificationChannelsV1FromAccountSettings,
   type AccountSettings,
   type WebhookNotificationChannelV1,
+  type ExpoPushNotificationChannelV1,
 } from '@happier-dev/protocol';
 
 import { logger } from '@/ui/logger';
@@ -41,7 +42,9 @@ export async function dispatchActivityNotificationAsync(params: Readonly<{
   let deliveredChannels = 0;
 
   // Separate expo_push and webhook channels
-  const expoPushChannels = channels.filter((c) => c.kind === 'expo_push' && isTopicEnabled(c, params.event.topic));
+  const expoPushChannels = channels.filter((c): c is ExpoPushNotificationChannelV1 =>
+    c.kind === 'expo_push' && isTopicEnabled(c, params.event.topic),
+  );
   const webhookChannels = channels.filter((c): c is WebhookNotificationChannelV1 =>
     c.kind === 'webhook' && isTopicEnabled(c, params.event.topic),
   );
