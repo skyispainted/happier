@@ -16,10 +16,10 @@
     "src"
   ],
   "bundledDependencies": [
-    "@happier-dev/release-runtime"
+    "@ks-happier/release-runtime"
   ],
   "dependencies": {
-    "@happier-dev/release-runtime": "0.0.0"
+    "@ks-happier/release-runtime": "0.0.0"
   },
   "engines": {
     "node": ">=22"

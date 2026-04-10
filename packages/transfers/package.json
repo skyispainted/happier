@@ -24,7 +24,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@happier-dev/protocol": "0.0.0"
+    "@ks-happier/protocol": "0.0.0"
   },
   "devDependencies": {
     "@types/node": ">=20",
