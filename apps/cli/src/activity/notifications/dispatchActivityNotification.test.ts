@@ -2,11 +2,21 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import {
   accountSettingsParse,
-  deriveSettingsSecretsKeyV1,
-  encryptSecretStringV1,
 } from '@happier-dev/protocol';
 
 import { dispatchActivityNotificationAsync } from './dispatchActivityNotification';
+
+// Mock the persistence module
+vi.mock('@/persistence', () => ({
+  readCredentials: vi.fn(async () => ({ token: 'test-token', encryption: { type: 'legacy', secret: new Uint8Array(32) } })),
+}));
+
+// Mock the configuration module
+vi.mock('@/configuration', () => ({
+  configuration: {
+    apiServerUrl: 'https://api.test.local',
+  },
+}));
 
 describe('dispatchActivityNotificationAsync', () => {
   const fetchSpy = vi.fn();
@@ -16,7 +26,8 @@ describe('dispatchActivityNotificationAsync', () => {
     fetchSpy.mockReset();
     fetchSpy.mockResolvedValue({
       ok: true,
-      status: 202,
+      status: 200,
+      json: async () => ({ success: true, dispatched: 1, failed: 0 }),
     });
   });
 
@@ -55,25 +66,14 @@ describe('dispatchActivityNotificationAsync', () => {
       'The branch is ready to review.',
       { sessionId: 'session-1' },
     );
+    // No webhook channels, so fetch should not be called
     expect(fetchSpy).not.toHaveBeenCalled();
   });
 
-  it('dispatches only to enabled explicit channels', async () => {
+  it('dispatches webhook notifications via server API', async () => {
     const sendToAllDevicesAsync = vi.fn(async () => {});
     const settings = accountSettingsParse({
       notificationChannelsV1: [
-        {
-          v: 1,
-          id: 'expo-disabled',
-          kind: 'expo_push',
-          enabled: false,
-          topics: {
-            ready: true,
-            permissionRequest: true,
-            userActionRequest: true,
-          },
-          readyIncludeMessageText: true,
-        },
         {
           v: 1,
           id: 'webhook-primary',
@@ -106,25 +106,35 @@ describe('dispatchActivityNotificationAsync', () => {
       },
     });
 
+    // Expo push should not be called (no expo channel configured)
     expect(sendToAllDevicesAsync).not.toHaveBeenCalled();
+
+    // fetch should be called to the server API, not directly to webhook URL
     expect(fetchSpy).toHaveBeenCalledTimes(1);
     const [url, init] = fetchSpy.mock.calls[0] ?? [];
-    expect(url).toBe('https://hooks.example.test/happier');
+    expect(url).toBe('https://api.test.local/v1/webhooks/dispatch');
     expect(init).toMatchObject({
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'x-happier-signature-256': expect.stringMatching(/^sha256=[a-f0-9]{64}$/),
+        'authorization': 'Bearer test-token',
       },
     });
-    const payload = JSON.parse(String(init.body));
-    expect(payload.content).toEqual({
-      title: 'Deploy fix',
-      body: 'Gemini is waiting for your command',
-    });
+
+    // Verify the request body structure
+    const body = JSON.parse(String(init.body));
+    expect(body.sessionId).toBe('session-2');
+    expect(body.sessionTitle).toBe('Deploy fix');
+    expect(body.event.topic).toBe('ready');
+    expect(body.event.waitingForCommandLabel).toBe('Gemini');
+    expect(body.channels).toHaveLength(1);
+    expect(body.channels[0].id).toBe('webhook-primary');
+    expect(body.channels[0].url).toBe('https://hooks.example.test/happier');
+    // signingSecret should NOT be included in the request to server
+    expect(body.channels[0].signingSecret).toBeUndefined();
   });
 
-  it('sends sanitized request payloads to webhook channels', async () => {
+  it('sends permission_request events to webhook via server', async () => {
     const sendToAllDevicesAsync = vi.fn(async () => {});
     const settings = accountSettingsParse({
       notificationChannelsV1: [
@@ -161,28 +171,70 @@ describe('dispatchActivityNotificationAsync', () => {
       },
     });
 
-    expect(sendToAllDevicesAsync).not.toHaveBeenCalled();
     expect(fetchSpy).toHaveBeenCalledTimes(1);
     const [, init] = fetchSpy.mock.calls[0] ?? [];
-    const payload = JSON.parse(String(init.body));
-    expect(init).toMatchObject({
-      headers: {
-        'content-type': 'application/json',
-        'x-happier-signature-256': expect.stringMatching(/^sha256=[a-f0-9]{64}$/),
-      },
-    });
-    expect(payload.request).toMatchObject({
-      requestId: 'request-9',
-      kind: 'permission',
-      toolName: 'Bash',
-      toolDetails: 'Command: git',
-    });
-    expect(JSON.stringify(payload)).not.toContain('secret-token');
+    const body = JSON.parse(String(init.body));
+    expect(body.event.topic).toBe('permission_request');
+    expect(body.event.requestId).toBe('request-9');
+    expect(body.event.toolName).toBe('Bash');
   });
 
-  it('decrypts encrypted webhook signing secrets when settings secret read keys are provided', async () => {
+  it('filters channels by topic subscription', async () => {
     const sendToAllDevicesAsync = vi.fn(async () => {});
-    const settingsSecretsKey = deriveSettingsSecretsKeyV1(new Uint8Array(32).fill(7));
+    const settings = accountSettingsParse({
+      notificationChannelsV1: [
+        {
+          v: 1,
+          id: 'webhook-ready-only',
+          kind: 'webhook',
+          enabled: true,
+          url: 'https://hooks.example.test/ready',
+          topics: {
+            ready: true,
+            permissionRequest: false,
+            userActionRequest: false,
+          },
+          readyIncludeMessageText: false,
+        },
+        {
+          v: 1,
+          id: 'webhook-permission-only',
+          kind: 'webhook',
+          enabled: true,
+          url: 'https://hooks.example.test/permission',
+          topics: {
+            ready: false,
+            permissionRequest: true,
+            userActionRequest: false,
+          },
+          readyIncludeMessageText: false,
+        },
+      ],
+    });
+
+    // Send a 'ready' event - should only go to webhook-ready-only
+    await dispatchActivityNotificationAsync({
+      settings,
+      expoPushSender: { sendToAllDevicesAsync },
+      event: {
+        topic: 'ready',
+        sessionId: 'session-4',
+        waitingForCommandLabel: 'Codex',
+      },
+    });
+
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+    const body = JSON.parse(String(fetchSpy.mock.calls[0][1].body));
+    expect(body.channels).toHaveLength(1);
+    expect(body.channels[0].id).toBe('webhook-ready-only');
+  });
+
+  it('handles server API errors gracefully', async () => {
+    fetchSpy.mockResolvedValue({
+      ok: false,
+      status: 500,
+    });
+
     const settings = accountSettingsParse({
       notificationChannelsV1: [
         {
@@ -191,45 +243,23 @@ describe('dispatchActivityNotificationAsync', () => {
           kind: 'webhook',
           enabled: true,
           url: 'https://hooks.example.test/happier',
-          signingSecret: {
-            _isSecretValue: true,
-            encryptedValue: encryptSecretStringV1(
-              'sealed-webhook-secret',
-              settingsSecretsKey,
-              (length) => new Uint8Array(length).fill(3),
-            ),
-          },
-          topics: {
-            ready: true,
-            permissionRequest: true,
-            userActionRequest: true,
-          },
+          topics: { ready: true, permissionRequest: true, userActionRequest: true },
           readyIncludeMessageText: false,
         },
       ],
     });
 
-    await dispatchActivityNotificationAsync({
+    // Should not throw, just log and continue
+    const result = await dispatchActivityNotificationAsync({
       settings,
-      settingsSecretsReadKeys: [settingsSecretsKey],
-      expoPushSender: { sendToAllDevicesAsync },
       event: {
         topic: 'ready',
-        sessionId: 'session-4',
-        sessionTitle: 'Ship release',
+        sessionId: 'session-5',
         waitingForCommandLabel: 'Codex',
-        assistantPreviewText: 'Release branch is ready.',
       },
     });
 
-    expect(sendToAllDevicesAsync).not.toHaveBeenCalled();
-    expect(fetchSpy).toHaveBeenCalledTimes(1);
-    const [, init] = fetchSpy.mock.calls[0] ?? [];
-    expect(init).toMatchObject({
-      headers: {
-        'content-type': 'application/json',
-        'x-happier-signature-256': expect.stringMatching(/^sha256=[a-f0-9]{64}$/),
-      },
-    });
+    expect(result.attemptedChannels).toBe(1);
+    expect(result.deliveredChannels).toBe(0);
   });
 });

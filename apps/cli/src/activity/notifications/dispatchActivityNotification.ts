@@ -1,6 +1,7 @@
 import {
   resolveNotificationChannelsV1FromAccountSettings,
   type AccountSettings,
+  type WebhookNotificationChannelV1,
 } from '@happier-dev/protocol';
 
 import { logger } from '@/ui/logger';
@@ -9,7 +10,10 @@ import {
   sendExpoPushActivityNotificationAsync,
   type ExpoPushActivityNotificationSender,
 } from './sendExpoPushActivityNotification';
-import { sendWebhookActivityNotificationAsync } from './sendWebhookActivityNotification';
+import {
+  sendWebhookActivityNotificationAsync,
+  dispatchWebhookNotificationsAsync,
+} from './sendWebhookActivityNotification';
 
 function isTopicEnabled(channel: {
   enabled: boolean;
@@ -36,30 +40,41 @@ export async function dispatchActivityNotificationAsync(params: Readonly<{
   let attemptedChannels = 0;
   let deliveredChannels = 0;
 
-  for (const channel of channels) {
-    if (!isTopicEnabled(channel, params.event.topic)) continue;
+  // Separate expo_push and webhook channels
+  const expoPushChannels = channels.filter((c) => c.kind === 'expo_push' && isTopicEnabled(c, params.event.topic));
+  const webhookChannels = channels.filter((c): c is WebhookNotificationChannelV1 =>
+    c.kind === 'webhook' && isTopicEnabled(c, params.event.topic),
+  );
+
+  // Handle Expo push notifications (existing logic)
+  for (const channel of expoPushChannels) {
+    if (!params.expoPushSender) continue;
     attemptedChannels += 1;
     try {
-      if (channel.kind === 'expo_push') {
-        if (!params.expoPushSender) continue;
-        await sendExpoPushActivityNotificationAsync({
-          channel,
-          event: params.event,
-          sender: params.expoPushSender,
-        });
-        deliveredChannels += 1;
-        continue;
-      }
-
-      await sendWebhookActivityNotificationAsync({
+      await sendExpoPushActivityNotificationAsync({
         channel,
         event: params.event,
-        settingsSecretsReadKeys: params.settingsSecretsReadKeys,
-        nowMs: params.nowMs,
+        sender: params.expoPushSender,
       });
       deliveredChannels += 1;
     } catch (error) {
-      logger.debug('[activityNotifications] Failed to dispatch outbound notification', error);
+      logger.debug('[activityNotifications] Failed to dispatch expo push notification', error);
+    }
+  }
+
+  // Handle webhook notifications via server (new logic)
+  if (webhookChannels.length > 0) {
+    attemptedChannels += webhookChannels.length;
+    try {
+      const result = await dispatchWebhookNotificationsAsync({
+        sessionId: params.event.sessionId,
+        sessionTitle: params.event.sessionTitle,
+        event: params.event,
+        channels: webhookChannels,
+      });
+      deliveredChannels += result.dispatched;
+    } catch (error) {
+      logger.debug('[activityNotifications] Failed to dispatch webhook notifications via server', error);
     }
   }
 
