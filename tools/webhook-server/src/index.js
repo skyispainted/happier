@@ -60,33 +60,37 @@ async function lookupWpsUser(email) {
 
 // 构建Markdown消息
 function buildMarkdownMessage(payload, wpsUser) {
-  const { topic, content, session, metadata, navigation, request } = payload;
-  const displayName = wpsUser ? wpsUser.user_name : (metadata?.displayName || metadata?.username || '未知用户');
-  const accountId = metadata?.accountId || 'unknown';
-  const sessionId = session?.sessionId || navigation?.sessionId || 'unknown';
+  const { topic, content, session, request } = payload;
   const sessionTitle = session?.title || '无标题';
+  const sessionId = session?.sessionId || '';
 
-  const topicLabels = { ready: '准备就绪', permission_request: '权限请求', user_action_request: '操作请求' };
-  const topicLabel = topicLabels[topic] || topic;
+  const topicConfig = {
+    ready: { emoji: '🟢', label: '准备就绪' },
+    permission_request: { emoji: '🔒', label: '权限请求' },
+    user_action_request: { emoji: '⚡', label: '操作请求' },
+  };
+  const { emoji, label } = topicConfig[topic] || { emoji: '📋', label: topic };
+  const serverUrl = 'https://happier.dev.fs.seayoogames.cn';
 
-  let md = `### Happier 通知\n\n`;
-  md += `| 字段 | 值 |\n|------|-----|\n`;
-  md += `| 用户 | ${displayName} |\n`;
-  md += `| 账号ID | ${accountId} |\n`;
-  md += `| 状态 | **${topicLabel}** |\n`;
-  md += `| 会话 | ${sessionTitle} |\n`;
-  md += `| 会话ID | ${sessionId} |\n`;
-
-  if (content) md += `\n**${content.title}**\n\n${content.body}`;
+  let md = `${emoji} **${label}**\n\n`;
+  md += `**${sessionTitle}**\n\n`;
+  md += `**${content.title}**\n`;
+  md += `${content.body}\n`;
 
   if (request) {
-    md += `\n\n**请求详情**\n`;
-    md += `- 工具: ${request.toolName}`;
-    if (request.toolDetails) md += `\n- 详情: ${request.toolDetails}`;
-    md += `\n- 类型: ${request.kind === 'permission' ? '权限审批' : '用户操作'}`;
+    md += `\n---\n`;
+    md += `🛠 **${request.toolName}**\n`;
+    if (request.toolDetails) {
+      md += `${request.toolDetails}\n`;
+    }
+    const kindText = request.kind === 'permission' ? '需要审批' : '需要执行';
+    md += `\n${kindText}`;
   }
 
-  md += `\n\n> ${new Date().toISOString()}`;
+  md += `\n---\n`;
+  md += `[📎 查看详情](${serverUrl}/session/${sessionId})\n`;
+  md += `\n> ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`;
+
   return md;
 }
 
