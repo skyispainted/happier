@@ -21,14 +21,15 @@ function verifySignature(payload, signature, secret) {
 function extractUserInfo(body) {
   try {
     const data = JSON.parse(body);
-    // Try account.username first (preferred)
-    const username = data.account?.username || data.metadata?.username || 'anonymous';
-    const accountId = data.account?.accountId || data.metadata?.accountId || 'unknown';
+    const meta = data.metadata || {};
+    const displayName = meta.displayName || 'unknown';
+    const username = meta.username || 'unknown';
+    const accountId = meta.accountId || 'unknown';
     const topic = data.topic || 'unknown';
     const sessionId = data.session?.sessionId || 'unknown';
-    return { username, accountId, topic, sessionId };
+    return { displayName, username, accountId, topic, sessionId };
   } catch {
-    return { username: 'unknown', accountId: 'unknown', topic: 'unknown', sessionId: 'unknown' };
+    return { displayName: 'unknown', username: 'unknown', accountId: 'unknown', topic: 'unknown', sessionId: 'unknown' };
   }
 }
 
@@ -46,7 +47,8 @@ const server = http.createServer((req, res) => {
 
     console.log(`\n[${timestamp}] ${separator}`);
     console.log(`  WEBHOOK RECEIVED`);
-    console.log(`  User: ${user.username}`);
+    console.log(`  User: ${user.displayName}`);
+    console.log(`  Username: ${user.username}`);
     console.log(`  Account ID: ${user.accountId}`);
     console.log(`  Session: ${user.sessionId}`);
     console.log(`  Topic: ${user.topic}`);

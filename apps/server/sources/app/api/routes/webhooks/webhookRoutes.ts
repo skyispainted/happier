@@ -290,12 +290,12 @@ export function webhookRoutes(app: Fastify) {
 
         const account = await db.account.findUnique({
             where: { id: userId },
-            select: { username: true },
+            select: { username: true, firstName: true, lastName: true },
         });
 
-        const accountInfo = account
-            ? { accountId: userId, username: account.username }
-            : { accountId: userId, username: null };
+        const displayName = account?.firstName && account?.lastName
+            ? `${account.firstName} ${account.lastName}`
+            : account?.firstName || account?.lastName || account?.username || userId;
 
         let dispatched = 0;
         let failed = 0;
@@ -312,7 +312,11 @@ export function webhookRoutes(app: Fastify) {
                     topic: event.topic,
                     content: { title: content.title, body: content.body },
                     session: { sessionId, title: sessionTitle },
-                    account: accountInfo,
+                    metadata: {
+                        accountId: userId,
+                        username: account?.username || null,
+                        displayName,
+                    },
                     request:
                         event.topic === "ready"
                             ? null
