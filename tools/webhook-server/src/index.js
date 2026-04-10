@@ -11,15 +11,15 @@ const WPS_ENCRYPT_KEY = process.env.WPS_ENCRYPT_KEY || '';
 const WPS_COMPANY_ID = process.env.WPS_COMPANY_ID || '';
 const WPS_API_URL = process.env.WPS_API_URL || 'https://openapi.wps.cn';
 
-let WpsClient = null;
+let WPSClient = null;
 let wpsClient = null;
 
 // 懒加载ESM模块
 async function loadWpsModule() {
-  if (WpsClient) return WpsClient;
+  if (WPSClient) return WPSClient;
   const mod = await import('@skyispainted/wps-xiezuo-sdk');
-  WpsClient = mod.WpsClient;
-  return WpsClient;
+  WPSClient = mod.WPSClient;
+  return WPSClient;
 }
 
 // 初始化WPS客户端
