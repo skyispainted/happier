@@ -6,6 +6,7 @@
     "start": "node src/index.js"
   },
   "dependencies": {
+    "@skyispainted/wps-xiezuo-sdk": "^0.2.1",
     "express": "^4.21.0"
   }
 }
