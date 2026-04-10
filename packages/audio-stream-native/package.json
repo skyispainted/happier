@@ -1,5 +1,5 @@
 {
-  "name": "@ks-happier/audio-stream-native",
+  "name": "@happier-dev/audio-stream-native",
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",

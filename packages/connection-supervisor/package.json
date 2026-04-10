@@ -1,5 +1,5 @@
 {
-  "name": "@ks-happier/connection-supervisor",
+  "name": "@happier-dev/connection-supervisor",
   "version": "0.0.0",
   "private": true,
   "type": "module",
