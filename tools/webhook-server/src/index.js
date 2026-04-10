@@ -60,9 +60,10 @@ async function lookupWpsUser(email) {
 
 // 构建Markdown消息
 function buildMarkdownMessage(payload, wpsUser) {
-  const { topic, content, session, request } = payload;
+  const { topic, content, session, metadata, request } = payload;
   const sessionTitle = session?.title || '无标题';
   const sessionId = session?.sessionId || '';
+  const previewText = metadata?.assistantPreviewText || null;
 
   const topicConfig = {
     ready: { emoji: '🟢', label: '准备就绪' },
@@ -73,21 +74,28 @@ function buildMarkdownMessage(payload, wpsUser) {
   const serverUrl = 'https://happier.dev.fs.seayoogames.cn';
 
   let md = `**${sessionTitle} — ${label}**\n\n`;
-  md += `${content.title}\n\n`;
-  md += `${content.body}\n`;
 
-  if (request) {
-    md += `\n---\n`;
-    md += `🛠 **${request.toolName}**\n`;
+  // Ready 事件：显示 AI 预览文本
+  if (topic === 'ready') {
+    if (previewText) {
+      md += `**${previewText}**\n`;
+    }
+  }
+  // 权限/操作事件：显示工具详情
+  else if (request) {
     if (request.toolDetails) {
-      md += `${request.toolDetails}\n`;
+      md += `**${request.toolDetails}**\n`;
     }
     const kindText = request.kind === 'permission' ? '需要审批' : '需要执行';
-    md += `\n${kindText}`;
+    md += `${kindText}\n`;
+  }
+  // 兜底：使用 content body
+  else {
+    md += `**${content.body}**\n`;
   }
 
   md += `\n> ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}\n\n`;
-  md += `[📎 查看详情](${serverUrl}/session/${sessionId})`;
+  md += `[查看详情](${serverUrl}/session/${sessionId})`;
 
   return md;
 }

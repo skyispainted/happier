@@ -75,18 +75,19 @@ function buildNotificationContent(
     options: { readyIncludeMessageText: boolean },
 ): { title: string; body: string; toolDetails?: string | null } {
     if (event.topic === "ready") {
-        const label = event.waitingForCommandLabel;
+        const sessionTitle = event.sessionTitle;
+        const previewText = options.readyIncludeMessageText ? event.assistantPreviewText ?? null : null;
         return {
-            title: event.sessionTitle ?? label,
-            body: `${label} is waiting for your command`,
+            title: sessionTitle ?? event.waitingForCommandLabel,
+            body: previewText ?? `${event.waitingForCommandLabel} is ready`,
         };
     }
 
     const kind = event.topic === "user_action_request" ? "user_action" : "permission";
     const toolDetails = event.toolDetails ?? null;
     return {
-        title: kind === "user_action" ? "User Action Required" : "Permission Request",
-        body: `Approval needed for: ${event.toolName}${toolDetails ? `\n${toolDetails}` : ""}`,
+        title: event.toolName,
+        body: `${kind === "user_action" ? "需要执行" : "需要审批"}: ${event.toolName}${toolDetails ? `\n${toolDetails}` : ""}`,
         toolDetails,
     };
 }
@@ -316,6 +317,7 @@ export function webhookRoutes(app: Fastify) {
                         accountId: userId,
                         username: account?.username || null,
                         displayName,
+                        assistantPreviewText: event.topic === "ready" ? event.assistantPreviewText ?? null : null,
                     },
                     request:
                         event.topic === "ready"
