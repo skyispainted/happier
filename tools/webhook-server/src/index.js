@@ -1,42 +1,60 @@
-const express = require('express');
-const crypto = require('crypto');
+const http = require('http');
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3333;
 const SIGNING_SECRET = process.env.SIGNING_SECRET || '';
 
-function verifySignature(payload, signature, secret) {
-  if (!signature || !secret) return false;
-  const match = signature.match(/^sha256=([a-fA-F0-9]+)$/);
-  if (!match) return false;
-  const expected = match[1];
-  const computed = crypto.createHmac('sha256', secret).update(payload).digest('hex');
-  return computed === expected;
-}
+const server = http.createServer((req, res) => {
+  console.log(`\n[${new Date().toISOString()}] === INCOMING ===`);
+  console.log(`Method: ${req.method}`);
+  console.log(`URL: ${req.url}`);
+  console.log(`Headers: ${JSON.stringify(req.headers)}`);
 
-const app = express();
-app.use('/webhook', express.raw({ type: 'application/json', limit: '10mb' }));
+  const chunks = [];
+  req.on('data', (chunk) => chunks.push(chunk));
+  req.on('end', () => {
+    const body = Buffer.concat(chunks).toString();
+    console.log(`Body length: ${body.length} bytes`);
+    console.log(`Body: ${body.substring(0, 300)}`);
 
-app.post('/webhook', (req, res) => {
-  const raw = req.body.toString('utf-8');
-  const sig = req.headers['x-happier-signature-256'] || '';
-  const valid = SIGNING_SECRET ? verifySignature(raw, sig, SIGNING_SECRET) : null;
+    const sig = req.headers['x-happier-signature-256'] || '';
+    if (SIGNING_SECRET && sig) {
+      const crypto = require('crypto');
+      const expected = crypto.createHmac('sha256', SIGNING_SECRET).update(body).digest('hex');
+      const match = sig === `sha256=${expected}`;
+      console.log(`Signature valid: ${match}`);
+    }
 
-  console.log('\n' + '='.repeat(60));
-  console.log(`[${new Date().toISOString()}] WEBHOOK RECEIVED`);
-  console.log('='.repeat(60));
-  console.log(`Signature: ${sig || 'none'}`);
-  if (SIGNING_SECRET) console.log(`Signature Valid: ${valid ? 'YES' : 'NO'}`);
-  console.log('-'.repeat(60));
-  try { console.log(JSON.stringify(JSON.parse(raw), null, 2)); }
-  catch { console.log(raw); }
-  console.log('='.repeat(60) + '\n');
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    const resp = JSON.stringify({ received: true, timestamp: new Date().toISOString() });
+    console.log(`Sending response: ${resp}`);
+    res.end(resp);
+    console.log(`=== END ===\n`);
+  });
 
-  res.json({ received: true });
+  req.on('error', (err) => {
+    console.log(`Request error: ${err.message}`);
+  });
+
+  res.on('error', (err) => {
+    console.log(`Response error: ${err.message}`);
+  });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+server.on('error', (err) => {
+  console.log(`Server error: ${err.message}`);
+});
+
+server.on('connection', (socket) => {
+  console.log(`[${new Date().toISOString()}] TCP connection from ${socket.remoteAddress}:${socket.remotePort}`);
+  socket.on('close', () => {
+    console.log(`[${new Date().toISOString()}] TCP connection closed`);
+  });
+  socket.on('error', (err) => {
+    console.log(`[${new Date().toISOString()}] Socket error: ${err.message}`);
+  });
+});
+
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`Webhook server listening on http://0.0.0.0:${PORT}`);
-  if (SIGNING_SECRET) console.log('Signature verification: ENABLED');
-  else console.log('Signature verification: DISABLED');
-  console.log('Waiting for webhooks...\n');
+  console.log('Waiting for requests...\n');
 });
