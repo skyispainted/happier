@@ -10,6 +10,7 @@ import { requireCatalogEntry, resolveCatalogAgentIdForCliSubcommand } from '@/ba
 import { DEFAULT_CATALOG_AGENT_ID } from '@/backends/types';
 import { applyDaemonAutostartEnvForInvocation, shouldEnsureDaemonForInvocation } from '@/daemon/ensureDaemon';
 import { applyEphemeralServerSelectionFromPrefixArgs } from '@/server/serverSelection';
+import { ensureDefaultServerProfile } from '@/cli/ensureDefaultServerProfile';
 import packageJson from '../../package.json';
 
 export async function dispatchCli(params: Readonly<{
@@ -29,6 +30,9 @@ export async function dispatchCli(params: Readonly<{
     console.log(buildRootHelpText());
     return;
   }
+
+  // Ensure a default server profile exists on first run
+  await ensureDefaultServerProfile();
 
   // If --version is passed - do not log, its likely daemon inquiring about our version
   if (!args.includes('--version')) {
