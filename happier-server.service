@@ -16,7 +16,28 @@ Environment=HAPPIER_SERVER_LIGHT_DATA_DIR=/var/lib/happier
 Environment=DATABASE_URL=file:/var/lib/happier/happier-server-light.sqlite
 Environment=METRICS_ENABLED=false
 Environment=SENTRY_ENABLED=false
-Environment=PORT=3005
+Environment=PORT=8090
+Environment=HAPPIER_API_LISTEN_HOST=0.0.0.0
+Environment=HAPPIER_SERVER_UI_DIR=/home/ubuntu/happier/apps/ui/dist
+Environment=AUTH_PROVIDERS_CONFIG_PATH=/var/lib/happier/auth-providers.json
+Environment=AUTH_SIGNUP_PROVIDERS=seayoo
+Environment=AUTH_REQUIRED_LOGIN_PROVIDERS=seayoo
+
+# 公开访问地址
+Environment=PUBLIC_URL=https://happier.dev.fs.seayoogames.cn
+Environment=HAPPIER_PUBLIC_SERVER_URL=https://happier.dev.fs.seayoogames.cn
+Environment=HAPPIER_WEBAPP_URL=https://happier.dev.fs.seayoogames.cn
+
+# 启用 Keyless Accounts
+Environment=HAPPIER_FEATURE_E2EE__KEYLESS_ACCOUNTS_ENABLED=1
+Environment=HAPPIER_FEATURE_ENCRYPTION__STORAGE_POLICY=optional
+Environment=HAPPIER_FEATURE_AUTH_OAUTH__KEYLESS_ENABLED=1
+Environment=HAPPIER_FEATURE_AUTH_OAUTH__KEYLESS_PROVIDERS=seayoo
+Environment=HAPPIER_FEATURE_AUTH_OAUTH__KEYLESS_AUTO_PROVISION=1
+
+# 放宽用户名规则，允许 email 格式
+Environment=FRIENDS_USERNAME_REGEX="^[a-z0-9_.@+-]+$"
+Environment=FRIENDS_USERNAME_MAX_LEN=64
 
 # 启动命令
 ExecStart=/home/ubuntu/happier/start-light.sh
