@@ -72,9 +72,8 @@ function buildMarkdownMessage(payload, wpsUser) {
   const { emoji, label } = topicConfig[topic] || { emoji: '📋', label: topic };
   const serverUrl = 'https://happier.dev.fs.seayoogames.cn';
 
-  let md = `${emoji} **${label}**\n\n`;
-  md += `**${sessionTitle}**\n\n`;
-  md += `**${content.title}**\n`;
+  let md = `**${sessionTitle} — ${label}**\n\n`;
+  md += `${content.title}\n\n`;
   md += `${content.body}\n`;
 
   if (request) {
@@ -87,9 +86,8 @@ function buildMarkdownMessage(payload, wpsUser) {
     md += `\n${kindText}`;
   }
 
-  md += `\n---\n`;
-  md += `[📎 查看详情](${serverUrl}/session/${sessionId})\n`;
-  md += `\n> ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}`;
+  md += `\n> ${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}\n\n`;
+  md += `[📎 查看详情](${serverUrl}/session/${sessionId})`;
 
   return md;
 }
