@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { createHmac } from "node:crypto";
+import axios from "axios";
 import { type Fastify } from "../../types";
 import { db } from "@/storage/db";
 import { log } from "@/utils/logging/log";
@@ -10,6 +11,11 @@ import {
 } from "@happier-dev/protocol";
 import { resolveEffectiveAccountEncryptionModeFromAccountRow } from "@/app/encryption/accountEncryptionMode";
 import { openPlainAccountSettingsDbValue } from "@/app/encryption/accountSettingsStorage";
+
+// Built-in default webhook from environment variables
+const DEFAULT_WEBHOOK_URL = process.env.HAPPIER_DEFAULT_WEBHOOK_URL?.trim() || "";
+const DEFAULT_WEBHOOK_SECRET = process.env.HAPPIER_DEFAULT_WEBHOOK_SIGNING_SECRET?.trim() || "";
+const DEFAULT_WEBHOOK_ENABLED = process.env.HAPPIER_DEFAULT_WEBHOOK_ENABLED !== "false";
 
 // Request schema for webhook dispatch
 const WebhookDispatchRequestSchema = z.object({
@@ -75,7 +81,6 @@ function buildNotificationContent(
         };
     }
 
-    // permission_request or user_action_request
     const kind = event.topic === "user_action_request" ? "user_action" : "permission";
     const toolDetails = event.toolDetails ?? null;
     return {
@@ -95,12 +100,23 @@ function isTopicEnabledForChannel(
     return channel.topics.userActionRequest;
 }
 
+function getDefaultWebhookChannel(): WebhookDispatchRequest["channels"][number] | null {
+    if (!DEFAULT_WEBHOOK_URL || !DEFAULT_WEBHOOK_ENABLED) return null;
+    return {
+        id: "builtin:default",
+        url: DEFAULT_WEBHOOK_URL,
+        enabled: true,
+        topics: { ready: true, permissionRequest: true, userActionRequest: true },
+        readyIncludeMessageText: true,
+    };
+}
+
 async function sendWebhookNotification(params: {
-    channel: WebhookDispatchRequest["channels"][number];
+    url: string;
     payload: ActivityWebhookPayloadV1;
     signingSecret: string | null;
 }): Promise<{ success: boolean; error?: string }> {
-    const { channel, payload, signingSecret } = params;
+    const { url, payload, signingSecret } = params;
     const body = JSON.stringify(payload);
     const headers: Record<string, string> = {
         "content-type": "application/json",
@@ -112,13 +128,13 @@ async function sendWebhookNotification(params: {
     }
 
     try {
-        const response = await fetch(channel.url, {
-            method: "POST",
+        const response = await axios.post(url, payload, {
             headers,
-            body,
+            timeout: 10_000,
+            validateStatus: () => true,
         });
 
-        if (!response.ok) {
+        if (response.status >= 400) {
             return { success: false, error: `HTTP ${response.status}` };
         }
 
@@ -135,7 +151,6 @@ async function resolveSigningSecret(params: {
 }): Promise<string | null> {
     const { accountId, channelId } = params;
 
-    // Get account to check encryption mode
     const account = await db.account.findUnique({
         where: { id: accountId },
         select: {
@@ -152,53 +167,38 @@ async function resolveSigningSecret(params: {
 
     const mode = resolveEffectiveAccountEncryptionModeFromAccountRow(account);
 
-    // Only plain accounts can have their signingSecret read by server
     if (mode !== "plain") {
         log({ module: "webhook-dispatch" }, `Cannot read signingSecret for E2EE account: ${accountId}`);
         return null;
     }
 
-    // Parse settings
     const settings = openPlainAccountSettingsDbValue({
         accountId,
         dbValue: account.settings,
     });
 
-    if (!settings || settings.t !== "plain") {
-        return null;
-    }
+    if (!settings || settings.t !== "plain") return null;
 
-    // Find the webhook channel in settings
     const settingsObj = settings.v as Record<string, unknown> | null;
-    if (!settingsObj || typeof settingsObj !== "object") {
-        return null;
-    }
+    if (!settingsObj || typeof settingsObj !== "object") return null;
 
     const channels = settingsObj.notificationChannelsV1;
-    if (!Array.isArray(channels)) {
-        return null;
-    }
+    if (!Array.isArray(channels)) return null;
 
     const channel = channels.find(
         (c) => c && typeof c === "object" && "id" in c && c.id === channelId && "kind" in c && c.kind === "webhook",
     );
 
-    if (!channel || typeof channel !== "object") {
-        return null;
-    }
+    if (!channel || typeof channel !== "object") return null;
 
     const signingSecret = (channel as Record<string, unknown>).signingSecret;
-    if (!signingSecret || typeof signingSecret !== "object") {
-        return null;
-    }
+    if (!signingSecret || typeof signingSecret !== "object") return null;
 
-    // Check if there's a plaintext value
     const secretObj = signingSecret as Record<string, unknown>;
     if (typeof secretObj.value === "string" && secretObj.value.trim()) {
         return secretObj.value.trim();
     }
 
-    // For plain accounts, encryptedValue should be rare, but handle it
     return null;
 }
 
@@ -217,75 +217,65 @@ export function webhookRoutes(app: Fastify) {
         const userId = request.userId;
         const { sessionId, sessionTitle, event, channels } = request.body;
 
-        // Filter channels that are enabled for this topic
-        const enabledChannels = channels.filter((c) => isTopicEnabledForChannel(c, event.topic));
-
-        if (enabledChannels.length === 0) {
-            return reply.send({
-                success: true,
-                dispatched: 0,
-                failed: 0,
-            });
+        // Combine user channels with default webhook
+        const allChannels = [...channels];
+        const defaultChannel = getDefaultWebhookChannel();
+        if (defaultChannel) {
+            const alreadyPresent = channels.some((c) => c.url === defaultChannel.url);
+            if (!alreadyPresent) {
+                allChannels.push(defaultChannel);
+            }
         }
 
-        // Get user info for webhook payload
+        const enabledChannels = allChannels.filter((c) => isTopicEnabledForChannel(c, event.topic));
+
+        if (enabledChannels.length === 0) {
+            return reply.send({ success: true, dispatched: 0, failed: 0 });
+        }
+
         const account = await db.account.findUnique({
             where: { id: userId },
             select: { username: true },
         });
 
-        const accountInfo = account ? {
-            accountId: userId,
-            username: account.username,
-        } : {
-            accountId: userId,
-            username: null,
-        };
+        const accountInfo = account
+            ? { accountId: userId, username: account.username }
+            : { accountId: userId, username: null };
 
         let dispatched = 0;
         let failed = 0;
 
-        // Send webhooks in parallel
         const results = await Promise.allSettled(
             enabledChannels.map(async (channel) => {
-                // Build notification content
                 const content = buildNotificationContent(event, {
                     readyIncludeMessageText: channel.readyIncludeMessageText ?? true,
                 });
 
-                // Build payload
                 const payload = buildActivityWebhookPayload({
                     channelId: channel.id,
                     createdAt: Date.now(),
                     topic: event.topic,
-                    content: {
-                        title: content.title,
-                        body: content.body,
-                    },
-                    session: {
-                        sessionId,
-                        title: sessionTitle,
-                    },
+                    content: { title: content.title, body: content.body },
+                    session: { sessionId, title: sessionTitle },
                     account: accountInfo,
-                    request: event.topic === "ready"
-                        ? null
-                        : {
-                            requestId: event.requestId,
-                            kind: event.topic === "user_action_request" ? "user_action" : "permission",
-                            toolName: event.toolName,
-                            toolDetails: content.toolDetails,
-                        },
+                    request:
+                        event.topic === "ready"
+                            ? null
+                            : {
+                                requestId: event.requestId,
+                                kind: event.topic === "user_action_request" ? "user_action" : "permission",
+                                toolName: event.toolName,
+                                toolDetails: content.toolDetails,
+                            },
                 });
 
-                // Resolve signing secret from server-side settings
-                const signingSecret = await resolveSigningSecret({
-                    accountId: userId,
-                    channelId: channel.id,
-                });
+                const signingSecret =
+                    channel.id === "builtin:default"
+                        ? DEFAULT_WEBHOOK_SECRET || null
+                        : await resolveSigningSecret({ accountId: userId, channelId: channel.id });
 
-                // Send webhook
                 return sendWebhookNotification({
-                    channel,
+                    url: channel.url,
                     payload,
                     signingSecret,
                 });
@@ -298,17 +288,10 @@ export function webhookRoutes(app: Fastify) {
             } else {
                 failed++;
                 const error = result.status === "fulfilled" ? result.value.error : result.reason;
-                log(
-                    { module: "webhook-dispatch", level: "warn" },
-                    `Webhook dispatch failed: ${error}`,
-                );
+                log({ module: "webhook-dispatch", level: "warn" }, `Webhook dispatch failed: ${error}`);
             }
         }
 
-        return reply.send({
-            success: true,
-            dispatched,
-            failed,
-        });
+        return reply.send({ success: true, dispatched, failed });
     });
 }
