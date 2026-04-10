@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { createHmac } from "node:crypto";
-import axios from "axios";
+import http from "node:http";
+import https from "node:https";
 import { type Fastify } from "../../types";
 import { db } from "@/storage/db";
 import { log } from "@/utils/logging/log";
@@ -111,6 +112,73 @@ function getDefaultWebhookChannel(): WebhookDispatchRequest["channels"][number] 
     };
 }
 
+function sendWebhook(params: {
+    url: string;
+    body: string;
+    headers: Record<string, string>;
+}): Promise<{ success: boolean; status?: number; error?: string }> {
+    const { url, body, headers } = params;
+    const parsed = new URL(url);
+    const isHttps = parsed.protocol === "https:";
+    const agent = isHttps ? https.globalAgent : http.globalAgent;
+
+    return new Promise((resolve) => {
+        log({ module: "webhook-dispatch" }, `=== WEBHOOK REQUEST ===`);
+        log({ module: "webhook-dispatch" }, `URL: ${url}`);
+        log({ module: "webhook-dispatch" }, `Method: POST`);
+        log({ module: "webhook-dispatch" }, `Headers: ${JSON.stringify(headers)}`);
+        log({ module: "webhook-dispatch" }, `Body length: ${body.length} bytes`);
+        log({ module: "webhook-dispatch" }, `=== END REQUEST ===`);
+
+        const req = (isHttps ? https : http).request({
+            hostname: parsed.hostname,
+            port: parsed.port || (isHttps ? 443 : 80),
+            path: parsed.pathname + parsed.search,
+            method: "POST",
+            headers,
+            agent,
+            timeout: 10_000,
+        });
+
+        req.on("response", (res) => {
+            let data = "";
+            res.on("data", (chunk) => { data += chunk; });
+            res.on("end", () => {
+                log({ module: "webhook-dispatch" }, `=== WEBHOOK RESPONSE ===`);
+                log({ module: "webhook-dispatch" }, `Status: ${res.statusCode}`);
+                log({ module: "webhook-dispatch" }, `Response data (first 200): ${data.substring(0, 200)}`);
+                log({ module: "webhook-dispatch" }, `=== END RESPONSE ===`);
+
+                if (res.statusCode != null && res.statusCode >= 400) {
+                    resolve({ success: false, status: res.statusCode, error: `HTTP ${res.statusCode}` });
+                } else {
+                    resolve({ success: true, status: res.statusCode });
+                }
+            });
+            res.on("error", (err) => {
+                log({ module: "webhook-dispatch", level: "warn" }, `Response error: ${err.message}`);
+                resolve({ success: false, error: err.message });
+            });
+        });
+
+        req.on("error", (err) => {
+            log({ module: "webhook-dispatch", level: "warn" }, `=== WEBHOOK ERROR ===`);
+            log({ module: "webhook-dispatch", level: "warn" }, `Error: ${err.message}`);
+            log({ module: "webhook-dispatch", level: "warn" }, `Code: ${err.code}`);
+            log({ module: "webhook-dispatch", level: "warn" }, `=== END ERROR ===`);
+            resolve({ success: false, error: err.message });
+        });
+
+        req.on("timeout", () => {
+            req.destroy();
+            resolve({ success: false, error: "Request timeout" });
+        });
+
+        req.write(body);
+        req.end();
+    });
+}
+
 async function sendWebhookNotification(params: {
     url: string;
     payload: ActivityWebhookPayloadV1;
@@ -120,6 +188,7 @@ async function sendWebhookNotification(params: {
     const body = JSON.stringify(payload);
     const headers: Record<string, string> = {
         "content-type": "application/json",
+        "content-length": String(Buffer.byteLength(body)),
     };
 
     if (signingSecret) {
@@ -127,43 +196,8 @@ async function sendWebhookNotification(params: {
         headers["x-happier-signature-256"] = `sha256=${signature}`;
     }
 
-    try {
-        // FULL REQUEST LOG
-        log({ module: "webhook-dispatch" }, `=== WEBHOOK REQUEST ===`);
-        log({ module: "webhook-dispatch" }, `URL: ${url}`);
-        log({ module: "webhook-dispatch" }, `Headers: ${JSON.stringify(headers)}`);
-        log({ module: "webhook-dispatch" }, `Body (first 200 chars): ${body.substring(0, 200)}`);
-        log({ module: "webhook-dispatch" }, `Body length: ${body.length} bytes`);
-        log({ module: "webhook-dispatch" }, `=== END REQUEST ===`);
-
-        const response = await axios.post(url, payload, {
-            headers,
-            timeout: 10_000,
-            validateStatus: () => true,
-        });
-
-        // FULL RESPONSE LOG
-        log({ module: "webhook-dispatch" }, `=== WEBHOOK RESPONSE ===`);
-        log({ module: "webhook-dispatch" }, `Status: ${response.status}`);
-        log({ module: "webhook-dispatch" }, `StatusText: ${response.statusText}`);
-        log({ module: "webhook-dispatch" }, `Response Headers: ${JSON.stringify(response.headers)}`);
-        log({ module: "webhook-dispatch" }, `Data: ${typeof response.data === "string" ? response.data : JSON.stringify(response.data).substring(0, 200)}`);
-        log({ module: "webhook-dispatch" }, `=== END RESPONSE ===`);
-
-        if (response.status >= 400) {
-            return { success: false, error: `HTTP ${response.status}` };
-        }
-
-        return { success: true };
-    } catch (error) {
-        const message = error instanceof Error ? error.message : "Unknown error";
-        const stack = error instanceof Error ? error.stack : "";
-        log({ module: "webhook-dispatch", level: "warn" }, `=== WEBHOOK ERROR ===`);
-        log({ module: "webhook-dispatch", level: "warn" }, `Error: ${message}`);
-        log({ module: "webhook-dispatch", level: "warn" }, `Stack: ${stack}`);
-        log({ module: "webhook-dispatch", level: "warn" }, `=== END ERROR ===`);
-        return { success: false, error: message };
-    }
+    const result = await sendWebhook({ url, body, headers });
+    return { success: result.success, error: result.error };
 }
 
 async function resolveSigningSecret(params: {
@@ -295,11 +329,18 @@ export function webhookRoutes(app: Fastify) {
                         ? DEFAULT_WEBHOOK_SECRET || null
                         : await resolveSigningSecret({ accountId: userId, channelId: channel.id });
 
-                return sendWebhookNotification({
-                    url: channel.url,
-                    payload,
-                    signingSecret,
-                });
+                const body = JSON.stringify(payload);
+                const headers: Record<string, string> = {
+                    "content-type": "application/json",
+                    "content-length": String(Buffer.byteLength(body)),
+                };
+
+                if (signingSecret) {
+                    const signature = createHmac("sha256", signingSecret).update(body).digest("hex");
+                    headers["x-happier-signature-256"] = `sha256=${signature}`;
+                }
+
+                return sendWebhook({ url: channel.url, body, headers });
             }),
         );
 
