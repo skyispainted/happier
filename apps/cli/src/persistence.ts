@@ -120,8 +120,8 @@ const defaultSettings: Settings = {
     cloud: {
       id: 'cloud',
       name: 'Happier Cloud',
-      serverUrl: 'https://happier.dev.fs.seayoogames.cn',
-      webappUrl: 'https://happier.dev.fs.seayoogames.cn',
+      serverUrl: 'https://api.happier.dev',
+      webappUrl: 'https://app.happier.dev',
       createdAt: 0,
       updatedAt: 0,
       lastUsedAt: 0,
@@ -158,8 +158,8 @@ function migrateSettings(raw: any, fromVersion: number): any {
 
   // Migration from v4 to v5 (server profiles + per-server state)
   if (fromVersion < 5) {
-    const DEFAULT_SERVER_URL = 'https://happier.dev.fs.seayoogames.cn';
-    const DEFAULT_WEBAPP_URL = 'https://happier.dev.fs.seayoogames.cn';
+    const DEFAULT_SERVER_URL = 'https://api.happier.dev';
+    const DEFAULT_WEBAPP_URL = 'https://app.happier.dev';
     const now = Date.now();
 
     const cloudId = 'cloud';

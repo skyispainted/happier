@@ -75,10 +75,9 @@ function buildNotificationContent(
     options: { readyIncludeMessageText: boolean },
 ): { title: string; body: string; toolDetails?: string | null } {
     if (event.topic === "ready") {
-        const sessionTitle = event.sessionTitle;
         const previewText = options.readyIncludeMessageText ? event.assistantPreviewText ?? null : null;
         return {
-            title: sessionTitle ?? event.waitingForCommandLabel,
+            title: event.waitingForCommandLabel,
             body: previewText ?? `${event.waitingForCommandLabel} is ready`,
         };
     }
