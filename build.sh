@@ -6,13 +6,13 @@ yarn install --ignore-scripts
 
 echo "Building packages..."
 
-# Build internal packages in order
+# Build internal packages in correct dependency order
 yarn workspace @happier-dev/protocol build
-yarn workspace @happier-dev/cli-common build
+yarn workspace @happier-dev/release-runtime build
 yarn workspace @happier-dev/agents build
+yarn workspace @happier-dev/cli-common build
 yarn workspace @happier-dev/transfers build
 yarn workspace @happier-dev/connection-supervisor build
-yarn workspace @happier-dev/release-runtime build
 
 echo "Generating Prisma clients for server (sqlite)..."
 HAPPIER_BUILD_DB_PROVIDERS=sqlite yarn workspace @happier-dev/server generate:providers
