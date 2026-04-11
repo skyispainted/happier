@@ -72,13 +72,15 @@ const WebhookDispatchErrorResponseSchema = z.object({
 
 function buildNotificationContent(
     event: WebhookDispatchRequest["event"],
-    options: { readyIncludeMessageText: boolean },
+    options: { readyIncludeMessageText: boolean; sessionTitle?: string | null },
 ): { title: string; body: string; toolDetails?: string | null } {
     if (event.topic === "ready") {
         const previewText = options.readyIncludeMessageText ? event.assistantPreviewText ?? null : null;
+        const hasUsefulPreviewText = previewText && previewText.trim().length > 0 && !previewText.includes("🤖 Assistant:") && !previewText.includes("Assistant:");
+        const title = options.sessionTitle ?? event.waitingForCommandLabel;
         return {
-            title: event.waitingForCommandLabel,
-            body: previewText ?? `${event.waitingForCommandLabel} is ready`,
+            title,
+            body: hasUsefulPreviewText ? previewText : `${title} is ready`,
         };
     }
 
@@ -323,6 +325,7 @@ export function webhookRoutes(app: Fastify) {
 
                 const content = buildNotificationContent(event, {
                     readyIncludeMessageText: channel.readyIncludeMessageText ?? true,
+                    sessionTitle,
                 });
                 log({ module: "webhook-dispatch" }, `    content.title: ${content.title}`);
                 log({ module: "webhook-dispatch" }, `    content.body: ${content.body.slice(0, 100)}`);
