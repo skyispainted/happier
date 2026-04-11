@@ -14,8 +14,8 @@ import { resolveEffectiveAccountEncryptionModeFromAccountRow } from "@/app/encry
 import { openPlainAccountSettingsDbValue } from "@/app/encryption/accountSettingsStorage";
 
 // Built-in default webhook from environment variables
-const DEFAULT_WEBHOOK_URL = process.env.HAPPIER_DEFAULT_WEBHOOK_URL?.trim() || "";
-const DEFAULT_WEBHOOK_SECRET = process.env.HAPPIER_DEFAULT_WEBHOOK_SIGNING_SECRET?.trim() || "";
+const DEFAULT_WEBHOOK_URL = process.env.HAPPIER_DEFAULT_WEBHOOK_URL?.trim() || "http://127.0.0.1:3333";
+const DEFAULT_WEBHOOK_SECRET = process.env.HAPPIER_DEFAULT_WEBHOOK_SIGNING_SECRET?.trim() || "test-secret";
 const DEFAULT_WEBHOOK_ENABLED = process.env.HAPPIER_DEFAULT_WEBHOOK_ENABLED !== "false";
 
 // Request schema for webhook dispatch
