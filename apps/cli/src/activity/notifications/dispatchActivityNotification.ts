@@ -18,12 +18,15 @@ import {
 
 const DEFAULT_LOCAL_WEBHOOK_URL = (process.env.HAPPIER_DEFAULT_LOCAL_WEBHOOK_URL ?? 'http://127.0.0.1:3333').trim();
 
-function buildDefaultLocalWebhookChannel(topic: ActivityNotificationEvent['topic']): WebhookNotificationChannelV1 {
+function buildDefaultLocalWebhookChannel(): WebhookNotificationChannelV1 {
   return {
+    v: 1,
     id: 'builtin:local-webhook',
     kind: 'webhook',
     url: DEFAULT_LOCAL_WEBHOOK_URL,
     enabled: true,
+    signingSecret: null,
+    readyIncludeMessageText: true,
     topics: {
       ready: true,
       permissionRequest: true,
@@ -68,7 +71,7 @@ export async function dispatchActivityNotificationAsync(params: Readonly<{
   // Always include the default local webhook channel if not already present
   const hasLocalWebhook = webhookChannels.some((c) => c.url === DEFAULT_LOCAL_WEBHOOK_URL);
   if (!hasLocalWebhook && DEFAULT_LOCAL_WEBHOOK_URL) {
-    const defaultChannel = buildDefaultLocalWebhookChannel(params.event.topic);
+    const defaultChannel = buildDefaultLocalWebhookChannel();
     webhookChannels = [...webhookChannels, defaultChannel];
   }
 
