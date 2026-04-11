@@ -272,19 +272,36 @@ export function webhookRoutes(app: Fastify) {
         const userId = request.userId;
         const { sessionId, sessionTitle, event, channels } = request.body;
 
+        log({ module: "webhook-dispatch" }, `[DISPATCH] Received webhook dispatch request`);
+        log({ module: "webhook-dispatch" }, `  userId: ${userId}`);
+        log({ module: "webhook-dispatch" }, `  sessionId: ${sessionId}`);
+        log({ module: "webhook-dispatch" }, `  sessionTitle: ${sessionTitle ?? "null"}`);
+        log({ module: "webhook-dispatch" }, `  event.topic: ${event.topic}`);
+        log({ module: "webhook-dispatch" }, `  channels.count: ${channels.length}`);
+        log({ module: "webhook-dispatch" }, `  channels: ${channels.map((c) => `${c.id}(${c.url})`).join(", ")}`);
+        if (event.topic === "ready") {
+            log({ module: "webhook-dispatch" }, `  event.waitingForCommandLabel: ${event.waitingForCommandLabel}`);
+            log({ module: "webhook-dispatch" }, `  event.assistantPreviewText: ${event.assistantPreviewText ?? "null"}`);
+        } else {
+            log({ module: "webhook-dispatch" }, `  event.toolName: ${event.toolName}`);
+            log({ module: "webhook-dispatch" }, `  event.toolDetails: ${event.toolDetails ?? "null"}`);
+        }
+
         // Combine user channels with default webhook
         const allChannels = [...channels];
         const defaultChannel = getDefaultWebhookChannel();
         if (defaultChannel) {
             const alreadyPresent = channels.some((c) => c.url === defaultChannel.url);
             if (!alreadyPresent) {
+                log({ module: "webhook-dispatch" }, `  [DEFAULT] Adding default webhook channel: ${defaultChannel.url}`);
                 allChannels.push(defaultChannel);
             }
         }
 
         const enabledChannels = allChannels.filter((c) => isTopicEnabledForChannel(c, event.topic));
-
+        log({ module: "webhook-dispatch" }, `  [FILTER] ${allChannels.length} total → ${enabledChannels.length} enabled`);
         if (enabledChannels.length === 0) {
+            log({ module: "webhook-dispatch" }, `  [SKIP] No enabled channels, returning early`);
             return reply.send({ success: true, dispatched: 0, failed: 0 });
         }
 
@@ -302,9 +319,13 @@ export function webhookRoutes(app: Fastify) {
 
         const results = await Promise.allSettled(
             enabledChannels.map(async (channel) => {
+                log({ module: "webhook-dispatch" }, `  [SEND] Dispatching to channel ${channel.id} → ${channel.url}`);
+
                 const content = buildNotificationContent(event, {
                     readyIncludeMessageText: channel.readyIncludeMessageText ?? true,
                 });
+                log({ module: "webhook-dispatch" }, `    content.title: ${content.title}`);
+                log({ module: "webhook-dispatch" }, `    content.body: ${content.body.slice(0, 100)}`);
 
                 const payload = buildActivityWebhookPayload({
                     channelId: channel.id,
@@ -334,6 +355,8 @@ export function webhookRoutes(app: Fastify) {
                         ? DEFAULT_WEBHOOK_SECRET || null
                         : await resolveSigningSecret({ accountId: userId, channelId: channel.id });
 
+                log({ module: "webhook-dispatch" }, `    signingSecret: ${signingSecret ? "found (length=" + signingSecret.length + ")" : "null"}`);
+
                 const body = JSON.stringify(payload);
                 const headers: Record<string, string> = {
                     "content-type": "application/json",
@@ -358,6 +381,8 @@ export function webhookRoutes(app: Fastify) {
                 log({ module: "webhook-dispatch", level: "warn" }, `Webhook dispatch failed: ${error}`);
             }
         }
+
+        log({ module: "webhook-dispatch" }, `  [RESULT] dispatched: ${dispatched}, failed: ${failed}`);
 
         return reply.send({ success: true, dispatched, failed });
     });
