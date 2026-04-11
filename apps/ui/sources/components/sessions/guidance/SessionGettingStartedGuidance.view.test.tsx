@@ -104,7 +104,7 @@ describe('SessionGettingStartedGuidanceView', () => {
     expect(expandedContent).toContain('happier server add');
     expect(expandedContent).toContain('https://api.company.example');
     expect(expandedContent).not.toContain('$ npm i -g @happier-dev/cli');
-    expect(expandedContent).toContain('curl -fsSL https://happier.dev/install | bash');
+    expect(expandedContent).toContain('npm install -g @ks-happier/cli@latest');
     expect(expandedContent).not.toContain('npm i -g @happier-dev/cli');
     expect(expandedContent).toContain('happier daemon install');
     expect(expandedContent).not.toContain('daemon service install');
