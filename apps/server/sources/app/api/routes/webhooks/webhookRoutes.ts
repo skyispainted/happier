@@ -70,6 +70,12 @@ const WebhookDispatchErrorResponseSchema = z.object({
     error: z.string(),
 });
 
+function cleanPreviewText(preview: string | undefined): string | null {
+    if (!preview || !preview.trim()) return null;
+    if (preview.includes("🤖 Assistant:") || preview.includes("Assistant:")) return null;
+    return preview.trim();
+}
+
 function shortSessionHash(sessionId: string): string {
     return createHash("sha256").update(sessionId).digest("hex").slice(0, 5);
 }
@@ -83,11 +89,8 @@ function buildNotificationContent(
 
     if (event.topic === "ready") {
         const title = `🟢 ${hash} ${titleBase}`.trim();
-        const previewText = options.readyIncludeMessageText ? event.assistantPreviewText ?? null : null;
-        const hasUsefulPreviewText = previewText && previewText.trim().length > 0 && !previewText.includes("🤖 Assistant:") && !previewText.includes("Assistant:");
-        const body = hasUsefulPreviewText
-            ? previewText
-            : `Session is ready and waiting for your command.`;
+        const cleaned = options.readyIncludeMessageText ? cleanPreviewText(event.assistantPreviewText) : null;
+        const body = cleaned ?? `Session is ready and waiting for your command.`;
         return { title, body };
     }
 
@@ -346,7 +349,9 @@ export function webhookRoutes(app: Fastify) {
                         accountId: userId,
                         username: account?.username || null,
                         displayName,
-                        assistantPreviewText: event.topic === "ready" ? event.assistantPreviewText ?? null : null,
+                        assistantPreviewText: event.topic === "ready"
+                            ? cleanPreviewText(event.assistantPreviewText) ?? null
+                            : null,
                     },
                     request:
                         event.topic === "ready"
