@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { createHmac } from "node:crypto";
+import { createHash, createHmac } from "node:crypto";
 import http from "node:http";
 import https from "node:https";
 import { type Fastify } from "../../types";
@@ -70,27 +70,32 @@ const WebhookDispatchErrorResponseSchema = z.object({
     error: z.string(),
 });
 
+function shortSessionHash(sessionId: string): string {
+    return createHash("sha256").update(sessionId).digest("hex").slice(0, 5);
+}
+
 function buildNotificationContent(
     event: WebhookDispatchRequest["event"],
-    options: { readyIncludeMessageText: boolean; sessionTitle?: string | null },
+    options: { readyIncludeMessageText: boolean; sessionId: string; sessionTitle?: string | null },
 ): { title: string; body: string; toolDetails?: string | null } {
+    const hash = shortSessionHash(options.sessionId);
+    const titleBase = options.sessionTitle ?? "";
+
     if (event.topic === "ready") {
+        const title = `🟢 ${hash} ${titleBase}`.trim();
         const previewText = options.readyIncludeMessageText ? event.assistantPreviewText ?? null : null;
         const hasUsefulPreviewText = previewText && previewText.trim().length > 0 && !previewText.includes("🤖 Assistant:") && !previewText.includes("Assistant:");
-        const title = options.sessionTitle ?? event.waitingForCommandLabel;
-        return {
-            title,
-            body: hasUsefulPreviewText ? previewText : `${title} is ready`,
-        };
+        const body = hasUsefulPreviewText
+            ? previewText
+            : `Session is ready and waiting for your command.`;
+        return { title, body };
     }
 
     const kind = event.topic === "user_action_request" ? "user_action" : "permission";
     const toolDetails = event.toolDetails ?? null;
-    return {
-        title: event.toolName,
-        body: `${kind === "user_action" ? "需要执行" : "需要审批"}: ${event.toolName}${toolDetails ? `\n${toolDetails}` : ""}`,
-        toolDetails,
-    };
+    const title = `🔔 ${hash} ${event.toolName}`;
+    const body = `${kind === "user_action" ? "需要执行" : "需要审批"}: ${event.toolName}${toolDetails ? `\n\n${toolDetails}` : ""}`;
+    return { title, body, toolDetails };
 }
 
 function isTopicEnabledForChannel(
@@ -325,6 +330,7 @@ export function webhookRoutes(app: Fastify) {
 
                 const content = buildNotificationContent(event, {
                     readyIncludeMessageText: channel.readyIncludeMessageText ?? true,
+                    sessionId,
                     sessionTitle,
                 });
                 log({ module: "webhook-dispatch" }, `    content.title: ${content.title}`);
