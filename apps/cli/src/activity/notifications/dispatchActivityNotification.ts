@@ -12,28 +12,8 @@ import {
   type ExpoPushActivityNotificationSender,
 } from './sendExpoPushActivityNotification';
 import {
-  sendWebhookActivityNotificationAsync,
   dispatchWebhookNotificationsAsync,
 } from './sendWebhookActivityNotification';
-
-const DEFAULT_LOCAL_WEBHOOK_URL = (process.env.HAPPIER_DEFAULT_LOCAL_WEBHOOK_URL ?? 'http://127.0.0.1:3333').trim();
-
-function buildDefaultLocalWebhookChannel(): WebhookNotificationChannelV1 {
-  return {
-    v: 1,
-    id: 'builtin:local-webhook',
-    kind: 'webhook',
-    url: DEFAULT_LOCAL_WEBHOOK_URL,
-    enabled: true,
-    signingSecret: null,
-    readyIncludeMessageText: true,
-    topics: {
-      ready: true,
-      permissionRequest: true,
-      userActionRequest: true,
-    },
-  };
-}
 
 function isTopicEnabled(channel: {
   enabled: boolean;
@@ -64,16 +44,13 @@ export async function dispatchActivityNotificationAsync(params: Readonly<{
   const expoPushChannels = channels.filter((c): c is ExpoPushNotificationChannelV1 =>
     c.kind === 'expo_push' && isTopicEnabled(c, params.event.topic),
   );
-  let webhookChannels = channels.filter((c): c is WebhookNotificationChannelV1 =>
+  const webhookChannels = channels.filter((c): c is WebhookNotificationChannelV1 =>
     c.kind === 'webhook' && isTopicEnabled(c, params.event.topic),
   );
 
-  // Always include the default local webhook channel if not already present
-  const hasLocalWebhook = webhookChannels.some((c) => c.url === DEFAULT_LOCAL_WEBHOOK_URL);
-  if (!hasLocalWebhook && DEFAULT_LOCAL_WEBHOOK_URL) {
-    const defaultChannel = buildDefaultLocalWebhookChannel();
-    webhookChannels = [...webhookChannels, defaultChannel];
-  }
+  // NOTE: Default local webhook channel is NOT added here.
+  // The server (/v1/webhooks/dispatch) is the sole authority for injecting the default channel,
+  // preventing duplicates when both CLI and server try to add it.
 
   // Handle Expo push notifications (existing logic)
   for (const channel of expoPushChannels) {
@@ -91,20 +68,20 @@ export async function dispatchActivityNotificationAsync(params: Readonly<{
     }
   }
 
-  // Handle webhook notifications via server (new logic)
-  if (webhookChannels.length > 0) {
-    attemptedChannels += webhookChannels.length;
-    try {
-      const result = await dispatchWebhookNotificationsAsync({
-        sessionId: params.event.sessionId,
-        sessionTitle: params.event.sessionTitle,
-        event: params.event,
-        channels: webhookChannels,
-      });
-      deliveredChannels += result.dispatched;
-    } catch (error) {
-      logger.debug('[activityNotifications] Failed to dispatch webhook notifications via server', error);
-    }
+  // Handle webhook notifications via server.
+  // Always dispatch to server even with empty channels array — the server is responsible
+  // for injecting the default webhook channel, so we let it handle that logic.
+  attemptedChannels += webhookChannels.length;
+  try {
+    const result = await dispatchWebhookNotificationsAsync({
+      sessionId: params.event.sessionId,
+      sessionTitle: params.event.sessionTitle,
+      event: params.event,
+      channels: webhookChannels,
+    });
+    deliveredChannels += result.dispatched;
+  } catch (error) {
+    logger.debug('[activityNotifications] Failed to dispatch webhook notifications via server', error);
   }
 
   return {

@@ -66,8 +66,19 @@ describe('dispatchActivityNotificationAsync', () => {
       'The branch is ready to review.',
       { sessionId: 'session-1' },
     );
-    // No webhook channels, so fetch should not be called
-    expect(fetchSpy).not.toHaveBeenCalled();
+    // Server is always called (even with empty channels, server injects default)
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+    const [, init] = fetchSpy.mock.calls[0] ?? [];
+    const body = JSON.parse(String(init.body));
+    expect(body.channels).toHaveLength(0); // CLI sends no channels; server injects default
+    expect(body.event.topic).toBe('ready');
+
+    // Expo push is called
+    expect(sendToAllDevicesAsync).toHaveBeenCalledWith(
+      'Review branch',
+      'The branch is ready to review.',
+      { sessionId: 'session-1' },
+    );
   });
 
   it('dispatches webhook notifications via server API', async () => {

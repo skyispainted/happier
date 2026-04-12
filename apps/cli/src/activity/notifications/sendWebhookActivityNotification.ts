@@ -124,9 +124,8 @@ export async function dispatchWebhookNotificationsAsync(params: Readonly<{
   event: ActivityNotificationEvent;
   channels: ReadonlyArray<WebhookNotificationChannelV1>;
 }>): Promise<{ dispatched: number; failed: number }> {
-  if (params.channels.length === 0) {
-    return { dispatched: 0, failed: 0 };
-  }
+  // NOTE: We always call the server even with empty channels.
+  // The server is responsible for injecting the default webhook channel.
 
   // Prepare channels for server dispatch (without signingSecret)
   const dispatchChannels: WebhookDispatchChannel[] = params.channels.map((channel) => ({
