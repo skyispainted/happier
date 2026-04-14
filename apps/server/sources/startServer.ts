@@ -31,6 +31,7 @@ import { pathToFileURL } from 'node:url';
 import { initializeServerSentry } from '@/app/monitoring/sentry';
 import { inferAndApplyTailscaleServePublicServerUrl } from '@/app/integrations/tailscale/tailscaleServePublicUrlInference';
 import { startRetentionWorker } from '@/app/retention/runtime/startRetentionWorker';
+import { startWalCheckpoint } from '@/storage/walCheckpoint';
 
 export type ServerFlavor = 'full' | 'light';
 export type ServerRole = 'all' | 'api' | 'worker';
@@ -190,6 +191,7 @@ export async function startServer(flavor: ServerFlavor): Promise<void> {
         }
         startDatabaseMetricsUpdater();
         startTimeout();
+        startWalCheckpoint();
     }
 
     //
