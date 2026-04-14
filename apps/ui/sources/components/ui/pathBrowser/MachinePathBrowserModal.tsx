@@ -1058,6 +1058,141 @@ export function MachinePathBrowserView(props: MachinePathBrowserViewProps): Reac
         return items;
     }, [collapseAll, createFolderInDirectory, expandedPaths.length, isCreatingFolder, props.onRequestClose, selectedDirectoryPath]);
 
+    const renderRow = React.useCallback(({ node, index, totalCount }: { node: FilesystemBrowserNode; index: number; totalCount: number }) => {
+        const rowBasePaddingLeft = 36;
+        const rowDepthIndent = 12;
+        const rowPaddingLeft = rowBasePaddingLeft + Math.min(6, Math.max(0, node.depth)) * rowDepthIndent;
+        const selected = selectedPath === node.path && (
+            selectionMode === 'file' ? node.type === 'file' : node.type === 'directory'
+        );
+        const contextMenuRowAnchorRef = React.createRef<View>();
+        const handleTogglePress = (event?: GestureResponderEvent) => {
+            stopToggleEventPropagation(event);
+            void toggleDirectory(node.path);
+        };
+        const handleOpenContextMenu = (event?: unknown) => {
+            stopToggleEventPropagation(event);
+            const maybeEvent = event as { preventDefault?: () => void; stopPropagation?: () => void };
+            maybeEvent.preventDefault?.();
+            maybeEvent.stopPropagation?.();
+            openContextMenu(node.path, contextMenuRowAnchorRef.current);
+        };
+        const handleRowLongPress = () => {
+            openContextMenu(node.path, contextMenuRowAnchorRef.current);
+        };
+        const rightElement = selected
+            ? <Ionicons name="checkmark-circle" size={18} color={theme.colors.button.primary.background} />
+            : undefined;
+
+        const icon = node.type === 'directory'
+            ? (
+                <View style={styles.directoryIconWrap}>
+                    <Pressable
+                        testID={getPathBrowserToggleTestId(node.path)}
+                        {...(Platform.OS === 'web'
+                            ? ({ onMouseDownCapture: stopToggleEventPropagation } as any)
+                            : {})}
+                        onPressIn={stopToggleEventPropagation}
+                        onPress={handleTogglePress}
+                        hitSlop={10}
+                        style={styles.directoryToggle}
+                    >
+                        <Ionicons
+                            name={node.isExpanded ? 'chevron-down' : 'chevron-forward'}
+                            size={16}
+                            color={theme.colors.textSecondary}
+                        />
+                    </Pressable>
+                    <Ionicons
+                        name={node.isExpanded ? 'folder-open-outline' : 'folder-outline'}
+                        size={16}
+                        color={theme.colors.textLink}
+                        style={styles.directoryFolderIcon}
+                    />
+                </View>
+            )
+            : node.type === 'file'
+                ? <Ionicons name="document-outline" size={18} color={theme.colors.textLink} />
+                : <Ionicons name="folder-outline" size={18} color={theme.colors.textLink} />;
+
+        return (
+            <FilesystemBrowserRow
+                node={node}
+                index={index}
+                totalCount={totalCount}
+                title={
+                    node.type === 'info' && node.infoKind === 'truncated'
+                        ? t('newSession.pathPicker.truncatedDirectoryInfo', { count: node.entryCount ?? 0 })
+                        : node.name || node.path
+                }
+                subtitle={node.type === 'error' ? node.errorMessage : undefined}
+                icon={icon}
+                testID={getPathBrowserRowTestId(node.path)}
+                selected={selected}
+                rightElement={rightElement}
+                onContextMenu={node.type === 'directory' && enableContextMenu ? handleOpenContextMenu : undefined}
+                onLongPress={node.type === 'directory' && enableContextMenu ? handleRowLongPress : undefined}
+                basePaddingLeft={rowBasePaddingLeft}
+                depthIndent={rowDepthIndent}
+                density="tight"
+                errorTitle={t('errors.tryAgain')}
+                errorSubtitle={node.errorMessage}
+                onRetryError={(errorNode) => {
+                    if (errorNode.parentDirectoryPath) {
+                        void retryDirectory(errorNode.parentDirectoryPath);
+                    }
+                }}
+                onPress={() => {
+                    if (node.type === 'directory') {
+                        if (selectionMode === 'file') {
+                            void toggleDirectory(node.path);
+                            return;
+                        }
+                        if (interaction === 'immediate') {
+                            shouldAutoSelectInitialPathRef.current = false;
+                            shouldAutoScrollInitialSelectionRef.current = false;
+                            props.onPickPath(node.path);
+                            return;
+                        }
+                        shouldAutoSelectInitialPathRef.current = false;
+                        shouldAutoScrollInitialSelectionRef.current = false;
+                        setSelectedPath(node.path);
+                        return;
+                    }
+                    if (node.type === 'file') {
+                        if (selectionMode !== 'file') return;
+                        if (interaction === 'immediate') {
+                            shouldAutoSelectInitialPathRef.current = false;
+                            shouldAutoScrollInitialSelectionRef.current = false;
+                            props.onPickPath(node.path);
+                            return;
+                        }
+                        shouldAutoSelectInitialPathRef.current = false;
+                        shouldAutoScrollInitialSelectionRef.current = false;
+                        setSelectedPath(node.path);
+                    }
+                }}
+                wrapContent={({ content }) => (
+                    <View collapsable={false}>
+                        <View
+                            ref={contextMenuRowAnchorRef}
+                            collapsable={false}
+                            pointerEvents="none"
+                            style={{
+                                position: 'absolute',
+                                left: rowPaddingLeft,
+                                top: 0,
+                                bottom: 0,
+                                width: 1,
+                            }}
+                        />
+                        {content}
+                    </View>
+                )}
+            />
+        );
+    }, [enableContextMenu, interaction, openContextMenu, props, selectedPath, selectionMode, styles.directoryIconWrap, styles.directoryFolderIcon, styles.directoryToggle, theme.colors.button.primary.background, theme.colors.textLink, theme.colors.textSecondary, toggleDirectory]);
+
         return (
             <View
                 {...(variant === 'modal' && !useCardChrome ? { testID: PATH_BROWSER_MODAL_TEST_ID } : {})}
@@ -1131,140 +1266,7 @@ export function MachinePathBrowserView(props: MachinePathBrowserViewProps): Reac
                     contentContainerStyle={{ paddingBottom: variant === 'modal' ? 16 : 0 }}
                     listRef={browserListRef}
                     onScrollToIndexFailed={handleScrollToIndexFailed}
-                    renderRow={({ node, index, totalCount }) => {
-                        const rowBasePaddingLeft = 36;
-                        const rowDepthIndent = 12;
-                        const rowPaddingLeft = rowBasePaddingLeft + Math.min(6, Math.max(0, node.depth)) * rowDepthIndent;
-                        const selected = selectedPath === node.path && (
-                            selectionMode === 'file' ? node.type === 'file' : node.type === 'directory'
-                        );
-                        const contextMenuRowAnchorRef = React.createRef<View>();
-                        const handleTogglePress = (event?: GestureResponderEvent) => {
-                            stopToggleEventPropagation(event);
-                            void toggleDirectory(node.path);
-                        };
-                        const handleOpenContextMenu = (event?: unknown) => {
-                            stopToggleEventPropagation(event);
-                            const maybeEvent = event as { preventDefault?: () => void; stopPropagation?: () => void };
-                            maybeEvent.preventDefault?.();
-                            maybeEvent.stopPropagation?.();
-                            openContextMenu(node.path, contextMenuRowAnchorRef.current);
-                        };
-                        const handleRowLongPress = () => {
-                            openContextMenu(node.path, contextMenuRowAnchorRef.current);
-                        };
-                        const rightElement = selected
-                            ? <Ionicons name="checkmark-circle" size={18} color={theme.colors.button.primary.background} />
-                            : undefined;
-
-                        const icon = node.type === 'directory'
-                            ? (
-                                <View style={styles.directoryIconWrap}>
-                                    <Pressable
-                                        testID={getPathBrowserToggleTestId(node.path)}
-                                        {...(Platform.OS === 'web'
-                                            ? ({ onMouseDownCapture: stopToggleEventPropagation } as any)
-                                            : {})}
-                                        onPressIn={stopToggleEventPropagation}
-                                        onPress={handleTogglePress}
-                                        hitSlop={10}
-                                        style={styles.directoryToggle}
-                                    >
-                                        <Ionicons
-                                            name={node.isExpanded ? 'chevron-down' : 'chevron-forward'}
-                                            size={16}
-                                            color={theme.colors.textSecondary}
-                                        />
-                                    </Pressable>
-                                    <Ionicons
-                                        name={node.isExpanded ? 'folder-open-outline' : 'folder-outline'}
-                                        size={16}
-                                        color={theme.colors.textLink}
-                                        style={styles.directoryFolderIcon}
-                                    />
-                                </View>
-                            )
-                            : node.type === 'file'
-                                ? <Ionicons name="document-outline" size={18} color={theme.colors.textLink} />
-                                : <Ionicons name="folder-outline" size={18} color={theme.colors.textLink} />;
-
-                        return (
-                            <FilesystemBrowserRow
-                                node={node}
-                                index={index}
-                                totalCount={totalCount}
-                                title={
-                                    node.type === 'info' && node.infoKind === 'truncated'
-                                        ? t('newSession.pathPicker.truncatedDirectoryInfo', { count: node.entryCount ?? 0 })
-                                        : node.name || node.path
-                                }
-                                subtitle={node.type === 'error' ? node.errorMessage : undefined}
-                                icon={icon}
-                                testID={getPathBrowserRowTestId(node.path)}
-                                selected={selected}
-                                rightElement={rightElement}
-                                onContextMenu={node.type === 'directory' && enableContextMenu ? handleOpenContextMenu : undefined}
-                                onLongPress={node.type === 'directory' && enableContextMenu ? handleRowLongPress : undefined}
-                                basePaddingLeft={rowBasePaddingLeft}
-                                depthIndent={rowDepthIndent}
-                                density="tight"
-                                errorTitle={t('errors.tryAgain')}
-                                errorSubtitle={node.errorMessage}
-	                                onRetryError={(errorNode) => {
-	                                    if (errorNode.parentDirectoryPath) {
-                                        void retryDirectory(errorNode.parentDirectoryPath);
-                                    }
-                                }}
-                                onPress={() => {
-                                    if (node.type === 'directory') {
-                                        if (selectionMode === 'file') {
-                                            void toggleDirectory(node.path);
-                                            return;
-                                        }
-                                        if (interaction === 'immediate') {
-                                            shouldAutoSelectInitialPathRef.current = false;
-                                            shouldAutoScrollInitialSelectionRef.current = false;
-                                            props.onPickPath(node.path);
-                                            return;
-                                        }
-                                        shouldAutoSelectInitialPathRef.current = false;
-                                        shouldAutoScrollInitialSelectionRef.current = false;
-                                        setSelectedPath(node.path);
-                                        return;
-                                    }
-                                    if (node.type === 'file') {
-                                        if (selectionMode !== 'file') return;
-                                        if (interaction === 'immediate') {
-                                            shouldAutoSelectInitialPathRef.current = false;
-                                            shouldAutoScrollInitialSelectionRef.current = false;
-                                            props.onPickPath(node.path);
-                                            return;
-                                        }
-                                        shouldAutoSelectInitialPathRef.current = false;
-                                        shouldAutoScrollInitialSelectionRef.current = false;
-                                        setSelectedPath(node.path);
-                                    }
-                                }}
-                                wrapContent={({ content }) => (
-                                    <View collapsable={false}>
-                                        <View
-                                            ref={contextMenuRowAnchorRef}
-                                            collapsable={false}
-                                            pointerEvents="none"
-                                            style={{
-                                                position: 'absolute',
-                                                left: rowPaddingLeft,
-                                                top: 0,
-                                                bottom: 0,
-                                                width: 1,
-                                            }}
-                                        />
-                                        {content}
-                                    </View>
-                                )}
-                            />
-                        );
-                    }}
+                    renderRow={renderRow}
                 />
                 <DropdownMenu
                     open={enableContextMenu && contextMenuDirectoryPath != null}
