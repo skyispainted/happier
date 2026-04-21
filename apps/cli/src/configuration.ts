@@ -10,12 +10,12 @@ import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { isServerIdFilesystemSafe, sanitizeServerIdForFilesystem } from '@/server/serverId'
 import { isLocalishServerUrl } from '@/server/serverUrlClassification'
+import { projectPath } from '@/projectPath'
 import { normalizeCliArgv } from '@/cli/parseArgs'
 import {
   inferPublicReleaseRingIdFromEnvAndArgv,
   resolveDaemonStateBasenameForRing,
 } from '@/cli/runtime/publicReleaseChannel'
-import packageJson from '../package.json'
 import type { PublicReleaseRingId } from '@happier-dev/release-runtime/releaseRings'
 
 /**
@@ -726,7 +726,7 @@ class Configuration {
       { min: 0, default: 7 * 24 * 60 * 60 * 1000 },
     );
 
-    this.currentCliVersion = packageJson.version
+    this.currentCliVersion = this.resolveDiskCliVersion()
 
     // Variant configuration is handled by caller/UX; configuration must not write to stdout/stderr.
 
@@ -786,6 +786,19 @@ class Configuration {
         }
       }
     }
+  }
+
+  /**
+   * Read the CLI version from the on-disk package.json at runtime.
+   * This avoids the stale compiled version baked in from the build-time import.
+   */
+  private resolveDiskCliVersion(): string {
+    try {
+      const pkg = JSON.parse(readFileSync(join(projectPath(), 'package.json'), 'utf-8'));
+      const v = typeof pkg.version === 'string' ? pkg.version.trim() : '';
+      if (v) return v;
+    } catch { /* fall through */ }
+    return 'unknown';
   }
 }
 

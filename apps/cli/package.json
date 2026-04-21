@@ -1,6 +1,6 @@
 {
   "name": "@ks-happier/cli",
-  "version": "0.2.9",
+  "version": "0.2.11",
   "description": "Mobile and Web client for Claude Code and Codex",
   "author": "Leeroy Brun <leeroy.brun@gmail.com>",
   "license": "MIT",
@@ -135,7 +135,7 @@
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "^0.14.1",
-    "@anthropic-ai/claude-agent-sdk": "^0.2.34",
+    "@anthropic-ai/claude-agent-sdk": "^0.2.116",
     "@fastify/swagger": "9.7.0",
     "@happier-dev/agents": "0.0.0",
     "@happier-dev/cli-common": "0.0.0",
