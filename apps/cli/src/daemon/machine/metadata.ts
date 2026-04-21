@@ -5,7 +5,6 @@ import { promisify } from 'util';
 import { configuration } from '@/configuration';
 import { projectPath } from '@/projectPath';
 import type { MachineMetadata } from '@/api/types';
-import packageJson from '../../../package.json';
 
 const execFileAsync = promisify(execFile);
 
@@ -35,7 +34,7 @@ export async function getPreferredHostName(): Promise<string> {
 export const initialMachineMetadata: MachineMetadata = {
   host: os.hostname(),
   platform: os.platform(),
-  happyCliVersion: packageJson.version,
+  happyCliVersion: configuration.currentCliVersion,
   homeDir: os.homedir(),
   happyHomeDir: configuration.happyHomeDir,
   happyLibDir: projectPath(),

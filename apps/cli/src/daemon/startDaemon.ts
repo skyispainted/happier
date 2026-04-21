@@ -18,7 +18,6 @@ import { logger } from '@/ui/logger';
 import { authAndSetupMachineIfNeeded } from '@/ui/auth';
 import { configuration } from '@/configuration';
 import { startCaffeinate, stopCaffeinate } from '@/integrations/caffeinate';
-import packageJson from '../../package.json';
 import { getEnvironmentInfo } from '@/ui/doctor';
 import { buildHappyCliSubprocessLaunchSpec, spawnHappyCLI } from '@/utils/spawnHappyCLI';
 import { getVendorResumeSupport, requireCatalogEntry, resolveAgentCliSubcommand, resolveCatalogAgentId } from '@/backends/catalog';
@@ -1386,7 +1385,7 @@ export async function startDaemon(): Promise<void> {
       pid: process.pid,
       httpPort: controlPort,
       startedAt: Date.now(),
-      startedWithCliVersion: packageJson.version,
+      startedWithCliVersion: configuration.currentCliVersion,
       machineId,
       daemonLogPath: logger.logFilePath,
       controlToken,
@@ -1681,7 +1680,7 @@ export async function startDaemon(): Promise<void> {
                       ...base,
                       host: preferredHost,
                       platform: os.platform(),
-                      happyCliVersion: packageJson.version,
+                      happyCliVersion: configuration.currentCliVersion,
                       homeDir: os.homedir(),
                       happyHomeDir: configuration.happyHomeDir,
                       happyLibDir: projectPath(),
