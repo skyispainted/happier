@@ -321,6 +321,14 @@ export async function claudeLocal(opts: {
             // Never forward it into the Claude Code subprocess environment.
             delete env.HAPPIER_SPAWN_EXPLICIT_ENV_KEYS_JSON;
 
+            // Modern Claude Code ignores ANTHROPIC_MODEL env var for model selection.
+            // Pass it explicitly via --model CLI arg when env var is set and no --model already in args.
+            const hasModelArg = args.some(a => a === '--model');
+            if (!hasModelArg && env.ANTHROPIC_MODEL) {
+                args.push('--model', env.ANTHROPIC_MODEL);
+                logger.debug(`[ClaudeLocal] Injecting --model ${env.ANTHROPIC_MODEL} from ANTHROPIC_MODEL env`);
+            }
+
             if (shouldUseNodeLauncher) {
                 if (!claudeCliPath || (!existsSync(claudeCliPath) && !isEmbeddedBunBundlePath(claudeCliPath))) {
                     throw new Error('Claude local launcher not found. Please ensure HAPPIER_PROJECT_ROOT is set correctly for development.');

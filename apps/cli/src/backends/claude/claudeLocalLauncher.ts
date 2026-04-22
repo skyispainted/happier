@@ -77,8 +77,16 @@ export async function claudeLocalLauncher(
             },
         });
 
-        // Create scanner
-            const scanner = await createSessionScanner({
+        // Track when Claude was spawned, to detect stuck startup
+    let claudeSpawnedAtMs: number | null = null;
+    let startupTimeoutNotified = false;
+
+    // Forward reference to the switch function, used by the scanner callback.
+    // Assigned inside the try block after doSwitch is defined.
+    let forceSwitch: (() => Promise<void>) | null = null;
+
+    // Create scanner
+    const scanner = await createSessionScanner({
         sessionId: session.sessionId,
         transcriptPath: session.transcriptPath,
         claudeConfigDir: resolveClaudeConfigDirOverride(process.env),
@@ -90,11 +98,35 @@ export async function claudeLocalLauncher(
                 turnDiffBridge.flushAfterForwardIfNeeded();
             }
         },
-        onTranscriptMissing: () => {
+        onTranscriptMissing: async () => {
+            // First time: show the "waiting" message
             session.client.sendSessionEvent({
                 type: 'message',
                 message: 'Claude transcript not available yet — waiting for it to appear…'
             });
+
+            // If we've been waiting too long, kill Claude and show an error.
+            if (startupTimeoutNotified) return;
+            if (claudeSpawnedAtMs === null) return;
+
+            const elapsed = Date.now() - claudeSpawnedAtMs;
+            const timeoutMs = configuration.claudeLocalStartupTimeoutMs;
+            if (elapsed < timeoutMs) return;
+
+            startupTimeoutNotified = true;
+            logger.debug(`[ClaudeLocal] Startup timeout exceeded (${Math.round(elapsed / 1000)}s > ${Math.round(timeoutMs / 1000)}s), aborting stuck process`);
+
+            session.client.sendSessionEvent({
+                type: 'message',
+                message: `Claude did not create a transcript after ${Math.round(timeoutMs / 1000)}s. The process may be stuck — restarting…`
+            });
+
+            // Abort the Claude process so the launcher can retry or fall back to remote mode.
+            try {
+                await forceSwitch?.();
+            } catch {
+                // Best-effort: if abort fails, we'll still exit the loop eventually.
+            }
         },
         transcriptMissingWarningMs: configuration.claudeTranscriptMissingWarningMs,
     });
@@ -181,6 +213,7 @@ export async function claudeLocalLauncher(
             await ensureSessionInfoBeforeSwitch({ session });
             await abort();
         }
+        forceSwitch = doSwitch;
 
         // When to abort
         session.client.rpcHandlerManager.registerHandler('abort', doAbort); // Abort current process, clean queue and switch to remote mode
@@ -278,6 +311,10 @@ export async function claudeLocalLauncher(
                 });
 
                 const { mcpConfigJson: baseMcpConfigJson } = await session.getOrCreateHappierMcpBridge();
+
+                // Track spawn time so the transcript-missing callback can detect a stuck startup.
+                claudeSpawnedAtMs = Date.now();
+                startupTimeoutNotified = false;
 
                 await claudeLocal({
                     path: session.path,

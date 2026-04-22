@@ -158,6 +158,11 @@ class Configuration {
   // Claude local transcript scanner (UI-facing missing-transcript warning delay).
   public readonly claudeTranscriptMissingWarningMs: number
 
+  // Claude local startup: hard timeout for JSONL transcript to appear.
+  // If the transcript file doesn't show up within this window after the SessionStart hook fires,
+  // we kill Claude and show an error (prevents indefinite "waiting" when Claude is stuck).
+  public readonly claudeLocalStartupTimeoutMs: number
+
 	  // Claude JSONL transcript repair (missing tool_result injection for interrupted tool calls).
 	  public readonly claudeTranscriptRepairWaitForToolUseIdsTimeoutMs: number
 	  public readonly claudeTranscriptRepairWaitForToolUseIdsPollIntervalMs: number
@@ -556,6 +561,13 @@ class Configuration {
     this.claudeTranscriptMissingWarningMs = resolveIntEnvWithBounds(
       'HAPPIER_CLAUDE_TRANSCRIPT_MISSING_WARNING_MS',
       { min: 0, max: 2 * 60_000, default: 15_000 },
+    );
+
+    // Default: 120s. If the JSONL transcript doesn't appear within this window after
+    // the SessionStart hook fires, we kill the stuck Claude process and error out.
+    this.claudeLocalStartupTimeoutMs = resolveIntEnvWithBounds(
+      'HAPPIER_CLAUDE_LOCAL_STARTUP_TIMEOUT_MS',
+      { min: 10_000, max: 10 * 60_000, default: 120_000 },
     );
 
     // Default: 250ms. Best-effort grace window for the transcript to settle and for tool_use/tool_result
